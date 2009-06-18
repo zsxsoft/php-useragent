@@ -57,6 +57,7 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 == Release Notes ==
 v0.8.3
 	* Adjusted readme.txt to pass validation from: http://wordpress.org/extend/plugins/about/validator/
+	* Initial submission to the the WP-UserAgent SVN Plugin Repository
 
 v0.8.2
 	* Added detection for Windows 3.11, Windows NT 3.11, Windows NT 4.0 and fallback check for Windows Me.
