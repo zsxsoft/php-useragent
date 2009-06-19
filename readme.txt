@@ -65,7 +65,7 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 == Release Notes ==
 v0.8.3
 <ul>
-	<li>Adjusted readme.txt to pass validation from: http://wordpress.org/extend/plugins/about/validator/</li>
+	<li>Adjusted readme.txt to appear better on the plugin page and pass validation from: http://wordpress.org/extend/plugins/about/validator/</li>
 	<li>Initial submission to the the WP-UserAgent SVN Plugin Repository</li>
 </ul>
 
