@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, browser, operating system, 
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.3
+Stable tag: 0.8.4
 
 == Description ==
 
@@ -63,6 +63,14 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 </ul>
 
 == Release Notes ==
+v0.8.4
+<ul>
+	<li>Links: rel=&quot;nofollow&quot; is applied to all web browser and operating system links. (props: Alter Ego Blog)</li>
+	<li>Added detection for Arch Linux (props: Terry Wang)</li>
+	<li>Added detection for KMail (Kontact Mail) since it has a unique and detectable user agent string.</li>
+	<li>Icon change: Macintosh (generic/old Mac) uses multi-color Apple icon, Mac OS X now uses gray Apple icon.</li>
+</ul>
+
 v0.8.3
 <ul>
 	<li>Adjusted readme.txt to appear better on the plugin page and pass validation from: http://wordpress.org/extend/plugins/about/validator/</li>

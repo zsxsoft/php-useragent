@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.8.3
+Version: 0.8.4
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -279,6 +279,10 @@ function detect_webbrowser(){
 		$link="http://www.kkman.com.tw/";
 		$title=detect_browser_version("KKman");
 		$code="kkman";
+	}elseif(preg_match('/KMail/i', $useragent)){
+		$link="http://kontact.kde.org/kmail/";
+		$title=detect_browser_version("KMail");
+		$code="kmail";
 	}elseif(preg_match('/KMLite/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/K-Meleon";
 		$title=detect_browser_version("KMLite");
@@ -462,7 +466,7 @@ function detect_webbrowser(){
 	}
 	$img_wb=img($code, "/net/");
 	if($ua_show_text)
-		$web_browser=$img_wb." <a href='".$link."' title='".$title."'>".$title."</a>";
+		$web_browser=$img_wb." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
 	else
 		$web_browser=$img_wb;
 	return $web_browser;
@@ -471,7 +475,11 @@ function detect_webbrowser(){
 //Detect Operating System and/or Devices
 function detect_os(){
 	global $useragent, $ua_show_text;
-	if(preg_match('/CentOS/', $useragent)){
+	if(preg_match('/Arch/', $useragent)){
+		$link="http://www.archlinux.org/";
+		$os="Arch Linux";
+		$code="archlinux";
+	}elseif(preg_match('/CentOS/', $useragent)){
 		$link="http://www.centos.org/";
 		$os="CentOS";
 		if(preg_match('#\.el([.0-9a-zA-Z]+).centos#i',$useragent,$regmatch))
@@ -527,9 +535,11 @@ function detect_os(){
 			$os=substr($useragent, strpos(strtolower($useragent), strtolower("Mac OS X")));
 			$os=substr($os, 0, strpos($os, ";"));
 			$os=str_replace("_", ".", $os); 
-		}else
+			$code="mac";
+		}else {
 			$os="Macintosh";
-		$code="mac";
+			$code="macintosh";
+		}
 	}elseif(preg_match('/Nintendo Wii/i', $useragent)){
 		$link="http://www.nintendo.com/wii";
 		$os = "Nintendo Wii";
@@ -640,7 +650,7 @@ function detect_os(){
 	}
 	$img_os=img($code, "/os/");
 	if($ua_show_text)
-		$detected_os=$img_os." <a href='".$link."' title='".$os."'>".$os."</a>";
+		$detected_os=$img_os." <a href='".$link."' title='".$os."' rel='nofollow'>".$os."</a>";
 	else
 		$detected_os=$img_os;
 	return $detected_os;
@@ -677,7 +687,7 @@ function detect_trackback(){
 	$title.=" ".$version;
 	$img_tb=img($code, "/net/");
 	if($ua_show_text)
-		$detected_tb=$img_tb." <a href='".$link."' title='".$title."'>".$title."</a>";
+		$detected_tb=$img_tb." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
 	else
 		$detected_tb=$img_tb;
 	return $detected_tb;
