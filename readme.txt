@@ -1,5 +1,5 @@
 === WP-UserAgent ===
-Contributors: kyleabaker, fernandobt
+Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, browser, operating system, 
 Requires at least: 2.0
