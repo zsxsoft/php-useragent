@@ -1,10 +1,10 @@
 === WP-UserAgent ===
 Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
-Tags: useragent, browser, operating system, 
+Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.4
+Stable tag: 0.8.5
 
 == Description ==
 
@@ -62,7 +62,13 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 	<li>Published under GPLv3.</li>
 </ul>
 
-== Release Notes ==
+== Changelog ==
+v0.8.5
+<ul>
+	<li>Added detection for Sabayon Linux (props: Ian "Thev00d00" Whyman)</li>
+	<li>Updated readme.txt to take advantage of the <a href="http://weblogtoolscollection.com/archives/2009/06/20/attention-all-plugin-authors/">new changelog tab</a>.</li>
+</ul>
+
 v0.8.4
 <ul>
 	<li>Links: rel=&quot;nofollow&quot; is applied to all web browser and operating system links. (props: Alter Ego Blog)</li>
