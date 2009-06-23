@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.5
+Stable tag: 0.8.6
 
 == Description ==
 
@@ -63,6 +63,21 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 </ul>
 
 == Changelog ==
+v0.8.6
+<ul>
+	<li>Added detection for more web browsers: BlackBerry Web Browser, Blazer, IEMobile, MIB (Motorola Internet Browser), NetFront, NetPositive, Obigo, Palm Pre Web Browser, Polaris, SEMC Browser, UCWEB, UP.Browser</li>
+	<li>Added detection for more operating systems: Android, BeOS, Darwin (Mac), DragonFly BSD, Kanotix, Knoppix, LindowsOS, Linspire, Mandriva, Motorola, NetBSD, Nintendo DSi, Palm, VectorLinux, webOS</li>
+	<li>Updates to detection of some rare sub-string instances: Win16 (Windows 3.11), Win95, Win98 (Windows 98 SE), Windows ME, Windows XP, Mac OSX, and Darwin (as Mac).</li>
+	<li>Moved detection point of Firefox near end (along with Mozilla and MSIE) so other browsers that include Firefox in the User-Agent string are properly detected (example: Swiftfox is occassionally listed after Firefox in the string, causing improper detection).</li>
+	<li>Corrected detection of Safari. Now Opera (starting with v10) and Safari are both versioned based on the Version/x.y string.</li>
+	<li>Corrected detection of Nokia. Minor detection change included forward slash to further narrow results.</li>
+	<li>Corrected links to Fedora and Mosaic's homepage.</li>
+	<li>Added icons for TeaShark (mobile web browser).</li>
+	<li>Added new detection for Mozilla versioning.</li>
+	<li>Added new Windows icons so a properly styled Windows icon is shown with the correct operating system version.</li>
+	<li>Minor code cleaning.</li>
+</ul>
+
 v0.8.5
 <ul>
 	<li>Added detection for Sabayon Linux (props: Ian "Thev00d00" Whyman)</li>
@@ -249,6 +264,6 @@ v0.6
 
 TO-DO:
 <ul>
-	<li>Allow users to modify links for each web browser and operating system.</li>
+	<li>Allow users to enable/disable links for web browsers and operating systems.</li>
 	<li>New web browsers and operating systems are always welcome.</li>
 </ul>
