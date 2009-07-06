@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.8.6
+Version: 0.8.7
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -142,6 +142,10 @@ function detect_webbrowser(){
 		$link="http://en.wikipedia.org/wiki/Blazer_(web_browser)";
 		$title=detect_browser_version("Blazer");
 		$code="blazer";
+	}elseif(preg_match('/Bolt/i', $useragent)){
+		$link="http://www.boltbrowser.com/";
+		$title=detect_browser_version("Bolt");
+		$code="bolt";
 	}elseif(preg_match('/BonEcho/i', $useragent)){
 		$link="http://www.mozilla.org/projects/minefield/";
 		$title=detect_browser_version("BonEcho");
@@ -531,7 +535,7 @@ function detect_webbrowser(){
 		$title="Unknown";
 		$code="null";
 	}
-	$img_wb=img($code, "/net/");
+	$img_wb=img($code, "/net/", $title);
 	if($ua_show_text)
 		$web_browser=$img_wb." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
 	else
@@ -813,7 +817,7 @@ function detect_os(){
 		$os="Unknown";
 		$code="null";	
 	}
-	$img_os=img($code, "/os/");
+	$img_os=img($code, "/os/", $os);
 	if($ua_show_text)
 		$detected_os=$img_os." <a href='".$link."' title='".$os."' rel='nofollow'>".$os."</a>";
 	else
@@ -850,7 +854,7 @@ function detect_trackback(){
 		$code="null";
 	}
 	$title.=" ".$version;
-	$img_tb=img($code, "/net/");
+	$img_tb=img($code, "/net/", $title);
 	if($ua_show_text)
 		$detected_tb=$img_tb." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
 	else
@@ -859,7 +863,7 @@ function detect_trackback(){
 }
 
 //Image generation function
-function img($code, $type){
+function img($code, $type, $title){
 	global $ua_comment_size, $ua_track_size, $ua_trackback, $url_img, $ua_doctype;
 	if($ua_comment_size=="")
 		$ua_comment_size=16;

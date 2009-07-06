@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.6
+Stable tag: 0.8.7
 
 == Description ==
 
@@ -63,6 +63,12 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 </ul>
 
 == Changelog ==
+v0.8.7
+<ul>
+	<li>Added detection for the Bolt Browser (mobile).</li>
+	<li>Fixed bug where Browser and Operating System names were not passed along to the title and alt attributes in the image tags (props: cimddwc)</li>
+</ul>
+
 v0.8.6
 <ul>
 	<li>Added detection for more web browsers: BlackBerry Web Browser, Blazer, IEMobile, MIB (Motorola Internet Browser), NetFront, NetPositive, Obigo, Palm Pre Web Browser, Polaris, SEMC Browser, UCWEB, UP.Browser</li>
@@ -264,6 +270,7 @@ v0.6
 
 TO-DO:
 <ul>
+	<li>Reach a stable and solid 1.0 release where the plugin is mostly finalized and updates will generally be additional browsers and/or systems.</li>
 	<li>Allow users to enable/disable links for web browsers and operating systems.</li>
 	<li>New web browsers and operating systems are always welcome.</li>
 </ul>
