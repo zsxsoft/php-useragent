@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.7
+Stable tag: 0.8.8
 
 == Description ==
 
@@ -63,6 +63,13 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 </ul>
 
 == Changelog ==
+v0.8.8
+<ul>
+	<li>Corrected a layout bug on the Settings page with the Comment Preview section.</li>
+	<li>Added option to display only text. Options are now Display icons and text, icons only or text only. You may need to check your settings if you were previously using the Icon only mode as it will most likely be reset with this update.</li>
+	<li>Added option to specify css styling of image via Default (no-border), Inline Style for custom css, or Class for using a stylesheet (props: Zim)</li>
+</ul>
+
 v0.8.7
 <ul>
 	<li>Added detection for the Bolt Browser (mobile).</li>

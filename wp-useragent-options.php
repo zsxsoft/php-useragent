@@ -9,6 +9,8 @@
 			$ua_comment_size=get_option('ua_comment_size');
 			$ua_track_size=get_option('ua_track_size');
 			$ua_show_text=get_option('ua_show_text');
+			$ua_image_style=get_option('ua_image_style');
+			$ua_image_css=get_option('ua_image_css');
 			$ua_text_surfing=get_option('ua_text_surfing');
 			$ua_text_on=get_option('ua_text_on');
 			$ua_show_au_bool=get_option('ua_show_ua_bool');
@@ -51,13 +53,28 @@
 						</td>
 					</tr>
 					<tr>
-						<td><strong>Text and icons, or icons only:</strong></td>
+						<td><strong>Icons and text, icons or text only:</strong></td>
 						<td>
 							<select id="ua_show_text" name="ua_show_text" onchange="preview();">
 								<option value="1" <?php if($ua_show_text==1) echo 'selected="selected"' ?>>Icons and text</option>
-								<option value="0" <?php if($ua_show_text==0) echo 'selected="selected"' ?>>Icons only</option>						
+								<option value="2" <?php if($ua_show_text==2) echo 'selected="selected"' ?>>Icons only</option>
+								<option value="3" <?php if($ua_show_text==3) echo 'selected="selected"' ?>>Text only</option>
 							</select>
 						</td>
+					</tr>
+					<tr>
+						<td><strong>Inline style or class for images:</strong></td>
+						<td>
+							<select id="ua_image_style" name="ua_image_style" onchange="preview();">
+								<option value="1" <?php if($ua_image_style==1) echo 'selected="selected"' ?>>Default</option>
+								<option value="2" <?php if($ua_image_style==2) echo 'selected="selected"' ?>>Inline Style</option>
+								<option value="3" <?php if($ua_image_style==3) echo 'selected="selected"' ?>>Class</option>		
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>If you're not sure what this is, please leave it as &quot;Default&quot; which applies a no-border style.<br />The Comment Preview will not be updated with these changes.</strong></td>
+						<td><input type="text" id="ua_image_css" name="ua_image_css" value="<?php echo $ua_image_css; ?>" onkeyup="preview();" /></td>
 					</tr>
 					<tr>
 						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">Display text</h3>
@@ -143,7 +160,7 @@
 					</tr>
 				</table>
 		<input type="hidden" name="action" value="update" />
-		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_text_surfing, ua_text_on, ua_show_ua_bool, ua_output_location" />
+		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_show_ua_bool, ua_output_location" />
 		<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 		</p>
@@ -160,18 +177,28 @@
 		function preview(){
 			var wp_ua_content="", wp_ua_string="", ua_text_surfing="", ua_text_on="", ua_browser="", ua_system="";
 
+			//wp_ua_image_style
+			if(document.getElementById('ua_image_style').value=="1")
+				document.getElementById('ua_image_css').style.display="none";
+			else
+				document.getElementById('ua_image_css').style.display="inline";
+
 			//wp_ua_content
-			if(document.getElementById('ua_show_text').value=="1"){
+			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="3"){
 				ua_text_surfing=document.getElementById('ua_text_surfing').value+" ";
 				ua_text_on=" "+document.getElementById('ua_text_on').value+" ";
 				ua_browser=" <a href='http://www.opera.com/' style='text-decoration:none'>Opera 10.00</a> ";
 				ua_system=" <a href='http://www.ubuntu.com/' style='text-decoration:none'>Ubuntu 9.10</a>";
 			}
 
-			if(document.getElementById('ua_comment_size').value=="16"){
-				wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_16+"' alt='Browser:' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_16+"' alt='System:' />"+ua_system;
-			}else if(document.getElementById('ua_comment_size').value=="24"){
-				wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_24+"' alt='Browser:' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_24+"' alt='System:' />"+ua_system;
+			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="2"){
+				if(document.getElementById('ua_comment_size').value=="16"){
+					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_16+"' alt='Browser:' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_16+"' alt='System:' />"+ua_system;
+				}else if(document.getElementById('ua_comment_size').value=="24"){
+					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_24+"' alt='Browser:' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_24+"' alt='System:' />"+ua_system;
+				}
+			} else if (document.getElementById('ua_show_text').value=="3") {
+				wp_ua_content=ua_text_surfing+ua_browser+ua_text_on+ua_system;
 			}
 
 			//wp_ua_string
@@ -181,10 +208,10 @@
 
 			//toggle preview and custom output location directions
 			if(document.getElementById('ua_output_location').value=="custom"){
-				document.getElementById('ua_output_custom_location').style.display="block";
+				document.getElementById('ua_output_custom_location').style.display="table-row";
 				document.getElementById('ua_preview').style.display="none";
 			}else{
-				document.getElementById('ua_preview').style.display="block";
+				document.getElementById('ua_preview').style.display="table-row";
 				document.getElementById('ua_output_custom_location').style.display="none";
 				if(document.getElementById('ua_output_location').value=="before"){
 					document.getElementById('wp_ua_content_bottom').innerHTML="";
