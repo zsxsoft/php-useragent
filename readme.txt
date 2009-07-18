@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.8
+Stable tag: 0.8.9
 
 == Description ==
 
@@ -63,6 +63,11 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 </ul>
 
 == Changelog ==
+v0.8.9
+<ul>
+	<li>Added detection for TheWorld Browser (props: mecal)</li>
+</ul>
+
 v0.8.8
 <ul>
 	<li>Corrected a layout bug on the Settings page with the Comment Preview section.</li>
