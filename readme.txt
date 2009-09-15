@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.8
-Stable tag: 0.8.9
+Stable tag: 0.9
 
 == Description ==
 
@@ -63,6 +63,13 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 </ul>
 
 == Changelog ==
+v0.9
+<ul>
+	<li>Added detection for Venenux GNU Linux.</li>
+	<li>Added detection for Laconica and MovableType trackbacks.</li>
+	<li>Cleaned some of the code for trackback detections.</li>
+</ul>
+
 v0.8.9
 <ul>
 	<li>Added detection for TheWorld Browser (props: mecal)</li>

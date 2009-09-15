@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.8.9
+Version: 0.9
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -688,6 +688,14 @@ function detect_os(){
 		$link="http://www.openbsd.org/";
 		$title="OpenBSD";
 		$code="openbsd";
+	}elseif(preg_match('/Oracle/i', $useragent)){
+		$link="http://www.oracle.com/us/technologies/linux/";
+		$title="Oracle";
+		if(preg_match('#\.el([._0-9a-zA-Z]+)#i',$useragent,$regmatch))
+			$title.=" Enterprise Linux ".str_replace("_", ".", $regmatch[1]);
+		else
+			$title.=" Linux";
+		$code="oracle";
 	}elseif(preg_match('/Palm/i', $useragent)){
 		$link="http://www.palm.com/";
 		$title="Palm";
@@ -704,7 +712,7 @@ function detect_os(){
 	}elseif(preg_match('/Red\ Hat/i', $useragent) || preg_match('/RedHat/i', $useragent)){
 		$link="http://www.redhat.com/";
 		$title = "Red Hat";
-		if(preg_match('#\.el([.0-9a-zA-Z]+)#i',$useragent,$regmatch))
+		if(preg_match('#\.el([._0-9a-zA-Z]+)#i',$useragent,$regmatch))
 			$title.=" Enterprise Linux ".str_replace("_", ".", $regmatch[1]);
 		$code="mandriva";
 	}elseif(preg_match('/Sabayon/i', $useragent)){
@@ -743,6 +751,10 @@ function detect_os(){
 		$link="http://www.vectorlinux.com/";
 		$title="VectorLinux";
 		$code="vectorlinux";
+	}elseif(preg_match('/Venenux/i', $useragent)){
+		$link="http://www.venenux.org/";
+		$title="Venenux GNU Linux";
+		$code="venenux";
 	}elseif(preg_match('/webOS/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/WebOS";
 		$title="Palm webOS";
@@ -751,10 +763,10 @@ function detect_os(){
 		$link="http://www.microsoft.com/windows/";
 		if(preg_match('/Windows NT 6.1; Win64; x64;/i', $useragent) || preg_match('/Windows NT 6.1; WOW64;/i', $useragent)){
 			$title="Windows 7 x64 Edition";
-			$code="win-3";
+			$code="win-4";
 		}elseif(preg_match('/Windows NT 6.1/i', $useragent)){
 			$title="Windows 7";
-			$code="win-3";
+			$code="win-4";
 		}elseif(preg_match('/Windows NT 6.0/i', $useragent)){
 			$title="Windows Vista";
 			$code="win-3";
@@ -836,30 +848,42 @@ function detect_os(){
 //Detect Trackbacks -- Check if it works...
 function detect_trackback(){
 	global $useragent, $ua_trackback, $ua_show_text;
-	$ua_trackback=1;
-	if(preg_match('#WordPress/([.0-9a-zA-Z]+)#i',$useragent,$regmatch)){
-		$link="http://www.wordpress.org/";
-		$title="WordPress";
-		$code="wordpress";
-		$version=$regmatch[1];
-	}elseif(preg_match('/Feedburner/i',$useragent,$regmatch)){
+	$ua_trackback=0;
+	if(preg_match('/Feedburner/i',$useragent,$regmatch)){
 		$link="http://www.feedburner.com/";
 		$title="FeedBurner";
 		$code="feedburner";
 		$version="";
-	}elseif(preg_match('#pligg#i',$useragent,$regmatch)){
+	}elseif(preg_match('/laconica|statusnet/i', $useragent, $regmatch)){
+		$link="http://status.net/";
+		$title="StatusNet";
+		$code="laconica";
+		$version="";
+	}elseif(preg_match('/meneame/i', $useragent, $regmatch)){
+		$link="http://www.meneame.net/";
+		$title="Meneame";
+		$code="meneame";
+		$version="";
+	}elseif(preg_match('#MovableType/([.0-9a-zA-Z]+)#i', $useragent, $regmatch)){
+		$link="http://www.movabletype.org/";
+		$title="MovableType";
+		$code="movabletype";
+		$version=$regmatch[1];
+	}elseif(preg_match('/pligg/i',$useragent,$regmatch)){
 		$link="http://www.pligg.com/";
 		$title="Pligg";
 		$code="pligg";
 		$version="";
-	}elseif(preg_match('#meneame#i', $useragent, $regmatch)){
-		$link="http://www.meneame.net/";
-		$title="Meneame";
-		$code="meneame";
+	}elseif(preg_match('#WordPress/([.0-9a-zA-Z]+)#i',$useragent,$regmatch)){
+		$link="http://www.wordpress.org/";
+		$title="WordPress";
+		$code="wordpress";
+		$version=$regmatch[1];
 	}else{
 		$link="";
 		$title="Unknown";
 		$code="null";
+		$version="";
 	}
 	$title.=" ".$version;
 	if($ua_show_text=="1")
