@@ -3,14 +3,14 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.9
+Version: 0.9.2
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
 //Author URI: http://picandocodigo.net
 */
 
-/* Copyright 2008-2009  Kyle Baker  (email: kyleabaker@gmail.com)
+/* Copyright 2008-2010  Kyle Baker  (email: kyleabaker@gmail.com)
 	//Copyright 2008  Fernando Briano  (email : transformers.es@gmail.com)
 
 This program is free software; you can redistribute it and/or modify
@@ -72,10 +72,13 @@ function detect_browser_version($title){
 
 
 	//chop the remainder following ";" (MSIE uses this, maybe some others -> Maxathon;)
-	if(strpos($version,";"))
+	if(strpos($version,"/")) //fix for Opera Mini
+		$version=substr($version,0,strpos($version,"/"));
+	elseif(strpos($version,";"))
 		$version=substr($version,0,strpos($version,";"));
 	elseif(strpos($version,")"))
 		$version=substr($version,0,strpos($version,")"));
+	
 
 
 	//check to see if the version ends the user agent string, if not then chop the remainder
@@ -406,6 +409,10 @@ function detect_webbrowser(){
 		$link="http://www.omnigroup.com/applications/omniweb/";
 		$title=detect_browser_version("OmniWeb");
 		$code="omniweb";
+	}elseif(preg_match('/Opera Mini/i', $useragent)){
+		$link="http://www.opera.com/mini/";
+		$title=detect_browser_version("Opera Mini");
+		$code="opera";
 	}elseif(preg_match('/Opera/i', $useragent)){
 		$link="http://www.opera.com/";
 		$title=detect_browser_version("Opera");
@@ -571,6 +578,10 @@ function detect_os(){
 		if(preg_match('#\.el([.0-9a-zA-Z]+).centos#i',$useragent,$regmatch))
 			$title.=" ".$regmatch[1];
 		$code="centos";
+	}elseif(preg_match('/CrOS/', $useragent)){
+		$link="http://en.wikipedia.org/wiki/Google_Chrome_OS";
+		$title="Google Chrome OS";
+		$code="chromeos";
 	}elseif(preg_match('/Debian/i', $useragent)){
 		$link="http://www.debian.org/";
 		$title="Debian GNU/Linux";
@@ -601,6 +612,12 @@ function detect_os(){
 		$link="http://www.gentoo.org/";
 		$title="Gentoo";
 		$code="gentoo";
+	}elseif(preg_match('/iPod/i', $useragent)){
+		$link="http://www.apple.com/itunes";
+		$title="iPod";
+		if(preg_match('#iPhone\ OS\ ([.\_0-9a-zA-Z]+)#i',$useragent,$regmatch))
+			$title.=" OS ".str_replace("_", ".", $regmatch[1]);
+		$code="iphone";
 	}elseif(preg_match('/iPhone/i', $useragent)){
 		$link="http://www.apple.com/iphone";
 		$title="iPhone";
@@ -641,18 +658,18 @@ function detect_os(){
 			$title=substr($useragent, strpos(strtolower($useragent), strtolower("Mac OS X")));
 			$title=substr($title, 0, strpos($title, ";"));
 			$title=str_replace("_", ".", $title); 
-			$code="mac";
+			$code="mac-3";
 		}elseif(preg_match('/Mac OSX/i', $useragent)){
 			$title=substr($useragent, strpos(strtolower($useragent), strtolower("Mac OSX")));
 			$title=substr($title, 0, strpos($title, ";"));
 			$title=str_replace("_", ".", $title); 
-			$code="mac";
+			$code="mac-2";
 		}elseif(preg_match('/Darwin/i', $useragent)){
 			$title="Mac OS Darwin";
-			$code="macintosh";
+			$code="mac-1";
 		}else {
 			$title="Macintosh";
-			$code="macintosh";
+			$code="mac-1";
 		}
 	}elseif(preg_match('/Mandriva/i', $useragent)){
 		$link="http://www.mandriva.com/";
