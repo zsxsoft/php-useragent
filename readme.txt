@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
-Tested up to: 2.9.1
-Stable tag: 0.9.2
+Tested up to: 2.9.2
+Stable tag: 0.9.4
 
 == Description ==
 
@@ -65,6 +65,20 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.4 =
+* Added detection for Novarra Vision Browser for mobile phones.
+* Corrected a misspelled image filename for 24x24 seamonkey.png
+* Corrected image used for Opera Mini.
+
+
+= v0.9.3 =
+* Added support for BlackBerry device and model detection.
+* Corrected the BlackBerry browser detection to simply register as BlackBerry since the device model number doesn't have anything to do with the browser.
+* Added detection for vBSEO (vBulletin).
+* Added detection for Opera 10+ so the new Opera icon is used properly.
+* Purged unused Mac icons.
+
 
 = v0.9.2 =
 * Added support for iPod detection so an iPod Touch doesn't appear as an iPhone.

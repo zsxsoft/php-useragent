@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.9.2
+Version: 0.9.4
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -141,7 +141,7 @@ function detect_webbrowser(){
 		$code="beonex";
 	}elseif(preg_match('/BlackBerry/i', $useragent)){
 		$link="http://www.blackberry.com/";
-		$title=detect_browser_version("BlackBerry");
+		$title="BlackBerry";
 		$code="blackberry";
 	}elseif(preg_match('/Blazer/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/Blazer_(web_browser)";
@@ -401,6 +401,10 @@ function detect_webbrowser(){
 		$link="http://www.access-company.com/";
 		$title=detect_browser_version("NF-Browser");
 		$code="netfront";
+	}elseif(preg_match('/Novarra-Vision/i', $useragent)){
+		$link="http://www.novarra.com/";
+		$title="Novarra ".detect_browser_version("Vision");
+		$code="novarra";
 	}elseif(preg_match('/Obigo/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/Obigo_Browser";
 		$title=detect_browser_version("Obigo");
@@ -412,11 +416,13 @@ function detect_webbrowser(){
 	}elseif(preg_match('/Opera Mini/i', $useragent)){
 		$link="http://www.opera.com/mini/";
 		$title=detect_browser_version("Opera Mini");
-		$code="opera";
+		$code="opera-2";
 	}elseif(preg_match('/Opera/i', $useragent)){
 		$link="http://www.opera.com/";
 		$title=detect_browser_version("Opera");
-		$code="opera";
+		$code="opera-1";
+		if(preg_match('/Version/i', $useragent))
+			$code="opera-2";
 	}elseif(preg_match('/Orca/i', $useragent)){
 		$link="http://www.orcabrowser.com/";
 		$title=detect_browser_version("Orca");
@@ -572,6 +578,12 @@ function detect_os(){
 		$link="http://en.wikipedia.org/wiki/BeOS";
 		$title="BeOS";
 		$code="beos";
+	}elseif(preg_match('/BlackBerry/', $useragent)){
+		$link="http://www.blackberry.com/";
+		$title="BlackBerry";
+		if(preg_match('#blackberry([.0-9a-zA-Z]+)\/#i',$useragent,$regmatch))
+			$title.=" ".$regmatch[1];
+		$code="blackberry";
 	}elseif(preg_match('/CentOS/', $useragent)){
 		$link="http://www.centos.org/";
 		$title="CentOS";
@@ -891,6 +903,10 @@ function detect_trackback(){
 		$title="Pligg";
 		$code="pligg";
 		$version="";
+	}elseif (preg_match('/vBSEO/i', $useragent, $regmatch)){
+		$link="http://www.vbseo.com/";
+		$title="vBSEO (VBulletin)";
+		$code.="vbseo";
 	}elseif(preg_match('#WordPress/([.0-9a-zA-Z]+)#i',$useragent,$regmatch)){
 		$link="http://www.wordpress.org/";
 		$title="WordPress";
