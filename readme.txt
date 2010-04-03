@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 0.9.4
+Stable tag: 0.9.5
 
 == Description ==
 
@@ -65,6 +65,25 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.5 =
+* Added browser version detection for BlackBerry web browsers (with a mod/hack fix).
+* Added detection for the (now discontinued) Iris mobile browser.
+* Updated MSIE Mobile icon.
+* Added detection for the Jasmine mobile web browser from Samsung.
+* Added detection for the Dolfin mobile web browser from Samsung.
+* Added detection for the Teleca (Obigo derivative) mobile web browser.
+* Added detection for the Java edition of the SEMC browser.
+* Added detection for LG mobile devices.
+* Added detection for Samsung mobile devices.
+* Added detection for SonyEricsson mobile devices.
+* Added two other Windows Mobile device strings.
+* -------------(props: Yomi - above suggestions and code)
+* Added detection for Namoroka web browser (props: Cahya).
+* Modified detection for Nokia devices to include a wider range.
+* Added detection for Lubuntu in anticipation of a platform specific string eventually (as other Ubuntu derivatives have done).
+* Fix for UC Web browser version detection.
+
 
 = v0.9.4 =
 * Added detection for Novarra Vision Browser for mobile phones.
@@ -294,5 +313,5 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 == Upgrade Notice ==
 
-= 0.9.2 =
-Added support for Google Chrome OS and iPod detection.
+= 0.9.5 =
+New support for several browsers and mobile devices as well as a couple of fixes for previous support.
