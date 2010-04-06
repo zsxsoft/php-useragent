@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 0.9.5
+Stable tag: 0.9.6
 
 == Description ==
 
@@ -65,6 +65,17 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.6 =
+* Added detection for Firefox Lorentz (with a temperary related link page until I find an official or article)
+* Added detection for Flock Sulfer.
+* Added detection for Google Wireless Transcoder.
+* -------------(props: dani - above suggestions)
+* Added trackback detection for SOAP (Simple Object Access Protocol) ex. SOAP::Lite/Perl/0.710.08
+* Added settings option to enable/disable links for web browsers and platforms (with a live preview example).
+* Fixed some settings page validation errors.
+* Updated the settings page from the Wordpress 2.5 style to a Wordpress 2.9 style to make it feel more friendly. Major aesthetic improvement, too!
+
 
 = v0.9.5 =
 * Added browser version detection for BlackBerry web browsers (with a mod/hack fix).

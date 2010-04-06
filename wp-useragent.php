@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.9.5
+Version: 0.9.6
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -49,6 +49,7 @@ $ua_image_style=get_option('ua_image_style');
 $ua_image_css=get_option('ua_image_css');
 $ua_text_surfing=get_option('ua_text_surfing');
 $ua_text_on=get_option('ua_text_on');
+$ua_text_links=get_option('ua_text_links');
 $ua_show_ua_bool=get_option('ua_show_ua_bool');
 $ua_output_location=get_option('ua_output_location');
 
@@ -107,7 +108,7 @@ function detect_browser_version($title){
 
 //Detect webbrowsers
 function detect_webbrowser(){
-	global $useragent, $ua_show_text;
+	global $useragent, $ua_show_text, $ua_text_links;
 	$mobile=0;
 	if(preg_match('/ABrowse/i', $useragent)){
 		$link="http://abrowse.sourceforge.net/";
@@ -246,6 +247,10 @@ function detect_webbrowser(){
 		$link="http://galeon.sourceforge.net/";
 		$title=detect_browser_version("Galeon");
 		$code="galeon";
+	}elseif(preg_match('/Google Wireless Transcoder/i', $useragent)){
+		$link="http://google.com/gwt/n";
+		$title="Google Wireless Transcoder";
+		$code="google";
 	}elseif(preg_match('/GoSurf/i', $useragent)){
 		$link="http://gosurfbrowser.com/?ln=en";
 		$title=detect_browser_version("GoSurf");
@@ -351,6 +356,10 @@ function detect_webbrowser(){
 		$link="http://www.lolifox.com/";
 		$title=detect_browser_version("lolifox");
 		$code="lolifox";
+	}elseif(preg_match('/Lorentz/i', $useragent)){
+		$link="http://news.softpedia.com/news/Firefox-Codenamed-Lorentz-Drops-in-March-2010-130855.shtml";
+		$title=detect_browser_version("Lorentz");
+		$code="shiretoko";
 	}elseif(preg_match('/Lunascape/i', $useragent)){
 		$link="http://www.lunascape.tv";
 		$title=detect_browser_version("Lunascape");
@@ -522,6 +531,10 @@ function detect_webbrowser(){
 		$link="http://www.stainlessapp.com/";
 		$title=detect_browser_version("Stainless");
 		$code="stainless";
+	}elseif(preg_match('/Sulfur/i', $useragent)){
+		$link="http://www.flock.com/";
+		$title="Flock ".detect_browser_version("Sulfur");
+		$code="flock";
 	}elseif(preg_match('/Sunrise/i', $useragent)){
 		$link="http://www.sunrisebrowser.com/";
 		$title=detect_browser_version("Sunrise");
@@ -592,18 +605,22 @@ function detect_webbrowser(){
 		$title="Unknown";
 		$code="null";
 	}
-	if($ua_show_text=="1")
+	if($ua_show_text=="1" && $ua_text_links!="0")		//image and linked text
 		$web_browser=img($code, "/net/", $title)." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
-	else if($ua_show_text=="2")
+	else if($ua_show_text=="1")							//image and text
+		$web_browser=img($code, "/net/", $title)." ".$title;
+	else if($ua_show_text=="2")							//image only
 		$web_browser=img($code, "/net/", $title);
-	else if($ua_show_text=="3")
+	else if($ua_show_text=="3" && $ua_text_links!="0")	//linked text only
 		$web_browser="<a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
+	else if($ua_show_text=="3")							//text only
+		$web_browser=$title;
 	return $web_browser;
 }
 
 //Detect Operating System and/or Devices
 function detect_os(){
-	global $useragent, $ua_show_text;
+	global $useragent, $ua_show_text, $ua_text_links;
 	if(preg_match('/Android/', $useragent)){
 		$link="http://www.android.com/";
 		$title="Android";
@@ -927,18 +944,22 @@ function detect_os(){
 		$title="Unknown";
 		$code="null";
 	}
-	if($ua_show_text=="1")
+	if($ua_show_text=="1" && $ua_text_links!="0")		//image and linked text
 		$detected_os=img($code, "/os/", $title)." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
-	else if($ua_show_text=="2")
+	else if($ua_show_text=="1")							//image and text
+		$detected_os=img($code, "/os/", $title)." ".$title;
+	else if($ua_show_text=="2")							//image only
 		$detected_os=img($code, "/os/", $title);
-	else if($ua_show_text=="3")
+	else if($ua_show_text=="3" && $ua_text_links!="0")	//linked text only
 		$detected_os="<a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
+	else if($ua_show_text=="3")							//text only
+		$detected_os=$title;
 	return $detected_os;
 }
 
 //Detect Trackbacks -- Check if it works...
 function detect_trackback(){
-	global $useragent, $ua_trackback, $ua_show_text;
+	global $useragent, $ua_trackback, $ua_show_text, $ua_text_links;
 	$ua_trackback=0;
 	if(preg_match('/Feedburner/i',$useragent,$regmatch)){
 		$link="http://www.feedburner.com/";
@@ -965,6 +986,10 @@ function detect_trackback(){
 		$title="Pligg";
 		$code="pligg";
 		$version="";
+	}elseif (preg_match('/SOAP::/i', $useragent, $regmatch)){
+		$link="http://en.wikipedia.org/wiki/SOAP";
+		$title="SOAP (Simple Object Access Protocol)";
+		$code.="null";
 	}elseif (preg_match('/vBSEO/i', $useragent, $regmatch)){
 		$link="http://www.vbseo.com/";
 		$title="vBSEO (VBulletin)";
@@ -981,12 +1006,16 @@ function detect_trackback(){
 		$version="";
 	}
 	$title.=" ".$version;
-	if($ua_show_text=="1")
+	if($ua_show_text=="1" && $ua_text_links!="0")		//image and linked text
 		$detected_tb=img($code, "/net/", $title)." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
-	else if($ua_show_text=="2")
+	elseif($ua_show_text=="1")							//image and text
+		$detected_tb=img($code, "/net/", $title)." ".$title;
+	else if($ua_show_text=="2")							//image only
 		$detected_tb=img($code, "/net/", $title);
-	else if($ua_show_text=="3")
+	else if($ua_show_text=="3" && $ua_text_links!="0")	//linked text only
 		$detected_tb="<a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
+	else if($ua_show_text=="3")							//text only
+		$detected_tb=$title;
 	return $detected_tb;
 }
 
@@ -1097,9 +1126,9 @@ if ($ua_output_location!='custom'){
 $plugin = plugin_basename(__FILE__); 
 add_filter("plugin_action_links_$plugin", 'my_plugin_actlinks' ); 
 function my_plugin_actlinks( $links ) { 
- // Add a link to this plugin's settings page
- $settings_link = '<a href="options-general.php?page=wp-useragent/wp-useragent-options.php">Settings</a>'; 
- array_unshift( $links, $settings_link ); 
- return $links; 
+	// Add a link to this plugin's settings page
+	$settings_link = '<a href="options-general.php?page=wp-useragent/wp-useragent-options.php">Settings</a>'; 
+	array_unshift( $links, $settings_link ); 
+	return $links; 
 }
 ?>

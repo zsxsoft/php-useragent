@@ -13,154 +13,254 @@
 			$ua_image_css=get_option('ua_image_css');
 			$ua_text_surfing=get_option('ua_text_surfing');
 			$ua_text_on=get_option('ua_text_on');
+			$ua_text_links=get_option('ua_text_links');
 			$ua_show_au_bool=get_option('ua_show_ua_bool');
 			$ua_output_location=get_option('ua_output_location');
 		?>
-				<table>
-					<tr>
-						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">DocType</h3>
-						This field is optional and generally will not affect the way that this plugin appears. However, if you wish to control
+
+		<div class="metabox-holder">
+			<div class="meta-box-sortables">
+				<script type="text/javascript">
+					<!--
+					jQuery(document).ready(function($) {
+						$('.postbox').children('h3, .handlediv').click(function(){
+							$(this).siblings('.inside').toggle();
+						});
+					});
+					//-->
+				</script>
+
+				<!-- DocType Box -->
+				<div class="postbox">
+					<div title="Click to toggle" class="handlediv"><br /></div>
+					<h3 class="hndl"><span>DocType</span></h3>
+					<div class="inside">
+						<p style="padding-left:10px;padding-right:10px;">This field is optional and generally will not affect the way that this plugin appears. However, if you wish to control
 						the <a href="http://www.w3schools.com/tags/tag_DOCTYPE.asp">DocType</a> in order to generate validly coded pages and validate your pages with <a href="http://www.w3.org/">W3.org</a>
-						then you can specify the DocType here.</td>
-					</tr>
-					<tr>
-						<td>DocType</td>
-						<td><select id="ua_doctype" name="ua_doctype" onchange="preview();">
-								<option value="html" <?php if($ua_doctype=="html") echo 'selected="selected"' ?>>html</option>
-								<option value="xhtml" <?php if($ua_doctype=="xhtml") echo 'selected="selected"' ?>>xhtml</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">User Agent icons</h3>
-						You can change the size of the icons as well as whether or not to display text with the icons.
-						</td>
-					</tr>
-					<tr>
-						<td><strong>Size of icons for comments:</strong></td>
-						<td><select id="ua_comment_size" name="ua_comment_size" onchange="preview();">
-								<option value="24" <?php if($ua_comment_size==24) echo 'selected="selected"' ?>>24</option>
-								<option value="16" <?php if($ua_comment_size==16) echo 'selected="selected"' ?>>16</option>
-							</select> pixels
-						</td>
-					</tr>
-					<tr>
-						<td><strong>Size of icons for trackbacks:</strong></td>
-						<td><select id="ua_track_size" name="ua_track_size" onchange="preview();">
-								<option value="24" <?php if($ua_track_size==24) echo 'selected="selected"' ?>>24</option>
-								<option value="16" <?php if($ua_track_size==16) echo 'selected="selected"' ?>>16</option>
-							</select> pixels
-						</td>
-					</tr>
-					<tr>
-						<td><strong>Icons and text, icons or text only:</strong></td>
-						<td>
-							<select id="ua_show_text" name="ua_show_text" onchange="preview();">
-								<option value="1" <?php if($ua_show_text==1) echo 'selected="selected"' ?>>Icons and text</option>
-								<option value="2" <?php if($ua_show_text==2) echo 'selected="selected"' ?>>Icons only</option>
-								<option value="3" <?php if($ua_show_text==3) echo 'selected="selected"' ?>>Text only</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td><strong>Inline style or class for images:</strong></td>
-						<td>
-							<select id="ua_image_style" name="ua_image_style" onchange="preview();">
-								<option value="1" <?php if($ua_image_style==1) echo 'selected="selected"' ?>>Default</option>
-								<option value="2" <?php if($ua_image_style==2) echo 'selected="selected"' ?>>Inline Style</option>
-								<option value="3" <?php if($ua_image_style==3) echo 'selected="selected"' ?>>Class</option>		
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td>If you're not sure what this is, please leave it as &quot;Default&quot; which applies a no-border style.<br />The Comment Preview will not be updated with these changes.</strong></td>
-						<td><input type="text" id="ua_image_css" name="ua_image_css" value="<?php echo $ua_image_css; ?>" onkeyup="preview();" /></td>
-					</tr>
-					<tr>
-						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">Display text</h3>
-							You can change the text between the Web Browser and the Operating System in the following options.<br />
-						</td>
-					</tr>
-					<tr>
-						<td><strong>Word for "Surfing"</strong></td>
-						<td><input type="text" id="ua_text_surfing" name="ua_text_surfing" value="<?php echo $ua_text_surfing; ?>" onkeyup="preview();" /></td>
-					</tr>
-					<tr>
-						<td><strong>Word for "on"</strong></td>
-						<td><input type="text" id="ua_text_on" name="ua_text_on" value="<?php echo $ua_text_on; ?>" onkeyup="preview();" /></td>
-					</tr>
-					<tr>
-						<td><strong>Display complete User-Agent string:</strong></td>
-						<td><select id="ua_show_ua_bool" name="ua_show_ua_bool" onchange="preview();">
-								<option value="true" <?php if($ua_show_ua_bool=="true") echo 'selected="selected"' ?>>True</option>
-								<option value="false"<?php if($ua_show_ua_bool=="false") echo 'selected="selected"' ?>>False</option>
-							</select>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">Display location</h3>
-							You can change the location that the User Agent output will appear (explanation below).
-						</td>
-					</tr>
-					<tr>
-						<td><strong>UserAgent Output Location:</strong></td>
-						<td><select id="ua_output_location" name="ua_output_location" onchange="preview();">
-								<option value="before" <?php if($ua_output_location=="before") echo 'selected="selected"' ?>>Before comment text</option>
-								<option value="after" <?php if($ua_output_location=="after") echo 'selected="selected"' ?>>After comment text</option>
-								<option value="custom" <?php if($ua_output_location=="custom") echo 'selected="selected"' ?>>Custom (Advanced)</option>
-							</select>
-							<br /><br />
-						</td>
-					</tr>
-					<tr id="ua_output_custom_location" style="display:none;">
-						<td colspan="2" style="border-top: 1px #ccc solid;">
-							<br /><strong>Usage:</strong> There are 3 options available for you to display the commenter's <em>browser</em> and <em>operating system</em>. The default option is &quot;Before comment text&quot;.<br /><br />
-							<ol>
-								<li style="background-color:#eee;"><strong><em>Before comment text.</em></strong> Web browser and operating system details appear before comment text.</li>
-								<li style="background-color:#fff;"><strong><em>After comment text.</em></strong> Web browser and operating system details appear after comment text.</li>
-								<li style="background-color:#eee;"><strong><em>Custom (Advanced).</em></strong> You can specify the location using the useragent_output_custom() function
-								inside the comments loop in your template (generally in the &quot;<em>comments.php</em>&quot; template file).<br /><br />
-								<em>Example:</em><br /><br />
-									<div style="padding-left:20px;">
-									<code>
-										&lt;?php foreach ($comments as $comment) : ?&gt;<br />
-										&lt;cite&gt;&lt;?php comment_author_link() ?&gt;&lt;/cite&gt; <span style="background-color:#fff;"><strong>&lt;?php useragent_output_custom(); ?&gt;</strong></span> says:&lt;br /&gt;<br />
-										&lt;?php comment_text() ?&gt;
-									</code><br /><br />
-									<em>CAUTION:</em> If you select "Custom" and don't use <code><span style="background-color:#fff;"><strong>&lt;?php useragent_output_custom(); ?&gt;</strong></span></code> in your template, 
-									the browser and operating system details will not be displayed. With this option, they are only displayed where and when this function is called.</li></div>
-							</ol>
-						</td>
-					</tr>
-					<tr id="ua_preview">
-						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">Comment Preview</h3>
-							<div style="position:relative;background-color:#eee;font-family:'Lucida Grande','Lucida Sans Unicode','Verdana [microsoft]','Helvetica [Adobe]','Arial [monotype]',sans-serif;padding:10px;padding-top:50px;text-align:left;width:450px;">
-								<div style="position:absolute;top:10px;left:10px;color:#777;font-size:10px;">
-									<a href="#" style="font-family:'Lucida Grande','Lucida Sans Unicode','Verdana [microsoft]','Helvetica [Adobe]','Arial [monotype]',sans-serif;font-size:16px;font-weight:bold;text-decoration:none;">kyleabaker</a><br />
-									<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANWSURBVHjaYvz//z8DJQAggFjQBQ6s7HZiZ/5Szc7xy4CZlZn375//DN+/fn/39QvDie9/ODv901qPI6sHCCBGZBccXt0+TUDgU7KgfAAbO58oAzuXIMP///8Yvnx4xvDuyTWGZzf2f/34mbUzrGByM0wPQADBDTi4sm2ijIpQnpC8F8Prb7wMl+9+ZHj1/hvDn7//GQR5ORi0lXkYBP/fY7h+aBHDy1d/yhKqZneD9AEEENiAXUs6bYQF3uxTMMtmvfaMneHNh58MeipCDAJ8TAz/GRgZ3n38y3DqxmsGHnYmBk2+mwxntiz89p1ZyCalcup5gABiApnC/O99Fb+MM+vr73wML979YAh0UGAQ4v3P8O7LFwYePm4GOVk+hgAXZYaXn/8xvGHSYhBXlOb6++19EUgvQACBDWBi/GbILSTDcPbmOwYdNWGGb8CAY2VlZdi9cwfDp48fGX7//Mmwa/d+Bi01EYbj1z4wSKiZMTD//2UD0gsQQGADgN4Q4OAWZHj25huDsDAnw0+gv9m4uBiePHrEsHvfQYbW9k4GXl5uBkExLobnQBfyiyowMDMwioP0AgQQ2IDfP38z/Pv3k+H7r39AzUD+PwaGVx8/M3Dz8DBcvniBwTsgkMHQ1Izh5x+gHFDy/78fQAwJfIAAAqeDr1++P//48pYiP7cUw/0X3xhUZfiB/uJgMDKxYNDQ1WHg4udj+PKTgeHxi68MfNxMDO+fXmT48efvG5BegAACu+Dzd4aDj68dZDBT52Q4fv4lAys7AwM3ByuDja0Vg4ggHwOQy8DDwcBw+vwrBjttJoaHl44x/P7PcgKkFyCAwAb8ZeKd+Ojm/e9Cv08wyPJ+YZi35ibDw6cfGBiBXmP8/pvh0eMPDLNW3WCQ43zFIPp9O8Pju19/MLLzgdMBQADBE9LspqQKHvYv7QYOjgwvmcwYjl/9w/Dh81+Gv0C/8nIxMFhq/WcQ+bmL4fSuUwzfGYQbCzqWNoD0AQQQSlKeVhtXy/rnc5m4PBePrJo2g4CkPDCK/jC8fXKb4cHlKwwvn/37+puFp6+gc1kdTA9AADGi58ZpdUlmf358KmT6+9uKhem/KEjszz/G13+ZWE4wsvH05bUuPImsHiCAGCnNzgABBgBEV02Y8mpPdAAAAABJRU5ErkJggg==" alt="Posted:" /> July 5, 1986 at 12:01 pm
-								</div>
-								<div style="position:absolute;top:10px;left:430px;"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAIAAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/VOuC8T6rquv2N/aabrlj4UguJZNLs9Ru4/MnmucMp8lS6AEMrAA7ixUkDGCe9r5g/aO+Nd78Fteg0jwwLPUtRv92oNZ6lB5sVlIxIV4yGUhnfc20kgcnIyBTSbdkcWMxdDA0XXxMuWK6+unTU6P9nfWfGHg+x13w58Qbu61S4tdZe3stWluluN8TLGq7suZQhkPBZeC4UngV75XwZ4a/aMj0jxFoX/CSKtzp09wW1HUVtFW+Uecs3+saNS0Il2sVABwvTgZ+74J47mGOaJ1kikUOjqchgRkEVzYev8AWaaqqLjfo1Z/cXQeHhfDUKqqclk2pc260u+unfXvqfOn7Wf7P3jr4syaXrPgHxbLoWq2EDwvYPdS28Vz825WDp0YHI+YEEEdMV8TfEI/E5PH17P8T9IfQfFqWluqXSyI8V2kaGLzUcbl+baM4/iycDoP1V1S+v7Z8WtiLhMff3/0r52+IXw68UfGPxzHH4o8MWT6LpN0sltM1uWWeE7WMZ5y+eQVPyggkdq3qYp0eRcrlrbRd+77Lz+R5ebZKs4w06MaihLR3d7aNdOra0+Z8GXsk3jK6GnpK7TXBS2gSWQu0cjsBvPyLgA4GcdjX69+FtEXw14Y0jSEcyJp9nDaBz1YIgXP6V86/Er4IPLrWj+JvCngfSLTVdKO4Q21iIfNIYMhKAhH2ndw2DzkHIAr3jwBf+I7/wAOWD+J7CGy1ZoFa4WBvlDn+HHqO/bIOKJYj2lR03Fq3Xo/R/pv8rHNkeQ/2NCpN1FLna20tZdvxP/Z" style="border:none;height:32px;width:32px;" alt="gravatar" /></div>
-								<div id="wp_ua_content_top"></div><div id="wp_ua_string_top" style="color:#777;font-size:10px;padding-bottom:5px;padding-top:5px;"></div>
-								<div>
-									This preview is intended to give you a general idea of how comments will appear with your current settings and is updated as you make changes.
-									<br /><br />
-									If you're happy with the changes that you've made, then make sure that you click the &quot;Save Changes&quot; button below.
-								</div>
-								<div id="wp_ua_content_bottom" style="padding-bottom:5px;padding-top:15px;"></div><div id="wp_ua_string_bottom" style="color:#777;font-size:10px;"></div>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="2"><h3 style="color: black; background-color: #e5f3ff; padding: 4px 8px;">Help</h3>
-							If you have <em>any</em> problems, questions, comments or suggestions regarding <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">WP-UserAgent</a> please don't heisitate to contact me.
-							<br /><br />
-							<strong>Author:</strong> Kyle Baker (kyleabaker)<br />
-							<strong>Plugin Homepage:</strong> <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">http://kyleabaker.com/goodies/coding/wp-useragent/</a>
-						</td>
-					</tr>
-				</table>
+						then you can specify the DocType here.</p>
+						
+						<table class="form-table" style="margin-top: 0">
+							<tbody>
+								<tr valign='top'>
+									<th scope='row'>DocType</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_doctype" name="ua_doctype" onchange="preview();">
+											<option value="html" <?php if($ua_doctype=="html") echo 'selected="selected"' ?>>html</option>
+											<option value="xhtml" <?php if($ua_doctype=="xhtml") echo 'selected="selected"' ?>>xhtml</option>
+										</select>
+									</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- User Agent icons Box -->
+				<div class="postbox">
+					<div title="Click to toggle" class="handlediv"><br /></div>
+					<h3 class="hndl"><span>User Agent icons</span></h3>
+					<div class="inside">
+						<p style="padding-left:10px;padding-right:10px;">You can change the size of the icons as well as whether or not to display text with the icons.</p>
+						
+						<table class="form-table" style="margin-top: 0">
+							<tbody>
+								<tr valign='top'>
+									<th scope='row'>Size of icons for comments:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_comment_size" name="ua_comment_size" onchange="preview();">
+											<option value="24" <?php if($ua_comment_size==24) echo 'selected="selected"' ?>>24</option>
+											<option value="16" <?php if($ua_comment_size==16) echo 'selected="selected"' ?>>16</option>
+										</select> pixels
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Size of icons for trackbacks:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_track_size" name="ua_track_size" onchange="preview();">
+											<option value="24" <?php if($ua_track_size==24) echo 'selected="selected"' ?>>24</option>
+											<option value="16" <?php if($ua_track_size==16) echo 'selected="selected"' ?>>16</option>
+										</select> pixels
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Icons and text, icons or text only:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_show_text" name="ua_show_text" onchange="preview();">
+											<option value="1" <?php if($ua_show_text==1) echo 'selected="selected"' ?>>Icons and text</option>
+											<option value="2" <?php if($ua_show_text==2) echo 'selected="selected"' ?>>Icons only</option>
+											<option value="3" <?php if($ua_show_text==3) echo 'selected="selected"' ?>>Text only</option>
+										</select>
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Inline style or class for images:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_image_style" name="ua_image_style" onchange="preview();">
+											<option value="1" <?php if($ua_image_style==1) echo 'selected="selected"' ?>>Default</option>
+											<option value="2" <?php if($ua_image_style==2) echo 'selected="selected"' ?>>Inline Style</option>
+											<option value="3" <?php if($ua_image_style==3) echo 'selected="selected"' ?>>Class</option>		
+										</select>
+										
+										<p>If you're not sure what this is, please leave it as &quot;Default&quot; which applies a no-border style.<br />
+											The Comment Preview will not be updated with these changes.</p>
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>&nbsp;</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<input type="text" id="ua_image_css" name="ua_image_css" value="<?php echo $ua_image_css; ?>" onkeyup="preview();" />
+									</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Display text Box -->
+				<div class="postbox">
+					<div title="Click to toggle" class="handlediv"><br /></div>
+					<h3 class="hndl"><span>Display text</span></h3>
+					<div class="inside">
+						<p style="padding-left:10px;padding-right:10px;">You can change the text between the Web Browser and the Operating System in the following options.</p>
+						
+						<table class="form-table" style="margin-top: 0">
+							<tbody>
+								<tr valign='top'>
+									<th scope='row'>Word for "<em>Surfing</em>":</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<input type="text" id="ua_text_surfing" name="ua_text_surfing" value="<?php echo $ua_text_surfing; ?>" onkeyup="preview();" />
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Word for "<em>on</em>":</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<input type="text" id="ua_text_on" name="ua_text_on" value="<?php echo $ua_text_on; ?>" onkeyup="preview();" />
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Use links on text:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_text_links" name="ua_text_links" onchange="preview();">
+											<option value="1" <?php if($ua_text_links!=0) echo 'selected="selected"'; ?>>Yes</option>
+											<option value="0" <?php if($ua_text_links==0) echo 'selected="selected"' ?>>No</option>
+										</select>
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Display complete User-Agent:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_show_ua_bool" name="ua_show_ua_bool" onchange="preview();">
+											<option value="true" <?php if($ua_show_ua_bool=="true") echo 'selected="selected"' ?>>True</option>
+											<option value="false"<?php if($ua_show_ua_bool=="false") echo 'selected="selected"' ?>>False</option>
+										</select>
+									</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Display location Box -->
+				<div class="postbox">
+					<div title="Click to toggle" class="handlediv"><br /></div>
+					<h3 class="hndl"><span>Display location</span></h3>
+					<div class="inside">
+						<p style="padding-left:10px;padding-right:10px;">You can change the location that the User Agent output will appear (explanation below).</p>
+						
+						<table class="form-table" style="margin-top: 0">
+							<tbody>
+								<tr valign='top'>
+									<th scope='row'>UserAgent Output Location:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_output_location" name="ua_output_location" onchange="preview();">
+											<option value="before" <?php if($ua_output_location=="before") echo 'selected="selected"' ?>>Before comment text</option>
+											<option value="after" <?php if($ua_output_location=="after") echo 'selected="selected"' ?>>After comment text</option>
+											<option value="custom" <?php if($ua_output_location=="custom") echo 'selected="selected"' ?>>Custom (Advanced)</option>
+										</select>
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>&nbsp;</th>
+									<td><div id="ua_output_custom_location" style="overflow:auto;max-height:100px;display:none;">
+										<strong>Usage:</strong> There are 3 options available for you to display the commenter's <em>browser</em> and <em>operating system</em>. The default option is &quot;Before comment text&quot;.<br /><br />
+										<ol>
+											<li style="background-color:#eee;"><strong><em>Before comment text.</em></strong> Web browser and operating system details appear before comment text.</li>
+											<li style="background-color:#fff;"><strong><em>After comment text.</em></strong> Web browser and operating system details appear after comment text.</li>
+											<li style="background-color:#eee;"><strong><em>Custom (Advanced).</em></strong> You can specify the location using the useragent_output_custom() function
+											inside the comments loop in your template (generally in the &quot;<em>comments.php</em>&quot; template file).<br /><br />
+											<em>Example:</em><br /><br />
+												<div style="padding-left:20px;">
+												<code>
+													&lt;?php foreach ($comments as $comment) : ?&gt;<br />
+													&lt;cite&gt;&lt;?php comment_author_link() ?&gt;&lt;/cite&gt; <span style="background-color:#fff;"><strong>&lt;?php useragent_output_custom(); ?&gt;</strong></span> says:&lt;br /&gt;<br />
+													&lt;?php comment_text() ?&gt;
+												</code><br /><br />
+												<em>CAUTION:</em> If you select "Custom" and don't use <code><span style="background-color:#fff;"><strong>&lt;?php useragent_output_custom(); ?&gt;</strong></span></code> in your template, 
+												the browser and operating system details will not be displayed. With this option, they are only displayed where and when this function is called.</div></li>
+										</ol>
+									</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Comment Preview Box -->
+				<div class="postbox">
+					<div title="Click to toggle" class="handlediv"><br /></div>
+					<h3 class="hndl"><span>Comment Preview</span></h3>
+					<div class="inside">
+						<table class="form-table" style="margin-top: 0">
+							<tbody>
+								<tr valign='top'>
+									<td><div id="ua_preview" style="overflow:auto;max-height:100px;">
+										<div style="position:relative;background-color:#eee;font-family:'Lucida Grande','Lucida Sans Unicode','Verdana [microsoft]','Helvetica [Adobe]','Arial [monotype]',sans-serif;padding:10px;padding-top:50px;text-align:left;width:450px;">
+											<div style="position:absolute;top:10px;left:10px;color:#777;font-size:10px;">
+												<a href="#" style="font-family:'Lucida Grande','Lucida Sans Unicode','Verdana [microsoft]','Helvetica [Adobe]','Arial [monotype]',sans-serif;font-size:16px;font-weight:bold;text-decoration:none;">kyleabaker</a><br />
+												<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAANWSURBVHjaYvz//z8DJQAggFjQBQ6s7HZiZ/5Szc7xy4CZlZn375//DN+/fn/39QvDie9/ODv901qPI6sHCCBGZBccXt0+TUDgU7KgfAAbO58oAzuXIMP///8Yvnx4xvDuyTWGZzf2f/34mbUzrGByM0wPQADBDTi4sm2ijIpQnpC8F8Prb7wMl+9+ZHj1/hvDn7//GQR5ORi0lXkYBP/fY7h+aBHDy1d/yhKqZneD9AEEENiAXUs6bYQF3uxTMMtmvfaMneHNh58MeipCDAJ8TAz/GRgZ3n38y3DqxmsGHnYmBk2+mwxntiz89p1ZyCalcup5gABiApnC/O99Fb+MM+vr73wML979YAh0UGAQ4v3P8O7LFwYePm4GOVk+hgAXZYaXn/8xvGHSYhBXlOb6++19EUgvQACBDWBi/GbILSTDcPbmOwYdNWGGb8CAY2VlZdi9cwfDp48fGX7//Mmwa/d+Bi01EYbj1z4wSKiZMTD//2UD0gsQQGADgN4Q4OAWZHj25huDsDAnw0+gv9m4uBiePHrEsHvfQYbW9k4GXl5uBkExLobnQBfyiyowMDMwioP0AgQQ2IDfP38z/Pv3k+H7r39AzUD+PwaGVx8/M3Dz8DBcvniBwTsgkMHQ1Izh5x+gHFDy/78fQAwJfIAAAqeDr1++P//48pYiP7cUw/0X3xhUZfiB/uJgMDKxYNDQ1WHg4udj+PKTgeHxi68MfNxMDO+fXmT48efvG5BegAACu+Dzd4aDj68dZDBT52Q4fv4lAys7AwM3ByuDja0Vg4ggHwOQy8DDwcBw+vwrBjttJoaHl44x/P7PcgKkFyCAwAb8ZeKd+Ojm/e9Cv08wyPJ+YZi35ibDw6cfGBiBXmP8/pvh0eMPDLNW3WCQ43zFIPp9O8Pju19/MLLzgdMBQADBE9LspqQKHvYv7QYOjgwvmcwYjl/9w/Dh81+Gv0C/8nIxMFhq/WcQ+bmL4fSuUwzfGYQbCzqWNoD0AQQQSlKeVhtXy/rnc5m4PBePrJo2g4CkPDCK/jC8fXKb4cHlKwwvn/37+puFp6+gc1kdTA9AADGi58ZpdUlmf358KmT6+9uKhem/KEjszz/G13+ZWE4wsvH05bUuPImsHiCAGCnNzgABBgBEV02Y8mpPdAAAAABJRU5ErkJggg==" alt="Posted:" /> July 5, 1986 at 12:01 pm
+											</div>
+											<div style="position:absolute;top:10px;left:430px;"><img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gOTAK/9sAQwADAgIDAgIDAwMDBAMDBAUIBQUEBAUKBwcGCAwKDAwLCgsLDQ4SEA0OEQ4LCxAWEBETFBUVFQwPFxgWFBgSFBUU/9sAQwEDBAQFBAUJBQUJFA0LDRQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU/8AAEQgAIAAgAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8A/VOuC8T6rquv2N/aabrlj4UguJZNLs9Ru4/MnmucMp8lS6AEMrAA7ixUkDGCe9r5g/aO+Nd78Fteg0jwwLPUtRv92oNZ6lB5sVlIxIV4yGUhnfc20kgcnIyBTSbdkcWMxdDA0XXxMuWK6+unTU6P9nfWfGHg+x13w58Qbu61S4tdZe3stWluluN8TLGq7suZQhkPBZeC4UngV75XwZ4a/aMj0jxFoX/CSKtzp09wW1HUVtFW+Uecs3+saNS0Il2sVABwvTgZ+74J47mGOaJ1kikUOjqchgRkEVzYev8AWaaqqLjfo1Z/cXQeHhfDUKqqclk2pc260u+unfXvqfOn7Wf7P3jr4syaXrPgHxbLoWq2EDwvYPdS28Vz825WDp0YHI+YEEEdMV8TfEI/E5PH17P8T9IfQfFqWluqXSyI8V2kaGLzUcbl+baM4/iycDoP1V1S+v7Z8WtiLhMff3/0r52+IXw68UfGPxzHH4o8MWT6LpN0sltM1uWWeE7WMZ5y+eQVPyggkdq3qYp0eRcrlrbRd+77Lz+R5ebZKs4w06MaihLR3d7aNdOra0+Z8GXsk3jK6GnpK7TXBS2gSWQu0cjsBvPyLgA4GcdjX69+FtEXw14Y0jSEcyJp9nDaBz1YIgXP6V86/Er4IPLrWj+JvCngfSLTVdKO4Q21iIfNIYMhKAhH2ndw2DzkHIAr3jwBf+I7/wAOWD+J7CGy1ZoFa4WBvlDn+HHqO/bIOKJYj2lR03Fq3Xo/R/pv8rHNkeQ/2NCpN1FLna20tZdvxP/Z" style="border:none;height:32px;width:32px;" alt="gravatar" /></div>
+											<div id="wp_ua_content_top"></div><div id="wp_ua_string_top" style="color:#777;font-size:10px;padding-bottom:5px;padding-top:5px;"></div>
+											<div>
+												This preview is intended to give you a general idea of how comments will appear with your current settings and is updated as you make changes.
+												<br /><br />
+												If you're happy with the changes that you've made, then make sure that you click the &quot;Save Changes&quot; button below.
+											</div>
+											<div id="wp_ua_content_bottom" style="padding-bottom:5px;padding-top:15px;"></div><div id="wp_ua_string_bottom" style="color:#777;font-size:10px;"></div>
+										</div>
+									</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<!-- Help Box -->
+				<div class="postbox">
+					<div title="Click to toggle" class="handlediv"><br /></div>
+					<h3 class="hndl"><span>Help</span></h3>
+					<div class="inside">
+						<p style="padding-left:10px;padding-right:10px;">You can change the location that the User Agent output will appear (explanation below).</p>
+						
+						<table class="form-table" style="margin-top: 0">
+							<tbody>
+								<tr valign='top'>
+									<td><div style="overflow:auto;max-height:100px;">
+										<p>If you have <em>any</em> problems, questions, comments or suggestions regarding <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">WP-UserAgent</a> please don't hesitate to contact me.</p>
+										<p><strong>Author:</strong> Kyle Baker (kyleabaker) - <a href="http://twitter.com/kyleabaker">Twitter</a><br />
+										<strong>Plugin Homepage:</strong> <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">http://kyleabaker.com/goodies/coding/wp-useragent/</a></p>
+									</div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 		<input type="hidden" name="action" value="update" />
-		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_show_ua_bool, ua_output_location" />
+		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_text_links, ua_show_ua_bool, ua_output_location" />
 		<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 		</p>
@@ -187,8 +287,13 @@
 			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="3"){
 				ua_text_surfing=document.getElementById('ua_text_surfing').value+" ";
 				ua_text_on=" "+document.getElementById('ua_text_on').value+" ";
-				ua_browser=" <a href='http://www.opera.com/' style='text-decoration:none'>Opera 10.00</a> ";
-				ua_system=" <a href='http://www.ubuntu.com/' style='text-decoration:none'>Ubuntu 9.10</a>";
+				if (document.getElementById('ua_text_links').value!="0") {
+					ua_browser=" <a href='http://www.opera.com/' style='text-decoration:none'>Opera 10.00</a> ";
+					ua_system=" <a href='http://www.ubuntu.com/' style='text-decoration:none'>Ubuntu 9.10</a>";
+				} else {
+					ua_browser=" Opera 10.00 ";
+					ua_system=" Ubuntu 9.10";
+				}
 			}
 
 			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="2"){
