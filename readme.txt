@@ -67,7 +67,7 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 == Changelog ==
 
 = v0.9.6 =
-* Added detection for Firefox Lorentz (with a temperary related link page until I find an official or article)
+* Added detection for Firefox Lorentz (with a temporary related link page until I find an official or article)
 * Added detection for Flock Sulfer.
 * Added detection for Google Wireless Transcoder.
 * -------------(props: dani - above suggestions)
