@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.9.7
+Version: 0.9.8
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -71,6 +71,10 @@ function detect_browser_version($title){
 		$start="/";
 	elseif (strtolower($title)==strtolower("Links"))
 		$start="Links ";
+	elseif (strtolower($title)==strtolower("Maemo Browser"))
+		$start="Maemo Browser ";
+	elseif (strtolower($title)==strtolower("UC Browser"))
+		$start="UC Browse";
 
 	if (strtolower($title)==strtolower("Maxthon") && preg_match('/Maxthon;/i', $useragent))
 		$version=""; //quick hack to fix detection of Maxthon when no version is listed
@@ -102,7 +106,7 @@ function detect_browser_version($title){
 		return "SEMC Browser ".$version;
 	elseif(strtolower($title)=="ucweb")
 		return "UC Browser ".$version;
-	elseif(strtolower($title)=="up.browser")
+	elseif(strtolower($title)=="up.browser" || strtolower($title)=="up.link")
 		return "Openwave Mobile Browser ".$version;
 	elseif(strtolower($title)=="chromeframe")
 		return "Google Chrome Frame ".$version;
@@ -380,6 +384,10 @@ function detect_webbrowser(){
 		$link="http://lynx.browser.org/";
 		$title=detect_browser_version("Lynx");
 		$code="lynx";
+	}elseif(preg_match('/Maemo\ Browser/i', $useragent)){
+		$link="http://maemo.nokia.com/features/maemo-browser/";
+		$title=detect_browser_version("Maemo Browser");
+		$code="maemo";
 	}elseif(preg_match('/Maxthon/i', $useragent)){
 		$link="http://www.maxthon.com/";
 		$title=detect_browser_version("Maxthon");
@@ -444,10 +452,6 @@ function detect_webbrowser(){
 		$link="http://www.access-company.com/";
 		$title=detect_browser_version("NF-Browser");
 		$code="netfront";
-	}elseif(preg_match('/Nokia/i', $useragent)){
-		$link="http://www.nokia.com/browser";
-		$title="Nokia Web Browser";
-		$code="nokia"; 
 	}elseif(preg_match('/Novarra-Vision/i', $useragent)){
 		$link="http://www.novarra.com/";
 		$title="Novarra ".detect_browser_version("Vision");
@@ -503,9 +507,13 @@ function detect_webbrowser(){
 		$title=detect_browser_version("retawq");
 		//$code="retawq";
 		$code="null";
-	}elseif(preg_match('/Safari/i', $useragent)){
+	}elseif(preg_match('/Safari/i', $useragent) && preg_match('/Version/i', $useragent)){
 		$link="http://www.apple.com/safari/";
 		$title=detect_browser_version("Safari");
+		$code="safari";
+	}elseif(preg_match('/Safari/i', $useragent) && !preg_match('/Nokia/i', $useragent)){
+		$link="http://www.apple.com/safari/";
+		$title="Safari";
 		$code="safari";
 	}elseif(preg_match('/SeaMonkey/i', $useragent)){
 		$link="http://www.seamonkey-project.org/";
@@ -519,6 +527,14 @@ function detect_webbrowser(){
 		$link="http://www.sonyericsson.com/";
 		$title=detect_browser_version("SEMC-java");
 		$code="semcbrowser";
+	}elseif(preg_match('/Series60/i', $useragent)){
+		$link="http://en.wikipedia.org/wiki/Web_Browser_for_S60";
+		$title="Nokia ".detect_browser_version("Series60");
+		$code="s60";
+	}elseif(preg_match('/S60/i', $useragent)){
+		$link="http://en.wikipedia.org/wiki/Web_Browser_for_S60";
+		$title="Nokia ".detect_browser_version("S60");
+		$code="s60";
 	}elseif(preg_match('/Shiira/i', $useragent)){
 		$link="http://www.shiira.jp/en.php";
 		$title=detect_browser_version("Shiira");
@@ -575,6 +591,10 @@ function detect_webbrowser(){
 		$link="http://www.ubrowser.com/";
 		$title=detect_browser_version("uBrowser");
 		$code="ubrowser";
+	}elseif(preg_match('/UC\ Browser/i', $useragent)){
+		$link="http://www.uc.cn/English/index.shtml";
+		$title=detect_browser_version("UC Browser");
+		$code="ucbrowser";
 	}elseif(preg_match('/UCWEB/i', $useragent)){
 		$link="http://www.ucweb.com/English/product.shtml";
 		$title=detect_browser_version("UCWEB");
@@ -582,6 +602,10 @@ function detect_webbrowser(){
 	}elseif(preg_match('/UP\.Browser/i', $useragent)){
 		$link="http://www.openwave.com/";
 		$title=detect_browser_version("UP.Browser");
+		$code="openwave";
+	}elseif(preg_match('/UP\.Link/i', $useragent)){
+		$link="http://www.openwave.com/";
+		$title=detect_browser_version("UP.Link");
 		$code="openwave";
 	}elseif(preg_match('/w3m/i', $useragent)){
 		$link="http://w3m.sourceforge.net/";
@@ -602,6 +626,10 @@ function detect_webbrowser(){
 		$code="null";
 
 	//Pulled out of order to help ensure better detection for above browsers
+	}elseif(preg_match('/Nokia/i', $useragent)){
+		$link="http://www.nokia.com/browser";
+		$title="Nokia Web Browser";
+		$code="maemo"; 
 	}elseif(preg_match('/Firefox/i', $useragent)){
 		$link="http://www.mozilla.org/";
 		$title=detect_browser_version("Firefox");
@@ -982,6 +1010,12 @@ function detect_os(){
 		$code="linux";
 		if(preg_match('/x86_64/i', $useragent))
 			$title.=" x64";
+
+	//Pulled out of order to help ensure better detection for above platforms
+	}elseif(preg_match('/J2ME\/MIDP/i', $useragent)){
+		$link="http://java.sun.com/javame/";
+		$title="J2ME/MIDP Device";
+		$code="java";
 	}else{
 		$title="Unknown";
 		$code="null";

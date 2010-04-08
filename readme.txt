@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 0.9.7
+Stable tag: 0.9.8
 
 == Description ==
 
@@ -65,6 +65,17 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.8 =
+* Added detection for the UC Browser.
+* Added detection for the Maemo Browser.
+* Added detection for the UP.Link browser.
+* Added detection for the Nokia S60 browser.
+* Added detection for the J2ME/MIDP Device platform.
+* Fixed detection of Safari browsers for detection Version or those without a version Listed.
+* Fixed generic Nokia Web Browser detection.
+* Fixed missing Nokia Web Browser image (props: Yomi)
+
 
 = v0.9.7 =
 * Fixed version detection for the Links browser (props: dani)
@@ -331,11 +342,16 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 = TO-DO: =
 * Reach a stable and solid 1.0 release where the plugin is mostly finalized and updates will generally be additional browsers and/or systems.
-* Allow users to enable/disable links for web browsers and operating systems.
-* Update Opera's new icon for version 10+ only.
 * New web browsers and operating systems are always welcome.
 
 == Upgrade Notice ==
 
-= 0.9.5 =
-New support for several browsers and mobile devices as well as a couple of fixes for previous support.
+= 0.9.8 =
+* Added detection for the UC Browser.
+* Added detection for the Maemo Browser.
+* Added detection for the UP.Link browser.
+* Added detection for the Nokia S60 browser.
+* Added detection for the J2ME/MIDP Device platform.
+* Fixed detection of Safari browsers for detection Version or those without a version Listed.
+* Fixed generic Nokia Web Browser detection.
+* Fixed missing Nokia Web Browser image (props: Yomi)
