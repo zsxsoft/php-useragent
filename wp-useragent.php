@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.9.6
+Version: 0.9.7
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -69,6 +69,8 @@ function detect_browser_version($title){
 		$start="ucwe";
 	elseif (strtolower($title)==strtolower("BlackBerry"))
 		$start="/";
+	elseif (strtolower($title)==strtolower("Links"))
+		$start="Links ";
 
 	if (strtolower($title)==strtolower("Maxthon") && preg_match('/Maxthon;/i', $useragent))
 		$version=""; //quick hack to fix detection of Maxthon when no version is listed
@@ -102,6 +104,8 @@ function detect_browser_version($title){
 		return "UC Browser ".$version;
 	elseif(strtolower($title)=="up.browser")
 		return "Openwave Mobile Browser ".$version;
+	elseif(strtolower($title)=="chromeframe")
+		return "Google Chrome Frame ".$version;
 	else
 		return $title." ".$version;
 }
@@ -179,6 +183,10 @@ function detect_webbrowser(){
 		$title=detect_browser_version("Chimera");
 		//$code="chimera";
 		$code="null";
+	}elseif(preg_match('/chromeframe/i', $useragent)){
+		$link="http://code.google.com/chrome/chromeframe/";
+		$title=detect_browser_version("chromeframe");
+		$code="google";
 	}elseif(preg_match('/Chrome/i', $useragent)){
 		$link="http://google.com/chrome/";
 		$title="Google ".detect_browser_version("Chrome");
@@ -207,6 +215,10 @@ function detect_webbrowser(){
 		$link="http://www.dillo.org/";
 		$title=detect_browser_version("Dillo");
 		$code="dillo";
+	}elseif(preg_match('/DoCoMo/i', $useragent)){
+		$link="http://www.nttdocomo.com/";
+		$title=detect_browser_version("DoCoMo");
+		$code="null";
 	}elseif(preg_match('/Dolfin/i', $useragent)){
 		$link="http://www.samsungmobile.com/";
 		$title=detect_browser_version("Dolfin");
@@ -584,6 +596,10 @@ function detect_webbrowser(){
 		$link="http://www.wyzo.com/";
 		$title=detect_browser_version("Wyzo");
 		$code="Wyzo";
+	}elseif(preg_match('/Xiino/i', $useragent)){
+		$link="#";
+		$title=detect_browser_version("Xiino");
+		$code="null";
 
 	//Pulled out of order to help ensure better detection for above browsers
 	}elseif(preg_match('/Firefox/i', $useragent)){
@@ -679,6 +695,12 @@ function detect_os(){
 		$link="http://www.gentoo.org/";
 		$title="Gentoo";
 		$code="gentoo";
+	}elseif(preg_match('/iPad/i', $useragent)){
+		$link="http://www.apple.com/itunes";
+		$title="iPad";
+		if(preg_match('#CPU\ OS\ ([.\_0-9a-zA-Z]+)#i',$useragent,$regmatch))
+			$title.=" OS ".str_replace("_", ".", $regmatch[1]);
+		$code="ipad";
 	}elseif(preg_match('/iPod/i', $useragent)){
 		$link="http://www.apple.com/itunes";
 		$title="iPod";
@@ -691,6 +713,18 @@ function detect_os(){
 		if(preg_match('#iPhone\ OS\ ([.\_0-9a-zA-Z]+)#i',$useragent,$regmatch))
 			$title.=" OS ".str_replace("_", ".", $regmatch[1]);
 		$code="iphone";
+	}elseif(preg_match('/IRIX64/i', $useragent)){
+		$link="http://www.sgi.com/partners/?/technology/irix/";
+		$title="IRIX x64 Linux";
+		if(preg_match('#IRIX64\ ([.\_0-9a-zA-Z]+)#i',$useragent,$regmatch))
+			$title.=" ".str_replace("_", ".", $regmatch[1]);
+		$code="irix";
+	}elseif(preg_match('/IRIX/i', $useragent)){
+		$link="http://www.sgi.com/partners/?/technology/irix/";
+		$title="IRIX Linux";
+		if(preg_match('#IRIX\ ([.\_0-9a-zA-Z]+)#i',$useragent,$regmatch))
+			$title.=" ".str_replace("_", ".", $regmatch[1]);
+		$code="irix";
 	}elseif(preg_match('/Kanotix/i', $useragent)){
 		$link="http://www.kanotix.com/";
 		$title="Kanotix";
@@ -849,6 +883,10 @@ function detect_os(){
 		if(preg_match('#Ubuntu/([.0-9a-zA-Z]+)#i',$useragent,$regmatch))
 			$title.=" ".$regmatch[1];
 		$code="ubuntu";
+	}elseif(preg_match('/Unix/i', $useragent)){
+		$link="http://www.unix.org/";
+		$title="Unix";
+		$code="unix";
 	}elseif(preg_match('/VectorLinux/i', $useragent)){
 		$link="http://www.vectorlinux.com/";
 		$title="VectorLinux";
@@ -924,6 +962,10 @@ function detect_os(){
 			$title="Windows";
 			$code="win-2";
 		}
+	}elseif(preg_match('/Xandros/i', $useragent)){
+		$link="http://www.xandros.com/";
+		$title="Xandros";
+		$code="xandros";
 	}elseif(preg_match('/Xubuntu/i', $useragent)){
 		$link="http://www.xubuntu.org/";
 		$title="Xubuntu";
@@ -961,7 +1003,12 @@ function detect_os(){
 function detect_trackback(){
 	global $useragent, $ua_trackback, $ua_show_text, $ua_text_links;
 	$ua_trackback=0;
-	if(preg_match('/Feedburner/i',$useragent,$regmatch)){
+	if(preg_match('/Drupal/i',$useragent,$regmatch)){
+		$link="http://www.drupal.org/";
+		$title="Drupal";
+		$code="drupal";
+		$version="";
+	}elseif(preg_match('/Feedburner/i',$useragent,$regmatch)){
 		$link="http://www.feedburner.com/";
 		$title="FeedBurner";
 		$code="feedburner";
@@ -990,6 +1037,10 @@ function detect_trackback(){
 		$link="http://en.wikipedia.org/wiki/SOAP";
 		$title="SOAP (Simple Object Access Protocol)";
 		$code.="null";
+	}elseif (preg_match('/Typepad/i', $useragent, $regmatch)){
+		$link="http://www.typepad.com/";
+		$title="Typepad";
+		$code.="typepad";
 	}elseif (preg_match('/vBSEO/i', $useragent, $regmatch)){
 		$link="http://www.vbseo.com/";
 		$title="vBSEO (VBulletin)";

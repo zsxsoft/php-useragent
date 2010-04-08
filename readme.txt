@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 0.9.6
+Stable tag: 0.9.7
 
 == Description ==
 
@@ -65,6 +65,19 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.7 =
+* Fixed version detection for the Links browser (props: dani)
+* Added detection for the Google Chrome Frame (props: dani)
+* Added detection for the Apple iPad.
+* Added detection for Typepad trackbacks.
+* Added detection for Drupal trackbacks.
+* Added detection for the DoCoMo web browser.
+* Added detection for the Xiino web browser.
+* Added detection for Xandros Linux.
+* Added detection for IRIX Linux.
+* Added detection for Unix.
+
 
 = v0.9.6 =
 * Added detection for Firefox Lorentz (with a temporary related link page until I find an official or article)
