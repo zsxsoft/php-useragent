@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.9.8
+Version: 0.9.9
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -71,8 +71,8 @@ function detect_browser_version($title){
 		$start="/";
 	elseif (strtolower($title)==strtolower("Links"))
 		$start="Links ";
-	elseif (strtolower($title)==strtolower("Maemo Browser"))
-		$start="Maemo Browser ";
+	//elseif (strtolower($title)==strtolower("Maemo Browser"))
+		//$start="Maemo Browser ";
 	elseif (strtolower($title)==strtolower("UC Browser"))
 		$start="UC Browse";
 
@@ -191,6 +191,10 @@ function detect_webbrowser(){
 		$link="http://code.google.com/chrome/chromeframe/";
 		$title=detect_browser_version("chromeframe");
 		$code="google";
+	}elseif(preg_match('/Chrome/i', $useragent) && preg_match('/Iron/i', $useragent)){
+		$link="http://www.srware.net/";
+		$title="SRWare ".detect_browser_version("Iron");
+		$code="srwareiron";
 	}elseif(preg_match('/Chrome/i', $useragent)){
 		$link="http://google.com/chrome/";
 		$title="Google ".detect_browser_version("Chrome");
@@ -715,6 +719,12 @@ function detect_os(){
 		if(preg_match('#\.fc([.0-9a-zA-Z]+)#i',$useragent,$regmatch))
 			$title.=" ".$regmatch[1];
 		$code="fedora";
+	}elseif(preg_match('/Foresight\ Linux/i', $useragent)){
+		$link="http://www.foresightlinux.org/";
+		$title="Foresight Linux";
+		if(preg_match('#Foresight\ Linux\/([.0-9a-zA-Z]+)#i',$useragent,$regmatch))
+			$title.=" ".$regmatch[1];
+		$code="foresight";
 	}elseif(preg_match('/FreeBSD/i', $useragent)){
 		$link="http://www.freebsd.org/";
 		$title="FreeBSD";

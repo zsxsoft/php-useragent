@@ -128,13 +128,15 @@
 								<tr valign='top'>
 									<th scope='row'>Word for "<em>Surfing</em>":</th>
 									<td><div style="overflow:auto;max-height:100px;">
-										<input type="text" id="ua_text_surfing" name="ua_text_surfing" value="<?php echo $ua_text_surfing; ?>" onkeyup="preview();" />
+										<input type="text" id="ua_text_surfing" name="ua_text_surfing" onkeyup="preview();" />
+										<span id="ua_text_surfing_hdn" style="display:none;"><?php echo $ua_text_surfing; ?></span>
 									</div></td>
 								</tr>
 								<tr valign='top'>
 									<th scope='row'>Word for "<em>on</em>":</th>
 									<td><div style="overflow:auto;max-height:100px;">
-										<input type="text" id="ua_text_on" name="ua_text_on" value="<?php echo $ua_text_on; ?>" onkeyup="preview();" />
+										<input type="text" id="ua_text_on" name="ua_text_on" onkeyup="preview();" />
+										<span id="ua_text_on_hdn" style="display:none;"><?php echo $ua_text_on; ?></span>
 									</div></td>
 								</tr>
 								<tr valign='top'>
@@ -248,7 +250,9 @@
 									<td><div style="overflow:auto;max-height:100px;">
 										<p>If you have <em>any</em> problems, questions, comments or suggestions regarding <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">WP-UserAgent</a> please don't hesitate to contact me.</p>
 										<p><strong>Author:</strong> Kyle Baker (kyleabaker) - <a href="http://twitter.com/kyleabaker">Twitter</a><br />
-										<strong>Plugin Homepage:</strong> <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">http://kyleabaker.com/goodies/coding/wp-useragent/</a></p>
+										<strong>Plugin Homepage:</strong> <a href="http://kyleabaker.com/goodies/coding/wp-useragent/">http://kyleabaker.com/goodies/coding/wp-useragent/</a><br />
+										Help me afford the cost of maintaining this plugin and the work that goes into it! <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=kyleabaker@gmail.com&item_name=Wordpress%20Plugin%20(WP-UserAgent)&no_shipping=1&no_note=1&tax=0&currency_code=USD&bn=PP%2dDonationsBF&charset=UTF%2d8&lc=US" target="_new"><img src="https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif" name="submit" alt="Donate to Kyle Baker (kyleabaker.com) for this plugin via PayPal" title="Donate to Kyle Baker (kyleabaker.com) for this plugin via PayPal" style="float:right" /></a>
+										</p>
 									</div></td>
 								</tr>
 							</tbody>
@@ -276,6 +280,9 @@
 
 		function preview(){
 			var wp_ua_content="", wp_ua_string="", ua_text_surfing="", ua_text_on="", ua_browser="", ua_system="";
+
+			document.getElementById('ua_text_surfing_hdn').innerHTML=document.getElementById('ua_text_surfing').value;
+			document.getElementById('ua_text_on_hdn').innerHTML=document.getElementById('ua_text_on').value;
 
 			//wp_ua_image_style
 			if(document.getElementById('ua_image_style').value=="1")
@@ -331,6 +338,10 @@
 				}
 			}
 		}
+
+		//set initially stored values for 'Surfing' and 'On'
+		document.getElementById('ua_text_surfing').value=document.getElementById('ua_text_surfing_hdn').innerHTML;
+		document.getElementById('ua_text_on').value=document.getElementById('ua_text_on_hdn').innerHTML;
 
 		//initiate preview
 		preview();

@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 0.9.8
+Stable tag: 0.9.9
 
 == Description ==
 
@@ -65,6 +65,14 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.9 =
+* Added detection for Foresight Linux (props: Tomas Forsman)
+* Added detection for the SRWare Iron web browser (props: dani)
+* Added a workaround for using special characters in the 'Surfing' and 'on' text fields in the options page. You can now include html styling and/or quotes (props: NomikOS)
+* Removed a faulty Maemo Browser detection rule.
+* Added a donations link at the bottom of the settings page for those who feel generous enough to reward me for the time and effort I share. ;)
+
 
 = v0.9.8 =
 * Added detection for the UC Browser.
