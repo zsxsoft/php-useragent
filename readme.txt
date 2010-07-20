@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 2.9.2
-Stable tag: 0.9.9
+Stable tag: 0.9.10
 
 == Description ==
 
@@ -65,6 +65,16 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.10 =
+* Added detection for the Tear mobile browser (props: Jake)
+* Added detection for PCLinuxOS (props: dani)
+* Added detection for the Mozilla Developer Preview builds.
+* Moved detection of Safari further down the chain since its being used commonly as a fallback detection for several browsers.
+* Consolidated Firefox BonEcho, GranParadiso, Lorentz, Namoroka, Shiretoko and future development icons into the firefoxdevpre.png icon, reducing the current count from 3 to 1, cleaning the code and removing duplicates.
+* Added the new Ubuntu icon for Ubuntu 10.04+, with a fallback to the old icon for previous versions of Ubuntu.
+* Made changes to reflect the new naming change for iOS on the iPad, iPhone and iPod.
+
 
 = v0.9.9 =
 * Added detection for Foresight Linux (props: Tomas Forsman)
