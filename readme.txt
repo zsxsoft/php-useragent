@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 3.0
-Stable tag: 0.9.10
+Stable tag: 0.9.11
 
 == Description ==
 
@@ -65,6 +65,32 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.9.11 =
+* Fix a regression where the Ubuntu version stopped being printed.
+* Fixed support for detecting PCLinuxOS version.
+* Added detection for ChromePlus.
+* Added detection for DeskBrowse.
+* Added detection for iNet Browser.
+* Added detection for iRider.
+* Added detection for LeechCraft.
+* Added detection for Madfox.
+* Added detection for Palemoon.
+* Added detection for Pogo.
+* Added detection for Prism.
+* Added detection for uZard Web.
+* Added detection for uzbl.
+* Added detection for Vonkeror.
+* Fixed detection for Opera Mobile and version number (props: Cahya)
+* Added detection of Nokia S60 devices (previously only the S60 web browser was detected).
+* Added detection support for alternate SymbianOS identifiers.
+* Added detection for the HTC Touch Pro2 smartphone (props: Yomi)
+* Modified image vertical alignment, so the images are now more inline with the sentence.
+* Added detection for libwww-perl trackbacks.
+* Added detection for Peach trackbacks.
+* Added detection for Python-urllib trackbacks.
+* Added detection for Snoopy trackbacks.
+
 
 = v0.9.10 =
 * Added detection for the Tear mobile browser (props: Jake)
