@@ -3,7 +3,7 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
-Tested up to: 3.0
+Tested up to: 3.0.1
 Stable tag: 0.10.0
 
 == Description ==
