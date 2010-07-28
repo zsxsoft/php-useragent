@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 3.0
-Stable tag: 0.9.11
+Stable tag: 0.10.0
 
 == Description ==
 
@@ -65,6 +65,67 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.0 =
+* Rewrote a large portion of the code to separate Device detection from the OS detection function for easier updating and management.
+* Improved mobile detection for a wider range of LG phones.
+* Improved regex to merge IRIX 32/64 detection into one conditional for simplicity.
+* Improved regex to merge SymbianOS and SymbOS detection into one conditional for simplicity.
+* Improved regex to for Playstation 3 and Portable detection for simplicity and added generic Playstation detection.
+* Improved detection for Nintendo DSi and Wii for simplicity and organization and added generic Nintendo detection.
+* Added detection for BenQ-Siemens mobile devices.
+* Added detection for Google Nexus One mobile devices (the Android OS was already supported).
+* Added detection for HTC mobile devices: HTC Desire, HTC Touch Pro2, HTC Startrek, HTC Hero, HTC Legend, HTC Magic, HTC Touch, HTC Touch Pro (props: Yomi), HTC Polaris, HTC S710, HTC Tattoo and generics or undefined.
+* Improved regex detection for a wider range of Nokia mobile devices.
+* Added detection for Palm Pre and Pixi (generics were already supported).
+* Added model detection to Samsung devices.
+* Added model detection to SonyEricsson devices.
+* Added model detection to Motorola devices: Motorola Droid, Motorola XT720, unspecified model numbers and generic Motorola devices.
+* Fixed several instances of regex that were not case insensitive (to improve match success).
+* Fix for IE8 Compatibility Mode detection.
+* Simplified regex for Safari browser detection.
+* Re-enabled fix for Maemo Browser version detection.
+* Cleaned comments throughout code to simplify them and remove useless ones.
+* Corrected displayed name of the Pale Moon web browser (from Palemoon).
+* Removed browser version detection for TheWorld Browser since it doesn't appear to ever include it.
+* Changed icon for retawq from null to a terminal icon.
+* Added detection for Abolimba.
+* Added detection for Amiga Aweb.
+* Added detection for Blackbird.
+* Added detection for Browzar.
+* Added detection for Bunjalloo.
+* Added detection for Comodo Dragon.
+* Added detection for Demeter.
+* Added detection for DocZilla.
+* Added detection for Dooble.
+* Added detection for Doris.
+* Added detection for Edbrowse.
+* Added detection for Epic Browser.
+* Added detection for GlobalMojo.
+* Added detection for Hv3.
+* Added detection for Hydra Browser.
+* Added detection for Ice Browser.
+* Added detection for Kirix Strata.
+* Added detection for LBrowser.
+* Added detection for MicroB.
+* Added detection for Multi-Browser XP.
+* Added detection for My Internet Browser.
+* Added detection for NetBox.
+* Added detection for NetCaptor.
+* Added detection for Off By One.
+* Added detection for OWB.
+* Added detection for Phaseout.
+* Added detection for rekonq.
+* Added detection for SiteKiosk.
+* Added detection for Swiftweasel.
+* Added detection for TheWorld Browser.
+* Added detection for Tjusig.
+* Added detection for TT Explorer.
+* Added detection for wKiosk.
+* Added detection for X-Smiles.
+* Added detection for MorphOS.
+* Added detection for AmigaOS.
+
 
 = v0.9.11 =
 * Fix a regression where the Ubuntu version stopped being printed.
@@ -386,16 +447,11 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 = TO-DO: =
 * Reach a stable and solid 1.0 release where the plugin is mostly finalized and updates will generally be additional browsers and/or systems.
-* New web browsers and operating systems are always welcome.
+* New web browsers, devices and operating systems are always welcome.
 
 == Upgrade Notice ==
 
-= 0.9.8 =
-* Added detection for the UC Browser.
-* Added detection for the Maemo Browser.
-* Added detection for the UP.Link browser.
-* Added detection for the Nokia S60 browser.
-* Added detection for the J2ME/MIDP Device platform.
-* Fixed detection of Safari browsers for detection Version or those without a version Listed.
-* Fixed generic Nokia Web Browser detection.
-* Fixed missing Nokia Web Browser image (props: Yomi)
+= 0.10.0 =
+* Added a large number of newly supported web browsers, more operating systems and a lot more mobile devices and consoles.
+* Code cleanup, reorganization and simplification where possible.
+* Minor version bump due to the large amount of code changes.
