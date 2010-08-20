@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
 Requires at least: 2.0
 Tested up to: 3.0.1
-Stable tag: 0.10.0
+Stable tag: 0.10.1
 
 == Description ==
 
@@ -65,6 +65,22 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.1 =
+* Fix version detection for Maemo Browser, TencentTraveler, NetCaptor, SiteKiosk, Tablet browser, Tjusig.
+* Removed extra icons from OS folder that were supposed to be moved to devices folder (reduces plugin file size).
+* Split Trackback icons out into separate trackback folder (including a copy of null.png).
+* Dramatically improved performance and simplified the detect_browser_version() method using RegEx instead of substr() which reduces 18 lines of code to only 2. This means 16 less lines of code are run per comment on your site!
+* Fixed error in HTC Touch Pro2 detection (Props: Yomi)
+* Added detection for Dell Streak, Dell Mini 5 and generic Dell devices.
+* Modified generic HTC detection regex to catch strings that also match "USCCHTC6175" and "HTC_XX_XX".
+* Added detection for Mobile Safari.
+* Added updated Edubuntu, Kubuntu, Lubuntu and Xubuntu icons for versions 10.04+ (the same as Ubuntu now). The updated Xubuntu icon has not been officially released yet, so the included icon may change later.
+* Added detection for generic XML-RPC trackbacks.
+* Cleaned several regex detectors so they all follow the same scheme/pattern now to add some consistency to the code.
+* Corrected title of IceApe to Iceape.
+* Updated regex for Ubuntu and other derivatives' detection to match "Ubuntu/10.10" as well as "Ubuntu 10.10" so versions are properly parsed for both.
+
 
 = v0.10.0 =
 * Rewrote a large portion of the code to separate Device detection from the OS detection function for easier updating and management.
@@ -451,7 +467,5 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 == Upgrade Notice ==
 
-= 0.10.0 =
-* Added a large number of newly supported web browsers, more operating systems and a lot more mobile devices and consoles.
-* Code cleanup, reorganization and simplification where possible.
-* Minor version bump due to the large amount of code changes.
+= 0.10.1 =
+* Optimizations and tweaks all around.
