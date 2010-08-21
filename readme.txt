@@ -1,10 +1,10 @@
 === WP-UserAgent ===
 Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
-Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, os
+Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
 Tested up to: 3.0.1
-Stable tag: 0.10.1
+Stable tag: 0.10.2
 
 == Description ==
 
@@ -65,6 +65,10 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.2 =
+* Optimized all packaged images to minimize filesizes without reducing quality. Images were reduced by approximately 50.33kb in total via PNGGauntlet. While this saves only a few extra kilobytes of bandwidth, it helps sites that are striving to perfect network performance with Page Speed for Firefox or Speed Tracer for Chrome (optimizing images).
+
 
 = v0.10.1 =
 * Fix version detection for Maemo Browser, TencentTraveler, NetCaptor, SiteKiosk, Tablet browser, Tjusig.
@@ -467,5 +471,5 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 == Upgrade Notice ==
 
-= 0.10.1 =
-* Optimizations and tweaks all around.
+= 0.10.2 =
+* No code changes this time, only optimizations to images to make them as small as possible without reducing quality making them network optimal.
