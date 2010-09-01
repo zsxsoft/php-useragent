@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.2
+Version: 0.10.3
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -49,6 +49,7 @@ $ua_image_style=get_option('ua_image_style');
 $ua_image_css=get_option('ua_image_css');
 $ua_text_surfing=get_option('ua_text_surfing');
 $ua_text_on=get_option('ua_text_on');
+$ua_text_via=get_option('ua_text_via');
 $ua_text_links=get_option('ua_text_links');
 $ua_show_ua_bool=get_option('ua_show_ua_bool');
 $ua_output_location=get_option('ua_output_location');
@@ -987,7 +988,7 @@ function detect_device(){
 		$code="lg";
 
 	//Motorola
-	}elseif(preg_match('/Droid/i', $useragent)){
+	}elseif(preg_match('/\ Droid/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/Motorola_Droid";
 		$title.="Motorola Droid";
 		$code="motorola";
@@ -1082,8 +1083,12 @@ function detect_device(){
 	}elseif(preg_match('/SonyEricsson/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/SonyEricsson";
 		$title="SonyEricsson";
-		if(preg_match('/SonyEricsson([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
-			$title.=" ".$regmatch[1];
+		if(preg_match('/SonyEricsson([.0-9a-zA-Z]+)/i', $useragent, $regmatch)){
+			if(strtolower($regmatch[1])==strtolower("U20i"))
+				$title.=" Xperia X10 Mini Pro";
+			else
+				$title.=" ".$regmatch[1];
+		}
 		$code="sonyericsson";
 
 	//No Device match
@@ -1612,10 +1617,13 @@ function wp_useragent(){
 
 //Function to form the final String
 function display_useragent(){
-	global $comment, $ua_show_text, $ua_text_surfing, $ua_text_on, $ua_show_ua_bool, $ua_doctype;
+	global $comment, $ua_show_text, $ua_text_surfing, $ua_text_on, $ua_text_via, $ua_show_ua_bool, $ua_doctype;
 	//Check if the comment is a trackback.
 	if($comment->comment_type=='trackback' || $comment->comment_type=='pingback'){
-		$ua=detect_trackback();
+		if($ua_show_text=="1" || $ua_show_text=="3")
+			$ua="$ua_text_via ".detect_trackback();
+		elseif($ua_show_text=="2")
+			$ua=detect_trackback();
 	}else{
 		if($ua_show_text=="1" || $ua_show_text=="3")
 			$ua="$ua_text_surfing ".detect_webbrowser()." $ua_text_on ".detect_platform();

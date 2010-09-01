@@ -13,6 +13,7 @@
 			$ua_image_css=get_option('ua_image_css');
 			$ua_text_surfing=get_option('ua_text_surfing');
 			$ua_text_on=get_option('ua_text_on');
+			$ua_text_via=get_option('ua_text_via');
 			$ua_text_links=get_option('ua_text_links');
 			$ua_show_au_bool=get_option('ua_show_ua_bool');
 			$ua_output_location=get_option('ua_output_location');
@@ -140,6 +141,16 @@
 									</div></td>
 								</tr>
 								<tr valign='top'>
+									<th scope='row'>
+										Word for "<em>via</em>":<br />
+										<small><em>* Displayed for Trackbacks and Pingbacks. Default value is empty.</em></small>
+									</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<input type="text" id="ua_text_via" name="ua_text_via" onkeyup="preview();" />
+										<span id="ua_text_via_hdn" style="display:none;"><?php echo $ua_text_via; ?></span>
+									</div></td>
+								</tr>
+								<tr valign='top'>
 									<th scope='row'>Use links on text:</th>
 									<td><div style="overflow:auto;max-height:100px;">
 										<select id="ua_text_links" name="ua_text_links" onchange="preview();">
@@ -264,7 +275,7 @@
 		</div>
 
 		<input type="hidden" name="action" value="update" />
-		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_text_links, ua_show_ua_bool, ua_output_location" />
+		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_text_via, ua_text_links, ua_show_ua_bool, ua_output_location" />
 		<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 		</p>
@@ -283,6 +294,7 @@
 
 			document.getElementById('ua_text_surfing_hdn').innerHTML=document.getElementById('ua_text_surfing').value;
 			document.getElementById('ua_text_on_hdn').innerHTML=document.getElementById('ua_text_on').value;
+			document.getElementById('ua_text_via_hdn').innerHTML=document.getElementById('ua_text_via').value;
 
 			//wp_ua_image_style
 			if(document.getElementById('ua_image_style').value=="1")
@@ -305,9 +317,9 @@
 
 			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="2"){
 				if(document.getElementById('ua_comment_size').value=="16"){
-					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_16+"' alt='Browser:' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_16+"' alt='System:' />"+ua_system;
+					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_16+"' alt='Browser:' style='border:0px;vertical-align:middle;' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_16+"' alt='System:' style='border:0px;vertical-align:middle;' />"+ua_system;
 				}else if(document.getElementById('ua_comment_size').value=="24"){
-					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_24+"' alt='Browser:' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_24+"' alt='System:' />"+ua_system;
+					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_24+"' alt='Browser:' style='border:0px;vertical-align:middle;' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_24+"' alt='System:' style='border:0px;vertical-align:middle;' />"+ua_system;
 				}
 			} else if (document.getElementById('ua_show_text').value=="3") {
 				wp_ua_content=ua_text_surfing+ua_browser+ua_text_on+ua_system;
@@ -342,6 +354,7 @@
 		//set initially stored values for 'Surfing' and 'On'
 		document.getElementById('ua_text_surfing').value=document.getElementById('ua_text_surfing_hdn').innerHTML;
 		document.getElementById('ua_text_on').value=document.getElementById('ua_text_on_hdn').innerHTML;
+		document.getElementById('ua_text_via').value=document.getElementById('ua_text_via_hdn').innerHTML;
 
 		//initiate preview
 		preview();
