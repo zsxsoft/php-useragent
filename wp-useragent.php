@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.3
+Version: 0.10.4
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -236,10 +236,10 @@ function detect_webbrowser(){
 		$link="http://www.srware.net/";
 		$title="SRWare ".detect_browser_version("Iron");
 		$code="srwareiron";
-	}elseif(preg_match('/Chrome/i', $useragent)){
-		$link="http://google.com/chrome/";
-		$title="Google ".detect_browser_version("Chrome");
-		$code="chrome";
+	}elseif(preg_match('/Chromium/i', $useragent)){
+		$link="http://www.chromium.org/";
+		$title=detect_browser_version("Chromium");
+		$code="chromium";
 	}elseif(preg_match('/CometBird/i', $useragent)){
 		$link="http://www.cometbird.com/";
 		$title=detect_browser_version("CometBird");
@@ -674,6 +674,10 @@ function detect_webbrowser(){
 		$link="http://retawq.sourceforge.net/";
 		$title=detect_browser_version("retawq");
 		$code="terminal";
+	}elseif(preg_match('/RockMelt/i', $useragent)){
+		$link="http://www.rockmelt.com/";
+		$title=detect_browser_version("RockMelt");
+		$code="rockmelt";
 	}elseif(preg_match('/SeaMonkey/i', $useragent)){
 		$link="http://www.seamonkey-project.org/";
 		$title=detect_browser_version("SeaMonkey");
@@ -686,11 +690,11 @@ function detect_webbrowser(){
 		$link="http://www.sonyericsson.com/";
 		$title=detect_browser_version("SEMC-java");
 		$code="semcbrowser";
-	}elseif(preg_match('/Series60/i', $useragent)){
+	}elseif(preg_match('/Series60/i', $useragent) && !preg_match('/Symbian/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/Web_Browser_for_S60";
 		$title="Nokia ".detect_browser_version("Series60");
 		$code="s60";
-	}elseif(preg_match('/S60/i', $useragent)){
+	}elseif(preg_match('/S60/i', $useragent) && !preg_match('/Symbian/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/Web_Browser_for_S60";
 		$title="Nokia ".detect_browser_version("S60");
 		$code="s60";
@@ -828,6 +832,10 @@ function detect_webbrowser(){
 		$code="null";
 
 	//Pulled out of order to help ensure better detection for above browsers
+	}elseif(preg_match('/Chrome/i', $useragent)){
+		$link="http://google.com/chrome/";
+		$title="Google ".detect_browser_version("Chrome");
+		$code="chrome";
 	}elseif(preg_match('/Safari/i', $useragent) && !preg_match('/Nokia/i', $useragent)){
 		$link="http://www.apple.com/safari/";
 		$title="Safari";
@@ -1026,7 +1034,7 @@ function detect_device(){
 		}
 
 	//Nokia
-	}elseif(preg_match('/Nokia/i', $useragent)){
+	}elseif(preg_match('/Nokia/i', $useragent) && !preg_match('/S(eries)?60/i', $useragent)){
 		$link="http://www.nokia.com/";
 		$title="Nokia";
 		if(preg_match('/Nokia(E|N)?([0-9]+)/i', $useragent, $regmatch))

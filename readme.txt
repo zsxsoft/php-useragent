@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.0.1
-Stable tag: 0.10.3
+Tested up to: 3.0.3
+Stable tag: 0.10.4
 
 == Description ==
 
@@ -65,6 +65,13 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.4 =
+* Added missing IRIX OS images. The quality isn't great, but they're the best I could find and produce myself. Submissions are welcome.
+* Adjusted Nokia Series60 browser detection so the output is less redundant (props: Yomi)
+* Added detection for the Chromium web browser (propers: Terry Wang)
+* Added detection for the RockMelt social web browser.
+* Reorganized detection for Google Chrome since so many derivatives are beginning to use it as a base and leave it in their user agent string.
 
 = v0.10.3 =
 * Corrected detection of Motorola Droid to eliminate false positives for Android devices (props: Yomi)
@@ -478,8 +485,9 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 == Upgrade Notice ==
 
-= 0.10.3 =
-* Corrected detection of Motorola Droid to eliminate false positives for Android devices (props: Yomi)
-* Added an option to specify a prepended word for Trackbacks and Pingbacks like the current "using" option. This is blank by default (props: dani)
-* Adjusted vertical alignment of icons in the settings page to properly reflect the middle alignment they use in comments.
-* Replaced poor quality WordPress icon with a better looking icon.
+= v0.10.4 =
+* Added missing IRIX OS images. The quality isn't great, but they're the best I could find and produce myself. Submissions are welcome.
+* Adjusted Nokia Series60 browser detection so the output is less redundant (props: Yomi)
+* Added detection for the Chromium web browser (propers: Terry Wang)
+* Added detection for the RockMelt social web browser.
+* Reorganized detection for Google Chrome since so many derivatives are beginning to use it as a base and leave it in their user agent string.
