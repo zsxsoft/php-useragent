@@ -16,6 +16,7 @@
 			$ua_text_via=get_option('ua_text_via');
 			$ua_text_links=get_option('ua_text_links');
 			$ua_show_au_bool=get_option('ua_show_ua_bool');
+			$ua_hide_unknown_bool=get_option('ua_hide_unknown_bool');
 			$ua_output_location=get_option('ua_output_location');
 		?>
 
@@ -164,7 +165,16 @@
 									<td><div style="overflow:auto;max-height:100px;">
 										<select id="ua_show_ua_bool" name="ua_show_ua_bool" onchange="preview();">
 											<option value="true" <?php if($ua_show_ua_bool=="true") echo 'selected="selected"' ?>>True</option>
-											<option value="false"<?php if($ua_show_ua_bool=="false") echo 'selected="selected"' ?>>False</option>
+											<option value="false" <?php if($ua_show_ua_bool=="false") echo 'selected="selected"' ?>>False</option>
+										</select>
+									</div></td>
+								</tr>
+								<tr valign='top'>
+									<th scope='row'>Hide icons and text for Unknown:</th>
+									<td><div style="overflow:auto;max-height:100px;">
+										<select id="ua_hide_unknown_bool" name="ua_hide_unknown_bool" onchange="preview();">
+											<option value="true" <?php if($ua_hide_unknown_bool=="true") echo 'selected="selected"' ?>>True</option>
+											<option value="false" <?php if($ua_hide_unknown_bool!="true") echo 'selected="selected"' ?>>False</option>
 										</select>
 									</div></td>
 								</tr>
@@ -275,7 +285,7 @@
 		</div>
 
 		<input type="hidden" name="action" value="update" />
-		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_text_via, ua_text_links, ua_show_ua_bool, ua_output_location" />
+		<input type="hidden" name="page_options" value="ua_doctype, ua_comment_size, ua_track_size, ua_show_text, ua_image_style, ua_image_css, ua_text_surfing, ua_text_on, ua_text_via, ua_text_links, ua_show_ua_bool, ua_hide_unknown_bool, ua_output_location" />
 		<p class="submit">
 			<input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
 		</p>

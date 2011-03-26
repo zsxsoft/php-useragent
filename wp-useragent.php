@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.5
+Version: 0.10.6
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -52,6 +52,7 @@ $ua_text_on=get_option('ua_text_on');
 $ua_text_via=get_option('ua_text_via');
 $ua_text_links=get_option('ua_text_links');
 $ua_show_ua_bool=get_option('ua_show_ua_bool');
+$ua_hide_unknown_bool=get_option('ua_hide_unknown_bool');
 $ua_output_location=get_option('ua_output_location');
 
 //Detect webbrowser versions
@@ -100,6 +101,8 @@ function detect_browser_version($title){
 		return "Multi-Browser XP ".$version;
 	elseif(strtolower($title)=="opera mobi")
 		return "Opera Mobile ".$version;
+	elseif(strtolower($title)=="osb-browser")
+		return "Gtk+ WebCore ".$version;
 	elseif(strtolower($title)=="tablet browser")
 		return "MicroB ".$version;
 	elseif(strtolower($title)=="tencenttraveler")
@@ -110,7 +113,7 @@ function detect_browser_version($title){
 
 //Detect webbrowsers
 function detect_webbrowser(){
-	global $useragent, $ua_show_text, $ua_text_links;
+	global $useragent, $ua_show_text, $ua_text_links, $ua_hide_unknown_bool;
 	$mobile=0;
 	if(preg_match('/360se/i', $useragent)){
 		$link="http://se.360.cn/";
@@ -168,6 +171,10 @@ function detect_webbrowser(){
 		$link="http://www.blackbirdbrowser.com/";
 		$title=detect_browser_version("Blackbird");
 		$code="blackbird";
+	}elseif(preg_match('/BlackHawk/i', $useragent)){
+		$link="http://www.netgate.sk/blackhawk/help/welcome-to-blackhawk-web-browser.html";
+		$title=detect_browser_version("BlackHawk");
+		$code="blackhawk";
 	}elseif(preg_match('/Blazer/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/Blazer_(web_browser)";
 		$title=detect_browser_version("Blazer");
@@ -638,6 +645,10 @@ function detect_webbrowser(){
 		$link="http://www.sand-labs.org/owb";
 		$title="Oregano Web Browser";
 		$code="owb";
+	}elseif(preg_match('/osb-browser/i', $useragent)){
+		$link="http://gtk-webcore.sourceforge.net/";
+		$title=detect_browser_version("osb-browser");
+		$code="null";
 	}elseif(preg_match('/\ Pre\//i', $useragent)){
 		$link="http://www.palm.com/us/products/phones/pre/index.html";
 		$title="Palm ".detect_browser_version("Pre");
@@ -778,6 +789,10 @@ function detect_webbrowser(){
 		$link="http://en.wikipedia.org/wiki/Obigo_Browser/";
 		$title=detect_browser_version(" Teleca");
 		$code="obigo";
+	}elseif(preg_match('/TencentTraveler/i', $useragent)){
+		$link="http://www.tencent.com/en-us/index.shtml";
+		$title="Tencent ".detect_browser_version("Traveler");
+		$code="tencenttraveler";
 	}elseif(preg_match('/TheWorld/i', $useragent)){
 		$link="http://www.ioage.com/";
 		$title="TheWorld Browser";
@@ -830,6 +845,10 @@ function detect_webbrowser(){
 		$link="http://www.uzbl.org/";
 		$title="uzbl";
 		$code="uzbl";
+	}elseif(preg_match('/Vimprobable/i', $useragent)){
+		$link="http://www.vimprobable.org/";
+		$title=detect_browser_version("Vimprobable");
+		$code="null";
 	}elseif(preg_match('/Vonkeror/i', $useragent)){
 		$link="http://zzo38computer.cjb.net/vonkeror/";
 		$title=detect_browser_version("Vonkeror");
@@ -917,6 +936,8 @@ function detect_webbrowser(){
 		$link="#";
 		$title="Unknown";
 		$code="null";
+		if($ua_hide_unknown_bool=='true' && $ua_show_text==2)
+			return $title;
 	}
 	if($ua_show_text=="1" && $ua_text_links!="0")		//image and linked text
 		$web_browser=img($code, "/net/", $title)." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
@@ -1180,7 +1201,7 @@ function detect_os(){
 		$link="http://www.android.com/";
 		$title="Android";
 		$code="android";
-	}elseif(preg_match('/Arch/i', $useragent)){
+	}elseif(preg_match('/[^A-Za-z]Arch/i', $useragent)) { //&& !preg_match('/Search/i', $useragent)){
 		$link="http://www.archlinux.org/";
 		$title="Arch Linux";
 		$code="archlinux";
@@ -1366,7 +1387,7 @@ function detect_os(){
 		$code="solaris";
 	}elseif(preg_match('/Suse/i', $useragent)){
 		$link="http://www.opensuse.org/";
-		$title="SuSE";
+		$title="openSUSE";
 		$code="suse";
 	}elseif(preg_match('/Symb[ian]?[OS]?/i', $useragent)){
 		$link="http://www.symbianos.org/";
@@ -1513,7 +1534,7 @@ function detect_os(){
 
 //Detect Platform (check for Device, then OS if no device is found, else return null)
 function detect_platform(){
-	global $useragent, $ua_show_text, $ua_text_links;
+	global $useragent, $ua_show_text, $ua_text_links, $ua_hide_unknown_bool;
 	if(strlen($detected_platform=detect_device()) > 0){
 		return $detected_platform;
 	}elseif(strlen($detected_platform=detect_os()) > 0){
@@ -1522,6 +1543,8 @@ function detect_platform(){
 		$title="Unknown";
 		$link="#";
 		$code="null";
+		if($ua_hide_unknown_bool=='true' && $ua_show_text==2)
+			return $title;
 	}
 	if($ua_show_text=="1" && $ua_text_links!="0")		//image and linked text
 		$detected_os=img($code, "/os/", $title)." <a href='".$link."' title='".$title."' rel='nofollow'>".$title."</a>";
@@ -1538,7 +1561,7 @@ function detect_platform(){
 
 //Detect Trackbacks -- Check if it works...
 function detect_trackback(){
-	global $useragent, $ua_trackback, $ua_show_text, $ua_text_links;
+	global $useragent, $ua_trackback, $ua_show_text, $ua_text_links, $ua_hide_unknown_bool;
 	$ua_trackback=0;
 	if(preg_match('/Drupal/i', $useragent)){
 		$link="http://www.drupal.org/";
@@ -1610,6 +1633,8 @@ function detect_trackback(){
 		$link="#";
 		$title="Unknown";
 		$code="null";
+		if($ua_hide_unknown_bool=='true' && $ua_show_text==2)
+			return $title;
 	}
 	$title.=" ".$version;
 	if($ua_show_text=="1" && $ua_text_links!="0")		//image and linked text
@@ -1676,25 +1701,53 @@ function wp_useragent(){
 
 //Function to form the final String
 function display_useragent(){
-	global $comment, $ua_show_text, $ua_text_surfing, $ua_text_on, $ua_text_via, $ua_show_ua_bool, $ua_doctype;
+	global $comment, $ua_show_text, $ua_text_surfing, $ua_text_on, $ua_text_via, $ua_show_ua_bool, $ua_hide_unknown_bool, $ua_doctype;
 	//Check if the comment is a trackback.
 	if($comment->comment_type=='trackback' || $comment->comment_type=='pingback'){
-		if($ua_show_text=="1" || $ua_show_text=="3")
-			$ua="$ua_text_via ".detect_trackback();
-		elseif($ua_show_text=="2")
-			$ua=detect_trackback();
+		$trackback=detect_trackback();
+		if($ua_show_text=="1" || $ua_show_text=="3"){
+			if($ua_hide_unknown_bool=='true' && strpos($trackback,"Unknown"))
+				$ua="";
+			else
+				$ua="$ua_text_via $trackback";
+		}elseif($ua_show_text=="2"){
+			if($ua_hide_unknown_bool=='true' && strpos($trackback,"Unknown"))
+				$ua="";
+			else
+				$ua=$trackback;
+		}
 	}else{
-		if($ua_show_text=="1" || $ua_show_text=="3")
-			$ua="$ua_text_surfing ".detect_webbrowser()." $ua_text_on ".detect_platform();
-		elseif($ua_show_text=="2")
-			$ua=detect_webbrowser().detect_platform();
+		$webbrowser=detect_webbrowser();
+		$platform=detect_platform();
+		if($ua_show_text=="1" || $ua_show_text=="3"){
+			if($ua_hide_unknown_bool=='true' && strpos($webbrowser,"Unknown") && strpos($platform,"Unknown"))
+				$ua="";
+			elseif($ua_hide_unknown_bool=='true' && strpos($webbrowser,"Unknown"))
+				$ua="$ua_text_on $platform";
+			elseif($ua_hide_unknown_bool=='true' && strpos($platform,"Unknown"))
+				$ua="$ua_text_surfing $webbrowser";
+			else
+				$ua="$ua_text_surfing $webbrowser $ua_text_on $platform";
+		}elseif($ua_show_text=="2"){
+			if($ua_hide_unknown_bool=='true' && strpos($webbrowser,"Unknown") && strpos($platform,"Unknown"))
+				$ua="";
+			elseif($ua_hide_unknown_bool=='true' && strpos($webbrowser,"Unknown"))
+				$ua=$platform;
+			elseif($ua_hide_unknown_bool=='true' && strpos($platform,"Unknown"))
+				$ua=$webbrowser;
+			else
+				$ua=$webbrowser.$platform;
+		}
 	}
 
 	if($ua_show_ua_bool=='true'){
-		if($ua_doctype=="html")
-			$ua.="<br><small>".htmlspecialchars($comment->comment_agent)."</small>";
-		elseif($ua_doctype=="xhtml")
-			$ua.="<br /><small>".htmlspecialchars($comment->comment_agent)."</small>";
+		if(strlen($ua) > 0) {
+			if($ua_doctype=="html")
+				$ua.="<br>";
+			elseif($ua_doctype=="xhtml")
+				$ua.="<br />";
+		}
+		$ua.="<small>".htmlspecialchars($comment->comment_agent)."</small>";
 	}
 
 	// The following conditional will hopefully prevent a problem where
