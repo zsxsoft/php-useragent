@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.6
+Version: 0.10.7
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -1059,6 +1059,14 @@ function detect_device(){
 		}
 		$code="htc";
 
+	//Kindle
+	}elseif(preg_match('/Kindle/i', $useragent)){
+		$link="http://en.wikipedia.org/wiki/Amazon_Kindle";
+		$title="Kindle";
+		if(preg_match('/Kindle\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+			$title.=" ".$regmatch[1];
+		$code="kindle";
+
 	//LG
 	}elseif(preg_match('/LG/i', $useragent)){
 		$link="http://www.lgmobile.com";
@@ -1337,6 +1345,12 @@ function detect_os(){
 		if(preg_match('/mdv([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 			$title.=" ".$regmatch[1];
 		$code="mandriva";
+	}elseif(preg_match('/moonOS/i', $useragent)){
+		$link="http://www.moonos.org/";
+		$title="moonOS";
+		if(preg_match('/moonOS\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+			$title.=" ".$regmatch[1];
+		$code="moonos";
 	}elseif(preg_match('/MorphOS/i', $useragent)){
 		$link="http://www.morphos-team.net/";
 		$title="MorphOS";

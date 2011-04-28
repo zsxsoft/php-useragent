@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
 Tested up to: 3.2
-Stable tag: 0.10.6
+Stable tag: 0.10.7
 
 == Description ==
 
@@ -65,6 +65,11 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.7 =
+* Added detection for Kindle.
+* Added detection for moonOS.
+
 
 = v0.10.6 =
 * Added detection for BlackHawk, Gtk+ WebCore, Tencent Traveler and Vimprobable.
@@ -500,7 +505,6 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 == Upgrade Notice ==
 
-= v0.10.6 =
-* Added detection for BlackHawk, Gtk+ WebCore, Tencent Traveler and Vimprobable.
-* Added a quick fix for Arch Linux improperly being detected when IE users have SearchToolbar installed (since it improperly matched seARCHtoolbar).
-* Added new feature to hide "Unknown" output. This is disabled by default (props: Cahya)
+= v0.10.7 =
+* Added detection for Kindle.
+* Added detection for moonOS.
