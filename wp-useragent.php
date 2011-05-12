@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.7
+Version: 0.10.8
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -61,13 +61,15 @@ function detect_browser_version($title){
 
 	//fix for Opera's (and others) UA string changes in v10.00
 	$start=$title;
-	if(strtolower($title)==strtolower("Opera") && preg_match('/Version/i', $useragent))
+	if((strtolower($title)==strtolower("Opera") || strtolower($title)==strtolower("Opera Next")) && preg_match('/Version/i', $useragent))
 		$start="Version";
 	elseif(strtolower($title)==strtolower("Opera Mobi") && preg_match('/Version/i', $useragent))
 		$start="Version";
 	elseif(strtolower($title)==strtolower("Safari") && preg_match('/Version/i', $useragent))
 		$start="Version";
 	elseif(strtolower($title)==strtolower("Pre") && preg_match('/Version/i', $useragent))
+		$start="Version";
+	elseif(strtolower($title)==strtolower("Android Webkit"))
 		$start="Version";
 	elseif(strtolower($title)==strtolower("Links"))
 		$start="Links (";
@@ -535,6 +537,10 @@ function detect_webbrowser(){
 		$link="http://www.mozilla.org/projects/minefield/";
 		$title=detect_browser_version("Minefield");
 		$code="minefield";
+	}elseif(preg_match('/MiniBrowser/i', $useragent)){
+		$link="http://dmkho.tripod.com/";
+		$title=detect_browser_version("MiniBrowser");
+		$code="minibrowser";
 	}elseif(preg_match('/Minimo/i', $useragent)){
 		$link="http://www-archive.mozilla.org/projects/minimo/";
 		$title=detect_browser_version("Minimo");
@@ -627,6 +633,10 @@ function detect_webbrowser(){
 		$link="http://www.opera.com/mobile/";
 		$title=detect_browser_version("Opera Mobi");
 		$code="opera-2";
+	}elseif(preg_match('/Opera Next/i', $useragent)){
+		$link="http://www.opera.com/support/kb/view/991/";
+		$title=detect_browser_version("Opera Next");
+		$code="opera-next";
 	}elseif(preg_match('/Opera/i', $useragent)){
 		$link="http://www.opera.com/";
 		$title=detect_browser_version("Opera");
@@ -857,6 +867,10 @@ function detect_webbrowser(){
 		$link="http://w3m.sourceforge.net/";
 		$title=detect_browser_version("W3M");
 		$code="w3m";
+	}elseif(preg_match('/AppleWebkitBrowser/i', $useragent) && preg_match('/Android/i', $useragent)){
+		$link="http://developer.android.com/reference/android/webkit/package-summary.html";
+		$title=detect_browser_version("Android Webkit");
+		$code="android-webkit";
 	}elseif(preg_match('/WeltweitimnetzBrowser/i', $useragent)){
 		$link="http://weltweitimnetz.de/software/Browser.en.page";
 		$title="Weltweitimnetz ".detect_browser_version("Browser");
