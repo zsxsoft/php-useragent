@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
 Tested up to: 3.2
-Stable tag: 0.10.8
+Stable tag: 0.10.9
 
 == Description ==
 
@@ -65,6 +65,11 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.9 =
+* Fixed Mac OS X version detection so its more flexible.
+* Fixed icon used for Red Hat linux (props: Third Eye)
+
 
 = v0.10.8 =
 * Added detection for Opera Next, Android Webkit and MiniBrowser.

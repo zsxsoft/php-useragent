@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.8
+Version: 0.10.9
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -1338,13 +1338,17 @@ function detect_os(){
 		$link="http://www.apple.com/macosx/";
 		if(preg_match('/Mac OS X/i', $useragent)){
 			$title=substr($useragent, strpos(strtolower($useragent), strtolower("Mac OS X")));
-			$title=substr($title, 0, strpos($title, ";"));
-			$title=str_replace("_", ".", $title); 
+			$title=substr($title, 0, strpos($title, ")"));
+			if (strpos($title, ";"))
+				$title=substr($title, 0, strpos($title, ";"));
+			$title=str_replace("_", ".", $title);
 			$code="mac-3";
 		}elseif(preg_match('/Mac OSX/i', $useragent)){
-			$title=substr($useragent, strpos(strtolower($useragent), strtolower("Mac OSX")));
-			$title=substr($title, 0, strpos($title, ";"));
-			$title=str_replace("_", ".", $title); 
+			$title=substr($useragent, strpos(strtolower($useragent), strtolower("Mac OS X")));
+			$title=substr($title, 0, strpos($title, ")"));
+			if (strpos($title, ";"))
+				$title=substr($title, 0, strpos($title, ";"));
+			$title=str_replace("_", ".", $title);
 			$code="mac-2";
 		}elseif(preg_match('/Darwin/i', $useragent)){
 			$title="Mac OS Darwin";
@@ -1396,7 +1400,7 @@ function detect_os(){
 		$title="Red Hat";
 		if(preg_match('/.el([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
 			$title.=" Enterprise Linux ".str_replace("_", ".", $regmatch[1]);
-		$code="mandriva";
+		$code="red-hat";
 	}elseif(preg_match('/Sabayon/i', $useragent)){
 		$link="http://www.sabayonlinux.org/";
 		$title="Sabayon Linux";
