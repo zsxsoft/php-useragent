@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.2
-Stable tag: 0.10.9
+Tested up to: 3.2.1
+Stable tag: 0.10.10
 
 == Description ==
 
@@ -56,7 +56,7 @@ Screenshots are available at the plugin [home page](http://kyleabaker.com/goodie
 * Published under GPLv3
 
 
-Some of you may compare this to another well-known plugin named browsersniff. UserAgent-Spy is a heavily modified and improved version of UserAgent-Spy, with several improvements over browsersniff also:
+Some of you may compare this to another well-known plugin named browsersniff. WP-UserAgent is a heavily modified and improved version of UserAgent-Spy, with several improvements over browsersniff also:
 
 * Easy standard installation, just upload to wp-plugins and activate it.
 * Customizable options.
@@ -65,6 +65,14 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 
 
 == Changelog ==
+
+= v0.10.10 =
+* Fixed Opera Next detection since the ua string has changed.
+* Added detection for Opera Labs, Fireweb Navigator, Kylo, Sundance, Charon, Sylera, Dorothy Browser, and Webian Shell.
+* Added detection for x64 versions of Unix/Linux.
+* Added detection for the Inferno operating system.
+* Added detection for Nokia Browser (props: Yomi)
+
 
 = v0.10.9 =
 * Fixed Mac OS X version detection so its more flexible.
@@ -511,8 +519,13 @@ Some of you may compare this to another well-known plugin named browsersniff. Us
 = TO-DO: =
 * Reach a stable and solid 1.0 release where the plugin is mostly finalized and updates will generally be additional browsers and/or systems.
 * New web browsers, devices and operating systems are always welcome.
+* Add detection for PSVita when its released.
 
 == Upgrade Notice ==
 
-= v0.10.8 =
-* Added detection for Opera Next, Android Webkit and MiniBrowser.
+= v0.10.10 =
+* Fixed Opera Next detection since the ua string has changed.
+* Added detection for Opera Labs, Fireweb Navigator, Kylo, Sundance, Charon, Sylera, Dorothy Browser, and Webian Shell.
+* Added detection for x64 versions of Unix/Linux.
+* Added detection for the Inferno operating system.
+* Added detection for Nokia Browser (props: Yomi)
