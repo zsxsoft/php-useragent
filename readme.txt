@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.2.1
-Stable tag: 0.10.10
+Tested up to: 3.3.1
+Stable tag: 0.10.11
 
 == Description ==
 
@@ -65,6 +65,11 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v0.10.11 =
+* Added detection for Columbus Browser, CoolNovo, Sundial, Usejump, WebRender.
+* Added detection for Nova Linux and WP7 (props: jako)
+
 
 = v0.10.10 =
 * Fixed Opera Next detection since the ua string has changed.
@@ -523,9 +528,6 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v0.10.10 =
-* Fixed Opera Next detection since the ua string has changed.
-* Added detection for Opera Labs, Fireweb Navigator, Kylo, Sundance, Charon, Sylera, Dorothy Browser, and Webian Shell.
-* Added detection for x64 versions of Unix/Linux.
-* Added detection for the Inferno operating system.
-* Added detection for Nokia Browser (props: Yomi)
+= v0.10.11 =
+* Added detection for Columbus Browser, CoolNovo, Sundial, Usejump, WebRender.
+* Added detection for Nova Linux and WP7 (props: jako)

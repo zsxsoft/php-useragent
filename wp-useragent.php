@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.10
+Version: 0.10.11
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -239,6 +239,10 @@ function detect_webbrowser(){
 		$link="http://www.chromium.org/";
 		$title=detect_browser_version("Chromium");
 		$code="chromium";
+	}elseif(preg_match('/Columbus/i', $useragent)){
+		$link="http://www.columbus-browser.com/";
+		$title=detect_browser_version("Columbus");
+		$code="columbus";
 	}elseif(preg_match('/CometBird/i', $useragent)){
 		$link="http://www.cometbird.com/";
 		$title=detect_browser_version("CometBird");
@@ -251,6 +255,10 @@ function detect_webbrowser(){
 		$link="http://www.conkeror.org/";
 		$title=detect_browser_version("Conkeror");
 		$code="conkeror";
+	}elseif(preg_match('/CoolNovo/i', $useragent)){
+		$link="http://www.coolnovo.com/";
+		$title=detect_browser_version("CoolNovo");
+		$code="coolnovo";
 	}elseif(preg_match('/Crazy\ Browser/i', $useragent)){
 		$link="http://www.crazybrowser.com/";
 		$title="Crazy ".detect_browser_version("Browser");
@@ -802,6 +810,10 @@ function detect_webbrowser(){
 		$title=detect_browser_version("Sundance");
 		$code="sundance";
 	}elseif(preg_match('/Sunrise/i', $useragent)){
+		$link="http://www.sundialbrowser.com/";
+		$title=detect_browser_version("Sundial");
+		$code="sundial";
+	}elseif(preg_match('/Sunrise/i', $useragent)){
 		$link="http://www.sunrisebrowser.com/";
 		$title=detect_browser_version("Sunrise");
 		$code="sunrise";
@@ -877,6 +889,10 @@ function detect_webbrowser(){
 		$link="http://www.openwave.com/";
 		$title=detect_browser_version("UP.Link");
 		$code="openwave";
+	}elseif(preg_match('/Usejump/i', $useragent)){
+		$link="http://www.usejump.com/";
+		$title=detect_browser_version("Usejump");
+		$code="usejump";
 	}elseif(preg_match('/uZardWeb/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/UZard_Web";
 		$title=detect_browser_version("uZardWeb");
@@ -909,6 +925,10 @@ function detect_webbrowser(){
 		$link="http://webian.org/shell/";
 		$title="Webian ".detect_browser_version("Shell");
 		$code="webianshell";
+	}elseif(preg_match('/Webrender/i', $useragent)){
+		$link="http://webrender.99k.org/";
+		$title="Webrender";
+		$code="webrender";
 	}elseif(preg_match('/WeltweitimnetzBrowser/i', $useragent)){
 		$link="http://weltweitimnetz.de/software/Browser.en.page";
 		$title="Weltweitimnetz ".detect_browser_version("Browser");
@@ -1130,6 +1150,12 @@ function detect_device(){
 		if(preg_match('/LG[E]?[\ |-|\/]([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 			$title.=" ".$regmatch[1];
 		$code="lg";
+
+	//Microsoft
+	}elseif(preg_match('/Windows Phone OS 7.0/i', $useragent) || preg_match('/ZuneWP7/i', $useragent) || preg_match('/WP7/i', $useragent)){
+		$link="http://www.microsoft.com/windowsphone/";
+		$title.="Windows Phone 7";
+		$code="wp7";
 
 	//Motorola
 	}elseif(preg_match('/\ Droid/i', $useragent)){
@@ -1473,6 +1499,16 @@ function detect_os(){
 		$link="http://www.netbsd.org/";
 		$title="NetBSD";
 		$code="netbsd";
+		if(preg_match('/x86_64/i', $useragent))
+			$title.=" x64";
+	}elseif(preg_match('/Nova/i', $useragent)){
+		$link="http://www.nova.cu";
+		$title="Nova";
+		if(preg_match('/Nova[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+			$version.=" ".$regmatch[1];
+		if(strlen($version) > 1)
+			$title.=$version;
+		$code="nova";
 		if(preg_match('/x86_64/i', $useragent))
 			$title.=" x64";
 	}elseif(preg_match('/OpenBSD/i', $useragent)){
