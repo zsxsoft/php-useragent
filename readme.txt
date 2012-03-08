@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
 Tested up to: 3.3.1
-Stable tag: 0.10.11
+Stable tag: 0.10.12
 
 == Description ==
 
@@ -65,6 +65,13 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v0.10.12 =
+* Added detection for Alienforce Browser, Patriott, Qupzilla, Baidu Browser and ZipZap.
+* Added detection for Chrome Mobile and Tizen.
+* Added detection for Motorola Xoom, Galaxy Nexus.
+* Added detection for Chakra Linux (props: KZKG^Gaara)
+
 
 = v0.10.11 =
 * Added detection for Columbus Browser, CoolNovo, Sundial, Usejump, WebRender.
@@ -528,6 +535,8 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v0.10.11 =
-* Added detection for Columbus Browser, CoolNovo, Sundial, Usejump, WebRender.
-* Added detection for Nova Linux and WP7 (props: jako)
+= v0.10.12 =
+* Added detection for Alienforce Browser, Patriott, Qupzilla, Baidu Browser and ZipZap.
+* Added detection for Chrome Mobile and Tizen.
+* Added detection for Motorola Xoom, Galaxy Nexus.
+* Added detection for Chakra Linux (props: KZKG^Gaara)
