@@ -3,14 +3,14 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.12
+Version: 0.10.13
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
 //Author URI: http://picandocodigo.net
 */
 
-/* Copyright 2008-2011  Kyle Baker  (email: kyleabaker@gmail.com)
+/* Copyright 2008-2012  Kyle Baker  (email: kyleabaker@gmail.com)
 	//Copyright 2008  Fernando Briano  (email : transformers.es@gmail.com)
 
 This program is free software; you can redistribute it and/or modify
@@ -76,6 +76,12 @@ function detect_browser_version($title){
 		$start="Links (";
 	elseif(strtolower($title)==strtolower("UC Browser"))
 		$start="UC Browse";
+	elseif(strtolower($title)==strtolower("TenFourFox"))
+		$start=" rv";
+	elseif(strtolower($title)==strtolower("Classilla"))
+		$start=" rv";
+	elseif(strtolower($title)==strtolower("SmartTV"))
+		$start="WebBrowser";
 
 	//Grab the browser version if its present
 	preg_match('/'.$start.'[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch);
@@ -112,6 +118,10 @@ function detect_browser_version($title){
 		return "TT Explorer ".$version;
 	elseif(strtolower($title)=="crmo")
 		return "Chrome Mobile ".$version;
+	elseif(strtolower($title)=="smarttv")
+		return "Maple Browser ".$version;
+	elseif(strtolower($title)=="wp-android" || strtolower($title)=="wp-iphone")
+		return "Wordpress App ".$version;
 	elseif(strtolower($title)=="opera labs")
 	{
 		preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
@@ -249,6 +259,10 @@ function detect_webbrowser(){
 		$link="http://www.chromium.org/";
 		$title=detect_browser_version("Chromium");
 		$code="chromium";
+	}elseif(preg_match('/Classilla/i', $useragent)){
+		$link="http://en.wikipedia.org/wiki/Classilla";
+		$title=detect_browser_version("Classilla");
+		$code="classilla";
 	}elseif(preg_match('/Columbus/i', $useragent)){
 		$link="http://www.columbus-browser.com/";
 		$title=detect_browser_version("Columbus");
@@ -341,6 +355,10 @@ function detect_webbrowser(){
 		$link="http://en.wikipedia.org/wiki/Enigma_Browser";
 		$title="Enigma ".detect_browser_version("Browser");
 		$code="enigmabrowser";
+	}elseif(preg_match('/EnigmaFox/i', $useragent)){
+		$link="#";
+		$title=detect_browser_version("EnigmaFox");
+		$code="null";
 	}elseif(preg_match('/Epic/i', $useragent)){
 		$link="http://www.epicbrowser.com/";
 		$title=detect_browser_version("Epic");
@@ -727,6 +745,14 @@ function detect_webbrowser(){
 		$link="http://www.mozilla.org/projects/phoenix/phoenix-release-notes.html";
 		$title=detect_browser_version("Phoenix");
 		$code="phoenix";
+	}elseif(preg_match('/Podkicker/i', $useragent)){
+		$link="http://www.podkicker.com/";
+		$title=detect_browser_version("Podkicker");
+		$code="podkicker";
+	}elseif(preg_match('/Podkicker\ Pro/i', $useragent)){
+		$link="http://www.podkicker.com/";
+		$title=detect_browser_version("Podkicker Pro");
+		$code="podkicker";
 	}elseif(preg_match('/Pogo/i', $useragent)){
 		$link="http://en.wikipedia.org/wiki/AT%26T_Pogo";
 		$title=detect_browser_version("Pogo");
@@ -815,6 +841,10 @@ function detect_webbrowser(){
 		$link="http://www.flashpeak.com/sbrowser/";
 		$title=detect_browser_version("SlimBrowser");
 		$code="slimbrowser";
+	}elseif(preg_match('/SmartTV/i', $useragent)){
+		$link="http://www.freethetvchallenge.com/details/faq";
+		$title=detect_browser_version("SmartTV");
+		$code="maplebrowser";
 	}elseif(preg_match('/Songbird/i', $useragent)){
 		$link="http://www.getsongbird.com/";
 		$title=detect_browser_version("Songbird");
@@ -871,6 +901,10 @@ function detect_webbrowser(){
 		$link="http://www.tencent.com/en-us/index.shtml";
 		$title="Tencent ".detect_browser_version("Traveler");
 		$code="tencenttraveler";
+	}elseif(preg_match('/TenFourFox/i', $useragent)){
+		$link="http://en.wikipedia.org/wiki/TenFourFox";
+		$title=detect_browser_version("TenFourFox");
+		$code="tenfourfox";
 	}elseif(preg_match('/TheWorld/i', $useragent)){
 		$link="http://www.ioage.com/";
 		$title="TheWorld Browser";
@@ -943,7 +977,7 @@ function detect_webbrowser(){
 		$link="http://w3m.sourceforge.net/";
 		$title=detect_browser_version("W3M");
 		$code="w3m";
-	}elseif(preg_match('/AppleWebkitBrowser/i', $useragent) && preg_match('/Android/i', $useragent)){
+	}elseif(preg_match('/AppleWebkit/i', $useragent) && preg_match('/Android/i', $useragent)){
 		$link="http://developer.android.com/reference/android/webkit/package-summary.html";
 		$title=detect_browser_version("Android Webkit");
 		$code="android-webkit";
@@ -967,6 +1001,14 @@ function detect_webbrowser(){
 		$link="http://www.w3.org/People/Berners-Lee/WorldWideWeb.html";
 		$title=detect_browser_version("WorldWideWeb");
 		$code="worldwideweb";
+	}elseif(preg_match('/wp-android/i', $useragent)){
+		$link="http://android.wordpress.org/";
+		$title=detect_browser_version("wp-android");
+		$code="wordpress";
+	}elseif(preg_match('/wp-iphone/i', $useragent)){
+		$link="http://ios.wordpress.org/";
+		$title=detect_browser_version("wp-iphone");
+		$code="wordpress";
 	}elseif(preg_match('/Wyzo/i', $useragent)){
 		$link="http://www.wyzo.com/";
 		$title=detect_browser_version("Wyzo");
@@ -1280,6 +1322,10 @@ function detect_device(){
 		$link="http://en.wikipedia.org/wiki/Galaxy_Nexus";
 		$title="Galaxy Nexus";
 		$code="samsung";
+	}elseif(preg_match('/SmartTV/i', $useragent)){
+		$link="http://www.freethetvchallenge.com/details/faq";
+		$title="Samsung Smart TV";
+		$code="samsung";
 	}elseif(preg_match('/Samsung/i', $useragent)){
 		$link="http://www.samsungmobile.com/";
 		$title="Samsung";
@@ -1331,6 +1377,10 @@ function detect_os(){
 		$link="http://www.android.com/";
 		$title="Android";
 		$code="android";
+		if(preg_match('/Android[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)){
+			$version=$regmatch[1];
+			$title.=" ".$version;
+		}
 		if(preg_match('/x86_64/i', $useragent))
 			$title.=" x64";
 	}elseif(preg_match('/[^A-Za-z]Arch/i', $useragent)) { //&& !preg_match('/Search/i', $useragent)){
@@ -1645,7 +1695,7 @@ function detect_os(){
 		$code="palm";
 	}elseif(preg_match('/Windows/i', $useragent) || preg_match('/WinNT/i', $useragent) || preg_match('/Win32/i', $useragent)){
 		$link="http://www.microsoft.com/windows/";
-		if(preg_match('/Windows NT 6.1; Win64; x64;/i', $useragent) || preg_match('/Windows NT 6.1; WOW64;/i', $useragent)){
+		if(preg_match('/Windows NT 6.1; Win64; x64;/i', $useragent) || preg_match('/Windows NT 6.1; WOW64/i', $useragent)){
 			$title="Windows 7 x64 Edition";
 			$code="win-4";
 		}elseif(preg_match('/Windows NT 6.1/i', $useragent)){
