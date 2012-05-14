@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.13
+Version: 0.10.14
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -251,7 +251,7 @@ function detect_webbrowser(){
 		$link="http://www.chromeplus.org/";
 		$title=detect_browser_version("ChromePlus");
 		$code="chromeplus";
-	}elseif(preg_match('/Chrome/i', $useragent) && preg_match('/Iron/i', $useragent)){
+	}elseif(preg_match('/Iron/i', $useragent)){
 		$link="http://www.srware.net/";
 		$title="SRWare ".detect_browser_version("Iron");
 		$code="srwareiron";
@@ -1415,6 +1415,12 @@ function detect_os(){
 		$code="chromeos";
 		if(preg_match('/x86_64/i', $useragent))
 			$title.=" x64";
+	}elseif(preg_match('/Crunchbang/i', $useragent)){
+		$link="http://www.crunchbanglinux.org/";
+		$title="Crunchbang";
+		$code="crunchbang";
+		if(preg_match('/x86_64/i', $useragent))
+			$title.=" x64";
 	}elseif(preg_match('/Debian/i', $useragent)){
 		$link="http://www.debian.org/";
 		$title="Debian GNU/Linux";
@@ -1567,6 +1573,10 @@ function detect_os(){
 			$title="Macintosh";
 			$code="mac-1";
 		}
+	}elseif(preg_match('/Mageia/i', $useragent)){
+		$link="http://www.mageia.org/";
+		$title="Mageia";
+		$code="mageia";
 	}elseif(preg_match('/Mandriva/i', $useragent)){
 		$link="http://www.mandriva.com/";
 		$title="Mandriva";
@@ -1621,6 +1631,12 @@ function detect_os(){
 		$code="oracle";
 		if(preg_match('/x86_64/i', $useragent))
 			$title.=" x64";
+	}elseif(preg_match('/Pardus/i', $useragent)){
+		$link="http://www.pardus.org.tr/en/";
+		$title="Pardus";
+		$code="pardus";
+		if(preg_match('/x86_64/i', $useragent))
+			$title.=" x64";
 	}elseif(preg_match('/PCLinuxOS/i', $useragent)){
 		$link="http://www.pclinuxos.com/";
 		$title="PCLinuxOS";
@@ -1635,6 +1651,12 @@ function detect_os(){
 		if(preg_match('/.el([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
 			$title.=" Enterprise Linux ".str_replace("_", ".", $regmatch[1]);
 		$code="red-hat";
+		if(preg_match('/x86_64/i', $useragent))
+			$title.=" x64";
+	}elseif(preg_match('/Rosa/i', $useragent)){
+		$link="http://www.rosalab.com/";
+		$title="Rosa Linux";
+		$code="rosa";
 		if(preg_match('/x86_64/i', $useragent))
 			$title.=" x64";
 	}elseif(preg_match('/Sabayon/i', $useragent)){

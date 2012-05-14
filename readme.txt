@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
 Tested up to: 3.4
-Stable tag: 0.10.13
+Stable tag: 0.10.14
 
 == Description ==
 
@@ -65,6 +65,11 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v0.10.14 =
+* Added detection for Crunchbang, Mageia, Pardus and Rosa Linux (props: KZKG^Gaara)
+* Fixed detection of SRWare Iron browser (props: KZKG^Gaara)
+
 
 = v0.10.13 =
 * Fixed detection of Windows x64 from the Chrome user agent.
@@ -536,14 +541,13 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 = TO-DO: =
+* Refactor codebase to simplify maintaince of this plugin and reduce duplicate code.
 * Reach a stable and solid 1.0 release where the plugin is mostly finalized and updates will generally be additional browsers and/or systems.
 * New web browsers, devices and operating systems are always welcome.
 * Add detection for PSVita when its released.
 
 == Upgrade Notice ==
 
-= v0.10.13 =
-* Fixed detection of Windows x64 from the Chrome user agent.
-* Added detection for TenFourFox, Classilla, EnigmaFox, Podkicker, Maple Browser.
-* Added detection for Samsung Smart TV, Wordpress app for iPhone, Wordpress app for Android.
-* Fixed Android version detection.
+= v0.10.14 =
+* Added detection for Crunchbang, Mageia, Pardus and Rosa Linux (props: KZKG^Gaara)
+* Fixed detection of SRWare Iron browser (props: KZKG^Gaara)
