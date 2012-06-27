@@ -4,7 +4,7 @@ Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
 Tested up to: 3.4
-Stable tag: 0.10.14
+Stable tag: 0.10.15
 
 == Description ==
 
@@ -65,6 +65,13 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v0.10.15 = //in-progress
+* Added detection for Atomic Web Browser.
+* Fixed issue where the Links browser was incorrectly detected for the UA "online link validator (http://www.dead-links.com/)" and cause a warning to appear.
+* Added detection for Windows 8.
+* Added detection for the Wordpress App for BlackBerry, Windows Phone, Nokia, WebOS.
+
 
 = v0.10.14 =
 * Added detection for Crunchbang, Mageia, Pardus and Rosa Linux (props: KZKG^Gaara)
@@ -548,6 +555,8 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v0.10.14 =
-* Added detection for Crunchbang, Mageia, Pardus and Rosa Linux (props: KZKG^Gaara)
-* Fixed detection of SRWare Iron browser (props: KZKG^Gaara)
+= v0.10.15 =
+* Added detection for Atomic Web Browser.
+* Fixed issue where the Links browser was incorrectly detected for the UA "online link validator (http://www.dead-links.com/)" and cause a warning to appear.
+* Added detection for Windows 8.
+* Added detection for the Wordpress App for BlackBerry, Windows Phone, Nokia, WebOS.

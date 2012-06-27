@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 0.10.14
+Version: 0.10.15
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano
@@ -122,6 +122,8 @@ function detect_browser_version($title){
 		return "Maple Browser ".$version;
 	elseif(strtolower($title)=="wp-android" || strtolower($title)=="wp-iphone")
 		return "Wordpress App ".$version;
+	elseif(strtolower($title)=="atomicbrowser")
+		return "Atomic Web Browser ".$version;
 	elseif(strtolower($title)=="opera labs")
 	{
 		preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
@@ -175,6 +177,10 @@ function detect_webbrowser(){
 		$link="http://code.google.com/p/arora/";
 		$title=detect_browser_version("Arora");
 		$code="arora";
+	}elseif(preg_match('/AtomicBrowser/i', $useragent)){
+		$link="http://www.atomicwebbrowser.com/";
+		$title=detect_browser_version("AtomicBrowser");
+		$code="atomicwebbrowser";
 	}elseif(preg_match('/Avant\ Browser/i', $useragent)){
 		$link="http://www.avantbrowser.com/";
 		$title="Avant ".detect_browser_version("Browser");
@@ -543,7 +549,7 @@ function detect_webbrowser(){
 		$link="http://leechcraft.org/";
 		$title="LeechCraft";
 		$code="null";
-	}elseif(preg_match('/Links/i', $useragent)){
+	}elseif(preg_match('/Links/i', $useragent) && !preg_match('/online\ link\ validator/i', $useragent)){
 		$link="http://links.sourceforge.net/";
 		$title=detect_browser_version("Links");
 		$code="links";
@@ -1005,9 +1011,25 @@ function detect_webbrowser(){
 		$link="http://android.wordpress.org/";
 		$title=detect_browser_version("wp-android");
 		$code="wordpress";
+	}elseif(preg_match('/wp-blackberry/i', $useragent)){
+		$link="http://blackberry.wordpress.org/";
+		$title=detect_browser_version("wp-blackberry");
+		$code="wordpress";
 	}elseif(preg_match('/wp-iphone/i', $useragent)){
 		$link="http://ios.wordpress.org/";
 		$title=detect_browser_version("wp-iphone");
+		$code="wordpress";
+	}elseif(preg_match('/wp-nokia/i', $useragent)){
+		$link="http://nokia.wordpress.org/";
+		$title=detect_browser_version("wp-nokia");
+		$code="wordpress";
+	}elseif(preg_match('/wp-webos/i', $useragent)){
+		$link="http://webos.wordpress.org/";
+		$title=detect_browser_version("wp-webos");
+		$code="wordpress";
+	}elseif(preg_match('/wp-windowsphone/i', $useragent)){
+		$link="http://windowsphone.wordpress.org/";
+		$title=detect_browser_version("wp-windowsphone");
 		$code="wordpress";
 	}elseif(preg_match('/Wyzo/i', $useragent)){
 		$link="http://www.wyzo.com/";
@@ -1279,7 +1301,7 @@ function detect_device(){
 			$title.=" ".$regmatch[1].$regmatch[2];
 		$code="nokia";
 	}elseif(preg_match('/S(eries)?60/i', $useragent)){
-		$link="http://www.s60.com";
+		$link="http://www.s60.com/";
 		$title="Nokia Series60";
 		$code="nokia";
 
@@ -1299,6 +1321,10 @@ function detect_device(){
 		$title="Palm Pre";
 		$code="palm";
 	}elseif(preg_match('/Palm/i', $useragent)){
+		$link="http://www.palm.com/";
+		$title="Palm";
+		$code="palm";
+	}elseif(preg_match('/wp-webos/i', $useragent)){
 		$link="http://www.palm.com/";
 		$title="Palm";
 		$code="palm";
@@ -1344,6 +1370,12 @@ function detect_device(){
 				$title.=" ".$regmatch[1];
 		}
 		$code="sonyericsson";
+
+	//Windows Phone
+	}elseif(preg_match('/wp-windowsphone/i', $useragent)){
+		$link="http://www.windowsphone.com/";
+		$title="Windows Phone";
+		$code="windowsphone";
 
 	//No Device match
 	}else{
@@ -1717,7 +1749,13 @@ function detect_os(){
 		$code="palm";
 	}elseif(preg_match('/Windows/i', $useragent) || preg_match('/WinNT/i', $useragent) || preg_match('/Win32/i', $useragent)){
 		$link="http://www.microsoft.com/windows/";
-		if(preg_match('/Windows NT 6.1; Win64; x64;/i', $useragent) || preg_match('/Windows NT 6.1; WOW64/i', $useragent)){
+		if(preg_match('/Windows NT 6.2; Win64; x64;/i', $useragent) || preg_match('/Windows NT 6.2; WOW64/i', $useragent)){
+			$title="Windows 8 x64 Edition";
+			$code="win-5";
+		}elseif(preg_match('/Windows NT 6.2/i', $useragent)){
+			$title="Windows 8";
+			$code="win-5";
+		}elseif(preg_match('/Windows NT 6.1; Win64; x64;/i', $useragent) || preg_match('/Windows NT 6.1; WOW64/i', $useragent)){
 			$title="Windows 7 x64 Edition";
 			$code="win-4";
 		}elseif(preg_match('/Windows NT 6.1/i', $useragent)){
