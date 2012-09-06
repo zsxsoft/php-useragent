@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.4
-Stable tag: 0.10.15
+Tested up to: 3.4.1
+Stable tag: 1.0.0
 
 == Description ==
 
@@ -66,7 +66,14 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Changelog ==
 
-= v0.10.15 = //in-progress
+= v1.0.0 =
+* Added detection for Barca, SubStream, SlimBoat, zBrowser, Ryouko browsers.
+* Fixed Chrome detection on Android (props: JayXon)
+* Refactored code for easier maintenance.
+* Release v1.0.0!!!! (w00t!)
+
+
+= v0.10.15 =
 * Added detection for Atomic Web Browser.
 * Fixed issue where the Links browser was incorrectly detected for the UA "online link validator (http://www.dead-links.com/)" and cause a warning to appear.
 * Added detection for Windows 8.
@@ -555,8 +562,8 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v0.10.15 =
-* Added detection for Atomic Web Browser.
-* Fixed issue where the Links browser was incorrectly detected for the UA "online link validator (http://www.dead-links.com/)" and cause a warning to appear.
-* Added detection for Windows 8.
-* Added detection for the Wordpress App for BlackBerry, Windows Phone, Nokia, WebOS.
+= v1.0.0 =
+* Added detection for Barca, SubStream, SlimBoat, zBrowser, Ryouko browsers.
+* Fixed Chrome detection on Android (props: JayXon)
+* Refactored code for easier maintenance.
+* Release v1.0.0!!!! (w00t!)

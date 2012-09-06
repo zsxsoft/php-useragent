@@ -5,19 +5,19 @@
 	<form method="post" action="options.php">
 		<?php 
 			wp_nonce_field('update-options');
-			$ua_doctype=get_option('ua_doctype');
-			$ua_comment_size=get_option('ua_comment_size');
-			$ua_track_size=get_option('ua_track_size');
-			$ua_show_text=get_option('ua_show_text');
-			$ua_image_style=get_option('ua_image_style');
-			$ua_image_css=get_option('ua_image_css');
-			$ua_text_surfing=get_option('ua_text_surfing');
-			$ua_text_on=get_option('ua_text_on');
-			$ua_text_via=get_option('ua_text_via');
-			$ua_text_links=get_option('ua_text_links');
-			$ua_show_au_bool=get_option('ua_show_ua_bool');
-			$ua_hide_unknown_bool=get_option('ua_hide_unknown_bool');
-			$ua_output_location=get_option('ua_output_location');
+			$ua_doctype				= get_option('ua_doctype');
+			$ua_comment_size		= get_option('ua_comment_size');
+			$ua_track_size			= get_option('ua_track_size');
+			$ua_show_text			= get_option('ua_show_text');
+			$ua_image_style			= get_option('ua_image_style');
+			$ua_image_css			= get_option('ua_image_css');
+			$ua_text_surfing		= get_option('ua_text_surfing');
+			$ua_text_on				= get_option('ua_text_on');
+			$ua_text_via			= get_option('ua_text_via');
+			$ua_text_links			= get_option('ua_text_links');
+			$ua_show_au_bool		= get_option('ua_show_ua_bool');
+			$ua_hide_unknown_bool	= get_option('ua_hide_unknown_bool');
+			$ua_output_location		= get_option('ua_output_location');
 		?>
 
 		<div class="metabox-holder">
@@ -299,7 +299,8 @@
 			var net_24="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAFJ0lEQVR4Xt2VW2xU1R6Hf2vty8zsuXSGXmnpMC2tMG0pNW2Aogcsl3gCpEDBIM0BqRjBBBOMPkiIh+QkgvIgGPUByoPyAAQKyk0PF4lQICktESitkWs77diWaaft3Dv7stzTCcYgRXzwxW/v385a2Wv/v7X2elj4uyF4Ro7lZ/O5FtsKo1FaSTk6nef4LCrwEd5o8hgzs1oci5Yc480px8nCBcpfFpwqnlSR48jYJ4omt6oqGCEE53w+ML09y2yAiQCiaEB6cemdLJdrA7flv+efWXDk+anzpma7Tggcb5LjMYgOB3Z4frm7t7llIwBfVart3c3j7bUmkizlyMpR84qL1gk7dn2FP+PjEndu56r/+IfWvsm8r9SyB9XL2PlXVykLikqKkQSCYBb+V5h3t6m8iCVTzO4vWxxnW96bDh2KpzCnfMZHzmmlDsu4cTCbLbDlOuG7037mbPutNiSBLIflWzH5S1VjAMMo/V0dwlAg8tlTBRvLynOemzN3JZwucK4JsGZmQOQp5NjIaTxGc1S5EFQ1MDyCoL+zYzrbf6ByTEH1S3OX2svKOOZ2A5PdoIX5GCEMJpP5Oh7DGwi29SoaCABCiB6KQF8v5Hh86ZgCZ1rqC6T1JojHA2azgZWWQdYUSILwAI8Rj4f9AU0LEUpBCAdCOYBQhNvbZ/IYA/l+xxQ1EACVJBCbFUhPhzbgh8jxD/EENEIHCOUtlPKghCIhU3q8k8YU+Pt6Mn3hEDjKgeN5CAYDSDCkzLt0KYYnQDgxJAgmUMohuRICFo1m/CZoON5i0a2z9QEVosAVBLdvSh+Wf1+LwWoysVPn2t5XFLWZ44Uri+e7o0gCo2SNS1Z7cmTyASIrAt9wokWilN9GKX2D53mz0SDCYBCGekeiWjSmAIzptzYaq71A4Hhxu2gg0K9o49XOk4FA+PNF84supmfmwGGzJTYWqqpA01QQJR4jR7+9foSA1IARgAB2u4RIZORg/zsrprqNQjESxTUNGmNwlVTg2prN0DSCBDynwZ4igePoqejB+pLZknGi7PMjFgkjrovoUH83Tym3MPExiAaAIBiMwWYRl3dkTOhWB7rAwJKr0EMddqRQdWcA4iZFt2gaw/Cw3jMYFpG0NBCXE6K3C8LDAcjDQQQH++5QnqetSMAoEh5V0RIzFAyVVXmqpoLp0bTkL9IbcO76YI/FaniL55iqMCCu8QhFVJBgAKywEHDmgeSOh5iRikhw6Ao1GcWdFEkoCAhhGA5GkDZzLno0jM4cowHUgB8Oi61kzkzXbotFWsNTTmWMwOfrwQR5BCQUBstzAfp+RPV+j7/vMJ33YuEBSTLWJwoDDAwEjFBo1IyusqpRAUPyXbDfB/M46WXo6JL9ZotxA08pIvd/QjalgLcbIAQsOxu9926fmdF27waFjmAwrbdapK0cxyuJgoSpCQ0yltSh3ZKGR/i9HqipqbWqx+uCTlVl3l5BIF+ktDZBjMYBfz9Ibx8GfmwO3bjZ/PYfzoOLTZ2lkUh0WzwuL1RVjTAAg73dUHdvhTvsByEU6bkTUVD7eoe34fCHZ2+3e4KCWPvv3PzXnNkTYcrPxaDRFL309aGa6guN/x/zwGm86pkSjcbqZEWt0VS1IDg8iN6GeuTfuowMnofZZIZdsiASiYBJVphtqbBnZcOXYmttbGmqq/v+7DU8I7qsK//85XurT//w8yf1e46e/HT1uuu7Z1V27ZtWHDpUUa5986/Z3d9V1xw+unb98spJkzn84/gV88c3kvtVaNkAAAAASUVORK5CYII=";
 			var os_24="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9gHHQIYGcceg0cAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAC5klEQVRIx63VT2hcVRQG8N+dzJ8ak1WtxCrWilK1A1YDrlSwQTuoRaTWohsVxNaFiwoTgiiCqGAGurJG6cr6h7RFxBplorbYLsQ/BcFOwdSiVFPUWkRMsE0myXMxN/IYJ8kUPfDgve+e9933zj3n+/gfosbNNcZqTNcYrtE5vxbOh2hig3wIrsYKzODHH6rGAydxWSr12SLPQbYd4smSXjyN23FhaukEenFp0yvXzN9kFiOuV6ysV3ThHO5uIodVq0sK+LQJf2/JDeoVRXyFp7qqjuGVFmk57Ogo2IxB7MMD2LPoGdQrLsERrMQU1k4d8DuOYy6WJofr4l8dwhBO4yasTRIPd4+ay7Ygh9ciORSwo6vqnsmS65PEz92jEpjcYJlgC17EcJonBF9gZ2ixwS043AS/kSQeyvc3iFs0QQ8+RjEF/4YrWp3BY03P3+DRhcihq+oX3IuzKXgFNoWJOwgZt+JaHCz0WYX3sSwm3pcre6fNdh7CthT0diZkPBMP6VUcnTpgBpWYMIPqeczintgcX8crEyZL/kR3KundQp+X8Dl+zZX1/BcZycYhSm9wDvl43z09qCPfb7ZNTVqDrSnoVBZl7Ip9fTq23OMxoTMEvfiyzQ/ehO2p5w8zXVWv40qsx1WFPsWmg9p+9vmlmY82FHRrE3w4G9tsHONQ79PZJCFbsgUf4M1FyEPgZVyegmcw/O85SLyF79NDiYHpwdayUqMnNDTokaal3UVOLqRF6/EROiJU+rbsk8AIfsJ3sRFuwJ24oIniFNYVOdPSD3JlB+sVT2An9s/NGg2N+pYWqNIhjRKdwo34rMiZJR2tXnE/joyV/YExXNQibd/qAdvyyw1EoxlJErvmpWVRR8uV7Y113izls6mYw5P55XbjrohtDEEmKkP7nlxrDONtWIeLMYsTayqGosilP3YkV7axbU/W0OEJ7I/XPzGVkAmOR/OZj2NteXI7UegHD0Zx+wt78cL8+t+YhsdFSTORbAAAAABJRU5ErkJggg==";
 
-		function preview(){
+		function preview()
+		{
 			var wp_ua_content="", wp_ua_string="", ua_text_surfing="", ua_text_on="", ua_browser="", ua_system="";
 
 			document.getElementById('ua_text_surfing_hdn').innerHTML=document.getElementById('ua_text_surfing').value;
@@ -308,51 +309,74 @@
 
 			//wp_ua_image_style
 			if(document.getElementById('ua_image_style').value=="1")
+			{
 				document.getElementById('ua_image_css').style.display="none";
+			}
 			else
+			{
 				document.getElementById('ua_image_css').style.display="inline";
+			}
 
 			//wp_ua_content
-			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="3"){
+			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="3")
+			{
 				ua_text_surfing=document.getElementById('ua_text_surfing').value+" ";
 				ua_text_on=" "+document.getElementById('ua_text_on').value+" ";
-				if (document.getElementById('ua_text_links').value!="0") {
+
+				if (document.getElementById('ua_text_links').value!="0")
+				{
 					ua_browser=" <a href='http://www.opera.com/' style='text-decoration:none'>Opera 10.00</a> ";
 					ua_system=" <a href='http://www.ubuntu.com/' style='text-decoration:none'>Ubuntu 9.10</a>";
-				} else {
+				}
+				else
+				{
 					ua_browser=" Opera 10.00 ";
 					ua_system=" Ubuntu 9.10";
 				}
 			}
 
-			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="2"){
-				if(document.getElementById('ua_comment_size').value=="16"){
+			if(document.getElementById('ua_show_text').value=="1" || document.getElementById('ua_show_text').value=="2")
+			{
+				if(document.getElementById('ua_comment_size').value=="16")
+				{
 					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_16+"' alt='Browser:' style='border:0px;vertical-align:middle;' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_16+"' alt='System:' style='border:0px;vertical-align:middle;' />"+ua_system;
-				}else if(document.getElementById('ua_comment_size').value=="24"){
+				}
+				else if(document.getElementById('ua_comment_size').value=="24")
+				{
 					wp_ua_content=ua_text_surfing+"<img src='data:image/png;base64,"+net_24+"' alt='Browser:' style='border:0px;vertical-align:middle;' />"+ua_browser+ua_text_on+" <img src='data:image/png;base64,"+os_24+"' alt='System:' style='border:0px;vertical-align:middle;' />"+ua_system;
 				}
-			} else if (document.getElementById('ua_show_text').value=="3") {
+			}
+			else if (document.getElementById('ua_show_text').value=="3")
+			{
 				wp_ua_content=ua_text_surfing+ua_browser+ua_text_on+ua_system;
 			}
 
 			//wp_ua_string
-			if(document.getElementById('ua_show_ua_bool').value=="true"){
+			if(document.getElementById('ua_show_ua_bool').value=="true")
+			{
 				wp_ua_string="Opera/9.80 (X11; Ubuntu/9.10 x86_64; U; en) Presto/2.2.15 Version/10.00";
 			}
 
 			//toggle preview and custom output location directions
-			if(document.getElementById('ua_output_location').value=="custom"){
+			if(document.getElementById('ua_output_location').value=="custom")
+			{
 				document.getElementById('ua_output_custom_location').style.display="table-row";
 				document.getElementById('ua_preview').style.display="none";
-			}else{
+			}
+			else
+			{
 				document.getElementById('ua_preview').style.display="table-row";
 				document.getElementById('ua_output_custom_location').style.display="none";
-				if(document.getElementById('ua_output_location').value=="before"){
+
+				if(document.getElementById('ua_output_location').value=="before")
+				{
 					document.getElementById('wp_ua_content_bottom').innerHTML="";
 					document.getElementById('wp_ua_string_bottom').innerHTML="";
 					document.getElementById('wp_ua_content_top').innerHTML=wp_ua_content;
 					document.getElementById('wp_ua_string_top').innerHTML=wp_ua_string;
-				}else if(document.getElementById('ua_output_location').value=="after"){
+				}
+				else if(document.getElementById('ua_output_location').value=="after")
+				{
 					document.getElementById('wp_ua_content_top').innerHTML="";
 					document.getElementById('wp_ua_string_top').innerHTML="";
 					document.getElementById('wp_ua_content_bottom').innerHTML=wp_ua_content;
