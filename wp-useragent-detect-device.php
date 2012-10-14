@@ -332,19 +332,24 @@ function detect_device()
 	}
 
 	// Playstation
-	elseif(preg_match('/Playstation/i', $useragent))
+	elseif(preg_match('/PlayStation/i', $useragent))
 	{
-		$title="Playstation";
+		$title="PlayStation";
 
-		if(preg_match('/[PS|Playstation\ ]3/i', $useragent))
+		if(preg_match('/[PS|PlayStation\ ]3/i', $useragent))
 		{
 			$link="http://www.us.playstation.com/PS3";
 			$title.=" 3";
 		}
-		elseif(preg_match('/[Playstation Portable|PSP]/i', $useragent))
+		elseif(preg_match('/[PlayStation Portable|PSP]/i', $useragent))
 		{
 			$link="http://www.us.playstation.com/PSP";
 			$title.=" Portable";
+		}
+		elseif(preg_match('/[PlayStation Vita|PSVita]/i', $useragent))
+		{
+			$link="http://us.playstation.com/psvita/";
+			$title.=" Vita";
 		}
 		else
 		{

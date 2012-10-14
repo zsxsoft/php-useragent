@@ -97,6 +97,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("Barca");
 		$code="barca";
 	}
+	elseif(preg_match('/Beamrise/i', $useragent))
+	{
+		$link="http://www.beamrise.com/";
+		$title=detect_browser_version("Beamrise");
+		$code="beamrise";
+	}
 	elseif(preg_match('/Beonex/i', $useragent))
 	{
 		$link="http://www.beonex.com/";
@@ -270,6 +276,12 @@ function detect_webbrowser()
 		$link="http://www.cyberdog.org/about/cyberdog/cyberbrowse.html";
 		$title=detect_browser_version("Cyberdog");
 		$code="cyberdog";
+	}
+	elseif(preg_match('/DPlus/i', $useragent))
+	{
+		$link="http://dplus-browser.sourceforge.net/";
+		$title=detect_browser_version("DPlus");
+		$code="dillo";
 	}
 	elseif(preg_match('/Deepnet\ Explorer/i', $useragent))
 	{
@@ -741,6 +753,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("MozillaDeveloperPreview");
 		$code="firefoxdevpre";
 	}
+	elseif(preg_match('/MQQBrowser/i', $useragent))
+	{
+		$link="http://browser.qq.com/";
+		$title="QQbrowser";
+		$code="qqbrowser";
+	}
 	elseif(preg_match('/Multi-Browser/i', $useragent))
 	{
 		$link="http://www.multibrowser.de/";
@@ -1068,6 +1086,13 @@ function detect_webbrowser()
 		$link="http://www.mozilla.org/";
 		$title=detect_browser_version("Shiretoko");
 		$code="firefoxdevpre";
+	}
+	elseif(preg_match('/Silk/i', $useragent)
+		&& !preg_match('/PlayStation/i', $useragent))
+	{
+		$link="http://en.wikipedia.org/wiki/Amazon_Silk";
+		$title="Amazon ".detect_browser_version("Silk");
+		$code="silk";
 	}
 	elseif(preg_match('/SiteKiosk/i', $useragent))
 	{
@@ -1407,6 +1432,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("Xiino");
 		$code="null";
 	}
+	elseif(preg_match('/YaBrowser/i', $useragent))
+	{
+		$link="http://browser.yandex.com/";
+		$title="Yandex.".detect_browser_version("Browser");
+		$code="yandex";
+	}
 	elseif(preg_match('/zBrowser/i', $useragent))
 	{
 		$link="http://sites.google.com/site/zeromusparadoxe01/zbrowser";
@@ -1470,7 +1501,11 @@ function detect_webbrowser()
 		
 		preg_match('/MSIE[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch);
 
-		if($regmatch[1]>=9)
+		if($regmatch[1]>=10)
+		{
+			$code="msie10";
+		}
+		elseif($regmatch[1]>=9)
 		{
 			$code="msie9";
 		}

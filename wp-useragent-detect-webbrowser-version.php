@@ -140,6 +140,10 @@ function detect_browser_version($title)
 	{
 		return "Barca Pro ".$version;
 	}
+	elseif(strtolower($title)=="dplus")
+	{
+		return "D+ ".$version;
+	}
 	elseif(strtolower($title)=="opera labs")
 	{
 		preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);

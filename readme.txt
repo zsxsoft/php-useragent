@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.4.1
-Stable tag: 1.0.0
+Tested up to: 3.4.2
+Stable tag: 1.0.1
 
 == Description ==
 
@@ -65,6 +65,12 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v1.0.1 =
+* Added detection for D+ browser, Internet Explorer 10, Amazon Silk, QQbrowser, Yandex.Browser, Beamrise.
+* Added detection for x64 version of Windows Server 2003.
+* Added detection for the Playstation Vita.
+
 
 = v1.0.0 =
 * Added detection for Barca, SubStream, SlimBoat, zBrowser, Ryouko browsers.
@@ -562,8 +568,7 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v1.0.0 =
-* Added detection for Barca, SubStream, SlimBoat, zBrowser, Ryouko browsers.
-* Fixed Chrome detection on Android (props: JayXon)
-* Refactored code for easier maintenance.
-* Release v1.0.0!!!! (w00t!)
+= v1.0.1 =
+* Added detection for D+ browser, Internet Explorer 10, Amazon Silk, QQbrowser, Yandex.Browser, Beamrise.
+* Added detection for x64 version of Windows Server 2003.
+* Added detection for the Playstation Vita.

@@ -726,6 +726,11 @@ function detect_os()
 			$title="Windows XP x64 Edition";
 			$code="win-2";
 		}
+		elseif(preg_match('/Windows NT 5.2; Win64; x64;/i', $useragent))
+		{
+			$title="Windows Server 2003 x64 Edition";
+			$code="win-2";
+		}
 		elseif(preg_match('/Windows NT 5.2/i', $useragent))
 		{
 			$title="Windows Server 2003";
