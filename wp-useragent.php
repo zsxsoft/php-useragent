@@ -3,7 +3,7 @@
 Plugin Name: WP-UserAgent
 Plugin URI: http://kyleabaker.com/goodies/coding/wp-useragent/
 Description: A simple User-Agent detection plugin that lets you easily insert icons and/or textual web browser and operating system details with each comment.
-Version: 1.0.1
+Version: 1.0.2
 Author: Kyle Baker
 Author URI: http://kyleabaker.com/
 //Author: Fernando Briano

@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.4.2
-Stable tag: 1.0.1
+Tested up to: 3.6
+Stable tag: 1.0.2
 
 == Description ==
 
@@ -65,6 +65,13 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v1.0.2 =
+* Fixed incorrect Rekonq browser icon.
+* Added detection for Nintendo Wii U.
+* Added detection for Nintendo Browser.
+* Fixed missing IE10 icons (props: Ray)
+
 
 = v1.0.1 =
 * Added detection for D+ browser, Internet Explorer 10, Amazon Silk, QQbrowser, Yandex.Browser, Beamrise.
@@ -568,7 +575,8 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v1.0.1 =
-* Added detection for D+ browser, Internet Explorer 10, Amazon Silk, QQbrowser, Yandex.Browser, Beamrise.
-* Added detection for x64 version of Windows Server 2003.
-* Added detection for the Playstation Vita.
+= v1.0.2 =
+* Fixed incorrect Rekonq browser icon.
+* Added detection for Nintendo Wii U.
+* Added detection for Nintendo Browser.
+* Fixed missing IE10 icons (props: Ray)

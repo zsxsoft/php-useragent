@@ -267,6 +267,12 @@ function detect_device()
 			$title.=" DS";
 			$code="nintendods";
 		}
+		elseif(preg_match('/Nintendo WiiU/i', $useragent))
+		{
+			$link="http://www.nintendo.com/wiiu";
+			$title.=" Wii U";
+			$code="nintendowiiu";
+		}
 		elseif(preg_match('/Nintendo Wii/i', $useragent))
 		{
 			$link="http://www.nintendo.com/wii";

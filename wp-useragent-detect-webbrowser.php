@@ -844,6 +844,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("NF-Browser");
 		$code="netfront";
 	}
+	elseif(preg_match('/NintendoBrowser/i', $useragent))
+	{
+		$link="http://www.netsurf-browser.org/";
+		$title="Nintendo ".detect_browser_version("Browser");
+		$code="nintendobrowser";
+	}
 	elseif(preg_match('/NokiaBrowser/i', $useragent))
 	{
 		$link="http://browser.nokia.com/";
