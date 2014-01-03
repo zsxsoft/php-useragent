@@ -694,7 +694,18 @@ function detect_os()
 	{
 		$link="http://www.microsoft.com/windows/";
 
-		if(preg_match('/Windows NT 6.2; Win64; x64;/i', $useragent)
+		if(preg_match('/Windows NT 6.3; Win64; x64;/i', $useragent)
+			|| preg_match('/Windows NT 6.3; WOW64/i', $useragent))
+		{
+			$title="Windows 8.1 x64 Edition";
+			$code="win-5";
+		}
+		elseif(preg_match('/Windows NT 6.3/i', $useragent))
+		{
+			$title="Windows 8.1";
+			$code="win-5";
+		}
+		elseif(preg_match('/Windows NT 6.2; Win64; x64;/i', $useragent)
 			|| preg_match('/Windows NT 6.2; WOW64/i', $useragent))
 		{
 			$title="Windows 8 x64 Edition";
@@ -880,7 +891,7 @@ function detect_os()
 		$link="http://www.ubuntu.com/";
 		$title="Ubuntu";
 
-		if(preg_match('/Ubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		if(preg_match('/Ubuntu[\/|\ ]([.0-9]+[.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
 			$version.=" ".$regmatch[1];
 		}

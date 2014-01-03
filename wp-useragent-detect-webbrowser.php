@@ -43,6 +43,12 @@ function detect_webbrowser()
 		$title="Amiga ".detect_browser_version("AWeb");
 		$code="amiga-aweb";
 	}
+	elseif(preg_match('/MRCHROME/i', $useragent))
+	{
+		$link="http://amigo.mail.ru/";
+		$title="Amigo";
+		$code="amigo";
+	}
 	elseif(preg_match('/America\ Online\ Browser/i', $useragent))
 	{
 		$link="http://downloads.channel.aol.com/browser";
@@ -223,6 +229,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("Classilla");
 		$code="classilla";
 	}
+	elseif(preg_match('/Coast/i', $useragent))
+	{
+		$link="http://coastbyopera.com/";
+		$title=detect_browser_version("Coast");
+		$code="coast";
+	}
 	elseif(preg_match('/Columbus/i', $useragent))
 	{
 		$link="http://www.columbus-browser.com/";
@@ -252,6 +264,12 @@ function detect_webbrowser()
 		$link="http://www.coolnovo.com/";
 		$title=detect_browser_version("CoolNovo");
 		$code="coolnovo";
+	}
+	elseif(preg_match('/CoRom/i', $useragent))
+	{
+		$link="http://en.wikipedia.org/wiki/C%E1%BB%9D_R%C3%B4m%2B_(browser)";
+		$title=detect_browser_version("CoRom");
+		$code="corom";
 	}
 	elseif(preg_match('/Crazy\ Browser/i', $useragent))
 	{
@@ -342,6 +360,12 @@ function detect_webbrowser()
 		$link="http://www.dorothybrowser.com/";
 		$title=detect_browser_version("Dorothy");
 		$code="dorothybrowser";
+	}
+	elseif(preg_match('/DPlus/i', $useragent))
+	{
+		$link="http://dplus-browser.sourceforge.net/";
+		$title=detect_browser_version("DPlus");
+		$code="dillo";
 	}
 	elseif(preg_match('/Edbrowse/i', $useragent))
 	{
@@ -880,6 +904,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("OmniWeb");
 		$code="omniweb";
 	}
+	elseif(preg_match('/OneBrowser/i', $useragent))
+	{
+		$link="http://one-browser.com/";
+		$title=detect_browser_version("OneBrowser");
+		$code="onebrowser";
+	}
 	elseif(preg_match('/Opera Mini/i', $useragent))
 	{
 		$link="http://www.opera.com/mini/";
@@ -916,6 +946,25 @@ function detect_webbrowser()
 		if(preg_match('/Version/i', $useragent))
 			$code="opera-2";
 	}
+	elseif(preg_match('/OPR/i', $useragent))
+	{
+		$link="http://www.opera.com/";
+		if(preg_match('/(Edition Next)/i', $useragent))
+		{
+			$title=detect_browser_version("Opera Next");
+			$code="opera-next";
+		}
+		elseif(preg_match('/(Edition Developer)/i', $useragent))
+		{
+			$title=detect_browser_version("Opera Developer");
+			$code="opera-developer";
+		}
+		else
+		{
+			$title=detect_browser_version("Opera");
+			$code="opera-1";
+		}
+	}
 	elseif(preg_match('/Orca/i', $useragent))
 	{
 		$link="http://www.orcabrowser.com/";
@@ -940,6 +989,12 @@ function detect_webbrowser()
 		$title=detect_browser_version("osb-browser");
 		$code="null";
 	}
+	elseif(preg_match('/Otter/i', $useragent))
+	{
+		$link="http://otter-browser.org/";
+		$title=detect_browser_version("Otter");
+		$code="otter";
+	}
 	elseif(preg_match('/\ Pre\//i', $useragent))
 	{
 		$link="http://www.palm.com/us/products/phones/pre/index.html";
@@ -958,6 +1013,12 @@ function detect_webbrowser()
 		$title="Patriott ".detect_browser_version("Browser");
 		$code="patriott";
 	}
+	elseif(preg_match('/Perk/i', $useragent))
+	{
+		$link="http://www.perk.com/";
+		$title=detect_browser_version("Perk");
+		$code="perk";
+	}
 	elseif(preg_match('/Phaseout/i', $useragent))
 	{
 		$link="http://www.phaseout.net/";
@@ -969,6 +1030,12 @@ function detect_webbrowser()
 		$link="http://www.mozilla.org/projects/phoenix/phoenix-release-notes.html";
 		$title=detect_browser_version("Phoenix");
 		$code="phoenix";
+	}
+	elseif(preg_match('/PlayStation\ 4/i', $useragent))
+	{
+		$link="http://us.playstation.com/";
+		$title="PS4 Web Browser";
+		$code="webkit";
 	}
 	elseif(preg_match('/Podkicker/i', $useragent))
 	{
@@ -1274,6 +1341,13 @@ function detect_webbrowser()
 		$title=detect_browser_version("uBrowser");
 		$code="ubrowser";
 	}
+	elseif( (preg_match('/Ubuntu\;\ Mobile/i', $useragent) || preg_match('/Ubuntu\;\ Tablet/i', $useragent) &&
+		preg_match('/WebKit/i', $useragent)) )
+	{
+		$link="https://launchpad.net/webbrowser-app";
+		$title="Ubuntu Web Browser";
+		$code="ubuntuwebbrowser";
+	}
 	elseif(preg_match('/UC\ Browser/i', $useragent))
 	{
 		$link="http://www.uc.cn/English/index.shtml";
@@ -1500,12 +1574,20 @@ function detect_webbrowser()
 		$title=detect_browser_version("Firefox");
 		$code="firefox";
 	}
-	elseif(preg_match('/MSIE/i', $useragent))
+	elseif(preg_match('/MSIE/i', $useragent) || preg_match('/Trident/i', $useragent))
 	{
 		$link="http://www.microsoft.com/windows/products/winfamily/ie/default.mspx";
 		$title="Internet Explorer".detect_browser_version("MSIE");
 		
-		preg_match('/MSIE[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch);
+		if (preg_match('/MSIE[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		{
+			// We have IE10 or older
+		}
+		elseif (preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		{
+			// We have IE11 or newer
+		}
+		
 
 		if($regmatch[1]>=10)
 		{

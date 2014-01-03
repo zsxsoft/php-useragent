@@ -3,8 +3,8 @@ Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
 Requires at least: 2.0
-Tested up to: 3.6
-Stable tag: 1.0.2
+Tested up to: 3.8
+Stable tag: 1.0.3
 
 == Description ==
 
@@ -65,6 +65,15 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 
 == Changelog ==
+
+= v1.0.3 =
+* Fixed detection of IE11 (props: G's)
+* Fixed detection of Windows 8.1 (props: JayXon)
+* Fixed detection of Opera 14 for Android and Opera 15+ for Desktop (props: Rafae)
+* Fixed an issue with Ubuntu version detection.
+* Added detection for Amigo, Coast, CoRom, DPlus, ONE Browser, Otter, Perk, PS4 Web Browser and Ubuntu Web Browser.
+* Added detection for PlayStation 4, Ubuntu Touch (Mobile and Tablet).
+
 
 = v1.0.2 =
 * Fixed incorrect Rekonq browser icon.
@@ -575,8 +584,10 @@ Some of you may compare this to another well-known plugin named browsersniff. WP
 
 == Upgrade Notice ==
 
-= v1.0.2 =
-* Fixed incorrect Rekonq browser icon.
-* Added detection for Nintendo Wii U.
-* Added detection for Nintendo Browser.
-* Fixed missing IE10 icons (props: Ray)
+= v1.0.3 =
+* Fixed detection of IE11 (props: G's)
+* Fixed detection of Windows 8.1 (props: JayXon)
+* Fixed detection of Opera 14 for Android and Opera 15+ for Desktop (props: Rafae)
+* Fixed an issue with Ubuntu version detection.
+* Added detection for Amigo, Coast, CoRom, DPlus, ONE Browser, Otter, Perk, PS4 Web Browser and Ubuntu Web Browser.
+* Added detection for PlayStation 4, Ubuntu Touch (Mobile and Tablet).

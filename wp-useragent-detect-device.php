@@ -347,6 +347,11 @@ function detect_device()
 			$link="http://www.us.playstation.com/PS3";
 			$title.=" 3";
 		}
+		elseif(preg_match('/[PS|PlayStation\ ]4/i', $useragent))
+		{
+			$link="http://www.us.playstation.com/PS4";
+			$title.=" 4";
+		}
 		elseif(preg_match('/[PlayStation Portable|PSP]/i', $useragent))
 		{
 			$link="http://www.us.playstation.com/PSP";
@@ -410,6 +415,20 @@ function detect_device()
 		}
 
 		$code="sonyericsson";
+	}
+
+	// Ubuntu Phone/Tablet
+	elseif(preg_match('/Ubuntu\;\ Mobile/i', $useragent))
+	{
+		$link="http://www.ubuntu.com/phone";
+		$title="Ubuntu Phone";
+		$code="ubuntutouch";
+	}
+	elseif(preg_match('/Ubuntu\;\ Tablet/i', $useragent))
+	{
+		$link="http://www.ubuntu.com/tablet";
+		$title="Ubuntu Tablet";
+		$code="ubuntutouch";
 	}
 
 	// Windows Phone

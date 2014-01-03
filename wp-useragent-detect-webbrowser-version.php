@@ -14,6 +14,13 @@ function detect_browser_version($title)
 	{
 		$start="Version";
 	}
+	elseif( (strtolower($title)==strtolower("Opera")
+			|| strtolower($title)==strtolower("Opera Next") 
+			|| strtolower($title)==strtolower("Opera Developer"))
+		&& preg_match('/OPR/i', $useragent))
+	{
+		$start="OPR";
+	}
 	elseif(strtolower($title)==strtolower("Opera Mobi")
 		&& preg_match('/Version/i', $useragent))
 	{
@@ -53,9 +60,14 @@ function detect_browser_version($title)
 	{
 		$start="WebBrowser";
 	}
+	elseif(strtolower($title)==strtolower("MSIE") && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent))
+	{
+		// We have IE11 or newer
+		$start=" rv";
+	}
 
 	// Grab the browser version if its present
-	preg_match('/'.$start.'[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch);
+	preg_match('/'.$start.'[\ |\/|\:]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch);
 	$version=$regmatch[1];
 
 	// Return browser Title and Version, but first..some titles need to be changed
