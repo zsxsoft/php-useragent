@@ -1,4 +1,4 @@
-=== WP-UserAgent ===
+=== WP-UserAgent === 
 Contributors: kyleabaker
 Donate Link: http://kyleabaker.com/goodies/coding/wp-useragent/
 Tags: useragent, user-agent, user agent, web, browser, web browser, operating system, platform, os, mac, apple, windows, win, linux, phone
