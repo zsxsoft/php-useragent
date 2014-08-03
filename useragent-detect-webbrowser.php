@@ -1112,6 +1112,12 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("QQBrowser", $useragent);
 		$code = "qqbrowser";
 	}
+	elseif(preg_match('/QQ/i', $useragent))
+	{
+		$link = "http://im.qq.com/";
+		$title = detect_browser_version("QQ", $useragent);
+		$code = "qq";
+	}
 	elseif(preg_match('/QtWeb\ Internet\ Browser/i', $useragent))
 	{
 		$link = "http://www.qtweb.net/";
