@@ -4,7 +4,8 @@ A simple project that allows you to display details about a computer's operating
 
 ## Contributors
 zsx(http://www.zsxsoft.com)
-This project based on [kyleabaker][1]'s "wp-useragent".
+
+This project based on [kyleabaker](http://www.kyleabaker.com/goodies/coding/wp-useragent/)'s "wp-useragent".
 
 ## Example
 ```php
