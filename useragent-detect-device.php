@@ -1,6 +1,19 @@
 <?php
-
-// Detect $console or Mobile Device
+/**
+ * Detect $console or Mobile Device
+ * @package php-useragent
+ * @author zsx <zsx@zsxsoft.com>
+ * @author Kyle Baker <kyleabaker@gmail.com>
+ * @author Fernando Briano <transformers.es@gmail.com>
+ * @copyright Copyright 2014 zsx 
+ * @copyright Copyright 2008-2014 Kyle Baker (email: kyleabaker@gmail.com)
+ * @copyright 2008 Fernando Briano (email : transformers.es@gmail.com)
+ * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
+ */
+ 
+/**
+ * Detect $console or Mobile Device
+ */
 function detect_device($useragent)
 {
 	$link = ''; $title = '';$code = '';
