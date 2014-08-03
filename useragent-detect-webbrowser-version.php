@@ -1,170 +1,179 @@
 <?php
 
 // Detect Web Browser versions
-function detect_browser_version($title)
+function detect_browser_version($title, $useragent)
 {
-	global $useragent;
-
+	$lower_title = strtolower($title);
+	$return = '';
 	// Fix for Opera's UA string changes in v10.00+ (and others)
 	$start=$title;
-	if( (strtolower($title)==strtolower("Opera")
-			|| strtolower($title)==strtolower("Opera Next") 
-			|| strtolower($title)==strtolower("Opera Labs"))
+	if( ($lower_title == strtolower("Opera")
+			|| $lower_title == strtolower("Opera Next") 
+			|| $lower_title == strtolower("Opera Labs"))
 		&& preg_match('/Version/i', $useragent))
 	{
-		$start="Version";
+		$start = "Version";
 	}
-	elseif( (strtolower($title)==strtolower("Opera")
-			|| strtolower($title)==strtolower("Opera Next") 
-			|| strtolower($title)==strtolower("Opera Developer"))
+	elseif( ($lower_title == strtolower("Opera")
+			|| $lower_title == strtolower("Opera Next") 
+			|| $lower_title == strtolower("Opera Developer"))
 		&& preg_match('/OPR/i', $useragent))
 	{
-		$start="OPR";
+		$start = "OPR";
 	}
-	elseif(strtolower($title)==strtolower("Opera Mobi")
+	elseif($lower_title == strtolower("Opera Mobi")
 		&& preg_match('/Version/i', $useragent))
 	{
-		$start="Version";
+		$start = "Version";
 	}
-	elseif(strtolower($title)==strtolower("Safari")
+	elseif($lower_title == strtolower("Safari")
 		&& preg_match('/Version/i', $useragent))
 	{
-		$start="Version";
+		$start = "Version";
 	}
-	elseif(strtolower($title)==strtolower("Pre")
+	elseif($lower_title == strtolower("Pre")
 		&& preg_match('/Version/i', $useragent))
 	{
-		$start="Version";
+		$start = "Version";
 	}
-	elseif(strtolower($title)==strtolower("Android Webkit"))
+	elseif($lower_title == strtolower("Android Webkit"))
 	{
-		$start="Version";
+		$start = "Version";
 	}
-	elseif(strtolower($title)==strtolower("Links"))
+	elseif($lower_title == strtolower("Links"))
 	{
-		$start="Links (";
+		$start = "Links (";
 	}
-	elseif(strtolower($title)==strtolower("UC Browser"))
+	elseif($lower_title == strtolower("UC Browser"))
 	{
-		$start="UC Browse";
+		$start = "UC Browse";
 	}
-	elseif(strtolower($title)==strtolower("TenFourFox"))
+	elseif($lower_title == strtolower("TenFourFox"))
 	{
-		$start=" rv";
+		$start = " rv";
 	}
-	elseif(strtolower($title)==strtolower("Classilla"))
+	elseif($lower_title == strtolower("Classilla"))
 	{
-		$start=" rv";
+		$start = " rv";
 	}
-	elseif(strtolower($title)==strtolower("SmartTV"))
+	elseif($lower_title == strtolower("SmartTV"))
 	{
-		$start="WebBrowser";
+		$start = "WebBrowser";
 	}
-	elseif(strtolower($title)==strtolower("MSIE") && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent))
+	elseif($lower_title == strtolower("MSIE") && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent))
 	{
 		// We have IE11 or newer
-		$start=" rv";
+		$start = " rv";
 	}
 
 	// Grab the browser version if its present
-	preg_match('/'.$start.'[\ |\/|\:]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch);
-	$version=$regmatch[1];
-
-	// Return browser Title and Version, but first..some titles need to be changed
-	if(strtolower($title)=="msie"
-		&& strtolower($version)=="7.0"
+	$version = '';
+	if (preg_match('/'.$start.'[\ |\/|\:]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+	{
+		$version = $regmatch[1];
+	}
+	
+	// $return = browser Title and Version, but first..some titles need to be changed
+	if($lower_title == "msie"
+		&& strtolower($version) == "7.0"
 		&& preg_match('/Trident\/4.0/i', $useragent))
 	{
-		return " 8.0 (Compatibility Mode)"; // Fix for IE8 quirky UA string with Compatibility Mode enabled
+		$return = " 8.0 (Compatibility Mode)"; // Fix for IE8 quirky UA string with Compatibility Mode enabled
 	}
-	elseif(strtolower($title)=="msie")
+	elseif($lower_title == "msie")
 	{
-		return " ".$version;
+		$return = " ".$version;
 	}
-	elseif(strtolower($title)=="multi-browser")
+	elseif($lower_title == "multi-browser")
 	{
-		return "Multi-Browser XP ".$version;
+		$return = "Multi-Browser XP ".$version;
 	}
-	elseif(strtolower($title)=="nf-browser")
+	elseif($lower_title == "nf-browser")
 	{
-		return "NetFront ".$version;
+		$return = "NetFront ".$version;
 	}
-	elseif(strtolower($title)=="semc-browser")
+	elseif($lower_title == "semc-browser")
 	{
-		return "SEMC Browser ".$version;
+		$return = "SEMC Browser ".$version;
 	}
-	elseif(strtolower($title)=="ucweb")
+	elseif($lower_title == "ucweb" || $lower_title == "uc?browser")
 	{
-		return "UC Browser ".$version;
+		$return = "UC Browser ".$version;
 	}
-	elseif(strtolower($title)=="up.browser"
-		|| strtolower($title)=="up.link")
+	elseif($lower_title == "ba?idubrowser")
 	{
-		return "Openwave Mobile Browser ".$version;
+		$return = "Baidu Browser ".$version;
 	}
-	elseif(strtolower($title)=="chromeframe")
+	elseif($lower_title == "up.browser"
+		|| $lower_title == "up.link")
 	{
-		return "Google Chrome Frame ".$version;
+		$return = "Openwave Mobile Browser ".$version;
 	}
-	elseif(strtolower($title)=="mozilladeveloperpreview")
+	elseif($lower_title == "chromeframe")
 	{
-		return "Mozilla Developer Preview ".$version;
+		$return = "Google Chrome Frame ".$version;
 	}
-	elseif(strtolower($title)=="multi-browser")
+	elseif($lower_title == "mozilladeveloperpreview")
 	{
-		return "Multi-Browser XP ".$version;
+		$return = "Mozilla Developer Preview ".$version;
 	}
-	elseif(strtolower($title)=="opera mobi")
+	elseif($lower_title == "multi-browser")
 	{
-		return "Opera Mobile ".$version;
+		$return = "Multi-Browser XP ".$version;
 	}
-	elseif(strtolower($title)=="osb-browser")
+	elseif($lower_title == "opera mobi")
 	{
-		return "Gtk+ WebCore ".$version;
+		$return = "Opera Mobile ".$version;
 	}
-	elseif(strtolower($title)=="tablet browser")
+	elseif($lower_title == "osb-browser")
 	{
-		return "MicroB ".$version;
+		$return = "Gtk+ WebCore ".$version;
 	}
-	elseif(strtolower($title)=="tencenttraveler")
+	elseif($lower_title == "tablet browser")
 	{
-		return "TT Explorer ".$version;
+		$return = "MicroB ".$version;
 	}
-	elseif(strtolower($title)=="crmo")
+	elseif($lower_title == "tencenttraveler")
 	{
-		return "Chrome Mobile ".$version;
+		$return = "TT Explorer ".$version;
 	}
-	elseif(strtolower($title)=="smarttv")
+	elseif($lower_title == "crmo")
 	{
-		return "Maple Browser ".$version;
+		$return = "Chrome Mobile ".$version;
 	}
-	elseif(strtolower($title)=="wp-android"
-		|| strtolower($title)=="wp-iphone")
+	elseif($lower_title == "smarttv")
 	{
-		//TODO check into Android version being returned
-		return "Wordpress App ".$version;
+		$return = "Maple Browser ".$version;
 	}
-	elseif(strtolower($title)=="atomicbrowser")
+	elseif($lower_title == "wp-android"
+		|| $lower_title == "wp-iphone")
 	{
-		return "Atomic Web Browser ".$version;
+		//TODO check into Android version being $return =ed
+		$return = "Wordpress App ".$version;
 	}
-	elseif(strtolower($title)=="barcapro")
+	elseif($lower_title == "atomicbrowser")
 	{
-		return "Barca Pro ".$version;
+		$return = "Atomic Web Browser ".$version;
 	}
-	elseif(strtolower($title)=="dplus")
+	elseif($lower_title == "barcapro")
 	{
-		return "D+ ".$version;
+		$return = "Barca Pro ".$version;
 	}
-	elseif(strtolower($title)=="opera labs")
+	elseif($lower_title == "dplus")
+	{
+		$return = "D+ ".$version;
+	}
+	elseif($lower_title == "opera labs")
 	{
 		preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
-		return $title.$regmatch[1]." ".$version;
+		$return = $title.$regmatch[1]." ".$version;
 	}
 	else
 	{
-		return $title." ".$version;
+		$return = $title." ".$version;
 	}
+	
+	return $return;
 }
 
 ?>
