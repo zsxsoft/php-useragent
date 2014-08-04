@@ -17,44 +17,6 @@
 function detect_device($useragent)
 {
 	$link = ''; $title = '';$code = '';
-	
-	// Apple
-	if(preg_match('/iPad/i', $useragent))
-	{
-		$link = "http://www.apple.com/itunes";
-		$title = "iPad";
-
-		if(preg_match('/CPU\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			$title .= " iOS ".str_replace("_", ".", $regmatch[1]);
-		}
-
-		$code = "ipad";
-	}
-	elseif(preg_match('/iPod/i', $useragent))
-	{
-		$link = "http://www.apple.com/itunes";
-		$title = "iPod";
-
-		if(preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			$title .= " iOS ".str_replace("_", ".", $regmatch[1]);
-		}
-
-		$code = "iphone";
-	}
-	elseif(preg_match('/iPhone/i', $useragent))
-	{
-		$link = "http://www.apple.com/iphone";
-		$title = "iPhone";
-
-		if(preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
-		{
-			$title .= " iOS ".str_replace("_", ".", $regmatch[1]);
-		}
-
-		$code = "iphone";
-	}
 
 	// BenQ-Siemens (Openwave)
 	/*elseif(preg_match('/[^M]SIE/i', $useragent))
@@ -71,7 +33,7 @@ function detect_device($useragent)
 	}*/
 	
     // meizu
-    elseif(preg_match('/(MEIZU (MX|M9)|M030)|MX-3/i', $useragent))
+    if(preg_match('/(MEIZU (MX|M9)|M030)|MX-3/i', $useragent))
     {
         $link = "http://www.meizu.com/";
         $title = "MeiZu";
@@ -563,6 +525,44 @@ function detect_device($useragent)
 		$link = "http://www.windowsphone.com/";
 		$title = "Windows Phone";
 		$code = "windowsphone";
+	}
+	
+	// Apple
+	elseif(preg_match('/iPad/i', $useragent))
+	{
+		$link = "http://www.apple.com/itunes";
+		$title = "iPad";
+
+		if(preg_match('/CPU\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		{
+			$title .= " iOS ".str_replace("_", ".", $regmatch[1]);
+		}
+
+		$code = "ipad";
+	}
+	elseif(preg_match('/iPod/i', $useragent))
+	{
+		$link = "http://www.apple.com/itunes";
+		$title = "iPod";
+
+		if(preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		{
+			$title .= " iOS ".str_replace("_", ".", $regmatch[1]);
+		}
+
+		$code = "iphone";
+	}
+	elseif(preg_match('/iPhone/i', $useragent))
+	{
+		$link = "http://www.apple.com/iphone";
+		$title = "iPhone";
+
+		if(preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		{
+			$title .= " iOS ".str_replace("_", ".", $regmatch[1]);
+		}
+
+		$code = "iphone";
 	}
 
 	//Some special UA..
