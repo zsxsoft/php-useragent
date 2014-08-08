@@ -99,12 +99,6 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("AtomicBrowser", $useragent);
 		$code = "atomicwebbrowser";
 	}
-	elseif(preg_match('/Avant\ Browser/i', $useragent))
-	{
-		$link = "http://www.avantbrowser.com/";
-		$title = "Avant ".detect_browser_version("Browser", $useragent);
-		$code = "avantbrowser";
-	}
 	elseif(preg_match('/BarcaPro/i', $useragent))
 	{
 		$link = "http://www.pocosystems.com/home/index.php?option=content&task=category&sectionid=2&id=9&Itemid=27";
@@ -1594,6 +1588,12 @@ function detect_webbrowser($useragent)
 		$link = "http://abrowse.sourceforge.net/";
 		$title = detect_browser_version("ABrowse", $useragent);
 		$code = "abrowse";
+	}
+	elseif(preg_match('/Avant\ Browser/i', $useragent))
+	{
+		$link = "http://www.avantbrowser.com/";
+		$title = "Avant ".detect_browser_version("Browser", $useragent);
+		$code = "avantbrowser";
 	}
 	elseif(preg_match('/Chrome/i', $useragent))
 	{
