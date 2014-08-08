@@ -27,7 +27,13 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("115Browser", $useragent);
 		$code = "114browser";
 	}
-	elseif(preg_match('/360se/i', $useragent))
+	if(preg_match('/2345Explorer/i', $useragent))
+	{
+		$link = "http://ie.2345.com/";
+		$title = detect_browser_version("2345Explorer", $useragent);
+		$code = "2345explorer";
+	}
+	elseif(preg_match('/360se|360ee/i', $useragent))
 	{
 		$link = "http://se.360.cn/";
 		$title = "360 Explorer";
