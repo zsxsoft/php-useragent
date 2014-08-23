@@ -598,12 +598,6 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("IceWeasel", $useragent);
 		$code = "iceweasel";
 	}
-	elseif(preg_match('/IEMobile/i', $useragent))
-	{
-		$link = "http://www.microsoft.com/windowsmobile/en-us/downloads/microsoft/internet-explorer-mobile.mspx";
-		$title = detect_browser_version("IEMobile", $useragent);
-		$code = "msie-mobile";
-	}
 	elseif(preg_match('/iNet\ Browser/i', $useragent))
 	{
 		$link = "http://alexanderjbeston.wordpress.com/";
@@ -1476,6 +1470,12 @@ function detect_webbrowser($useragent)
 		$link = "http://w3m.sourceforge.net/";
 		$title = detect_browser_version("W3M", $useragent);
 		$code = "w3m";
+	}
+	elseif(preg_match('/IEMobile/i', $useragent))
+	{
+		$link = "http://www.microsoft.com/windowsmobile/en-us/downloads/microsoft/internet-explorer-mobile.mspx";
+		$title = detect_browser_version("IEMobile", $useragent);
+		$code = "msie-mobile";
 	}
 	elseif(preg_match('/AppleWebkit/i', $useragent)
 		&& preg_match('/Android/i', $useragent)
