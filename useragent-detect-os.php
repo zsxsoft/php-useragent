@@ -709,7 +709,7 @@ function detect_os($useragent)
 	{
 		$link = "http://www.microsoft.com/windows/";
 
-		if(preg_match('/Windows NT 6.3; Win64; x64;/i', $useragent)
+		if(preg_match('/Windows NT 6.3; Win64; x64/i', $useragent)
 			|| preg_match('/Windows NT 6.3; WOW64/i', $useragent))
 		{
 			$title = "Windows 8.1 x64 Edition";
@@ -720,7 +720,7 @@ function detect_os($useragent)
 			$title = "Windows 8.1";
 			$code = "win-5";
 		}
-		elseif(preg_match('/Windows NT 6.2; Win64; x64;/i', $useragent)
+		elseif(preg_match('/Windows NT 6.2; Win64; x64/i', $useragent)
 			|| preg_match('/Windows NT 6.2; WOW64/i', $useragent))
 		{
 			$title = "Windows 8 x64 Edition";
@@ -731,7 +731,7 @@ function detect_os($useragent)
 			$title = "Windows 8";
 			$code = "win-5";
 		}
-		elseif(preg_match('/Windows NT 6.1; Win64; x64;/i', $useragent)
+		elseif(preg_match('/Windows NT 6.1; Win64; x64/i', $useragent)
 			|| preg_match('/Windows NT 6.1; WOW64/i', $useragent))
 		{
 			$title = "Windows 7 x64 Edition";
@@ -752,7 +752,7 @@ function detect_os($useragent)
 			$title = "Windows XP x64 Edition";
 			$code = "win-2";
 		}
-		elseif(preg_match('/Windows NT 5.2; Win64; x64;/i', $useragent))
+		elseif(preg_match('/Windows NT 5.2; Win64; x64/i', $useragent))
 		{
 			$title = "Windows Server 2003 x64 Edition";
 			$code = "win-2";
