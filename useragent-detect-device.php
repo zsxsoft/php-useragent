@@ -234,7 +234,7 @@ function detect_device($useragent)
         $link = "http://www.lenovo.com.cn";
         $title = "Lenovo";
 		
-		if(preg_match('/Lenovo[\ |-|\/]([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		if(preg_match('/Lenovo[\ |\-|\/|\_]([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
 			$title .= " " . $regmatch[1];
 		}
