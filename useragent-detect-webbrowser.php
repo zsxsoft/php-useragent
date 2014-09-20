@@ -1106,7 +1106,7 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("QQBrowser", $useragent);
 		$code = "qqbrowser";
 	}
-	elseif(preg_match('/QQ/i', $useragent))
+	elseif(preg_match('/QQ(?!Download)/i', $useragent))
 	{
 		$link = "http://im.qq.com/";
 		$title = detect_browser_version("QQ", $useragent);
