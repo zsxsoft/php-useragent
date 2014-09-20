@@ -113,7 +113,7 @@ function detect_browser_version($title, $useragent)
 	{
 		$return = "UC Browser ".$version;
 	}
-	elseif($lower_title == "ba?idubrowser")
+	elseif($lower_title == "ba?idubrowser|baiduhd")
 	{
 		$return = "Baidu Browser ".$version;
 	}

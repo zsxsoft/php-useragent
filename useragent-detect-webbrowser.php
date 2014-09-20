@@ -135,10 +135,10 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("Beonex", $useragent);
 		$code = "beonex";
 	}
-	elseif(preg_match('/BA?IDUBrowser/i', $useragent))
+	elseif(preg_match('/BA?IDUBrowser|BaiduHD/i', $useragent))
 	{
 		$link = "http://browser.baidu.com/";
-		$title = detect_browser_version("BA?IDUBrowser", $useragent);
+		$title = detect_browser_version("BA?IDUBrowser|BaiduHD", $useragent);
 		$code = "bidubrowser";
 	}
 	elseif(preg_match('/BlackBerry/i', $useragent))
