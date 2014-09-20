@@ -67,9 +67,9 @@ function detect_device($useragent)
 		$link = "http://www.coolpad.com/";
 		$title = "CoolPad";
 
-		if(preg_match('/CoolPad ?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		if(preg_match('/CoolPad( |\_)?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
-			$title .= " ".$regmatch[1];
+			$title .= " ".$regmatch[2];
 		}
 
 		$code = "coolpad";
