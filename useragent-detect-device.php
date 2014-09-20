@@ -231,7 +231,7 @@ function detect_device($useragent)
 
 		$code = "kindle";
 	}
-	//ZTE
+	// K-Touch
     elseif(preg_match('/k-touch/i', $useragent))
     {
         $link = "http://www.k-touch.cn/";
@@ -512,7 +512,7 @@ function detect_device($useragent)
 		$code = "sonyericsson";
 	}
 
-	//ZTE
+	// vivo
     elseif(preg_match('/vivo/i', $useragent))
     {
         $link = "http://www.vivo.com.cn/";
@@ -524,15 +524,15 @@ function detect_device($useragent)
 		}
     }
 
-	//ZTE
+	// ZTE
     elseif(preg_match('/zte/i', $useragent))
     {
         $link = "http://www.zte.com.cn/cn/";
         $title = "ZTE";
         $code = "zte";
-		if(preg_match('/ZTE(-T)? ?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		if(preg_match('/ZTE(-T)?( |\_|\-)?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
-			$title .= " " . $regmatch[2];
+			$title .= " " . $regmatch[3];
 		}
     }
 
