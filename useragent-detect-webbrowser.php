@@ -706,6 +706,12 @@ function detect_webbrowser($useragent)
 		$title = "Liebao Browser";
 		$code = "lbbrowser";
 	}
+	elseif(preg_match('/Liebaofast/i', $useragent))
+	{
+		$link = "http://m.liebao.cn/";
+		$title = detect_browser_version("Liebaofast", $useragent);
+		$code = "lbbrowser";
+	}
 	elseif(preg_match('/LeechCraft/i', $useragent))
 	{
 		$link = "http://leechcraft.org/";
