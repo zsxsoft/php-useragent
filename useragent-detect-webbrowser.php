@@ -813,7 +813,7 @@ function detect_webbrowser($useragent)
 	elseif(preg_match('/MQQBrowser/i', $useragent))
 	{
 		$link = "http://browser.qq.com/";
-		$title = "QQBrowser";
+		$title = detect_browser_version("MQQBrowser", $useragent);
 		$code = "qqbrowser";
 	}
 	elseif(preg_match('/Multi-Browser/i', $useragent))
