@@ -104,7 +104,7 @@ function detect_os($useragent)
 			$title .= " x64";
 		}
 	}
-	elseif(preg_match('/CrOS/i', $useragent))
+	elseif(preg_match('/\b(?!Mi)CrOS(?!oft)/i', $useragent))
 	{
 		$link = "http://en.wikipedia.org/wiki/Google_Chrome_OS";
 		$title = "Google Chrome OS";
