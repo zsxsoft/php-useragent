@@ -39,6 +39,12 @@ function detect_webbrowser($useragent)
 		$title = "360 Explorer";
 		$code = "360se";
 	}
+	elseif(preg_match('/360\ aphone\ browser/i', $useragent))
+	{
+		$link = "http://mse.360.cn/index.html";
+		$title = "360 Aphone Browser";
+		$code = "360se";
+	}
 	elseif(preg_match('/Abolimba/i', $useragent))
 	{
 		$link = "http://www.aborange.de/products/freeware/abolimba-multibrowser.php";
