@@ -43,9 +43,9 @@ function detect_os($useragent)
 		$title = "Android";
 		$code = "android";
 
-		if(preg_match('/Android[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		if(preg_match('/(Android|Adr)[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
-			$version=$regmatch[1];
+			$version=$regmatch[2];
 			$title .= " ".$version;
 		}
 
