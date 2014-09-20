@@ -197,11 +197,11 @@ function detect_device($useragent)
 	elseif(preg_match('/Huawei/i', $useragent))
 	{
 		$link = "http://www.huawei.com/cn/";
-		$title = "HuaWei";
+		$title = "Huawei";
 		$code = "huawei";
-		if(preg_match('/HUAWEI([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
+		if(preg_match('/HUAWEI( |\_)?([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
-			$title .= " " . $regmatch[1];
+			$title .= " " . $regmatch[2];
 		}
 	}
 	// Kindle
