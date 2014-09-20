@@ -352,12 +352,20 @@ function detect_device($useragent)
 		$code = "nokia";
 		if(preg_match('/Nokia(E|N| )?([0-9]+)/i', $useragent, $regmatch))
 		{
-			$title .= " " . $regmatch[1] . $regmatch[2];
+			if (preg_match('/IEMobile|WPDesktop/i', $useragent)) {
+				// Nokia Windows Phone
+				if ($regmatch[2] == '909') $regmatch[2] = '1020'; // Lumia 1020
+				$title .= " Lumia " . $regmatch[2];
+			}
+			else {
+				$title .= " " . $regmatch[1] . $regmatch[2];
+			}
 		}
 		elseif(preg_match('/Lumia ([0-9]+)/i', $useragent, $regmatch))
 		{
 			$title .= " Lumia " . $regmatch[1];
 		}
+
 		//}
     }
 	
