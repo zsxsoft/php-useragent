@@ -657,7 +657,7 @@ function detect_os($useragent)
 			$title .= " ".$regmatch[1];
 		}
 
-		$code = "symbianos";
+		$code = "symbian";
 
 		if(preg_match('/x86_64/i', $useragent))
 		{
