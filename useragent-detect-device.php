@@ -41,7 +41,7 @@ function detect_device($useragent)
     }
 
 	// xiaomi
-    elseif(preg_match('/MI-ONE|MI \d|xiaomi|HM NOTE/i', $useragent))
+    elseif(preg_match('/MI-ONE|MI \d|HM NOTE/i', $useragent))
     {
         $link = "http://www.xiaomi.com/";
         $title = "Xiaomi";
