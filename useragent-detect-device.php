@@ -36,7 +36,7 @@ function detect_device($useragent)
     if(preg_match('/(MEIZU (MX|M9)|M030)|MX-3/i', $useragent))
     {
         $link = "http://www.meizu.com/";
-        $title = "MeiZu";
+        $title = "Meizu";
         $code = "meizu";
     }
 
@@ -44,7 +44,21 @@ function detect_device($useragent)
     elseif(preg_match('/MI-ONE|MI \d|xiaomi|HM NOTE/i', $useragent))
     {
         $link = "http://www.xiaomi.com/";
-        $title = "XiaoMi";
+        $title = "Xiaomi";
+
+        if(preg_match('/HM NOTE ([A-Z0-9]+)/i', $useragent, $regmatch))
+		{
+			$title .= " HM-NOTE " . $regmatch[1];
+		}
+		else if(preg_match('/MI ([A-Z0-9]+)/i', $useragent, $regmatch))
+		{
+			$title .= " " . $regmatch[1];
+		}
+		else if(preg_match('/MI-ONE/i', $useragent, $regmatch))
+		{
+			$title .= " 1";
+		}
+
         $code = "xiaomi";
     }
 
@@ -502,7 +516,7 @@ function detect_device($useragent)
     elseif(preg_match('/vivo/i', $useragent))
     {
         $link = "http://www.vivo.com.cn/";
-        $title = "VIVO";
+        $title = "vivo";
         $code = "vivo";
 		if(preg_match('/VIVO ([.0-9a-zA-Z]+)/i', $useragent, $regmatch))
 		{
