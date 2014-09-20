@@ -229,7 +229,7 @@ function detect_webbrowser($useragent)
 	{
 		$link = "http://code.google.com/chrome/chromeframe/";
 		$title = detect_browser_version("chromeframe", $useragent);
-		$code = "google";
+		$code = "chrome";
 	}
 	elseif(preg_match('/ChromePlus/i', $useragent))
 	{
@@ -1112,7 +1112,7 @@ function detect_webbrowser($useragent)
 		$title = detect_browser_version("QQBrowser", $useragent);
 		$code = "qqbrowser";
 	}
-	elseif(preg_match('/QQ(?!Download)/i', $useragent))
+	elseif(preg_match('/QQ(?!Download|Pinyin)/i', $useragent))
 	{
 		$link = "http://im.qq.com/";
 		$title = detect_browser_version("QQ", $useragent);
