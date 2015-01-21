@@ -2,6 +2,10 @@
 
 A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
 
+## Try it
+
+http://www.zsxsoft.com/php-useragent/test-my-useragent.php
+
 ## Contributors
 zsx(http://www.zsxsoft.com)
 
