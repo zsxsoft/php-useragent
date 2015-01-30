@@ -531,11 +531,11 @@ class useragent_detect_os {
 			|| preg_match('/Win32/i', $useragent)) {
 			$link = "http://www.microsoft.com/windows/";
 
-			if (preg_match('/Windows NT 6.4; Win64; x64/i', $useragent)
-				|| preg_match('/Windows NT 6.4; WOW64/i', $useragent)) {
+			if (preg_match('/Windows NT (6.4|10.0); Win64; x64/i', $useragent)
+				|| preg_match('/Windows NT (6.4|10.0); WOW64/i', $useragent)) {
 				$title = "Windows 10 x64 Edition";
 				$code = "win-5";
-			} elseif (preg_match('/Windows NT 6.4/i', $useragent)) {
+			} elseif (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
 				$title = "Windows 10";
 				$code = "win-5";
 			} elseif (preg_match('/Windows NT 6.3; Win64; x64/i', $useragent)
