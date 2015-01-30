@@ -83,33 +83,33 @@
       </h2>
 
       <div class="highlight highlight-php">
-        <pre><span class="pl-pse">&lt;?php</span><span class="pl-s2"></span>
-<span class="pl-s2"><span class="pl-c">/**</span></span>
-<span class="pl-s2"><span class="pl-c">* Test Useragent</span></span>
-<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@package</span> php-useragent</span></span>
-<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@author</span> zsx &lt;zsx@zsxsoft.com&gt;</span></span>
-<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@license</span> GNU/GPL http://www.gnu.org/copyleft/gpl.html</span></span>
-<span class="pl-s2"><span class="pl-c">*/</span></span>
-<span class="pl-s2"><span class="pl-s3">ini_set</span>(<span class="pl-s1"><span class="pl-pds">'</span>display_errors<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>On<span class="pl-pds">'</span></span>);</span>
-<span class="pl-s2"><span class="pl-s3">error_reporting</span>(<span class="pl-sc">E_ALL</span>);</span>
-<span class="pl-s2"><span class="pl-k">include</span> <span class="pl-s1"><span class="pl-pds">'</span>./useragent.class.php<span class="pl-pds">'</span></span>;</span>
-<span class="pl-s2"><span class="pl-vo">$useragent</span> <span class="pl-k">=</span> <span class="pl-s3">UserAgentFactory</span><span class="pl-k">::</span>analyze(<span class="pl-vo">$_SERVER</span>[<span class="pl-s1"><span class="pl-pds">'</span>HTTP_USER_AGENT<span class="pl-pds">'</span></span>]);</span>
-<span class="pl-s2"></span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>
+        <pre><span class="pse">&lt;?php</span><span class="s2"></span>
+<span class="s2"><span class="c">/**</span></span>
+<span class="s2"><span class="c">* Test Useragent</span></span>
+<span class="s2"><span class="c"> * <span class="k">@package</span> php-useragent</span></span>
+<span class="s2"><span class="c"> * <span class="k">@author</span> zsx &lt;zsx@zsxsoft.com&gt;</span></span>
+<span class="s2"><span class="c"> * <span class="k">@license</span> GNU/GPL http://www.gnu.org/copyleft/gpl.html</span></span>
+<span class="s2"><span class="c">*/</span></span>
+<span class="s2"><span class="s3">ini_set</span>(<span class="s1"><span class="pds">'</span>display_errors<span class="pds">'</span></span>, <span class="s1"><span class="pds">'</span>On<span class="pds">'</span></span>);</span>
+<span class="s2"><span class="s3">error_reporting</span>(<span class="sc">E_ALL</span>);</span>
+<span class="s2"><span class="k">include</span> <span class="s1"><span class="pds">'</span>./useragent.class.php<span class="pds">'</span></span>;</span>
+<span class="s2"><span class="vo">$useragent</span> <span class="k">=</span> <span class="s3">UserAgentFactory</span><span class="k">::</span>analyze(<span class="vo">$_SERVER</span>[<span class="s1"><span class="pds">'</span>HTTP_USER_AGENT<span class="pds">'</span></span>]);</span>
+<span class="s2"></span><span class="pse"><span class="s2">?</span>&gt;</span>
 &lt;!DOCTYPE html&gt;
-&lt;<span class="pl-ent">html</span> <span class="pl-e">lang</span>=<span class="pl-s1"><span class="pl-pds">"</span>en<span class="pl-pds">"</span></span>&gt;
-&lt;<span class="pl-ent">head</span>&gt;
-    &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s1"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">title</span>&gt;UserAgent&lt;/<span class="pl-ent">title</span>&gt;
-&lt;/<span class="pl-ent">head</span>&gt;
-&lt;<span class="pl-ent">body</span>&gt;
-    &lt;<span class="pl-ent">h1</span>&gt;Test UserAgent&lt;/<span class="pl-ent">h1</span>&gt;
-    &lt;<span class="pl-ent">p</span>&gt;UserAgent: <span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">useragent</span>;</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
-    &lt;<span class="pl-ent">p</span>&gt;Platform: &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">platform</span>[<span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span><span class="pl-pds">"</span></span>/&gt;<span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">platform</span>[<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
-    &lt;<span class="pl-ent">p</span>&gt;Web Browser: &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">browser</span>[<span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span><span class="pl-pds">"</span></span>/&gt;<span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">browser</span>[<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
-    &lt;<span class="pl-ent">p</span>&gt;OS: &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">os</span>[<span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span><span class="pl-pds">"</span></span>/&gt;<span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">os</span>[<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
+&lt;<span class="ent">html</span> <span class="e">lang</span>=<span class="s1"><span class="pds">"</span>en<span class="pds">"</span></span>&gt;
+&lt;<span class="ent">head</span>&gt;
+    &lt;<span class="ent">meta</span> <span class="e">charset</span>=<span class="s1"><span class="pds">"</span>UTF-8<span class="pds">"</span></span>&gt;
+    &lt;<span class="ent">title</span>&gt;UserAgent&lt;/<span class="ent">title</span>&gt;
+&lt;/<span class="ent">head</span>&gt;
+&lt;<span class="ent">body</span>&gt;
+    &lt;<span class="ent">h1</span>&gt;Test UserAgent&lt;/<span class="ent">h1</span>&gt;
+    &lt;<span class="ent">p</span>&gt;UserAgent: <span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">useragent</span>;</span><span class="pse"><span class="s2">?</span>&gt;</span>&lt;/<span class="ent">p</span>&gt;
+    &lt;<span class="ent">p</span>&gt;Platform: &lt;<span class="ent">img</span> <span class="e">src</span>=<span class="s1"><span class="pds">"</span><span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">platform</span>[<span class="s1"><span class="pds">'</span>image<span class="pds">'</span></span>]</span><span class="pse"><span class="s2">?</span>&gt;</span><span class="pds">"</span></span>/&gt;<span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">platform</span>[<span class="s1"><span class="pds">'</span>title<span class="pds">'</span></span>]</span><span class="pse"><span class="s2">?</span>&gt;</span>&lt;/<span class="ent">p</span>&gt;
+    &lt;<span class="ent">p</span>&gt;Web Browser: &lt;<span class="ent">img</span> <span class="e">src</span>=<span class="s1"><span class="pds">"</span><span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">browser</span>[<span class="s1"><span class="pds">'</span>image<span class="pds">'</span></span>]</span><span class="pse"><span class="s2">?</span>&gt;</span><span class="pds">"</span></span>/&gt;<span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">browser</span>[<span class="s1"><span class="pds">'</span>title<span class="pds">'</span></span>]</span><span class="pse"><span class="s2">?</span>&gt;</span>&lt;/<span class="ent">p</span>&gt;
+    &lt;<span class="ent">p</span>&gt;OS: &lt;<span class="ent">img</span> <span class="e">src</span>=<span class="s1"><span class="pds">"</span><span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">os</span>[<span class="s1"><span class="pds">'</span>image<span class="pds">'</span></span>]</span><span class="pse"><span class="s2">?</span>&gt;</span><span class="pds">"</span></span>/&gt;<span class="pse">&lt;?php</span><span class="s2"> <span class="s3">echo</span> <span class="vo">$useragent</span><span class="k">-&gt;</span><span class="vo">os</span>[<span class="s1"><span class="pds">'</span>title<span class="pds">'</span></span>]</span><span class="pse"><span class="s2">?</span>&gt;</span>&lt;/<span class="ent">p</span>&gt;
 
-&lt;/<span class="pl-ent">body</span>&gt;
-&lt;/<span class="pl-ent">html</span>&gt;</pre>
+&lt;/<span class="ent">body</span>&gt;
+&lt;/<span class="ent">html</span>&gt;</pre>
       </div>
 
       <h2>
