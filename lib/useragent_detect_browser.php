@@ -24,13 +24,11 @@ class useragent_detect_browser {
 
 		$web_browser = '';
 		$mobile = 0;
-
 		if (preg_match('/115Browser/i', $useragent)) {
 			$link = "http://ie.114la.com/";
 			$title = self::detect_browser_version("115Browser", $useragent);
 			$code = "114browser";
-		}
-		if (preg_match('/2345Explorer/i', $useragent)) {
+		} elseif (preg_match('/2345Explorer/i', $useragent)) {
 			$link = "http://ie.2345.com/";
 			$title = self::detect_browser_version("2345Explorer", $useragent);
 			$code = "2345explorer";
@@ -1237,7 +1235,10 @@ class useragent_detect_browser {
 		// Grab the browser version if its present
 		$version = '';
 		if (preg_match('/' . $start . '[\ |\/|\:]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-			$version = $regmatch[1];
+			if (count($regmatch) > 1) {
+				$version = $regmatch[1];
+			}
+
 		}
 
 		// $return = browser Title and Version, but first..some titles need to be changed
