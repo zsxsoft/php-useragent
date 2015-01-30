@@ -1,77 +1,146 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>php-useragent by zsxsoft</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <title>php-useragent by zsxsoft</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>php-useragent</h1>
-        <p>php-useragent</p>
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>php-useragent</h1>
+      <p>php-useragent</p>
 
-        <p class="view"><a href="https://github.com/zsxsoft/php-useragent">View the Project on GitHub <small>zsxsoft/php-useragent</small></a></p>
+      <p class="view">
+        <a href="https://github.com/zsxsoft/php-useragent">
+          View the Project on GitHub
+          <small>zsxsoft/php-useragent</small>
+        </a>
+      </p>
 
+      <ul>
+        <li>
+          <a href="https://github.com/zsxsoft/php-useragent/zipball/master">
+            Download <strong>ZIP File</strong>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/zsxsoft/php-useragent/tarball/master">
+            Download <strong>TAR Ball</strong>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/zsxsoft/php-useragent">
+            View On
+            <strong>GitHub</strong>
+          </a>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <h1>
+        <a name="php-useragent" class="anchor" href="#php-useragent">
+          <span class="octicon octicon-link"></span>
+        </a>
+        PHP-UserAgent
+      </h1>
 
-        <ul>
-          <li><a href="https://github.com/zsxsoft/php-useragent/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/zsxsoft/php-useragent/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/zsxsoft/php-useragent">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="php-useragent" class="anchor" href="#php-useragent"><span class="octicon octicon-link"></span></a>PHP-UserAgent</h1>
+      <p>
+        A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
+      </p>
 
-<p>A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.</p>
+      <h2>
+        <a name="contributors" class="anchor" href="#contributors">
+          <span class="octicon octicon-link"></span>
+        </a>
+        Contributors
+      </h2>
 
-<h2>
-<a name="contributors" class="anchor" href="#contributors"><span class="octicon octicon-link"></span></a>Contributors</h2>
+      <p>
+        zsx(
+        <a href="http://www.zsxsoft.com">http://www.zsxsoft.com</a>
+        )
+      </p>
 
-<p>zsx(<a href="http://www.zsxsoft.com">http://www.zsxsoft.com</a>)</p>
+      <p>
+        This project based on
+        <a href="http://www.kyleabaker.com/goodies/coding/wp-useragent/">kyleabaker</a>
+        's "wp-useragent".
+      </p>
 
-<p>This project based on <a href="http://www.kyleabaker.com/goodies/coding/wp-useragent/">kyleabaker</a>'s "wp-useragent".</p>
+      <h2>
+        <a name="example" class="anchor" href="#example">
+          <span class="octicon octicon-link"></span>
+        </a>
+        Example
+      </h2>
 
-<h2>
-<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+      <div class="highlight highlight-php">
+        <pre><span class="pl-pse">&lt;?php</span><span class="pl-s2"></span>
+<span class="pl-s2"><span class="pl-c">/**</span></span>
+<span class="pl-s2"><span class="pl-c">* Test Useragent</span></span>
+<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@package</span> php-useragent</span></span>
+<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@author</span> zsx &lt;zsx@zsxsoft.com&gt;</span></span>
+<span class="pl-s2"><span class="pl-c"> * <span class="pl-k">@license</span> GNU/GPL http://www.gnu.org/copyleft/gpl.html</span></span>
+<span class="pl-s2"><span class="pl-c">*/</span></span>
+<span class="pl-s2"><span class="pl-s3">ini_set</span>(<span class="pl-s1"><span class="pl-pds">'</span>display_errors<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>On<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">error_reporting</span>(<span class="pl-sc">E_ALL</span>);</span>
+<span class="pl-s2"><span class="pl-k">include</span> <span class="pl-s1"><span class="pl-pds">'</span>./useragent.class.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s2"><span class="pl-vo">$useragent</span> <span class="pl-k">=</span> <span class="pl-s3">UserAgentFactory</span><span class="pl-k">::</span>analyze(<span class="pl-vo">$_SERVER</span>[<span class="pl-s1"><span class="pl-pds">'</span>HTTP_USER_AGENT<span class="pl-pds">'</span></span>]);</span>
+<span class="pl-s2"></span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>
+&lt;!DOCTYPE html&gt;
+&lt;<span class="pl-ent">html</span> <span class="pl-e">lang</span>=<span class="pl-s1"><span class="pl-pds">"</span>en<span class="pl-pds">"</span></span>&gt;
+&lt;<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s1"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">title</span>&gt;UserAgent&lt;/<span class="pl-ent">title</span>&gt;
+&lt;/<span class="pl-ent">head</span>&gt;
+&lt;<span class="pl-ent">body</span>&gt;
+    &lt;<span class="pl-ent">h1</span>&gt;Test UserAgent&lt;/<span class="pl-ent">h1</span>&gt;
+    &lt;<span class="pl-ent">p</span>&gt;UserAgent: <span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">useragent</span>;</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span>&gt;Platform: &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">platform</span>[<span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span><span class="pl-pds">"</span></span>/&gt;<span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">platform</span>[<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span>&gt;Web Browser: &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">browser</span>[<span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span><span class="pl-pds">"</span></span>/&gt;<span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">browser</span>[<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
+    &lt;<span class="pl-ent">p</span>&gt;OS: &lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">os</span>[<span class="pl-s1"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span><span class="pl-pds">"</span></span>/&gt;<span class="pl-pse">&lt;?php</span><span class="pl-s2"> <span class="pl-s3">echo</span> <span class="pl-vo">$useragent</span><span class="pl-k">-&gt;</span><span class="pl-vo">os</span>[<span class="pl-s1"><span class="pl-pds">'</span>title<span class="pl-pds">'</span></span>]</span><span class="pl-pse"><span class="pl-s2">?</span>&gt;</span>&lt;/<span class="pl-ent">p</span>&gt;
 
-<div class="highlight highlight-php"><pre><span class="k">include</span><span class="p">(</span><span class="s1">'./useragent-detect-device.php'</span><span class="p">);</span>
-<span class="k">include</span><span class="p">(</span><span class="s1">'./useragent-detect-os.php'</span><span class="p">);</span>
-<span class="k">include</span><span class="p">(</span><span class="s1">'./useragent-detect-platform.php'</span><span class="p">);</span>
-<span class="k">include</span><span class="p">(</span><span class="s1">'./useragent-detect-webbrowser.php'</span><span class="p">);</span>
-<span class="k">include</span><span class="p">(</span><span class="s1">'./useragent-detect-webbrowser-version.php'</span><span class="p">);</span>
+&lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre>
+      </div>
 
-<span class="nv">$useragent</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">'HTTP_USER_AGENT'</span><span class="p">];</span>
-<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$useragent</span><span class="p">);</span>
-<span class="nv">$webbrowser</span> <span class="o">=</span> <span class="nx">detect_webbrowser</span><span class="p">(</span><span class="nv">$useragent</span><span class="p">);</span>
-<span class="nv">$platform</span> <span class="o">=</span> <span class="nx">detect_platform</span><span class="p">(</span><span class="nv">$useragent</span><span class="p">);</span>
-<span class="k">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="s1">'&lt;br/&gt;&lt;img src="img/24/net/'</span> <span class="o">.</span> <span class="nv">$webbrowser</span><span class="p">[</span><span class="s1">'image'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'.png" /&gt;'</span> <span class="o">.</span> <span class="nv">$webbrowser</span><span class="p">[</span><span class="s1">'title'</span><span class="p">];</span>
-<span class="k">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">.</span> <span class="s1">'&lt;br/&gt;&lt;img src="img/24/'</span> <span class="o">.</span> <span class="nv">$platform</span><span class="p">[</span><span class="s1">'dir'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'/'</span> <span class="o">.</span> <span class="nv">$platform</span><span class="p">[</span><span class="s1">'image'</span><span class="p">]</span> <span class="o">.</span> <span class="s1">'.png" /&gt;'</span> <span class="o">.</span> <span class="nv">$platform</span><span class="p">[</span><span class="s1">'title'</span><span class="p">];</span>
-</pre></div>
+      <h2>
+        <a name="license" class="anchor" href="#license">
+          <span class="octicon octicon-link"></span>
+        </a>
+        License
+      </h2>
 
-<h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/license" class="user-mention">@license</a>
+          GNU/GPL
+          <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
+        </li>
+      </ul>
+    </section>
+    <footer>
+      <p>
+        This project is maintained by
+        <a href="https://github.com/zsxsoft">zsxsoft</a>
+      </p>
+      <p>
+        <small>
+          Hosted on GitHub Pages &mdash; Theme by
+          <a href="https://github.com/orderedlist">orderedlist</a>
+        </small>
+      </p>
+    </footer>
+  </div>
+  <script src="javascripts/scale.fix.js"></script>
 
-<ul>
-<li>
-<a href="https://github.com/license" class="user-mention">@license</a> GNU/GPL <a href="http://www.gnu.org/copyleft/gpl.html">http://www.gnu.org/copyleft/gpl.html</a>
-</li>
-</ul>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/zsxsoft">zsxsoft</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+</body>
 </html>
