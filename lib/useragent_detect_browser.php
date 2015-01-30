@@ -1096,9 +1096,18 @@ class useragent_detect_browser {
 			$title = "Avant " . self::detect_browser_version("Browser", $useragent);
 			$code = "avantbrowser";
 		} elseif (preg_match('/Chrome/i', $useragent)) {
-			$link = "http://google.com/chrome/";
-			$title = "Google " . self::detect_browser_version("Chrome", $useragent);
-			$code = "chrome";
+
+			// Note: For IE11 Experimental Web Platform Features in Windows 10
+			// Spartan? Who knows.
+			if (preg_match('/Windows NT 1.+Edge/i', $useragent)) {
+				$link = "http://www.microsoft.com/windows/products/winfamily/ie/default.mspx";
+				$title = "Internet Explorer " . self::detect_browser_version("Spartan", $useragent);
+				$code = "msie11";
+			} else {
+				$link = "http://google.com/chrome/";
+				$title = "Google " . self::detect_browser_version("Chrome", $useragent);
+				$code = "chrome";
+			}
 		} elseif (preg_match('/Safari/i', $useragent)
 			&& !preg_match('/Nokia/i', $useragent)) {
 			$link = "http://www.apple.com/safari/";
@@ -1221,6 +1230,8 @@ class useragent_detect_browser {
 		} elseif ($lower_title == strtolower("MSIE") && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent)) {
 			// We have IE11 or newer
 			$start = " rv";
+		} elseif ($lower_title == "spartan") {
+			$start = "edge";
 		}
 
 		// Grab the browser version if its present
