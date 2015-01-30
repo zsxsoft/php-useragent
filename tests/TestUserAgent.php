@@ -147,7 +147,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; ARM; Touch; WPDesktop)', 16, '43710000/', '.gif'),
-				array('43710000/16/browser/msie10.gif', '43710000/16/device/windowsphone.gif', 'Internet Explorer 10.0', 'Windows Phone'),
+				array('43710000/16/browser/msie10.gif', '43710000/16/os/windowsphone.gif', 'Internet Explorer 10.0', 'Windows Phone'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.2; ARM; Trident/7.0; Touch; rv:11.0; WPDesktop; HTC; Windows Phone 8X by HTC) like Gecko', 16, null, null),
@@ -331,7 +331,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Opera/9.80 (Windows Phone; Opera Mini/7.6.8/35.4970; U; zh) Presto/2.8.119 Version/11.10', 24, null, null),
-				array('img/24/browser/opera-2.png', 'img/24/device/windowsphone.png', 'Opera Mini 7.6.8', 'Windows Phone'),
+				array('img/24/browser/opera-2.png', 'img/24/os/windowsphone.png', 'Opera Mini 7.6.8', 'Windows Phone'),
 			),
 			array(
 				array('Opera/9.80 (Android 2.3.6; Linux; Opera Mobi/ADR-1306261228) Presto/2.11.355 Version/12.10', 16, '205150000/', null),
@@ -423,7 +423,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; ARM; Touch; WPDesktop) UCBrowser/2.9.0.263', 16, '235390000/', null),
-				array('235390000/16/browser/ucbrowser.png', '235390000/16/device/windowsphone.png', 'UC Browser 2.9.0.263', 'Windows Phone'),
+				array('235390000/16/browser/ucbrowser.png', '235390000/16/os/windowsphone.png', 'UC Browser 2.9.0.263', 'Windows Phone'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 UBrowser/3.0.1084.0 Safari/537.36', 16, '226980000/', null),
@@ -463,6 +463,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			$original = $list[0];
 			$result = $list[1];
 			$useragent = UserAgentFactory::analyze($original[0], $original[1], $original[2], $original[3]);
+			echo 'Test: ' . $useragent->useragent . "\n";
 			$this->assertEquals($useragent->browser['image'], $result[0]);
 			$this->assertEquals($useragent->platform['image'], $result[1]);
 			$this->assertEquals($useragent->browser['title'], $result[2]);
