@@ -218,15 +218,6 @@ class UserAgent_Detect_Device {
 			$code = "lg";
 		}
 
-		// Microsoft
-		elseif (preg_match('/Windows Phone OS 7.0/i', $useragent)
-			|| preg_match('/ZuneWP7/i', $useragent)
-			|| preg_match('/WP7/i', $useragent)) {
-			$link = "http://www.microsoft.com/windowsphone/";
-			$title .= "Windows Phone 7";
-			$code = "wp7";
-		}
-
 		// Motorola
 		elseif (preg_match('/\ Droid/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Motorola_Droid";
@@ -433,13 +424,6 @@ class UserAgent_Detect_Device {
 			$link = "http://www.ubuntu.com/tablet";
 			$title = "Ubuntu Tablet";
 			$code = "ubuntutouch";
-		}
-
-		// Windows Phone
-		elseif (preg_match('/Windows Phone|WPDesktop/i', $useragent)) {
-			$link = "http://www.windowsphone.com/";
-			$title = "Windows Phone";
-			$code = "windowsphone";
 		}
 
 		// Apple

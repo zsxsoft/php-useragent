@@ -22,7 +22,18 @@ class useragent_detect_os {
 		$code = '';
 		$version = '';
 
-		if (preg_match('/AmigaOS/i', $useragent)) {
+		if (preg_match('/Windows Phone|WPDesktop|ZuneWP7|WP7/i', $useragent)) {
+			$link = "http://www.windowsphone.com/";
+			$title = "Windows Phone";
+			$code = "windowsphone";
+			if (preg_match('/Windows Phone (OS )?([0-9\.]+)/i', $useragent, $regmatch)) {
+				$title .= " " . $regmatch[2];
+				if ((int) $regmatch[2] == 7) {
+					$code = "wp7";
+				}
+			}
+
+		} elseif (preg_match('/AmigaOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/AmigaOS";
 			$title = "AmigaOS";
 
