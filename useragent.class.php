@@ -74,7 +74,11 @@ class UserAgent {
 	}
 
 	public static function __autoload($className) {
-		require_once './lib/' . $className . '.php';
+		if (is_file('./lib/' . $className . '.php')) {
+			// For PHPUnit
+			require_once './lib/' . $className . '.php';
+		}
+
 	}
 
 	public function analyze($string) {

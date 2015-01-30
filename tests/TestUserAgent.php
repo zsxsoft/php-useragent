@@ -23,7 +23,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko se5_i) Chrome/31.0.1650.63 Safari/537.36 QIHU 360SE', 16, null, '.gif'),
-				array('img/16/browser/360se.gif', 'img/16/os/win-5.gif', '360 Explorer', 'Windows 8.1 x64 Edition'),
+				array('img/16/browser/360se.gif', 'img/16/os/win-5.gif', '360 Explorer', 'Windows 8.1 x64'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 6.0; America Online Browser 1.1; rev1.2; Windows NT 5.1; SV1; .NET CLR 1.1.4322)', 24, null, null),
@@ -115,11 +115,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; MRA 8.0 (build 6019); QQDownload 760; chromeframe/32.0.1700.107; SLCC2; .NET CLR 2.0.50727; InfoPath.2; .NET4.0C; .NET4.0E; .NET CLR 3.5.30729; .NET CLR 3.0.30729; QQBrowser/7.7.26717.400)', 16, null, null),
-				array('img/16/browser/chrome.png', 'img/16/os/win-4.png', 'Google Chrome Frame 32.0.1700.107', 'Windows 7 x64 Edition'),
+				array('img/16/browser/chrome.png', 'img/16/os/win-4.png', 'Google Chrome Frame 32.0.1700.107', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E; GreenBrowser)', 16, null, null),
-				array('img/16/browser/greenbrowser.png', 'img/16/os/win-4.png', 'GreenBrowser ', 'Windows 7 x64 Edition'),
+				array('img/16/browser/greenbrowser.png', 'img/16/os/win-4.png', 'GreenBrowser ', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (X11; Linux x86_64; rv:31.0) Gecko/20100101 Firefox/31.0 Iceweasel/31.2.0', 24, '70180000/', null),
@@ -159,11 +159,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (MSIE 9.0; Windows NT 6.4; WOW64; Trident/7.0; rv:11.0) like Gecko', 24, null, null),
-				array('img/24/browser/msie9.png', 'img/24/os/win-5.png', 'Internet Explorer 11.0', 'Windows 10 x64 Edition'),
+				array('img/24/browser/msie9.png', 'img/24/os/win-5.png', 'Internet Explorer 11.0', 'Windows 10 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; LCJB; rv:11.0) like Gecko', 24, null, null),
-				array('img/24/browser/msie11.png', 'img/24/os/win-5.png', 'Internet Explorer 11.0', 'Windows 8 x64 Edition'),
+				array('img/24/browser/msie11.png', 'img/24/os/win-5.png', 'Internet Explorer 11.0', 'Windows 8 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (MSIE 7.0; Windows NT 6.0; Trident/7.0; rv:11.0) like Gecko', 16, null, '.gif'),
@@ -187,7 +187,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 5.0; Windows 3.1)', 16, '273090000/', null),
-				array('273090000/16/browser/msie4.png', '273090000/16/os/win-1.png', 'Internet Explorer 5.0', 'Microsoft Windows 3.1'),
+				array('273090000/16/browser/msie4.png', '273090000/16/os/win-1.png', 'Internet Explorer 5.0', 'Windows 3.1'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 5.0; Windows NT 6.0; Trident/5.0)', 16, '94720000/', '.gif'),
@@ -195,7 +195,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 4.0)', 24, null, null),
-				array('img/24/browser/msie4.png', 'img/24/os/win-1.png', 'Internet Explorer 5.5', 'Microsoft Windows NT 4.0'),
+				array('img/24/browser/msie4.png', 'img/24/os/win-1.png', 'Internet Explorer 5.5', 'Windows NT 4.0'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 5.5; Windows 95)', 24, '155960000/', null),
@@ -219,7 +219,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET4.0C; .NET4.0E)', 24, null, '.gif'),
-				array('img/24/browser/msie7.gif', 'img/24/os/win-4.gif', 'Internet Explorer 8.0', 'Windows 7 x64 Edition'),
+				array('img/24/browser/msie7.gif', 'img/24/os/win-4.gif', 'Internet Explorer 8.0', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)', 16, null, null),
@@ -247,7 +247,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; Lunascape 6.9.3.27400)', 16, null, null),
-				array('img/16/browser/lunascape.png', 'img/16/os/win-4.png', 'Lunascape 6.9.3.27400', 'Windows 7 x64 Edition'),
+				array('img/16/browser/lunascape.png', 'img/16/os/win-4.png', 'Lunascape 6.9.3.27400', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.12 (KHTML, like Gecko) Maxthon/3.0 Chrome/18.0.966.0 Safari/535.12', 16, null, '.gif'),
@@ -255,7 +255,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E; Maxthon/3.0)', 24, '16240000/', '.gif'),
-				array('16240000/24/browser/maxthon.gif', '16240000/24/os/win-4.gif', 'Maxthon 3.0', 'Windows 7 x64 Edition'),
+				array('16240000/24/browser/maxthon.gif', '16240000/24/os/win-4.gif', 'Maxthon 3.0', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.50727; Avant Browser; Maxthon/3.0)', 24, '314260000/', '.gif'),
@@ -267,7 +267,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.800 Chrome/30.0.1599.101 Safari/537.36', 24, null, null),
-				array('img/24/browser/maxthon.png', 'img/24/os/win-4.png', 'Maxthon 4.4.3.800', 'Windows 7 x64 Edition'),
+				array('img/24/browser/maxthon.png', 'img/24/os/win-4.png', 'Maxthon 4.4.3.800', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Linux; U; Android 4.1.1; zh-cn; MI 2SC Build/JRO03L) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36 XiaoMi/MiuiBrowser/2.1.1', 24, '293150000/', null),
@@ -311,11 +311,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12.388 Version/12.17', 24, null, null),
-				array('img/24/browser/opera-2.png', 'img/24/os/win-5.png', 'Opera 12.17', 'Windows 8 x64 Edition'),
+				array('img/24/browser/opera-2.png', 'img/24/os/win-5.png', 'Opera 12.17', 'Windows 8 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.27 Safari/537.36 OPR/26.0.1656.8 (Edition beta)', 24, null, '.gif'),
-				array('img/24/browser/opera-1.gif', 'img/24/os/win-4.gif', 'Opera 26.0.1656.8', 'Windows 7 x64 Edition'),
+				array('img/24/browser/opera-1.gif', 'img/24/os/win-4.gif', 'Opera 26.0.1656.8', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2236.0 Safari/537.36 OPR/28.0.1719.0 (Edition developer)', 16, null, '.gif'),
@@ -339,7 +339,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.44 Safari/537.36 OPR/24.0.1558.25 (Edition Next)', 24, '243460000/', '.gif'),
-				array('243460000/24/browser/opera-next.gif', '243460000/24/os/win-4.gif', 'Opera Next 24.0.1558.25', 'Windows 7 x64 Edition'),
+				array('243460000/24/browser/opera-next.gif', '243460000/24/os/win-4.gif', 'Opera Next 24.0.1558.25', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; rv:25.0) Gecko/20141021 Firefox/24.9 PaleMoon/25.0.2', 16, '16970000/', null),
@@ -367,7 +367,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; LENW8; rv:11.0; SaaYaa) like Gecko', 16, null, '.gif'),
-				array('img/16/browser/saayaa.gif', 'img/16/os/win-5.gif', 'SaaYaa Explorer', 'Windows 8 x64 Edition'),
+				array('img/16/browser/saayaa.gif', 'img/16/os/win-5.gif', 'SaaYaa Explorer', 'Windows 8 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) CasperJS/1.0.2+Phantomjs/1.9.2 Safari/534.34', 24, '208700000/', null),
@@ -399,7 +399,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Iron/34.0.1850.0 Chrome/34.0.1850.0 Safari/537.36', 24, null, '.gif'),
-				array('img/24/browser/srwareiron.gif', 'img/24/os/win-4.gif', 'SRWare Iron 34.0.1850.0', 'Windows 7 x64 Edition'),
+				array('img/24/browser/srwareiron.gif', 'img/24/os/win-4.gif', 'SRWare Iron 34.0.1850.0', 'Windows 7 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 TaoBrowser/3.2 Safari/536.11', 16, null, '.gif'),
@@ -411,7 +411,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.2; WOW64; Trident/6.0; qihu theworld)', 16, '112700000/', null),
-				array('112700000/16/browser/theworld.png', '112700000/16/os/win-5.png', 'TheWorld Browser', 'Windows 8 x64 Edition'),
+				array('112700000/16/browser/theworld.png', '112700000/16/os/win-5.png', 'TheWorld Browser', 'Windows 8 x64'),
 			),
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; TheWorld)', 16, '278530000/', '.gif'),
@@ -427,7 +427,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 UBrowser/3.0.1084.0 Safari/537.36', 16, '226980000/', null),
-				array('226980000/16/browser/ucbrowser.png', '226980000/16/os/win-4.png', 'UC Browser 3.0.1084.0', 'Windows 7 x64 Edition'),
+				array('226980000/16/browser/ucbrowser.png', '226980000/16/os/win-4.png', 'UC Browser 3.0.1084.0', 'Windows 7 x64'),
 			),
 			array(
 				array('JUC(Linux;U;2.3.7;Zh_cn;lenovo a60;320*480;)UCWEB7.8.1.96/139/800', 16, '1400000/', null),
@@ -451,7 +451,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 YaBrowser/14.7.1916.15705 Safari/537.36', 16, null, null),
-				array('img/16/browser/yandex.png', 'img/16/os/win-5.png', 'Yandex.Browser 14.7.1916.15705', 'Windows 8.1 x64 Edition'),
+				array('img/16/browser/yandex.png', 'img/16/os/win-5.png', 'Yandex.Browser 14.7.1916.15705', 'Windows 8.1 x64'),
 			),
 		);
 

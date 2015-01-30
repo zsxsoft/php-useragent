@@ -530,44 +530,26 @@ class useragent_detect_os {
 			|| preg_match('/WinNT/i', $useragent)
 			|| preg_match('/Win32/i', $useragent)) {
 			$link = "http://www.microsoft.com/windows/";
+			$x64 = false;
+			if (preg_match('/Win64; x64|WOW64/i', $useragent)) {
+				$x64 = true;
+			}
 
-			if (preg_match('/Windows NT (6.4|10.0); Win64; x64/i', $useragent)
-				|| preg_match('/Windows NT (6.4|10.0); WOW64/i', $useragent)) {
-				$title = "Windows 10 x64 Edition";
-				$code = "win-5";
-			} elseif (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
+			if (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
 				$title = "Windows 10";
-				$code = "win-5";
-			} elseif (preg_match('/Windows NT 6.3; Win64; x64/i', $useragent)
-				|| preg_match('/Windows NT 6.3; WOW64/i', $useragent)) {
-				$title = "Windows 8.1 x64 Edition";
 				$code = "win-5";
 			} elseif (preg_match('/Windows NT 6.3/i', $useragent)) {
 				$title = "Windows 8.1";
 				$code = "win-5";
-			} elseif (preg_match('/Windows NT 6.2; Win64; x64/i', $useragent)
-				|| preg_match('/Windows NT 6.2; WOW64/i', $useragent)) {
-				$title = "Windows 8 x64 Edition";
-				$code = "win-5";
 			} elseif (preg_match('/Windows NT 6.2/i', $useragent)) {
 				$title = "Windows 8";
 				$code = "win-5";
-			} elseif (preg_match('/Windows NT 6.1; Win64; x64/i', $useragent)
-				|| preg_match('/Windows NT 6.1; WOW64/i', $useragent)) {
-				$title = "Windows 7 x64 Edition";
-				$code = "win-4";
 			} elseif (preg_match('/Windows NT 6.1/i', $useragent)) {
 				$title = "Windows 7";
 				$code = "win-4";
 			} elseif (preg_match('/Windows NT 6.0/i', $useragent)) {
 				$title = "Windows Vista";
 				$code = "win-3";
-			} elseif (preg_match('/Windows NT 5.2 x64/i', $useragent)) {
-				$title = "Windows XP x64 Edition";
-				$code = "win-2";
-			} elseif (preg_match('/Windows NT 5.2; Win64; x64/i', $useragent)) {
-				$title = "Windows Server 2003 x64 Edition";
-				$code = "win-2";
 			} elseif (preg_match('/Windows NT 5.2/i', $useragent)) {
 				$title = "Windows Server 2003";
 				$code = "win-2";
@@ -576,7 +558,7 @@ class useragent_detect_os {
 				$title = "Windows XP";
 				$code = "win-2";
 			} elseif (preg_match('/Windows NT 5.01/i', $useragent)) {
-				$title = "Windows 2000, Service Pack 1 (SP1)";
+				$title = "Windows 2000 Service Pack 1";
 				$code = "win-1";
 			} elseif (preg_match('/Windows NT 5.0/i', $useragent)
 				|| preg_match('/Windows 2000/i', $useragent)) {
@@ -584,23 +566,19 @@ class useragent_detect_os {
 				$code = "win-1";
 			} elseif (preg_match('/Windows NT 4.0/i', $useragent)
 				|| preg_match('/WinNT4.0/i', $useragent)) {
-				$title = "Microsoft Windows NT 4.0";
+				$title = "Windows NT 4.0";
 				$code = "win-1";
 			} elseif (preg_match('/Windows NT 3.51/i', $useragent)
 				|| preg_match('/WinNT3.51/i', $useragent)) {
-				$title = "Microsoft Windows NT 3.11";
+				$title = "Windows NT 3.11";
 				$code = "win-1";
-			} elseif (preg_match('/Windows 3.11/i', $useragent)
-				|| preg_match('/Win3.11/i', $useragent)
-				|| preg_match('/Win16/i', $useragent)) {
-				$title = "Microsoft Windows 3.11";
+			} elseif (preg_match('/Win(dows )?3.11|Win16/i', $useragent)) {
+				$title = "Windows 3.11";
 				$code = "win-1";
 			} elseif (preg_match('/Windows 3.1/i', $useragent)) {
-				$title = "Microsoft Windows 3.1";
+				$title = "Windows 3.1";
 				$code = "win-1";
-			} elseif (preg_match('/Windows 98; Win 9x 4.90/i', $useragent)
-				|| preg_match('/Win 9x 4.90/i', $useragent)
-				|| preg_match('/Windows ME/i', $useragent)) {
+			} elseif (preg_match('/Win 9x 4.90|Windows ME/i', $useragent)) {
 				$title = "Windows Millennium Edition (Windows Me)";
 				$code = "win-1";
 			} elseif (preg_match('/Win98/i', $useragent)) {
@@ -627,6 +605,10 @@ class useragent_detect_os {
 				$title = "Windows";
 				$code = "win-2";
 			}
+			if ($x64) {
+				$title .= " x64";
+			}
+
 		} elseif (preg_match('/Xandros/i', $useragent)) {
 			$link = "http://www.xandros.com/";
 			$title = "Xandros";
