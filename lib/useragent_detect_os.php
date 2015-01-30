@@ -702,7 +702,7 @@ class useragent_detect_os {
 			$title = "J2ME/MIDP Device";
 			$code = "java";
 		} else {
-
+			$code = "null";
 		}
 
 		return array(

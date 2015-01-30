@@ -50,6 +50,10 @@ class UserAgent {
 		$this->_imagePath = 'img/';
 	}
 
+	private function _makeImage($dir, $code) {
+		return $this->imagePath . $dir . '/' . $code . $this->imageExtension;
+	}
+
 	private function _makePlatform() {
 
 		$this->_data['platform'] = &$this->_data['device'];
@@ -63,6 +67,7 @@ class UserAgent {
 				"title" => "Unknown",
 				"code" => "null",
 				"dir" => "browser",
+				"image" => $this->_makeImage('browser', 'null'),
 			);
 		}
 
@@ -78,7 +83,7 @@ class UserAgent {
 		foreach ($classList as $value) {
 			$class = "useragent_detect_" . $value;
 			$this->_data[$value] = $class::analyze($string);
-			$this->_data[$value]['image'] = $this->imagePath . $value . '/' . $this->_data[$value]['code'] . $this->imageExtension;
+			$this->_data[$value]['image'] = $this->_makeImage($value, $this->_data[$value]['code']);
 		}
 
 		// platform

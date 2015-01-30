@@ -477,11 +477,11 @@ class UserAgent_Detect_Device {
 		elseif (preg_match('/MSIE.+?Windows.+?Trident/i', $useragent) && !preg_match('/Windows ?Phone/i', $useragent)) {
 			$link = "";
 			$title = "";
-			$code = "";
+			$code = "null";
 		}
 		// No Device match
 		else {
-
+			$code = "null";
 		}
 
 		return array(
