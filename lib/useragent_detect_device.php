@@ -123,7 +123,7 @@ class UserAgent_Detect_Device {
 		} elseif (preg_match('/Windows Phone .+ by HTC/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/High_Tech_Computer_Corporation";
 			$title = "HTC";
-			if (preg_match('/Windows Phone (.+) by HTC/i', $useragent, $regmatch)) {
+			if (preg_match('/Windows Phone ([0-9A-Za-z]+) by HTC/i', $useragent, $regmatch)) {
 				$title .= " " . $regmatch[1];
 			}
 			$code = "htc";

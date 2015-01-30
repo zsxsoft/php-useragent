@@ -131,7 +131,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; Windows Phone 8S by HTC) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537', 16, '108130000/', '.gif'),
-				array('108130000/16/browser/msie-mobile.gif', '108130000/16/device/htc.gif', 'IEMobile 11.0', 'HTC 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; Windows Phone 8S'),
+				array('108130000/16/browser/msie-mobile.gif', '108130000/16/device/htc.gif', 'IEMobile 11.0', 'HTC 8S'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Nokia 909) like Gecko', 16, '86550000/', '.gif'),
