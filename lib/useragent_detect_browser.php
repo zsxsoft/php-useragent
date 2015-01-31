@@ -32,6 +32,10 @@ class useragent_detect_browser {
 			$link = "http://ie.2345.com/";
 			$title = self::detect_browser_version("2345Explorer", $useragent);
 			$code = "2345explorer";
+		} elseif (preg_match('/2345chrome/i', $useragent)) {
+			$link = "http://chrome.2345.com/";
+			$title = self::detect_browser_version("2345Chrome", $useragent);
+			$code = "2345chrome";
 		} elseif (preg_match('/360se|360ee/i', $useragent)) {
 			$link = "http://se.360.cn/";
 			$title = "360 Explorer";
