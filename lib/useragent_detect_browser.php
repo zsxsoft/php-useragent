@@ -393,6 +393,10 @@ class useragent_detect_browser {
 			$link = "http://www.xiaomi.com/";
 			$title = self::detect_browser_version("MiuiBrowser", $useragent);
 			$code = "miuibrowser";
+		} elseif (preg_match('/MxNitro/i', $useragent)) {
+			$link = "http://www.maxthon.com/nitro/";
+			$title = self::detect_browser_version("MxNitro", $useragent);
+			$code = "mxnitro";
 		} elseif (preg_match('/IBrowse/i', $useragent)) {
 			$link = "http://www.ibrowse-dev.net/";
 			$title = self::detect_browser_version("IBrowse", $useragent);
