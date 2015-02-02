@@ -10,8 +10,12 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 	function testUserAgent() {
 		$testList = array(
 			array(
-				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 115Browser/5.0', 16, '15820000/', '.gif'),
-				array('15820000/16/browser/114browser.gif', '15820000/16/os/win-2.gif', '115Browser 5.0', 'Windows XP'),
+				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 114Browser/5.0', 16, '15820000/', '.gif'),
+				array('15820000/16/browser/114browser.gif', '15820000/16/os/win-2.gif', '114Browser 5.0', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 115Browser/5.1.3', 16, '15820000/', '.gif'),
+				array('15820000/16/browser/115browser.gif', '15820000/16/os/win-2.gif', '115Browser 5.1.3', 'Windows XP'),
 			),
 			array(
 				array('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; 2345Explorer 3.4.0.12519)', 16, '168440000/', null),

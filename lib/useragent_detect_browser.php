@@ -24,10 +24,14 @@ class useragent_detect_browser {
 
 		$web_browser = '';
 		$mobile = 0;
-		if (preg_match('/115Browser/i', $useragent)) {
+		if (preg_match('/114Browser/i', $useragent)) {
 			$link = "http://ie.114la.com/";
-			$title = self::detect_browser_version("115Browser", $useragent);
+			$title = self::detect_browser_version("114Browser", $useragent);
 			$code = "114browser";
+		} elseif (preg_match('/115Browser/i', $useragent)) {
+			$link = "http://ie.115.com/";
+			$title = self::detect_browser_version("115Browser", $useragent);
+			$code = "115browser";
 		} elseif (preg_match('/2345Explorer/i', $useragent)) {
 			$link = "http://ie.2345.com/";
 			$title = self::detect_browser_version("2345Explorer", $useragent);
