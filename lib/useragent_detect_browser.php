@@ -118,7 +118,6 @@ class useragent_detect_browser {
 		'IceWeasel',
 		'iNet\ Browser',
 		'iRider',
-		'Iron',
 		'InternetSurfboard',
 		'Jasmine',
 		'K-Meleon',
@@ -172,11 +171,6 @@ class useragent_detect_browser {
 		'OffByOne',
 		'OmniWeb',
 		'OneBrowser',
-		'Opera Mini',
-		'Opera Mobi',
-		'Opera',
-		'OPR',
-		'(Edition Developer)',
 		'Orca',
 		'Oregano',
 		'Origyn\ Web\ Browser',
@@ -230,7 +224,6 @@ class useragent_detect_browser {
 		'tear',
 		'TeaShark',
 		'Teleca',
-		'TencentTraveler',
 		'TenFourFox',
 		'TheWorld',
 		'Thunderbird',
@@ -267,8 +260,7 @@ class useragent_detect_browser {
 		'Xiino',
 		'YaBrowser',
 		'zBrowser',
-		'ZipZap',
-		'Avant\ Browser');
+		'ZipZap');
 
 	private static $browserList = array(
 		'114browser' => array(
@@ -791,11 +783,6 @@ class useragent_detect_browser {
 			'title' => '{%iRider%}',
 			'code' => 'irider',
 		),
-		'iron' => array(
-			'link' => 'http://www.srware.net/en/software_srware_iron.php',
-			'title' => '{%Iron%}',
-			'code' => 'iron',
-		),
 		'internetsurfboard' => array(
 			'link' => 'http://inetsurfboard.sourceforge.net/',
 			'title' => '{%InternetSurfboard%}',
@@ -1060,21 +1047,6 @@ class useragent_detect_browser {
 			'link' => 'http://one-browser.com/',
 			'title' => '{%OneBrowser%}',
 			'code' => 'onebrowser',
-		),
-		'opera mini' => array(
-			'link' => 'http://www.opera.com/mini/',
-			'title' => '{%Opera Mini%}',
-			'code' => 'opera-2',
-		),
-		'opera mobi' => array(
-			'link' => 'http://www.opera.com/mobile/',
-			'title' => '{%Opera Mobi%}',
-			'code' => 'opera-2',
-		),
-		'opera' => array(
-			'link' => 'http://www.opera.com/',
-			'title' => '{%Opera%}',
-			'code' => 'opera-1',
 		),
 		'orca' => array(
 			'link' => 'http://www.orcabrowser.com/',
@@ -1371,14 +1343,14 @@ class useragent_detect_browser {
 			'title' => '{%Tjusig%}',
 			'code' => 'tjusig',
 		),
-		'tencenttraveler' => array(
-			'link' => 'http://tt.qq.com/',
-			'title' => '{%TencentTraveler%}',
-			'code' => 'tt-explorer',
-		),
-		'uc?browser' => array(
+		'ubrowser' => array(
 			'link' => 'http://www.uc.cn/',
-			'title' => '{%UC?Browser%}',
+			'title' => '{%UBrowser%}',
+			'code' => 'ucbrowser',
+		),
+		'ucbrowser' => array(
+			'link' => 'http://www.uc.cn/',
+			'title' => '{%UCBrowser%}',
 			'code' => 'ucbrowser',
 		),
 		'uc browser' => array(
@@ -1536,11 +1508,6 @@ class useragent_detect_browser {
 			'title' => 'ABrowse {%Browser%}',
 			'code' => 'abrowse',
 		),
-		'avant browser' => array(
-			'link' => 'http://www.avantbrowser.com/',
-			'title' => 'Avant {%Browser%}',
-			'code' => 'avantbrowser',
-		),
 		'firefox' => array(
 			'link' => 'http://www.mozilla.org/',
 			'title' => '{%Firefox%}',
@@ -1581,6 +1548,14 @@ class useragent_detect_browser {
 			$link = "http://www.traos.org/";
 			$title = self::detect_browser_version(array('', 'Galaxy'));
 			$code = "galaxy";
+		} elseif (preg_match('/Opera Mini/i', $useragent)) {
+			$link = "http://www.opera.com/mini/";
+			$title = self::detect_browser_version(array('', 'Opera Mini'));
+			$code = "opera-2";
+		} elseif (preg_match('/Opera Mobi/i', $useragent)) {
+			$link = "http://www.opera.com/mobile/";
+			$title = self::detect_browser_version(array('', 'Opera Mobi'));
+			$code = "opera-2";
 		} elseif (preg_match('/Opera Labs/i', $useragent)
 			|| (preg_match('/Opera/i', $useragent)
 				&& preg_match('/Edition Labs/i', $useragent))) {
@@ -1774,13 +1749,16 @@ class useragent_detect_browser {
 		} elseif ($lower_title == strtolower("Links")) {
 			$start = "Links (";
 		} elseif ($lower_title == strtolower("UC Browser")) {
-			$start = "UC Browse";
+			$start = "UC Browser";
 		} elseif ($lower_title == strtolower("TenFourFox")) {
 			$start = " rv";
 		} elseif ($lower_title == strtolower("Classilla")) {
 			$start = " rv";
 		} elseif ($lower_title == strtolower("SmartTV")) {
 			$start = "WebBrowser";
+		} elseif ($lower_title == strtolower("UCWeb")
+			&& preg_match('/UCBrowser/i', $useragent)) {
+			$start = "UCBrowser";
 		} elseif ($lower_title == strtolower("MSIE") && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent)) {
 			// We have IE11 or newer
 			$start = " rv";
@@ -1810,7 +1788,7 @@ class useragent_detect_browser {
 			$return = "NetFront " . $version;
 		} elseif ($lower_title == "semc-browser") {
 			$return = "SEMC Browser " . $version;
-		} elseif ($lower_title == "ucweb" || $lower_title == "uc?browser") {
+		} elseif ($lower_title == "ucweb" || $lower_title == "ubrowser" || $lower_title == "ucbrowser" || $lower_title == "uc browser") {
 			$return = "UC Browser " . $version;
 		} elseif ($lower_title == "bidubrowser" || $lower_title == "baidubrowser" || $lower_title == "baiduhd") {
 			$return = "Baidu Browser " . $version;
