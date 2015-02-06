@@ -101,7 +101,9 @@ class UserAgent {
 		$classList = array("device", "os", "browser");
 		foreach ($classList as $value) {
 			$class = "useragent_detect_" . $value;
-			$this->_data[$value] = $class::analyze($string);
+			// Not support in PHP 5.2
+			//$this->_data[$value] = $class::analyze($string);
+			$this->_data[$value] = call_user_func(array($class, 'analyze'), $string);
 			$this->_data[$value]['image'] = $this->_makeImage($value, $this->_data[$value]['code']);
 		}
 
