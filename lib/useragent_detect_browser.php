@@ -18,10 +18,8 @@
 class useragent_detect_browser {
 
 	private static $browserRegEx = array(
-		'114Browser',
-		'115Browser',
-		'2345Explorer',
-		'2345chrome',
+		'11(4|5)Browser',
+		'2345(Explorer|chrome)',
 		'360se|360ee|360\ aphone\ browser',
 		'Abolimba',
 		'Acoo\ Browser',
@@ -131,8 +129,7 @@ class useragent_detect_browser {
 		'Konqueror',
 		'Kylo',
 		'LBrowser',
-		'LBBrowser',
-		'Liebaofast',
+		'LBBrowser|Liebaofast',
 		'LeechCraft',
 		'Lobo',
 		'lolifox',
@@ -150,7 +147,6 @@ class useragent_detect_browser {
 		'Minimo',
 		'Mosaic',
 		'MozillaDeveloperPreview',
-		'MQQBrowser',
 		'Multi-Browser',
 		'MultiZilla',
 		'MyIE2',
@@ -188,7 +184,7 @@ class useragent_detect_browser {
 		'Pogo',
 		'Polaris',
 		'Prism',
-		'QQBrowser',
+		'M?QQBrowser',
 		'QQ(?!Download|Pinyin)',
 		'QtWeb\ Internet\ Browser',
 		'QupZilla',
@@ -230,9 +226,7 @@ class useragent_detect_browser {
 		'Tizen',
 		'Tjusig',
 		'TencentTraveler',
-		'UC?Browser',
-		'UC\ Browser',
-		'UCWEB',
+		'UC?\ ?Browser|UCWEB',
 		'UltraBrowser',
 		'UP.Browser',
 		'UP.Link',
@@ -1725,41 +1719,41 @@ class useragent_detect_browser {
 		$return = '';
 		// Fix for Opera's UA string changes in v10.00+ (and others)
 		$start = $title;
-		if (($lower_title == strtolower("Opera")
-			|| $lower_title == strtolower("Opera Next")
-			|| $lower_title == strtolower("Opera Labs"))
+		if (($lower_title == "opera"
+			|| $lower_title == "opera next"
+			|| $lower_title == "opera labs")
 			&& preg_match('/Version/i', $useragent)) {
 			$start = "Version";
-		} elseif (($lower_title == strtolower("Opera")
-			|| $lower_title == strtolower("Opera Next")
-			|| $lower_title == strtolower("Opera Developer"))
+		} elseif (($lower_title == "opera"
+			|| $lower_title == "opera next"
+			|| $lower_title == "opera developer")
 			&& preg_match('/OPR/i', $useragent)) {
 			$start = "OPR";
-		} elseif ($lower_title == strtolower("Opera Mobi")
+		} elseif ($lower_title == "opera mobi"
 			&& preg_match('/Version/i', $useragent)) {
 			$start = "Version";
-		} elseif ($lower_title == strtolower("Safari")
+		} elseif ($lower_title == "safari"
 			&& preg_match('/Version/i', $useragent)) {
 			$start = "Version";
-		} elseif ($lower_title == strtolower("Pre")
+		} elseif ($lower_title == "pre"
 			&& preg_match('/Version/i', $useragent)) {
 			$start = "Version";
-		} elseif ($lower_title == strtolower("Android Webkit")) {
+		} elseif ($lower_title == "android webkit") {
 			$start = "Version";
-		} elseif ($lower_title == strtolower("Links")) {
+		} elseif ($lower_title == "links") {
 			$start = "Links (";
-		} elseif ($lower_title == strtolower("UC Browser")) {
+		} elseif ($lower_title == "uc browser") {
 			$start = "UC Browser";
-		} elseif ($lower_title == strtolower("TenFourFox")) {
+		} elseif ($lower_title == "tenfourfox") {
 			$start = " rv";
-		} elseif ($lower_title == strtolower("Classilla")) {
+		} elseif ($lower_title == "classilla") {
 			$start = " rv";
-		} elseif ($lower_title == strtolower("SmartTV")) {
+		} elseif ($lower_title == "smarttv") {
 			$start = "WebBrowser";
-		} elseif ($lower_title == strtolower("UCWeb")
+		} elseif ($lower_title == "ucweb"
 			&& preg_match('/UCBrowser/i', $useragent)) {
 			$start = "UCBrowser";
-		} elseif ($lower_title == strtolower("MSIE") && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent)) {
+		} elseif ($lower_title == "msie" && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent)) {
 			// We have IE11 or newer
 			$start = " rv";
 		} elseif ($lower_title == "spartan") {
@@ -1777,7 +1771,7 @@ class useragent_detect_browser {
 
 		// $return = browser Title and Version, but first..some titles need to be changed
 		if ($lower_title == "msie"
-			&& strtolower($version) == "7.0"
+			&& $version == "7.0"
 			&& preg_match('/Trident\/4.0/i', $useragent)) {
 			$return = " 8.0 (Compatibility Mode)"; // Fix for IE8 quirky UA string with Compatibility Mode enabled
 		} elseif ($lower_title == "msie") {
