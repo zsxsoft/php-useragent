@@ -237,12 +237,14 @@ class useragent_detect_os {
 			$link = "http://www.kubuntu.org/";
 			$title = "Kubuntu";
 
-			if (preg_match('/Kubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+			if (preg_match('/Kubuntu[\/|\ ]([.0-9]+)/i', $useragent, $regmatch)) {
 				$version .= " " . $regmatch[1];
-			}
 
-			if ($regmatch[1] < 10) {
-				$code = "kubuntu-1";
+				if ($regmatch[1] < 10) {
+					$code = "kubuntu-1";
+				} else {
+					$code = "kubuntu-2";
+				}
 			} else {
 				$code = "kubuntu-2";
 			}
