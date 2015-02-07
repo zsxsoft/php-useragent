@@ -1711,6 +1711,274 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21', 16, null, '.gif'),
 				array('img/16/browser/ubuntuwebbrowser.png', 'img/16/device/ubuntutouch.png', 'Ubuntu Web Browser', 'Ubuntu Phone'),
 			),
+			array(
+				array('Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; Acoo Browser 1.98.744; .NET CLR 3.5.30729)', 24, '119680000/', '.gif'),
+				array('119680000/24/browser/acoobrowser.gif', '119680000/24/os/win-3.gif', 'Acoo Browser 1.98.744', 'Windows Vista'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; http://www.Abolimba.de; .NET CLR 1.1.4322)', 16, '280290000/', null),
+				array('280290000/16/browser/abolimba.png', '280290000/16/os/win-2.png', 'Abolimba', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.2; WOW64; rv:9.0.1) Gecko/20100101 Firefox/9.0.1 Alienforce/9.0.1', 24, null, null),
+				array('img/24/browser/alienforce.png', 'img/24/os/win-5.png', 'Alienforce 9.0.1', 'Windows 8 x64'),
+			),
+			array(
+				array('Amiga-AWeb/3.4.167SE', 16, null, '.gif'),
+				array('img/16/browser/amiga-aweb.gif', 'img/16/browser/null.gif', 'Amiga AWeb 3.4.167SE', 'Unknown'),
+			),
+			array(
+				array('BarcaPro/1.4.xxxx', 24, '123840000/', '.gif'),
+				array('123840000/24/browser/barca.gif', '123840000/24/browser/null.gif', 'Barca Pro 1.4.xxxx', 'Unknown'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; SIMBARCA5238C3-B76C-4BCE-8B03-0CE1EA1E621D; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)', 16, null, null),
+				array('img/16/browser/barca.png', 'img/16/os/win-2.png', 'Barca 5238C3', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML like Gecko) Chrome/32.0.1700.77 Beamrise/32.2.1700.77 Safari/537.36', 16, null, null),
+				array('img/16/browser/beamrise.png', 'img/16/os/win-5.png', 'Beamrise 32.2.1700.77', 'Windows 8'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 BIDUBrowser/7.0 Safari/537.36', 24, '168760000/', null),
+				array('168760000/24/browser/bidubrowser.png', '168760000/24/os/win-2.png', 'Baidu Browser 7.0', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.1.1; ar-eg; BlackBird I9000 Build/IMM76D) AppleWebKit/534.30 (KHTML like Gecko) Version/4.0 Mobile Safari/534.30', 16, '316970000/', '.gif'),
+				array('316970000/16/browser/blackbird.gif', '316970000/16/os/android.gif', 'Blackbird I9000', 'Android 4.1.1'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3 (KHTML like Gecko) BlackHawk/1.0.195.0 Chrome/127.0.0.1 Safari/52916320.534', 16, null, null),
+				array('img/16/browser/blackhawk.png', 'img/16/os/win-4.png', 'BlackHawk 1.0.195.0', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/4.61 [en] (X11; U; ) - BrowseX (2.0.0 Windows)', 24, '160290000/', null),
+				array('160290000/24/browser/browsex.png', '160290000/24/os/win-2.png', 'BrowseX', 'Windows'),
+			),
+			array(
+				array('Mozilla/5.0 (iPad; CPU OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Coast/1.0.2.62956 Mobile/10B329 Safari/7534.48.3', 16, null, '.gif'),
+				array('img/16/browser/coast.gif', 'img/16/device/ipad.gif', 'Coast 1.0.2.62956', 'iPad iOS 6.1.3'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML like Gecko) Columbus/1.5.0.0 Safari/534.34', 24, null, '.gif'),
+				array('img/24/browser/columbus.gif', 'img/24/os/win-5.gif', 'Columbus 1.5.0.0', 'Windows 8 x64'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML like Gecko) coccocbrowser/42.0 CoRom/36.0.1985.149 Chrome/36.0.1985.149 Safari/537.36', 24, null, null),
+				array('img/24/browser/corom.png', 'img/24/os/win-5.png', 'CoRom 36.0.1985.149', 'Windows 8.1'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.0.3; en-us; Transformer Prime TF201 Build/IML74K) AppleWebKit/535.7 (KHTML, like Gecko) CrMo/16.0.912.75 Safari/535.7', 24, '80220000/', '.gif'),
+				array('80220000/24/browser/chrome.gif', '80220000/24/os/android.gif', 'Chrome Mobile 16.0.912.75', 'Android 4.0.3'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 2.3.7; en-gb; E15i Build/4.0.1.A.0.283; GingerCruzt) AppleWebKit/533.1 (KHTML like Gecko) Version/4.0 Mobile Safari/533.1', 16, '284950000/', null),
+				array('284950000/16/browser/cruz.png', '284950000/16/os/android.png', 'Cruz t', 'Android 2.3.7'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; DPlus 0.5a)', 24, null, '.gif'),
+				array('img/24/browser/dillo.gif', 'img/24/browser/null.gif', 'D+ 0.5a', 'Unknown'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; U; Intel Mac OS X 1056; en-us) AppleWebKit/525.27.1 (KHTML like Gecko) Demeter/1.0.9 Safari/125', 24, null, null),
+				array('img/24/browser/demeter.png', 'img/24/os/mac-3.png', 'Demeter 1.0.9', 'Mac OS X 1056'),
+			),
+			array(
+				array('Mozilla/3.01 (compatible; Netbox/3.5 R92; Linux 2.2)', 24, null, '.gif'),
+				array('img/24/browser/netbox.gif', 'img/24/os/linux.gif', 'NetBox 3.5', 'GNU/Linux'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.3a5) Gecko/20100610 MozillaDeveloperPreview/3.7a5', 24, null, '.gif'),
+				array('img/24/browser/firefoxdevpre.gif', 'img/24/os/win-3.gif', 'Mozilla Developer Preview 3.7a5', 'Windows Vista'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.20) Gecko/20081217 Firefox/2.0.0.20 Novarra-Vision/8.0', 24, null, null),
+				array('img/24/browser/novarra.png', 'img/24/os/nova.png', 'Novarra Vision 8.0', 'Nova'),
+			),
+			array(
+				array('Mozilla/4.7 (compatible; OffByOne; Windows )', 24, null, null),
+				array('img/24/browser/offbyone.png', 'img/24/os/win-2.png', 'Off By One', 'Windows'),
+			),
+			array(
+				array('OneBrowser/4.2.0/Adr(Linux; U; Android 4.1.2; cs-cz; C2105 Build/15.0.A.1.31) AppleWebKit/533.1 (KHTML, like Gecko) Mobile Safari/533.1', 16, null, '.gif'),
+				array('img/16/browser/onebrowser.gif', 'img/16/os/android.gif', 'OneBrowser 4.2.0', 'Android 4.1.2'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36 OPR/19.0.1326.39 (Edition Next)', 16, null, '.gif'),
+				array('img/16/browser/opera-next.gif', 'img/16/os/mac-3.gif', 'Opera Next 19.0.1326.39', 'Mac OS X 10.9.1'),
+			),
+			array(
+				array('Mozilla/5.0 (compatible; Origyn Web Browser; AmigaOS 4.1; PPC; U) AppleWebKit/525.1+ (KHTML, like Gecko, Safari/525.1+)', 24, '285990000/', null),
+				array('285990000/24/browser/owb.png', '285990000/24/os/amigaos.png', 'Oregano Web Browser', 'AmigaOS 4.1'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; Android 4.4.3; Amazon Otter Build/KTU84M) AppleWebKit/537.36 (KHTML like Gecko) Version/4.0 Chrome/33.0.0.0 Safari/537.36', 24, '298950000/', '.gif'),
+				array('298950000/24/browser/otter.gif', '298950000/24/os/android.gif', 'Otter Build', 'Android 4.4.3'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; cs-CZ) AppleWebKit/533.3 (KHTML, like Gecko) SlimBoat/1.0.8 Version/5.1 Safari/533.3', 24, '308910000/', '.gif'),
+				array('308910000/24/browser/slimboat.gif', '308910000/24/os/win-4.gif', 'SlimBoat 1.0.8', 'Windows 7'),
+			),
+			array(
+				array('KDDI-KC31 UP.Browser/6.2.0.5 (GUI) MMP/2.0', 16, null, '.gif'),
+				array('img/16/browser/openwave.gif', 'img/16/browser/null.gif', 'Openwave Mobile Browser 6.2.0.5', 'Unknown'),
+			),
+			array(
+				array('HTC-ST7377/1.59.502.3 (67150) Opera/9.50 (Windows NT 5.1; U; en) UP.Link/6.3.1.17.0', 16, null, null),
+				array('img/16/browser/openwave.png', 'img/16/device/htc.png', 'Openwave Mobile Browser 6.3.1.17.0', 'HTC ST7377'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; Linux x86_64; rv:2.0) Gecko/20110318 WebianShell/0.', 24, '91590000/', '.gif'),
+				array('91590000/24/browser/webianshell.gif', '91590000/24/os/linux.gif', 'Webian Shell 0.', 'GNU/Linux x64'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; QQDownload 1.7; GTB6.6; TencentTraveler 4.0; SLCC1; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.5.30729; .NET CLR 3.0.30729)', 16, '126360000/', null),
+				array('126360000/16/browser/tencenttraveler.png', '126360000/16/os/win-3.png', 'Tencent Traveler 4.0', 'Windows Vista'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Tjusig 2.40.164; Avant Browser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)', 24, '211700000/', '.gif'),
+				array('211700000/24/browser/tjusig.gif', '211700000/24/os/win-1.gif', 'Tjusig 2.40.164', 'Windows 98'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Tizen 2.0; en-us) AppleWebKit/537.1 (KHTML, like Gecko) Mobile TizenBrowser/2.0', 16, '171750000/', null),
+				array('171750000/16/browser/tizen.png', '171750000/16/os/linux.png', 'Tizen 2.0', 'GNU/Linux'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; AspTear 1.5)', 16, null, null),
+				array('img/16/browser/tear.png', 'img/16/os/win-1.png', 'Tear', 'Windows 2000'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.8.1.9) Gecko/20071110 Sylera/3.0.20 SeaMonkey/1.1.6', 24, null, '.gif'),
+				array('img/24/browser/null.gif', 'img/24/os/win-4.gif', 'Sylera 3.0.20', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.2) AppleWebKit/534.34 (KHTML like Gecko) SlimBoat/1.1.53 Chrome/25.0.1364.97 Version/5.1 Safari/534.34', 16, '100440000/', '.gif'),
+				array('100440000/16/browser/slimboat.gif', '100440000/16/os/win-5.gif', 'SlimBoat 1.1.53', 'Windows 8'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.0.13.81_10003810) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16 Silk-Accelerated=true', 24, null, '.gif'),
+				array('img/24/browser/silk.gif', 'img/24/os/mac-3.gif', 'Silk 1.0', 'Mac OS X 10.6.3'),
+			),
+			array(
+				array('DoCoMo/2.0 F2051(c100;TD)', 24, null, null),
+				array('img/24/browser/null.png', 'img/24/browser/null.png', 'DoCoMo 2.0', 'Unknown'),
+			),
+			array(
+				array('DocZilla/1.0 (Windows; U; WinNT4.0; en-US; rv:1.0.0)', 16, '193880000/', null),
+				array('193880000/16/browser/doczilla.png', '193880000/16/os/win-1.png', 'DocZilla 1.0', 'Windows NT 4.0'),
+			),
+			array(
+				array('Mozilla/5.0 (iPad; CPU OS 613 like Mac OS X) AppleWebKit/536.26 (KHTML like Gecko) Mobile/10B329 Safari/6533.18.5 SecuredBrowser/jp.co.obayashi.clomosecuredbrowser', 16, null, '.gif'),
+				array('img/16/browser/edbrowse.gif', 'img/16/device/ipad.gif', 'Edbrowse r', 'iPad iOS 613'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; Intel Mac OS X 1095) AppleWebKit/537.36 (KHTML like Gecko) Chrome/34.0.1771.0 Safari/537.36 Epic', 16, null, '.gif'),
+				array('img/16/browser/epicbrowser.gif', 'img/16/os/mac-3.gif', 'Epic ', 'Mac OS X 1095'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_1; nl-nl) AppleWebKit/532.3+ (KHTML, like Gecko) Fluid/0.9.6 Safari/532.3+', 16, null, '.gif'),
+				array('img/16/browser/fluid.gif', 'img/16/os/mac-3.gif', 'Fluid 0.9.6', 'Mac OS X 10.6.1'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.10) Gecko/20100923 Firefox/3.6.10 compat GlobalMojo/2.0.7 GlobalMojoExt/2.0.7', 16, null, '.gif'),
+				array('img/16/browser/globalmojo.gif', 'img/16/os/win-4.gif', 'GlobalMojo 2.0.7', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; GTB7.5; GOSURF; Foxy/1; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.5.30729; .NET CLR 3.0.30618)', 24, null, null),
+				array('img/24/browser/gosurf.png', 'img/24/os/win-3.png', 'GoSurf ', 'Windows Vista'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.2.2; en-us ; HV3 Build/JDQ39) AppleWebKit/533.1 (KHTML like Gecko) Version/4.0 Mobile Safari/533.1/UCBrowser/8.6.1.262/145/355', 16, null, '.gif'),
+				array('img/16/browser/hv3.gif', 'img/16/os/android.gif', 'Hv3 Build', 'Android 4.2.2'),
+			),
+			array(
+				array('Mozilla/5.0 (Java 1.6.0_01; Windows XP 5.1 x86; en) ICEbrowser/v6_1_2', 24, '313100000/', null),
+				array('313100000/24/browser/icebrowser.png', '313100000/24/os/win-2.png', 'ICEbrowser v6_1_2', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (iPhone; CPU iPhone OS 712 like Mac OS X) AppleWebKit/537.51.2 (KHTML like Gecko) Mobile/11D257 FBAN/FBIOS;FBAV/14.0.0.25.26;FBBV/4017285;FBDV/iPhone61;FBMD/iPhone;FBSN/iPhone OS;FBSV/7.1.2;FBSS/2; FBCR/Strata;FBID/phone;FBLC/enUS;FBOP/5', 16, '288650000/', null),
+				array('288650000/16/browser/kirix-strata.png', '288650000/16/device/iphone.png', 'Kirix Strata ', 'iPhone iOS 712'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/31.0.1650.63 Safari/537.36', 16, '80810000/', null),
+				array('80810000/16/browser/chrome.png', '80810000/16/os/win-5.png', 'Google Chrome 31.0.1650.63', 'Windows 8 x64'),
+			),
+			array(
+				array('Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; LEGALBROWSER)', 16, null, '.gif'),
+				array('img/16/browser/lbrowser.gif', 'img/16/os/win-4.gif', 'LBrowser ', 'Windows 7 x64'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; cs; rv:1.9.2.6) Gecko/20100628 myibrow/4alpha2', 24, '71800000/', null),
+				array('71800000/24/browser/myibrow.png', '71800000/24/os/win-4.png', 'myibrow 4alpha2', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; ru-RU) AppleWebKit/533.3 (KHTML like Gecko) InternetSurfboard/0.4 Safari/533.3', 16, null, null),
+				array('img/16/browser/internetsurfboard.png', 'img/16/os/win-4.png', 'InternetSurfboard 0.4', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; en-US; SkipStone 0.8.3) Gecko/20020615 Debian/1.0.0-3', 16, '25400000/', '.gif'),
+				array('25400000/16/browser/skipstone.gif', '25400000/16/os/debian.gif', 'SkipStone 0.8.3', 'Debian GNU/Linux'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 5.1; cs; rv:1.9.0.5) Gecko/2009021916 Songbird/1.1.2 (20090331142126)', 24, '197230000/', '.gif'),
+				array('197230000/24/browser/songbird.gif', '197230000/24/os/win-2.gif', 'Songbird 1.1.2', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.12 (KHTML, like Gecko) Chrome/9.0.571.0 Safari/534.12 ZipZap 3.1', 24, '135930000/', null),
+				array('135930000/24/browser/zipzap.png', '135930000/24/os/win-4.png', 'ZipZap 3.1', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; UltraBrowser 11.0; BTRS123574; InfoPath.2)', 24, '300570000/', null),
+				array('300570000/24/browser/ultrabrowser.png', '300570000/24/os/win-2.png', 'UltraBrowser 11.0', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (en-us) AppleWebKit/537.36(KHTML like Gecko; Google-Adwords-DisplayAds-WebRender;) Chrome/27.0.1453Safari/537.36', 16, '107680000/', null),
+				array('107680000/16/browser/webrender.png', '107680000/16/browser/null.png', 'Webrender', 'Unknown'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; U; Intel Mac OS X 1067; it-it) AppleWebKit/533.20.25 (KHTML like Gecko) Mozilla/5.0 (Macintosh; U; Intel Mac OS X 1067; en) AppleWebKit/533.20.25 (KHTML like Gecko) "wKiosk for Mac"', 24, '227610000/', null),
+				array('227610000/24/browser/wkiosk.png', '227610000/24/os/mac-3.png', 'wKiosk', 'Mac OS X 1067'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/534.34 (KHTML, like Gecko) Qt/4.8.2 Ryouko/1.2.4 Safari/534.34', 16, null, null),
+				array('img/16/browser/ryouko.png', 'img/16/os/win-2.png', 'Ryouko 1.2.4', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) QupZilla/1.4.3 Safari/534.34', 16, null, '.gif'),
+				array('img/16/browser/qupzilla.gif', 'img/16/os/mac-3.gif', 'QupZilla 1.4.3', 'Mac OS X'),
+			),
+			array(
+				array('Podkicker/1.0.3 Android/4.0.4', 16, null, null),
+				array('img/16/browser/podkicker.png', 'img/16/os/android.png', 'Podkicker 1.0.3', 'Android 4.0.4'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; PhaseOut-www.phaseout.net)', 24, null, '.gif'),
+				array('img/24/browser/phaseout.gif', 'img/24/os/win-2.gif', 'Phaseout', 'Windows XP'),
+			),
+			array(
+				array('Mozilla/4.0 (BREW 3.1.5; U; en-us; Samsung; SPH_M330; POLARIS/6.1/WAP) MMP/2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0', 16, '306130000/', '.gif'),
+				array('306130000/16/browser/polaris.gif', '306130000/16/device/samsung.gif', 'Polaris 6.1', 'Samsung'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; cs-CZ) AppleWebKit/533.3 (KHTML, like Gecko) Patriott::Browser/1.0.0 Safari/533.3', 16, '276860000/', '.gif'),
+				array('276860000/16/browser/patriott.gif', '276860000/16/os/win-4.gif', 'Patriott Browser 1.0.0', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; fa-IR) AppleWebKit/532.4 (KHTML like Gecko) Usejump/0.10.4 Safari/532.4', 24, '66030000/', null),
+				array('66030000/24/browser/usejump.png', '66030000/24/os/win-4.png', 'Usejump 0.10.4', 'Windows 7'),
+			),
+			array(
+				array('Xiino/1.0.9E [en] (v. 3.5.2H6.0; 153x130; c8)', 24, '266900000/', null),
+				array('266900000/24/browser/null.png', '266900000/24/browser/null.png', 'Xiino 1.0.9E', 'Unknown'),
+			),
+			array(
+				array('X-Smiles/1.2-20081113', 24, null, '.gif'),
+				array('img/24/browser/x-smiles.gif', 'img/24/browser/null.gif', 'X-Smiles 1.2', 'Unknown'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.34 (KHTML, like Gecko) zBrowser/NigtSky-0.0.2 Safari/534.34', 16, '115310000/', null),
+				array('115310000/16/browser/zbrowser.png', '115310000/16/os/win-4.png', 'zBrowser NigtSky', 'Windows 7'),
+			),
 		);
 
 		foreach ($testList as $list) {
