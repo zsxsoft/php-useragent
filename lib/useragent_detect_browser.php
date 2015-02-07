@@ -1825,8 +1825,6 @@ class useragent_detect_browser {
 			$return = "Gtk+ WebCore " . $version;
 		} elseif ($lower_title == "tablet browser") {
 			$return = "MicroB " . $version;
-		} elseif ($lower_title == "tencenttraveler") {
-			$return = "TT Explorer " . $version;
 		} elseif ($lower_title == "crmo") {
 			$return = "Chrome Mobile " . $version;
 		} elseif ($lower_title == "smarttv") {
