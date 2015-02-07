@@ -632,7 +632,7 @@ class useragent_detect_browser {
 		),
 		'escape' => array(
 			'link' => 'http://www.espial.com/products/evo_browser/',
-			'title' => 'Espial TV Browser - {%Escape%}',
+			'title' => '{%Escape%}',
 			'code' => 'espialtvbrowser',
 		),
 		'fennec' => array(
