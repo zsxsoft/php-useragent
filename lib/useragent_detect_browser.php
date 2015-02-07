@@ -1312,7 +1312,7 @@ class useragent_detect_browser {
 		),
 		'teleca' => array(
 			'link' => 'http://en.wikipedia.org/wiki/Obigo_Browser/',
-			'title' => '{% Teleca%}',
+			'title' => '{%Teleca%}',
 			'code' => 'obigo',
 		),
 		'tencenttraveler' => array(
@@ -1844,6 +1844,12 @@ class useragent_detect_browser {
 		} elseif ($lower_title == "opera labs") {
 			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
 			$return = $title . $regmatch[1] . " " . $version;
+		} elseif ($lower_title == "iceweasel") {
+			if ($version == "Firefox") {
+				$version = "";
+			}
+
+			$return = $title . " " . $version;
 		} else {
 			$return = $title . " " . $version;
 		}
