@@ -53,6 +53,7 @@ class useragent_detect_browser {
 		'Chimera',
 		'chromeframe',
 		'ChromePlus',
+		'curl',
 		'Iron',
 		'Chromium',
 		'Classilla',
@@ -80,7 +81,7 @@ class useragent_detect_browser {
 		'Dorothy',
 		'DPlus',
 		'Edbrowse',
-		'Elinks',
+		'E?links',
 		'Element\ Browser',
 		'Enigma\ Browser',
 		'EnigmaFox',
@@ -244,6 +245,7 @@ class useragent_detect_browser {
 		'WeltweitimnetzBrowser',
 		'wKiosk',
 		'WorldWideWeb',
+		'wget',
 		'wp-android',
 		'wp-blackberry',
 		'wp-iphone',
@@ -843,6 +845,11 @@ class useragent_detect_browser {
 			'title' => '{%LBrowser%}',
 			'code' => 'lbrowser',
 		),
+		'links' => array(
+			'link' => 'http://links.twibright.com/',
+			'title' => '{%Links%}',
+			'code' => 'null',
+		),
 		'lbbrowser' => array(
 			'link' => 'http://www.liebao.cn/',
 			'title' => 'Liebao Browser',
@@ -1413,6 +1420,16 @@ class useragent_detect_browser {
 			'title' => '{%W3M%}',
 			'code' => 'w3m',
 		),
+		'wget' => array(
+			'link' => 'https://www.gnu.org/software/wget/',
+			'title' => '{%wget%}',
+			'code' => 'null',
+		),
+		'curl' => array(
+			'link' => 'http://curl.haxx.se/',
+			'title' => '{%curl%}',
+			'code' => 'null',
+		),
 		'iemobile' => array(
 			'link' => 'http://www.microsoft.com/windowsmobile/en-us/downloads/microsoft/internet-explorer-mobile.mspx',
 			'title' => '{%IEMobile%}',
@@ -1768,11 +1785,12 @@ class useragent_detect_browser {
 
 		// Grab the browser version if its present
 		$version = '';
+
+		$start = preg_quote($start);
 		if (preg_match('/' . $start . '[\ |\/|\:]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 			if (count($regmatch) > 1) {
 				$version = $regmatch[1];
 			}
-
 		}
 
 		// $return = browser Title and Version, but first..some titles need to be changed
