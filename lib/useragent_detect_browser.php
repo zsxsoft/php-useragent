@@ -111,7 +111,7 @@ class useragent_detect_browser {
 		'MxNitro',
 		'IBrowse',
 		'iCab',
-		'Ice Browser',
+		'IceBrowser',
 		'Iceape',
 		'IceCat',
 		'IceWeasel',
@@ -151,6 +151,7 @@ class useragent_detect_browser {
 		'Multi-Browser',
 		'MultiZilla',
 		'MyIE2',
+		'myibrow',
 		'Namoroka',
 		'Navigator',
 		'NetBox',
@@ -161,7 +162,6 @@ class useragent_detect_browser {
 		'Netscape',
 		'NetSurf',
 		'NF-Browser',
-		'NintendoBrowser',
 		'NokiaBrowser',
 		'Novarra-Vision',
 		'Obigo',
@@ -203,6 +203,7 @@ class useragent_detect_browser {
 		'SkipStone',
 		'Skyfire',
 		'Sleipnir',
+		'Silk',
 		'SlimBoat',
 		'SlimBrowser',
 		'SmartTV',
@@ -246,12 +247,6 @@ class useragent_detect_browser {
 		'wKiosk',
 		'WorldWideWeb',
 		'wget',
-		'wp-android',
-		'wp-blackberry',
-		'wp-iphone',
-		'wp-nokia',
-		'wp-webos',
-		'wp-windowsphone',
 		'Wyzo',
 		'X-Smiles',
 		'Xiino',
@@ -324,6 +319,11 @@ class useragent_detect_browser {
 			'link' => 'http://amigo.mail.ru/',
 			'title' => 'Amigo',
 			'code' => 'amigo',
+		),
+		'myibrow' => array(
+			'link' => 'http://myinternetbrowser.webove-stranky.org/',
+			'title' => '{%myibrow%}',
+			'code' => 'my-internet-browser',
 		),
 		'america online browser' => array(
 			'link' => 'http://downloads.channel.aol.com/browser',
@@ -750,9 +750,9 @@ class useragent_detect_browser {
 			'title' => '{%iCab%}',
 			'code' => 'icab',
 		),
-		'ice browser' => array(
+		'icebrowser' => array(
 			'link' => 'http://www.icesoft.com/products/icebrowser.html',
-			'title' => '{%Ice Browser%}',
+			'title' => '{%IceBrowser%}',
 			'code' => 'icebrowser',
 		),
 		'iceape' => array(
@@ -1015,11 +1015,6 @@ class useragent_detect_browser {
 			'title' => '{%NF-Browser%}',
 			'code' => 'netfront',
 		),
-		'nintendobrowser' => array(
-			'link' => 'http://www.netsurf-browser.org/',
-			'title' => 'Nintendo {%Browser%}',
-			'code' => 'nintendobrowser',
-		),
 		'nokiabrowser' => array(
 			'link' => 'http://browser.nokia.com/',
 			'title' => 'Nokia {%Browser%}',
@@ -1224,6 +1219,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.fenrir-inc.com/other/sleipnir/',
 			'title' => '{%Sleipnir%}',
 			'code' => 'sleipnir',
+		),
+		'silk' => array(
+			'link' => 'http://en.wikipedia.org/wiki/Amazon_Silk/',
+			'title' => 'Amazon {%Silk%}',
+			'code' => 'silk',
 		),
 		'slimboat' => array(
 			'link' => 'http://slimboat.com/',
@@ -1459,36 +1459,6 @@ class useragent_detect_browser {
 			'link' => 'http://www.w3.org/People/Berners-Lee/WorldWideWeb.html',
 			'title' => '{%WorldWideWeb%}',
 			'code' => 'worldwideweb',
-		),
-		'wp-android' => array(
-			'link' => 'http://android.wordpress.org/',
-			'title' => '{%wp-android%}',
-			'code' => 'wordpress',
-		),
-		'wp-blackberry' => array(
-			'link' => 'http://blackberry.wordpress.org/',
-			'title' => '{%wp-blackberry%}',
-			'code' => 'wordpress',
-		),
-		'wp-iphone' => array(
-			'link' => 'http://ios.wordpress.org/',
-			'title' => '{%wp-iphone%}',
-			'code' => 'wordpress',
-		),
-		'wp-nokia' => array(
-			'link' => 'http://nokia.wordpress.org/',
-			'title' => '{%wp-nokia%}',
-			'code' => 'wordpress',
-		),
-		'wp-webos' => array(
-			'link' => 'http://webos.wordpress.org/',
-			'title' => '{%wp-webos%}',
-			'code' => 'wordpress',
-		),
-		'wp-windowsphone' => array(
-			'link' => 'http://windowsphone.wordpress.org/',
-			'title' => '{%wp-windowsphone%}',
-			'code' => 'wordpress',
 		),
 		'wyzo' => array(
 			'link' => 'http://www.wyzo.com/',

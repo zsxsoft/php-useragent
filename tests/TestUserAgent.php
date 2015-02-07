@@ -1709,7 +1709,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('202100000/24/browser/obigo.png', '202100000/24/device/lg.png', 'Teleca Q7', 'LG VX11000'),
 			), array(
 				array('Mozilla/5.0 (Ubuntu; Mobile) WebKit/537.21', 16, null, '.gif'),
-				array('img/16/browser/ubuntuwebbrowser.png', 'img/16/device/ubuntutouch.png', 'Ubuntu Web Browser', 'Ubuntu Phone'),
+				array('img/16/browser/ubuntuwebbrowser.gif', 'img/16/device/ubuntutouch.gif', 'Ubuntu Web Browser', 'Ubuntu Phone'),
 			),
 			array(
 				array('Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; Acoo Browser 1.98.744; .NET CLR 3.5.30729)', 24, '119680000/', '.gif'),
@@ -1857,7 +1857,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.0.13.81_10003810) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16 Silk-Accelerated=true', 24, null, '.gif'),
-				array('img/24/browser/silk.gif', 'img/24/os/mac-3.gif', 'Silk 1.0', 'Mac OS X 10.6.3'),
+				array('img/24/browser/silk.gif', 'img/24/os/mac-3.gif', 'Amazon Silk 1.0.13.81', 'Mac OS X 10.6.3'),
 			),
 			array(
 				array('DoCoMo/2.0 F2051(c100;TD)', 24, null, null),
@@ -1893,7 +1893,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Java 1.6.0_01; Windows XP 5.1 x86; en) ICEbrowser/v6_1_2', 24, '313100000/', null),
-				array('313100000/24/browser/icebrowser.png', '313100000/24/os/win-2.png', 'ICEbrowser v6_1_2', 'Windows XP'),
+				array('313100000/24/browser/icebrowser.png', '313100000/24/os/win-2.png', 'IceBrowser v6', 'Windows XP'),
 			),
 			array(
 				array('Mozilla/5.0 (iPhone; CPU iPhone OS 712 like Mac OS X) AppleWebKit/537.51.2 (KHTML like Gecko) Mobile/11D257 FBAN/FBIOS;FBAV/14.0.0.25.26;FBBV/4017285;FBDV/iPhone61;FBMD/iPhone;FBSN/iPhone OS;FBSV/7.1.2;FBSS/2; FBCR/Strata;FBID/phone;FBLC/enUS;FBOP/5', 16, '288650000/', null),
@@ -1909,7 +1909,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; cs; rv:1.9.2.6) Gecko/20100628 myibrow/4alpha2', 24, '71800000/', null),
-				array('71800000/24/browser/myibrow.png', '71800000/24/os/win-4.png', 'myibrow 4alpha2', 'Windows 7'),
+				array('71800000/24/browser/my-internet-browser.png', '71800000/24/os/win-4.png', 'myibrow 4alpha2', 'Windows 7'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; ru-RU) AppleWebKit/533.3 (KHTML like Gecko) InternetSurfboard/0.4 Safari/533.3', 16, null, null),
