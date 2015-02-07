@@ -235,6 +235,7 @@ class useragent_detect_browser {
 		'uZard',
 		'uzbl',
 		'Vimprobable',
+		'Vivaldi',
 		'Vonkeror',
 		'w3m',
 		'IEMobile',
@@ -1396,6 +1397,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.vimprobable.org/',
 			'title' => '{%Vimprobable%}',
 			'code' => 'null',
+		),
+		'vivaldi' => array(
+			'link' => 'http://www.vivaldi.com',
+			'title' => '{%Vivaldi%}',
+			'code' => 'vivaldi',
 		),
 		'vonkeror' => array(
 			'link' => 'http://zzo38computer.cjb.net/vonkeror/',
