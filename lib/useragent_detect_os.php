@@ -539,9 +539,7 @@ class useragent_detect_os {
 			$link = "http://en.wikipedia.org/wiki/WebOS";
 			$title = "Palm webOS";
 			$code = "palm";
-		} elseif (preg_match('/Windows/i', $useragent)
-			|| preg_match('/WinNT/i', $useragent)
-			|| preg_match('/Win32/i', $useragent)) {
+		} elseif (preg_match('/Windows|Win(NT|32|95|98)/i', $useragent)) {
 			$link = "http://www.microsoft.com/windows/";
 			$x64 = false;
 			if (preg_match('/Win64; x64|WOW64/i', $useragent)) {
@@ -592,7 +590,7 @@ class useragent_detect_os {
 				$title = "Windows 3.1";
 				$code = "win-1";
 			} elseif (preg_match('/Win 9x 4.90|Windows ME/i', $useragent)) {
-				$title = "Windows Millennium Edition (Windows Me)";
+				$title = "Windows Me";
 				$code = "win-1";
 			} elseif (preg_match('/Win98/i', $useragent)) {
 				$title = "Windows 98 SE";
