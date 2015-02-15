@@ -53,7 +53,6 @@ class useragent_detect_browser {
 		'Chimera',
 		'chromeframe',
 		'ChromePlus',
-		'CriOS',
 		'curl',
 		'Iron',
 		'Chromium',
@@ -465,11 +464,6 @@ class useragent_detect_browser {
 			'link' => 'http://www.chromeplus.org/',
 			'title' => '{%ChromePlus%}',
 			'code' => 'chromeplus',
-		),
-		'crios' => array(
-			'link' => 'http://www.google.com/chrome',
-			'title' => '{%CriOS%}',
-			'code' => 'chrome',
 		),
 		'iron' => array(
 			'link' => 'http://www.srware.net/',
@@ -1615,7 +1609,7 @@ class useragent_detect_browser {
 			$link = "http://developer.android.com/reference/android/webkit/package-summary.html";
 			$title = self::detect_browser_version(array('', 'Android Webkit'));
 			$code = "android-webkit";
-		} elseif (preg_match('/Chrome/i', $useragent)) {
+		} elseif (preg_match('/Chrome|crios/i', $useragent)) {
 
 			// Note: For IE11 Experimental Web Platform Features in Windows 10
 			// Spartan? Who knows.
@@ -1623,6 +1617,10 @@ class useragent_detect_browser {
 				$link = "http://www.microsoft.com/windows/products/winfamily/ie/default.mspx";
 				$title = "Internet Explorer " . self::detect_browser_version(array('', 'Spartan'));
 				$code = "msie11";
+			} else if (preg_match('/crios/i', $useragent)) {
+				$link = "http://google.com/chrome/";
+				$title = "Google " . self::detect_browser_version(array('', 'Crios'));
+				$code = "chrome";
 			} else {
 				$link = "http://google.com/chrome/";
 				$title = "Google " . self::detect_browser_version(array('', 'Chrome'));
