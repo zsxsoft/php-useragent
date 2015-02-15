@@ -2192,7 +2192,8 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Multi-Browser XP 10.2 (www.multibrowser.de); Avant Browser; .NET CLR 2.0.50727; .NET CLR 1.1.4322; InfoPath.1; .NET CLR 3.0.04506.30)'),
 				array('img/16/browser/multi-browserxp.png', 'img/16/os/win-2.png', 'Multi-Browser XP', 'Windows XP'),
-			), array(
+			),
+			array(
 				array('Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B329 MicroMessenger/5.0.1'),
 				array('img/16/browser/wechat.png', 'img/16/device/iphone.png', 'WeChat 5.0.1', 'iPhone iOS 6.1.3'),
 			),
@@ -2215,6 +2216,16 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			array(
 				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1985.125 Safari/537.36 Kinza/1.2.0'),
 				array('img/16/browser/kinza.png', 'img/16/os/win-5.png', 'Kinza 1.2.0', 'Windows 8.1 x64'),
+			),
+			array(
+				// I didn't install the latest version.
+				// The latest version of Polarity Browser was based on Chromium.
+				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.12) Gecko/20101026 Villanova/1.9.2.12 Polarity/3.0.0 Firefox/4.0'),
+				array('img/16/browser/polarity.png', 'img/16/os/win-4.png', 'Polarity 3.0.0', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.46 Safari/536.5 Nichrome/self/19'),
+				array('img/16/browser/nichromeself.png', 'img/16/os/win-2.png', 'NiChrome 19', 'Windows XP'),
 			),
 		);
 

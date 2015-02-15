@@ -166,6 +166,7 @@ class useragent_detect_browser {
 		'Netscape',
 		'NetSurf',
 		'NF-Browser',
+		'Nichrome\/self',
 		'NokiaBrowser',
 		'Novarra-Vision',
 		'Obigo',
@@ -188,6 +189,7 @@ class useragent_detect_browser {
 		'Podkicker\ Pro',
 		'Pogo',
 		'Polaris',
+		'Polarity',
 		'Prism',
 		'M?QQBrowser',
 		'QQ(?!Download|Pinyin)',
@@ -1046,6 +1048,11 @@ class useragent_detect_browser {
 			'title' => '{%NF-Browser%}',
 			'code' => 'netfront',
 		),
+		'nichrome/self' => array(
+			'link' => 'http://soft.rambler.ru/browser/',
+			'title' => '{%Nichrome/self%}',
+			'code' => 'nichromeself',
+		),
 		'nokiabrowser' => array(
 			'link' => 'http://browser.nokia.com/',
 			'title' => 'Nokia {%Browser%}',
@@ -1155,6 +1162,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.infraware.co.kr/eng/01_product/product02.asp',
 			'title' => '{%Polaris%}',
 			'code' => 'polaris',
+		),
+		'polarity' => array(
+			'link' => 'http://polarityweb.weebly.com/',
+			'title' => '{%Polarity%}',
+			'code' => 'polarity',
 		),
 		'prism' => array(
 			'link' => 'http://prism.mozillalabs.com/',
@@ -1787,6 +1799,8 @@ class useragent_detect_browser {
 			$start = " rv";
 		} elseif ($lower_title == "spartan") {
 			$start = "edge";
+		} elseif ($lower_title == "nichrome/self") {
+			$start = "self";
 		}
 
 		// Grab the browser version if its present
@@ -1839,6 +1853,8 @@ class useragent_detect_browser {
 			$return = "D+ " . $version;
 		} elseif ($lower_title == "micromessenger") {
 			$return = "WeChat " . $version;
+		} elseif ($lower_title == "nichrome/self") {
+			$return = "NiChrome " . $version;
 		} elseif ($lower_title == "opera labs") {
 			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
 			$return = $title . $regmatch[1] . " " . $version;
