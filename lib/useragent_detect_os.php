@@ -22,6 +22,11 @@ class useragent_detect_os {
 		$code = '';
 		$version = '';
 
+		$x64 = false;
+		if (preg_match('/x86_64|Win64; x64|WOW64/i', $useragent)) {
+			$x64 = true;
+		}
+
 		if (preg_match('/Windows Phone|WPDesktop|ZuneWP7|WP7/i', $useragent)) {
 			$link = "http://www.windowsphone.com/";
 			$title = "Windows Phone";
@@ -43,9 +48,6 @@ class useragent_detect_os {
 
 			$code = "amigaos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Android|ADR /i', $useragent)) {
 			$link = "http://www.android.com/";
 			$title = "Android";
@@ -56,25 +58,16 @@ class useragent_detect_os {
 				$title .= " " . $version;
 			}
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/[^A-Za-z]Arch/i', $useragent)) {
 			$link = "http://www.archlinux.org/";
 			$title = "Arch Linux";
 			$code = "archlinux";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/BeOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/BeOS";
 			$title = "BeOS";
 			$code = "beos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/CentOS/i', $useragent)) {
 			$link = "http://www.centos.org/";
 			$title = "CentOS";
@@ -85,49 +78,31 @@ class useragent_detect_os {
 
 			$code = "centos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Chakra/i', $useragent)) {
 			$link = "http://www.chakra-linux.org/";
 			$title = "Chakra Linux";
 			$code = "chakra";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/\b(?!Mi)CrOS(?!oft)/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Google_Chrome_OS";
 			$title = "Google Chrome OS";
 			$code = "chromeos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Crunchbang/i', $useragent)) {
 			$link = "http://www.crunchbanglinux.org/";
 			$title = "Crunchbang";
 			$code = "crunchbang";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Debian/i', $useragent)) {
 			$link = "http://www.debian.org/";
 			$title = "Debian GNU/Linux";
 			$code = "debian";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/DragonFly/i', $useragent)) {
 			$link = "http://www.dragonflybsd.org/";
 			$title = "DragonFly BSD";
 			$code = "dragonflybsd";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Edubuntu/i', $useragent)) {
 			$link = "http://www.edubuntu.org/";
 			$title = "Edubuntu";
@@ -146,9 +121,6 @@ class useragent_detect_os {
 				$title .= $version;
 			}
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Fedora/i', $useragent)) {
 			$link = "http://www.fedoraproject.org/";
 			$title = "Fedora";
@@ -159,9 +131,6 @@ class useragent_detect_os {
 
 			$code = "fedora";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Foresight\ Linux/i', $useragent)) {
 			$link = "http://www.foresightlinux.org/";
 			$title = "Foresight Linux";
@@ -172,33 +141,21 @@ class useragent_detect_os {
 
 			$code = "foresight";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/FreeBSD/i', $useragent)) {
 			$link = "http://www.freebsd.org/";
 			$title = "FreeBSD";
 			$code = "freebsd";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Gentoo/i', $useragent)) {
 			$link = "http://www.gentoo.org/";
 			$title = "Gentoo";
 			$code = "gentoo";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Inferno/i', $useragent)) {
 			$link = "http://www.vitanuova.com/inferno/";
 			$title = "Inferno";
 			$code = "inferno";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/IRIX/i', $useragent)) {
 			$link = "http://www.sgi.com/partners/?/technology/irix/";
 			$title = "IRIX Linux";
@@ -214,25 +171,16 @@ class useragent_detect_os {
 
 			$code = "irix";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Kanotix/i', $useragent)) {
 			$link = "http://www.kanotix.com/";
 			$title = "Kanotix";
 			$code = "kanotix";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Knoppix/i', $useragent)) {
 			$link = "http://www.knoppix.net/";
 			$title = "Knoppix";
 			$code = "knoppix";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Kubuntu/i', $useragent)) {
 			$link = "http://www.kubuntu.org/";
 			$title = "Kubuntu";
@@ -253,25 +201,16 @@ class useragent_detect_os {
 				$title .= $version;
 			}
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/LindowsOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Lsongs";
 			$title = "LindowsOS";
 			$code = "lindowsos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Linspire/i', $useragent)) {
 			$link = "http://www.linspire.com/";
 			$title = "Linspire";
 			$code = "lindowsos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Linux\ Mint/i', $useragent)) {
 			$link = "http://www.linuxmint.com/";
 			$title = "Linux Mint";
@@ -282,9 +221,6 @@ class useragent_detect_os {
 
 			$code = "linuxmint";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Lubuntu/i', $useragent)) {
 			$link = "http://www.lubuntu.net/";
 			$title = "Lubuntu";
@@ -303,9 +239,6 @@ class useragent_detect_os {
 				$title .= $version;
 			}
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Mac/i', $useragent)
 			|| preg_match('/Darwin/i', $useragent)) {
 			$link = "http://www.apple.com/macosx/";
@@ -351,9 +284,6 @@ class useragent_detect_os {
 
 			$code = "mandriva";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/moonOS/i', $useragent)) {
 			$link = "http://www.moonos.org/";
 			$title = "moonOS";
@@ -363,26 +293,16 @@ class useragent_detect_os {
 			}
 
 			$code = "moonos";
-
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/MorphOS/i', $useragent)) {
 			$link = "http://www.morphos-team.net/";
 			$title = "MorphOS";
 			$code = "morphos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/NetBSD/i', $useragent)) {
 			$link = "http://www.netbsd.org/";
 			$title = "NetBSD";
 			$code = "netbsd";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Nova/i', $useragent)) {
 			$link = "http://www.nova.cu";
 			$title = "Nova";
@@ -396,18 +316,11 @@ class useragent_detect_os {
 			}
 
 			$code = "nova";
-
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/OpenBSD/i', $useragent)) {
 			$link = "http://www.openbsd.org/";
 			$title = "OpenBSD";
 			$code = "openbsd";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Oracle/i', $useragent)) {
 			$link = "http://www.oracle.com/us/technologies/linux/";
 			$title = "Oracle";
@@ -419,18 +332,11 @@ class useragent_detect_os {
 			}
 
 			$code = "oracle";
-
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Pardus/i', $useragent)) {
 			$link = "http://www.pardus.org.tr/en/";
 			$title = "Pardus";
 			$code = "pardus";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/PCLinuxOS/i', $useragent)) {
 			$link = "http://www.pclinuxos.com/";
 			$title = "PCLinuxOS";
@@ -441,9 +347,6 @@ class useragent_detect_os {
 
 			$code = "pclinuxos";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Red\ Hat/i', $useragent)
 			|| preg_match('/RedHat/i', $useragent)) {
 			$link = "http://www.redhat.com/";
@@ -455,33 +358,20 @@ class useragent_detect_os {
 
 			$code = "red-hat";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Rosa/i', $useragent)) {
 			$link = "http://www.rosalab.com/";
 			$title = "Rosa Linux";
 			$code = "rosa";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Sabayon/i', $useragent)) {
 			$link = "http://www.sabayonlinux.org/";
 			$title = "Sabayon Linux";
 			$code = "sabayon";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Slackware/i', $useragent)) {
 			$link = "http://www.slackware.com/";
 			$title = "Slackware";
 			$code = "slackware";
-
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Solaris/i', $useragent)) {
 			$link = "http://www.sun.com/software/solaris/";
 			$title = "Solaris";
@@ -495,9 +385,6 @@ class useragent_detect_os {
 			$title = "openSUSE";
 			$code = "suse";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Symb[ian]?[OS]?/i', $useragent)) {
 			$link = "http://www.symbianos.org/";
 			$title = "SymbianOS";
@@ -508,43 +395,27 @@ class useragent_detect_os {
 
 			$code = "symbian";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Unix/i', $useragent)) {
 			$link = "http://www.unix.org/";
 			$title = "Unix";
 			$code = "unix";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/VectorLinux/i', $useragent)) {
 			$link = "http://www.vectorlinux.com/";
 			$title = "VectorLinux";
 			$code = "vectorlinux";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Venenux/i', $useragent)) {
 			$link = "http://www.venenux.org/";
 			$title = "Venenux GNU Linux";
 			$code = "venenux";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/webOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/WebOS";
 			$title = "Palm webOS";
 			$code = "palm";
 		} elseif (preg_match('/Windows|Win(NT|32|95|98)/i', $useragent)) {
 			$link = "http://www.microsoft.com/windows/";
-			$x64 = false;
-			if (preg_match('/Win64; x64|WOW64/i', $useragent)) {
-				$x64 = true;
-			}
 
 			if (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
 				$title = "Windows 10";
@@ -616,18 +487,12 @@ class useragent_detect_os {
 				$title = "Windows";
 				$code = "win-2";
 			}
-			if ($x64) {
-				$title .= " x64";
-			}
 
 		} elseif (preg_match('/Xandros/i', $useragent)) {
 			$link = "http://www.xandros.com/";
 			$title = "Xandros";
 			$code = "xandros";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Xubuntu/i', $useragent)) {
 			$link = "http://www.xubuntu.org/";
 			$title = "Xubuntu";
@@ -645,18 +510,10 @@ class useragent_detect_os {
 			if (strlen($version) > 1) {
 				$title .= $version;
 			}
-
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Zenwalk/i', $useragent)) {
 			$link = "http://www.zenwalk.org/";
 			$title = "Zenwalk GNU Linux";
 			$code = "zenwalk";
-
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		}
 
 		// Pulled out of order to help ensure better detection for above platforms
@@ -679,23 +536,21 @@ class useragent_detect_os {
 				$title .= $version;
 			}
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/Linux/i', $useragent)) {
 			$link = "http://www.linux.org/";
 			$title = "GNU/Linux";
 			$code = "linux";
 
-			if (preg_match('/x86_64/i', $useragent)) {
-				$title .= " x64";
-			}
 		} elseif (preg_match('/J2ME\/MIDP/i', $useragent)) {
 			$link = "http://java.sun.com/javame/";
 			$title = "J2ME/MIDP Device";
 			$code = "java";
 		} else {
 			$code = "null";
+		}
+
+		if ($x64) {
+			$title .= ' x64';
 		}
 
 		return array(
