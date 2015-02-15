@@ -77,22 +77,22 @@ class useragent_detect_os {
 			}
 
 			$code = "centos";
-
+// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Chakra/i', $useragent)) {
 			$link = "http://www.chakra-linux.org/";
 			$title = "Chakra Linux";
 			$code = "chakra";
-
+// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/\b(?!Mi)CrOS(?!oft)/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Google_Chrome_OS";
 			$title = "Google Chrome OS";
 			$code = "chromeos";
-
+// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Crunchbang/i', $useragent)) {
 			$link = "http://www.crunchbanglinux.org/";
 			$title = "Crunchbang";
 			$code = "crunchbang";
-
+// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Debian/i', $useragent)) {
 			$link = "http://www.debian.org/";
 			$title = "Debian GNU/Linux";
@@ -102,7 +102,7 @@ class useragent_detect_os {
 			$link = "http://www.dragonflybsd.org/";
 			$title = "DragonFly BSD";
 			$code = "dragonflybsd";
-
+// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Edubuntu/i', $useragent)) {
 			$link = "http://www.edubuntu.org/";
 			$title = "Edubuntu";
@@ -120,7 +120,7 @@ class useragent_detect_os {
 			if (strlen($version) > 1) {
 				$title .= $version;
 			}
-
+// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Fedora/i', $useragent)) {
 			$link = "http://www.fedoraproject.org/";
 			$title = "Fedora";
@@ -175,12 +175,13 @@ class useragent_detect_os {
 			$link = "http://www.kanotix.com/";
 			$title = "Kanotix";
 			$code = "kanotix";
-
+// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Knoppix/i', $useragent)) {
 			$link = "http://www.knoppix.net/";
 			$title = "Knoppix";
 			$code = "knoppix";
-
+// @codeCoverageIgnoreEnd
+			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Kubuntu/i', $useragent)) {
 			$link = "http://www.kubuntu.org/";
 			$title = "Kubuntu";
@@ -200,7 +201,7 @@ class useragent_detect_os {
 			if (strlen($version) > 1) {
 				$title .= $version;
 			}
-
+// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/LindowsOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Lsongs";
 			$title = "LindowsOS";
@@ -220,6 +221,7 @@ class useragent_detect_os {
 			}
 
 			$code = "linuxmint";
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Lubuntu/i', $useragent)) {
 			$link = "http://www.lubuntu.net/";
@@ -238,13 +240,14 @@ class useragent_detect_os {
 			if (strlen($version) > 1) {
 				$title .= $version;
 			}
+// @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/Mac/i', $useragent)
 			|| preg_match('/Darwin/i', $useragent)) {
 			$link = "http://www.apple.com/macosx/";
 
-			if (preg_match('/Mac OS X/i', $useragent)) {
-				$title = substr($useragent, strpos(strtolower($useragent), strtolower("Mac OS X")));
+			if (preg_match('/(Mac OS ?X)/i', $useragent, $regmatch)) {
+				$title = substr($useragent, strpos(strtolower($useragent), strtolower($regmatch[1])));
 				$title = substr($title, 0, strpos($title, ")"));
 
 				if (strpos($title, ";")) {
@@ -252,17 +255,8 @@ class useragent_detect_os {
 				}
 
 				$title = str_replace("_", ".", $title);
-				$code = "mac-3";
-			} elseif (preg_match('/Mac OSX/i', $useragent)) {
-				$title = substr($useragent, strpos(strtolower($useragent), strtolower("Mac OS X")));
-				$title = substr($title, 0, strpos($title, ")"));
 
-				if (strpos($title, ";")) {
-					$title = substr($title, 0, strpos($title, ";"));
-				}
-
-				$title = str_replace("_", ".", $title);
-				$code = "mac-2";
+				$code = $regmatch[1] == "Mac OSX" ? "mac-2" : "mac-3";
 			} elseif (preg_match('/Darwin/i', $useragent)) {
 				$title = "Mac OS Darwin";
 				$code = "mac-1";
@@ -270,17 +264,22 @@ class useragent_detect_os {
 				$title = "Macintosh";
 				$code = "mac-1";
 			}
+// @codeCoverageIgnoreStart
+
 		} elseif (preg_match('/Mageia/i', $useragent)) {
 			$link = "http://www.mageia.org/";
 			$title = "Mageia";
 			$code = "mageia";
+// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Mandriva/i', $useragent)) {
 			$link = "http://www.mandriva.com/";
 			$title = "Mandriva";
+// @codeCoverageIgnoreStart
 
 			if (preg_match('/mdv([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$title .= " " . $regmatch[1];
 			}
+// @codeCoverageIgnoreEnd
 
 			$code = "mandriva";
 
@@ -320,6 +319,7 @@ class useragent_detect_os {
 			$link = "http://www.openbsd.org/";
 			$title = "OpenBSD";
 			$code = "openbsd";
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Oracle/i', $useragent)) {
 			$link = "http://www.oracle.com/us/technologies/linux/";
@@ -330,12 +330,14 @@ class useragent_detect_os {
 			} else {
 				$title .= " Linux";
 			}
+// @codeCoverageIgnoreEnd
 
 			$code = "oracle";
 		} elseif (preg_match('/Pardus/i', $useragent)) {
 			$link = "http://www.pardus.org.tr/en/";
 			$title = "Pardus";
 			$code = "pardus";
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/PCLinuxOS/i', $useragent)) {
 			$link = "http://www.pclinuxos.com/";
@@ -346,6 +348,7 @@ class useragent_detect_os {
 			}
 
 			$code = "pclinuxos";
+// @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/Red\ Hat/i', $useragent)
 			|| preg_match('/RedHat/i', $useragent)) {
@@ -357,26 +360,27 @@ class useragent_detect_os {
 			}
 
 			$code = "red-hat";
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Rosa/i', $useragent)) {
 			$link = "http://www.rosalab.com/";
 			$title = "Rosa Linux";
 			$code = "rosa";
+// @codeCoverageIgnoreEnd
+
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Sabayon/i', $useragent)) {
 			$link = "http://www.sabayonlinux.org/";
 			$title = "Sabayon Linux";
 			$code = "sabayon";
+// @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/Slackware/i', $useragent)) {
 			$link = "http://www.slackware.com/";
 			$title = "Slackware";
 			$code = "slackware";
-		} elseif (preg_match('/Solaris/i', $useragent)) {
-			$link = "http://www.sun.com/software/solaris/";
-			$title = "Solaris";
-			$code = "solaris";
-		} elseif (preg_match('/SunOS/i', $useragent)) {
+		} elseif (preg_match('/Solaris|SunOS/i', $useragent)) {
 			$link = "http://www.sun.com/software/solaris/";
 			$title = "Solaris";
 			$code = "solaris";
@@ -399,22 +403,26 @@ class useragent_detect_os {
 			$link = "http://www.unix.org/";
 			$title = "Unix";
 			$code = "unix";
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/VectorLinux/i', $useragent)) {
 			$link = "http://www.vectorlinux.com/";
 			$title = "VectorLinux";
 			$code = "vectorlinux";
+// @codeCoverageIgnoreEnd
+			// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Venenux/i', $useragent)) {
 			$link = "http://www.venenux.org/";
 			$title = "Venenux GNU Linux";
 			$code = "venenux";
+// @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/webOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/WebOS";
 			$title = "Palm webOS";
 			$code = "palm";
-		} elseif (preg_match('/Windows|Win(NT|32|95|98)/i', $useragent)) {
+		} elseif (preg_match('/Windows|Win(NT|32|95|98|16)/i', $useragent)) {
 			$link = "http://www.microsoft.com/windows/";
 
 			if (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
@@ -439,9 +447,11 @@ class useragent_detect_os {
 				|| preg_match('/Windows XP/i', $useragent)) {
 				$title = "Windows XP";
 				$code = "win-2";
+				// @codeCoverageIgnoreStart
 			} elseif (preg_match('/Windows NT 5.01/i', $useragent)) {
 				$title = "Windows 2000 Service Pack 1";
 				$code = "win-1";
+				// @codeCoverageIgnoreEnd
 			} elseif (preg_match('/Windows NT 5.0/i', $useragent)
 				|| preg_match('/Windows 2000/i', $useragent)) {
 				$title = "Windows 2000";
@@ -450,7 +460,7 @@ class useragent_detect_os {
 				|| preg_match('/WinNT4.0/i', $useragent)) {
 				$title = "Windows NT 4.0";
 				$code = "win-1";
-			} elseif (preg_match('/Windows NT 3.51/i', $useragent)
+			} elseif (preg_match('/Win(dows )?NT ?3.51/i', $useragent)
 				|| preg_match('/WinNT3.51/i', $useragent)) {
 				$title = "Windows NT 3.11";
 				$code = "win-1";
@@ -477,22 +487,25 @@ class useragent_detect_os {
 			} elseif (preg_match('/Windows CE/i', $useragent)) {
 				$title = "Windows CE";
 				$code = "win-2";
+				// @codeCoverageIgnoreStart
 			} elseif (preg_match('/WM5/i', $useragent)) {
 				$title = "Windows Mobile 5";
 				$code = "win-phone";
 			} elseif (preg_match('/WindowsMobile/i', $useragent)) {
 				$title = "Windows Mobile";
 				$code = "win-phone";
+				// @codeCoverageIgnoreEnd
 			} else {
 				$title = "Windows";
 				$code = "win-2";
 			}
-
+// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Xandros/i', $useragent)) {
 			$link = "http://www.xandros.com/";
 			$title = "Xandros";
 			$code = "xandros";
-
+// @codeCoverageIgnoreEnd
+			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Xubuntu/i', $useragent)) {
 			$link = "http://www.xubuntu.org/";
 			$title = "Xubuntu";
@@ -510,6 +523,7 @@ class useragent_detect_os {
 			if (strlen($version) > 1) {
 				$title .= $version;
 			}
+// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Zenwalk/i', $useragent)) {
 			$link = "http://www.zenwalk.org/";
 			$title = "Zenwalk GNU Linux";

@@ -2099,6 +2099,54 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3', 24, '312400000/', '.gif'),
 				array('312400000/24/browser/chrome.gif', '312400000/24/device/iphone.gif', 'Google CriOS 19.0.1084.60', 'iPhone iOS 5.1.1'),
 			),
+			array(
+				array('Mozilla/5.0 (compatible; Konqueror/2.2.2; Linux 2.4.18; X11; i686; AffiliateCashGen/1.0; en) LindowsOS (Lindows.com, Inc.)', 16, '50200000/', null),
+				array('50200000/16/browser/konqueror.png', '50200000/16/os/lindowsos.png', 'Konqueror 2.2.2', 'LindowsOS'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; en; rv:1.9b5) Gecko Foresight Linux Epiphany/2.22', 24, null, '.gif'),
+				array('img/24/browser/epiphany.gif', 'img/24/os/foresight.gif', 'Epiphany 2.22', 'Foresight Linux'),
+			),
+			array(
+				array('AmigaVoyager/3.4.4 (MorphOS/PPC native) user-agent', 24, null, '.gif'),
+				array('img/24/browser/amigavoyager.gif', 'img/24/os/morphos.gif', 'Amiga Voyager 3.4.4', 'MorphOS'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.12) Gecko/20100826 moonOS/3.0 (Makara) Firefox/3.5.2', 16, '36690000/', '.gif'),
+				array('36690000/16/browser/firefox.gif', '36690000/16/os/moonos.gif', 'Firefox 3.5.2', 'moonOS 3.0'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; OpenBSD i386; en-US; rv:1.7.10) Gecko/20050919 (No IDN) Firefox/1.0.6', 16, null, null),
+				array('img/16/browser/firefox.png', 'img/16/os/openbsd.png', 'Firefox 1.0.6', 'OpenBSD'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1) Gecko/20090619 Pardus/2009 Firefox/3.5', 16, null, '.gif'),
+				array('img/16/browser/firefox.gif', 'img/16/os/pardus.gif', 'Firefox 3.5', 'Pardus'),
+			),
+			array(
+				array('Mozilla/2.0 (Compatible; AOL-IWENG 3.0; Win16)', 16, null, '.gif'),
+				array('img/16/browser/aol.gif', 'img/16/os/win-1.gif', 'AOL ', 'Windows 3.11'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)', 24, null, '.gif'),
+				array('img/24/browser/icecat.gif', 'img/24/os/zenwalk.gif', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; de; rv:1.9.2.13) Gecko/20101221 IceCat/3.6.13 (like Firefox/3.6.13) (Zenwalk GNU Linux)', 24, '122530000/', null),
+				array('122530000/24/browser/icecat.png', '122530000/24/os/zenwalk.png', 'GNU IceCat 3.6.13', 'Zenwalk GNU Linux'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Linux i686; nl-NL; rv:1.6) Gecko/20050714 Linspire/1.6-5.1.0.50.linspire2.70', 16, '267160000/', '.gif'),
+				array('267160000/16/browser/mozilla.gif', '267160000/16/os/lindowsos.gif', 'Mozilla 1.6', 'Linspire'),
+			),
+			array(
+				array('Mozilla/5.0 (X11; U; Mac OSX; it; rv:1.9.0.7) Gecko/2009030422 Firefox/3.0.7', 16, null, '.gif'),
+				array('img/16/browser/firefox.gif', 'img/16/os/mac-2.gif', 'Firefox 3.0.7', 'Mac OSX'),
+			),
+			array(
+				array('MobileSafari/9537.53 CFNetwork/672.1.13 Darwin/13.1.0', 24, null, '.gif'),
+				array('img/24/browser/safari.gif', 'img/24/os/mac-1.gif', 'Safari', 'Mac OS Darwin'),
+			),
 		);
 
 		foreach ($testList as $list) {
