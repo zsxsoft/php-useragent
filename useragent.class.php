@@ -92,8 +92,8 @@ class UserAgent {
 	public static function __autoload($className) {
 		if (is_file('lib/' . $className . '.php')) {
 			require_once 'lib/' . $className . '.php';
-		}
 
+		}
 	}
 
 	public function analyze($string) {
@@ -103,8 +103,9 @@ class UserAgent {
 			$class = "useragent_detect_" . $value;
 			// Not support in PHP 5.2
 			//$this->_data[$value] = $class::analyze($string);
-			$this->_data[$value] = call_user_func(array($class, 'analyze'), $string);
+			$this->_data[$value] = call_user_func($class . '::analyze', $string);
 			$this->_data[$value]['image'] = $this->_makeImage($value, $this->_data[$value]['code']);
+
 		}
 
 		// platform
