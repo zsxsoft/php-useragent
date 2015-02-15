@@ -566,6 +566,14 @@ class useragent_detect_os {
 			$link = "http://www.openbsd.org/";
 			$title = "OpenBSD";
 			$code = "openbsd";
+		} elseif (preg_match('/RISC OS/i', $useragent)) {
+			$link = "https://www.riscosopen.org/";
+			$title = "RISC OS";
+			$code = "risc";
+
+			if (preg_match('/RISC OS ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$title .= " " . $regmatch[1];
+			}
 
 		} elseif (preg_match('/Solaris|SunOS/i', $useragent)) {
 			$link = "http://www.sun.com/software/solaris/";

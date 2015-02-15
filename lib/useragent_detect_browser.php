@@ -23,6 +23,7 @@ class useragent_detect_browser {
 		'360se|360ee|360\ aphone\ browser',
 		'Abolimba',
 		'Acoo\ Browser',
+		'ANTFresco',
 		'Alienforce',
 		'Amaya',
 		'Amiga-AWeb',
@@ -142,6 +143,7 @@ class useragent_detect_browser {
 		'Maxthon',
 		'\ MIB\/',
 		'Tablet\ browser',
+		'MicroMessenger',
 		'Midori',
 		'Minefield',
 		'MiniBrowser',
@@ -314,6 +316,11 @@ class useragent_detect_browser {
 			'link' => 'http://aweb.sunsite.dk/',
 			'title' => 'Amiga {%AWeb%}',
 			'code' => 'amiga-aweb',
+		),
+		'antfresco' => array(
+			'link' => 'http://www.espial.com/',
+			'title' => 'ANT {%Fresco%}',
+			'code' => 'antfresco',
 		),
 		'mrchrome' => array(
 			'link' => 'http://amigo.mail.ru/',
@@ -914,6 +921,11 @@ class useragent_detect_browser {
 			'link' => 'http://browser.garage.maemo.org/',
 			'title' => '{%Tablet browser%}',
 			'code' => 'microb',
+		),
+		'micromessenger' => array(
+			'link' => 'http://weixin.qq.com/',
+			'title' => '{%MicroMessenger%}',
+			'code' => 'wechat',
 		),
 		'midori' => array(
 			'link' => 'http://www.twotoasts.de/index.php?/pages/midori_summary.html',
@@ -1801,6 +1813,8 @@ class useragent_detect_browser {
 			$return = "Barca Pro " . $version;
 		} elseif ($lower_title == "dplus") {
 			$return = "D+ " . $version;
+		} elseif ($lower_title == "micromessenger") {
+			$return = "WeChat " . $version;
 		} elseif ($lower_title == "opera labs") {
 			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
 			$return = $title . $regmatch[1] . " " . $version;
