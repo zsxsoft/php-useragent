@@ -248,6 +248,7 @@ class useragent_detect_browser {
 		'Vonkeror',
 		'w3m',
 		'IEMobile',
+		'Waterfox',
 		'WebianShell',
 		'Webrender',
 		'WeltweitimnetzBrowser',
@@ -1483,6 +1484,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.microsoft.com/windowsmobile/en-us/downloads/microsoft/internet-explorer-mobile.mspx',
 			'title' => '{%IEMobile%}',
 			'code' => 'msie-mobile',
+		),
+		'waterfox' => array(
+			'link' => 'https://www.waterfoxproject.org/',
+			'title' => '{%WaterFox%}',
+			'code' => 'waterfox',
 		),
 		'webianshell' => array(
 			'link' => 'http://webian.org/shell/',

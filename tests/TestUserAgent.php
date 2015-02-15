@@ -2232,6 +2232,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (X11; U; Linux; C) AppleWebKit/533.3 (KHTML, like Gecko) QtCarBrowser Safari/533.3'),
 				array('img/16/browser/tesla.png', 'img/16/os/linux.png', 'Tesla Car Browser', 'GNU/Linux'),
 			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:35.0) Gecko/20100101 Firefox/35.0 Waterfox/35.0'),
+				array('img/16/browser/waterfox.png', 'img/16/os/win-5.png', 'WaterFox 35.0', 'Windows 8.1 x64'),
+			),
+
 		);
 
 		foreach ($testList as $list) {
