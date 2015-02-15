@@ -2208,6 +2208,10 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) WhiteHat Aviator/35.0.1916.114 Chrome/35.0.1916.114 Safari/537.36'),
 				array('img/16/browser/aviator.png', 'img/16/os/win-5.png', 'WhiteHat Aviator 35.0.1916.114', 'Windows 8.1 x64'),
 			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.1; rv:20.0) Gecko/20100101 Firefox/20.0 IceDragon/20.0.1.14'),
+				array('img/16/browser/icedragon.png', 'img/16/os/win-4.png', 'IceDragon 20.0.1.14', 'Windows 7'),
+			),
 		);
 
 		foreach ($testList as $list) {

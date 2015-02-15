@@ -115,6 +115,7 @@ class useragent_detect_browser {
 		'IceBrowser',
 		'Iceape',
 		'IceCat',
+		'IceDragon',
 		'IceWeasel',
 		'iNet\ Browser',
 		'iRider',
@@ -777,6 +778,11 @@ class useragent_detect_browser {
 			'link' => 'http://gnuzilla.gnu.org/',
 			'title' => 'GNU {%IceCat%}',
 			'code' => 'icecat',
+		),
+		'icedragon' => array(
+			'link' => 'https://www.comodo.com/home/browsers-toolbars/icedragon-browser.php',
+			'title' => '{%IceDragon%}',
+			'code' => 'icedragon',
 		),
 		'iceweasel' => array(
 			'link' => 'http://www.geticeweasel.org/',
