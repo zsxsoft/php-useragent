@@ -53,6 +53,7 @@ class useragent_detect_browser {
 		'Chimera',
 		'chromeframe',
 		'ChromePlus',
+		'CriOS',
 		'curl',
 		'Iron',
 		'Chromium',
@@ -464,6 +465,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.chromeplus.org/',
 			'title' => '{%ChromePlus%}',
 			'code' => 'chromeplus',
+		),
+		'crios' => array(
+			'link' => 'http://www.google.com/chrome',
+			'title' => '{%CriOS%}',
+			'code' => 'chrome',
 		),
 		'iron' => array(
 			'link' => 'http://www.srware.net/',
