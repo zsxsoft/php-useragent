@@ -5,7 +5,7 @@
  * @author zsx <zsx@zsxsoft.com>
  * @author Kyle Baker <kyleabaker@gmail.com>
  * @author Fernando Briano <transformers.es@gmail.com>
- * @copyright Copyright 2014 zsx
+ * @copyright Copyright 2014-2015 zsx
  * @copyright Copyright 2008-2014 Kyle Baker (email: kyleabaker@gmail.com)
  * @copyright 2008 Fernando Briano (email : transformers.es@gmail.com)
  * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
@@ -1657,6 +1657,7 @@ class useragent_detect_browser {
 			} elseif (preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				// We have IE11 or newer
 			}
+			$code = "msie";
 
 			if (count($regmatch) > 0) {
 				if ($regmatch[1] >= 11) {
@@ -1677,12 +1678,7 @@ class useragent_detect_browser {
 					$code = "msie3";
 				} elseif ($regmatch[1] >= 2) {
 					$code = "msie2";
-				} elseif ($regmatch[1] >= 1) {
-					$code = "msie1";
 				}
-			}
-			if ($code == '') {
-				$code = "msie";
 			}
 		} elseif (preg_match('/Mozilla/i', $useragent)) {
 			$link = "http://www.mozilla.org/";
@@ -1774,8 +1770,6 @@ class useragent_detect_browser {
 			$return = " 8.0 (Compatibility Mode)"; // Fix for IE8 quirky UA string with Compatibility Mode enabled
 		} elseif ($lower_title == "msie") {
 			$return = " " . $version;
-		} elseif ($lower_title == "multi-browser") {
-			$return = "Multi-Browser XP " . $version;
 		} elseif ($lower_title == "nf-browser") {
 			$return = "NetFront " . $version;
 		} elseif ($lower_title == "semc-browser") {
@@ -1791,8 +1785,6 @@ class useragent_detect_browser {
 			$return = "Google Chrome Frame " . $version;
 		} elseif ($lower_title == "mozilladeveloperpreview") {
 			$return = "Mozilla Developer Preview " . $version;
-		} elseif ($lower_title == "multi-browser") {
-			$return = "Multi-Browser XP " . $version;
 		} elseif ($lower_title == "opera mobi") {
 			$return = "Opera Mobile " . $version;
 		} elseif ($lower_title == "osb-browser") {
