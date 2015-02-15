@@ -1619,7 +1619,7 @@ class useragent_detect_browser {
 				$code = "msie11";
 			} else if (preg_match('/crios/i', $useragent)) {
 				$link = "http://google.com/chrome/";
-				$title = "Google " . self::detect_browser_version(array('', 'Crios'));
+				$title = "Google " . self::detect_browser_version(array('', 'CriOS'));
 				$code = "chrome";
 			} else {
 				$link = "http://google.com/chrome/";
@@ -1803,10 +1803,6 @@ class useragent_detect_browser {
 			$return = "Chrome Mobile " . $version;
 		} elseif ($lower_title == "smarttv") {
 			$return = "Maple Browser " . $version;
-		} elseif ($lower_title == "wp-android"
-			|| $lower_title == "wp-iphone") {
-			//TODO check into Android version being $return =ed
-			$return = "Wordpress App " . $version;
 		} elseif ($lower_title == "atomicbrowser") {
 			$return = "Atomic Web Browser " . $version;
 		} elseif ($lower_title == "barcapro") {

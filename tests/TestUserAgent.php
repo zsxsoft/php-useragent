@@ -2095,6 +2095,10 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (PlayStation 4 1.51) AppleWebKit/536.26 (KHTML, like Gecko)', 16, '255380000/', null),
 				array('255380000/16/browser/webkit.png', '255380000/16/device/playstation.png', 'PS4 Web Browser', 'PlayStation 4'),
 			),
+			array(
+				array('Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3', 24, '312400000/', '.gif'),
+				array('312400000/24/browser/chrome.gif', '312400000/24/device/iphone.gif', 'Google CriOS 19.0.1084.60', 'iPhone iOS 5.1.1'),
+			),
 		);
 
 		foreach ($testList as $list) {
