@@ -127,6 +127,7 @@ class useragent_detect_browser {
 		'Kazehakase',
 		'Strata',
 		'KKman',
+		'Kinza',
 		'KMail',
 		'KMLite',
 		'Konqueror',
@@ -379,6 +380,7 @@ class useragent_detect_browser {
 			'title' => '{%Beonex%}',
 			'code' => 'beonex',
 		),
+		// Baidu Browser Spark does not have own UA.
 		'baidubrowser' => array(
 			'link' => 'http://browser.baidu.com/',
 			'title' => '{%baidubrowser%}',
@@ -838,6 +840,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.kkman.com.tw/',
 			'title' => '{%KKman%}',
 			'code' => 'kkman',
+		),
+		'kinza' => array(
+			'link' => 'http://www.kinza.jp/',
+			'title' => '{%Kinza%}',
+			'code' => 'kinza',
 		),
 		'kmail' => array(
 			'link' => 'http://kontact.kde.org/kmail/',
