@@ -249,6 +249,7 @@ class useragent_detect_browser {
 		'wKiosk',
 		'WorldWideWeb',
 		'wget',
+		'WhiteHat Aviator',
 		'Wyzo',
 		'X-Smiles',
 		'Xiino',
@@ -1461,6 +1462,11 @@ class useragent_detect_browser {
 			'link' => 'http://weltweitimnetz.de/software/Browser.en.page',
 			'title' => 'Weltweitimnetz {%Browser%}',
 			'code' => 'weltweitimnetzbrowser',
+		),
+		'whitehat aviator' => array(
+			'link' => 'https://www.whitehatsec.com/aviator/',
+			'title' => '{%WhiteHat Aviator%}',
+			'code' => 'aviator',
 		),
 		'wkiosk' => array(
 			'link' => 'http://www.app4mac.com/store/index.php?target=products&product_id=9',

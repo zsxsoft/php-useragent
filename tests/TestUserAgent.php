@@ -2200,6 +2200,10 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/3.04 (compatible; ANTFresco/2.13; RISC OS 4.02)'),
 				array('img/16/browser/antfresco.png', 'img/16/os/risc.png', 'ANT Fresco 2.13', 'RISC OS 4.02'),
 			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) WhiteHat Aviator/35.0.1916.114 Chrome/35.0.1916.114 Safari/537.36'),
+				array('img/16/browser/aviator.png', 'img/16/os/win-5.png', 'WhiteHat Aviator 35.0.1916.114', 'Windows 8.1 x64'),
+			),
 		);
 
 		foreach ($testList as $list) {
