@@ -1478,6 +1478,10 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('img/16/browser/espialtvbrowser.png', 'img/16/os/mac-1.png', 'Escape 5.1.8', 'Macintosh'),
 			),
 			array(
+				array('Mozilla/5.0 (DTV) AppleWebKit/531.2+ (KHTML, like Gecko) Espial/6.1.5 AQUOSBrowser/2.0 (US01DTV;V;0001;0001)'),
+				array('img/16/browser/espialtvbrowser.png', 'img/16/browser/null.png', 'Espial 6.1.5', 'Unknown'),
+			),
+			array(
 				array('Mozilla/5.0 (X11; U; Linux x86; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Epiphany/2.30.6 Safari/534.7'),
 				array('img/16/browser/epiphany.png', 'img/16/os/linux.png', 'Epiphany 2.30.6', 'GNU/Linux'),
 			),

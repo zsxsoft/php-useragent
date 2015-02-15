@@ -88,7 +88,7 @@ class useragent_detect_browser {
 		'EnigmaFox',
 		'Epic',
 		'Epiphany',
-		'Escape',
+		'Escape|Espial',
 		'Fennec',
 		'Firebird',
 		'Fireweb\ Navigator',
@@ -639,8 +639,13 @@ class useragent_detect_browser {
 			'code' => 'epiphany',
 		),
 		'escape' => array(
-			'link' => 'http://www.espial.com/products/evo_browser/',
+			'link' => 'http://www.espial.com/products/tv-browser/',
 			'title' => '{%Escape%}',
+			'code' => 'espialtvbrowser',
+		),
+		'espial' => array(
+			'link' => 'http://www.espial.com/products/tv-browser/',
+			'title' => '{%Espial%}',
 			'code' => 'espialtvbrowser',
 		),
 		'fennec' => array(
