@@ -91,7 +91,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; Galaxy Nexus Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/5.0 Mb2345Browser/4.0 Mobile Safari/534.30', 24, null, '.gif'),
-				array('img/24/browser/galaxy.gif', 'img/24/device/google-nexusone.gif', 'Galaxy Nexus', 'Nexus Build'),
+				array('img/24/browser/galaxy.gif', 'img/24/device/samsung.gif', 'Galaxy Nexus', 'Galaxy Nexus'),
 			),
 			array(
 				array('Mozilla/5.0 (Linux; Android 4.3; zh-cn; SAMSUNG-SCH-P709E Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36', 16, '239440000/', null),
@@ -1978,6 +1978,122 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			array(
 				array('Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.34 (KHTML, like Gecko) zBrowser/NigtSky-0.0.2 Safari/534.34', 16, '115310000/', null),
 				array('115310000/16/browser/zbrowser.png', '115310000/16/os/win-4.png', 'zBrowser NigtSky', 'Windows 7'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; Opera/9.5) Alltel HTC Touch Pro', 24, null, '.gif'),
+				array('img/24/browser/opera-1.gif', 'img/24/device/htc.gif', 'Opera 9.5', 'HTC Touch Pro'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 2.2.2; de-de; Dell Streak Build/FRG83G) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1', 24, null, null),
+				array('img/24/browser/android-webkit.png', 'img/24/device/dell.png', 'Android Webkit 4.0', 'Dell Streak'),
+			),
+			array(
+				array('Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.5; Trident/3.1; IEMobile/7.0; DELL; Venue Pro)', 24, '114620000/', null),
+				array('114620000/24/browser/msie-mobile.png', '114620000/24/device/dell.png', 'IEMobile 7.0', 'Dell'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30', 16, null, '.gif'),
+				array('img/16/browser/android-webkit.gif', 'img/16/device/htc.gif', 'Android Webkit 4.0', 'HTC Sensation'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 2.2; fr-lu; HTC Legend Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1', 24, null, '.gif'),
+				array('img/24/browser/android-webkit.gif', 'img/24/device/htc.gif', 'Android Webkit 4.0', 'HTC Legend'),
+			),
+			array(
+				array('UA: Mozilla/5.0 (Linux; U; Android 1.6; es-es; HTC Tattoo 1.67.164.9 Build/DRC79) AppleWebKit/528.5+ (KHTML, like Gecko) Version/3.1.2 Mobile Safari/525.20.1', 24, null, '.gif'),
+				array('img/24/browser/android-webkit.gif', 'img/24/device/htc.gif', 'Android Webkit 3.1.2', 'HTC Tattoo'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 2.2; xx-xx; lepad_001b Build/PQXU100.4.0097.042211) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1', 24, null, '.gif'),
+				array('img/24/browser/android-webkit.gif', 'img/24/device/lenovo.gif', 'Android Webkit 4.0', 'Lenovo LePad'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 2.2; en-us; DROID2 GLOBAL Build/S273) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1', 24, null, '.gif'),
+				array('img/24/browser/android-webkit.gif', 'img/24/device/motorola.gif', 'Android Webkit 4.0', 'Motorola Droid'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 3.0; en-us; Xoom Build/HRI39) AppleWebKit/534.13 (KHTML, like Gecko) Version/4.0 Safari/534.13', 16, '143690000/', '.gif'),
+				array('143690000/16/browser/android-webkit.gif', '143690000/16/device/motorola.gif', 'Android Webkit 4.0', 'Motorola Xoom'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; Milestone XT720 Build/STR_U2_01.18.2) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17', 16, null, null),
+				array('img/16/browser/android-webkit.png', 'img/16/device/motorola.png', 'Android Webkit 4.0', 'Motorola XT720'),
+			),
+			array(
+				array('Opera/9.50 (Nintendo DSi; Opera/483; U; en-US)', 24, '246700000/', '.gif'),
+				array('246700000/24/browser/opera-1.gif', '246700000/24/device/nintendodsi.gif', 'Opera 9.50', 'Nintendo DSi'),
+			),
+			array(
+				array('Mozilla/5.0 (Nintendo WiiU) AppleWebKit/534.52 (KHTML, like Gecko) NX/2.1.0.8.23 NintendoBrowser/1.1.0.7579.EU', 24, '193970000/', null),
+				array('193970000/24/browser/mozilla.png', '193970000/24/device/nintendowiiu.png', 'Mozilla Compatible', 'Nintendo Wii U'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.1; xx-xx; ONDA MID Build/JRO03C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Safari/534.30', 16, null, null),
+				array('img/16/browser/android-webkit.png', 'img/16/device/onda.png', 'Android Webkit 4.0', 'Onda'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-CN; OPPO R833T Build/baijiazai) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.5.489 U3/0.8.0 Mobile Safari/533.1', 24, '313450000/', null),
+				array('313450000/24/browser/ucbrowser.png', '313450000/24/device/oppo.png', 'UC Browser 9.9.5.489', 'OPPO'),
+			),
+			array(
+				array('Mozilla/5.0 (webOS/1.3.5.1; U; xx-xx) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/1.0 Safari/525.27.1 Pixi/1.1', 16, '50130000/', '.gif'),
+				array('50130000/16/browser/safari.gif', '50130000/16/device/palm.gif', 'Safari 1.0', 'Palm Pixi'),
+			),
+			array(
+				array('Mozilla/5.0 (webOS/1.0; U; en-US) AppleWebKit/525.27.1 (KHTML, like Gecko) Version/1.0 Safari/525.27.1 Pre/1.0', 16, '56000000/', null),
+				array('56000000/16/browser/palmpre.png', '56000000/16/device/palm.png', 'Palm Pre 1.0', 'Palm Pre'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-CN; Coolpad 8670 Build/JDQ39) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.2.467 U3/0.8.0 Mobile Safari/533.1', 24, null, '.gif'),
+				array('img/24/browser/ucbrowser.gif', 'img/24/device/coolpad.gif', 'UC Browser 9.9.2.467', 'CoolPad 8670'),
+			),
+			array(
+				array('CoolPad8736_CMCC_TD/1.0 Linux/3.0.8 Android/4.2 Release/6.25.2013 Browser/AppleWebkit534.30', 24, '4730000/', '.gif'),
+				array('4730000/24/browser/android-webkit.gif', '4730000/24/device/coolpad.gif', 'Android Webkit ', 'CoolPad 8736'),
+			),
+			array(
+				array('Mozilla/5.0 (Ubuntu; Tablet) WebKit/537.21', 24, '268630000/', '.gif'),
+				array('268630000/24/browser/ubuntuwebbrowser.gif', '268630000/24/device/ubuntutouch.gif', 'Ubuntu Web Browser', 'Ubuntu Tablet'),
+			),
+			array(
+				array('UCWEB/2.0 (Linux; U; Android 4.2.1; zh-CN; vivo X3t) U2/1.0.0 UCBrowser/9.9.4.484 U2/1.0.0 Mobile', 16, '74490000/', null),
+				array('74490000/16/browser/ucbrowser.png', '74490000/16/device/vivo.png', 'UC Browser 9.9.4.484', 'vivo X3t'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; vivo X3L Build/JLS36C) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30', 16, '54610000/', '.gif'),
+				array('54610000/16/browser/android-webkit.gif', '54610000/16/device/vivo.gif', 'Android Webkit 4.0', 'vivo X3L'),
+			),
+			array(
+				array('HUAWEI_P6-T00_TD/5.0 Android/4.2.2 (Linux; U; Android 4.2.2; zh-cn) Release/03.20.2013 Browser/WAP2.0 (AppleWebKit/534.30) Mobile Safari/534.30', 24, null, null),
+				array('img/24/browser/android-webkit.png', 'img/24/device/huawei.png', 'Android Webkit ', 'Huawei P6'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19', 16, null, '.gif'),
+				array('img/16/browser/chrome.gif', 'img/16/device/samsung.gif', 'Google Chrome 18.0.1025.133', 'Galaxy Nexus'),
+			),
+			array(
+				array('Mozilla/5.0 (SmartHub; SMART-TV; U; Linux/SmartTV) AppleWebKit/531.2+ (KHTML, like Gecko) WebBrowser/1.0 SmartTV Safari/531.2+', 24, '233470000/', '.gif'),
+				array('233470000/24/browser/maplebrowser.gif', '233470000/24/device/samsung.gif', 'Maple Browser 1.0', 'Samsung Smart TV'),
+			),
+			array(
+				array('Mozilla/5.0 (SMART-TV; X11; Linux i686) AppleWebKit/535.20+ (KHTML, like Gecko) Version/5.0 Safari/535.20+', 24, null, '.gif'),
+				array('img/24/browser/safari.gif', 'img/24/device/samsung.gif', 'Safari 5.0', 'Samsung Smart TV'),
+			),
+			array(
+				array('Mozilla/5.0 (PlayStation Vita 1.50) AppleWebKit/531.22.8 (KHTML, like Gecko) Silk/3.2', 24, '186210000/', '.gif'),
+				array('186210000/24/browser/silk.gif', '186210000/24/device/playstation.gif', 'Amazon Silk 3.2', 'PlayStation Vita'),
+			),
+			array(
+				array('PSP (PlayStation Portable); 2.00', 24, '234250000/', '.gif'),
+				array('234250000/24/browser/null.gif', '234250000/24/device/playstation.gif', 'Unknown', 'PlayStation Portable'),
+			),
+			array(
+				array('Mozilla/4.0 (PSP (PlayStation Portable); 2.00)', 24, null, null),
+				array('img/24/browser/mozilla.png', 'img/24/device/playstation.png', 'Mozilla Compatible', 'PlayStation Portable'),
+			),
+			array(
+				array('Mozilla/5.0 (PlayStation 4 1.51) AppleWebKit/536.26 (KHTML, like Gecko)', 16, '255380000/', null),
+				array('255380000/16/browser/webkit.png', '255380000/16/device/playstation.png', 'PS4 Web Browser', 'PlayStation 4'),
 			),
 		);
 
