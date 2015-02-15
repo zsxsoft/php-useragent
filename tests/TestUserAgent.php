@@ -2236,6 +2236,10 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (Windows NT 6.3; Win64; x64; rv:35.0) Gecko/20100101 Firefox/35.0 Waterfox/35.0'),
 				array('img/16/browser/waterfox.png', 'img/16/os/win-5.png', 'WaterFox 35.0', 'Windows 8.1 x64'),
 			),
+			array(
+				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Superbird/37.0.2062.90 Chrome/37.0.2062.90 Safari/537.36'),
+				array('img/16/browser/superbird.png', 'img/16/os/win-5.png', 'Superbird 37.0.2062.90', 'Windows 8.1 x64'),
+			),
 
 		);
 

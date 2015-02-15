@@ -213,6 +213,7 @@ class useragent_detect_browser {
 		'Silk',
 		'SlimBoat',
 		'SlimBrowser',
+		'Superbird',
 		'SmartTV',
 		'Songbird',
 		'Stainless',
@@ -1284,6 +1285,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.flashpeak.com/sbrowser/',
 			'title' => '{%SlimBrowser%}',
 			'code' => 'slimbrowser',
+		),
+		'superbird' => array(
+			'link' => 'http://superbird-browser.com',
+			'title' => '{%Superbird%}',
+			'code' => 'superbird',
 		),
 		'smarttv' => array(
 			'link' => 'http://www.freethetvchallenge.com/details/faq',
