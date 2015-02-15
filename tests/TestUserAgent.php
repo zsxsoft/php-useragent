@@ -2175,11 +2175,15 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			$original = $list[0];
 			$result = $list[1];
 			$useragent = UserAgentFactory::analyze($original[0]);
-			echo 'Test: ' . $useragent->useragent . "\n";
+			// echo 'Test: ' . $useragent->useragent . "\n";
 			$this->assertEquals($useragent->browser['image'], $result[0]);
 			$this->assertEquals($useragent->platform['image'], $result[1]);
 			$this->assertEquals($useragent->browser['title'], $result[2]);
 			$this->assertEquals($useragent->platform['title'], $result[3]);
+			$this->assertFileExists($useragent->browser['image']);
+			$this->assertFileExists($useragent->platform['image']);
+			$this->assertFileExists($useragent->os['image']);
+
 		}
 	}
 }
