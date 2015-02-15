@@ -194,6 +194,7 @@ class useragent_detect_browser {
 		'M?QQBrowser',
 		'QQ(?!Download|Pinyin)',
 		'QtWeb\ Internet\ Browser',
+		'QtCarBrowser',
 		'QupZilla',
 		'rekonq',
 		'retawq',
@@ -1188,6 +1189,11 @@ class useragent_detect_browser {
 			'title' => 'QtWeb Internet {%Browser%}',
 			'code' => 'qtwebinternetbrowser',
 		),
+		'qtcarbrowser' => array(
+			'link' => 'http://www.teslamotors.com/',
+			'title' => '{%qtcarbrowser%}',
+			'code' => 'tesla',
+		),
 		'qupzilla' => array(
 			'link' => 'http://www.qupzilla.com/',
 			'title' => '{%QupZilla%}',
@@ -1858,6 +1864,8 @@ class useragent_detect_browser {
 		} elseif ($lower_title == "opera labs") {
 			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
 			$return = $title . $regmatch[1] . " " . $version;
+		} elseif ($lower_title == 'qtcarbrowser') {
+			$return = "Tesla Car Browser";
 		} elseif ($lower_title == "iceweasel") {
 			if ($version == "Firefox") {
 				$version = "";
