@@ -355,6 +355,15 @@ class UserAgent_Detect_Device {
 			}
 		}
 
+		// Xperia
+		elseif (preg_match('/Xperia/i', $useragent)) {
+			$link = "http://www.sonymobile.com/";
+			$title = "Xperia";
+			$code = "xperia";
+			if (preg_match('/Xperia(-T)?( |\_|\-)?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$title .= " " . $regmatch[3];
+			}
+		}
 		// ZTE
 		elseif (preg_match('/zte/i', $useragent)) {
 			$link = "http://www.zte.com.cn/cn/";

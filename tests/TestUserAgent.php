@@ -2169,6 +2169,14 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobiile Safari/533.1'),
 				array('img/16/browser/android-webkit.png', 'img/16/device/meizu.png', 'Android Webkit 4.0', 'Meizu'),
 			),
+			array(
+				array('Mozilla/5.0 (Linux; Android 4.4.4; Xperia SP Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 YiXin/3.2.0'),
+				array('img/16/browser/chrome.png', 'img/16/device/xperia.png', 'Google Chrome 33.0.0.0', 'Xperia SP'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.4.4; zh-cn; Xperia Z Build/KTU84Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'),
+				array('img/16/browser/android-webkit.png', 'img/16/device/xperia.png', 'Android Webkit 4.0', 'Xperia Z'),
+			),
 		);
 
 		foreach ($testList as $list) {
