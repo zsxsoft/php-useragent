@@ -322,6 +322,15 @@ class UserAgent_Detect_Device {
 			$link = "http://www.samsung.com/us/experience/smart-tv/";
 			$title = "Samsung Smart TV";
 			$code = "samsung";
+		} elseif (preg_match('/GT-/i', $useragent)) {
+			$link = "http://www.samsungmobile.com/";
+			$title = "Samsung";
+
+			if (preg_match('/GT-([.\-0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$title .= " " . $regmatch[1];
+			}
+
+			$code = "samsung";
 		} elseif (preg_match('/Samsung/i', $useragent)) {
 			$link = "http://www.samsungmobile.com/";
 			$title = "Samsung";

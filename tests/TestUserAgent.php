@@ -2177,6 +2177,18 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (Linux; U; Android 4.4.4; zh-cn; Xperia Z Build/KTU84Q) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'),
 				array('img/16/browser/android-webkit.png', 'img/16/device/xperia.png', 'Android Webkit 4.0', 'Xperia Z'),
 			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.3; zh-cn; GT-I9300I Build/JLS36C) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.4 Mobile Safari/537.36'),
+				array('img/16/browser/qqbrowser.png', 'img/16/device/samsung.png', 'MQQBrowser 5.4', 'Samsung I9300I'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.1.2; zh-CN; GT-N7100 Build/JZO54K) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.2.467 U3/0.8.0 Mobile Safari/533.1'),
+				array('img/16/browser/ucbrowser.png', 'img/16/device/samsung.png', 'UC Browser 9.9.2.467', 'Samsung N7100'),
+			),
+			array(
+				array('Mozilla/5.0 (Linux; U; Android 4.2.2; nl-nl; GT-I9505 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'),
+				array('img/16/browser/android-webkit.png', 'img/16/device/samsung.png', 'Android Webkit 4.0', 'Samsung I9505'),
+			),
 		);
 
 		foreach ($testList as $list) {
