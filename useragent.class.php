@@ -44,22 +44,17 @@ class UserAgent {
 					return $this->$privateParam;
 				} else if (isset($this->_data[$param])) {
 					return $this->_data[$param];
-				} else {
-					return null;
 				}
 				break;
 		}
+		return null;
 	}
 
 	public function __set($name, $value) {
 		$trueName = '_' . $name;
 		if (isset($this->$trueName)) {
 			$this->$trueName = $value;
-			return true;
-		} else {
-			return false;
 		}
-
 	}
 
 	public function __construct() {

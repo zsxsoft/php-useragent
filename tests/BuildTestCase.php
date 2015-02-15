@@ -28,13 +28,13 @@ $list = explode("\n", file_get_contents("ua.txt"));
 		<?php
 foreach ($list as $value) {
 	//var_dump(trim($value));exit;
-	$imageSize = rand(1, 2) == 2 ? 24 : 16;
-	$imagePath = rand(1, 2) == 2 ? ((string) ((int) (rand() * 10000))) . '/' : null;
-	$imageExtension = rand(1, 2) == 2 ? ".gif" : null;
-	$useragent = UserAgentFactory::analyze(trim($value), $imageSize, $imagePath, $imageExtension);
+	//$imageSize = rand(1, 2) == 2 ? 24 : 16;
+	//$imagePath = rand(1, 2) == 2 ? ((string) ((int) (rand() * 10000))) . '/' : null;
+	//$imageExtension = rand(1, 2) == 2 ? ".gif" : null;
+	$useragent = UserAgentFactory::analyze(trim($value)); //, $imageSize, $imagePath, $imageExtension);
 	?>
 <pre>			array(
-					array('<?php echo $useragent->useragent?>', <?php echo $imageSize?>, <?php echo $imagePath != null ? "'" . $imagePath . "'" : 'null'?>, <?php echo $imageExtension != null ? "'" . $imageExtension . "'" : 'null'?>),
+					array('<?php echo $useragent->useragent?>'),
 					array('<?php echo $useragent->browser['image']?>', '<?php echo $useragent->platform['image']?>', '<?php echo $useragent->browser['title']?>', '<?php echo $useragent->platform['title']?>')
 				),
 </pre><!--
