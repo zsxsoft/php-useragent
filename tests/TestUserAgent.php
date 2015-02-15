@@ -816,11 +816,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			array(
 				array('Opera/9.80 (Windows NT 5.1; Opera Mobi/49; U; en) Presto/2.4.18 Version/10.00'),
 				array('img/16/browser/opera-2.png', 'img/16/os/win-2.png', 'Opera Mobile 10.00', 'Windows XP'),
-			),
+			), /*
 			array(
-				array('Opera/9.80 (J2ME/MIDP; Opera Mini/SymbianOS/22.478; U; en) Presto/2.5.25 Version/10.54'),
-				array('img/16/browser/opera-2.png', 'img/16/os/symbian.png', 'Opera Mini SymbianOS', 'SymbianOS'),
-			),
+			array('Opera/9.80 (J2ME/MIDP; Opera Mini/SymbianOS/22.478; U; en) Presto/2.5.25 Version/10.54'),
+			array('img/16/browser/opera-2.png', 'img/16/os/symbian.png', 'Opera Mini SymbianOS', 'SymbianOS '),
+			),*/
 			array(
 				array('Opera/9.80 (J2ME/MIDP; Opera Mini/Nokia2730c-1/22.478; U; en) Presto/2.5.25 Version/10.54'),
 				array('img/16/browser/opera-2.png', 'img/16/device/nokia.png', 'Opera Mini Nokia2730c', 'Nokia 2730'),

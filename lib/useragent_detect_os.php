@@ -44,13 +44,12 @@ class useragent_detect_os {
 
 	public static function analyzeWindows($useragent) {
 		$link = "http://www.microsoft.com/windows/";
-		$title = 'Windows ';
-		$code = '';
-		$version = '';
+		$title = 'Windows';
+		$code = 'win-2';
 
 		if (preg_match('/Windows Phone|WPDesktop|ZuneWP7|WP7/i', $useragent)) {
 			$link = "http://www.windowsphone.com/";
-			$title .= 'Phone';
+			$title .= ' Phone';
 			$code = "windowsphone";
 			if (preg_match('/Windows Phone (OS )?([0-9\.]+)/i', $useragent, $regmatch)) {
 				$title .= " " . $regmatch[2];
@@ -59,76 +58,73 @@ class useragent_detect_os {
 				}
 			}
 		} elseif (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
-			$title .= "10";
+			$title .= " 10";
 			$code = "win-5";
 		} elseif (preg_match('/Windows NT 6.3/i', $useragent)) {
-			$title .= "8.1";
+			$title .= " 8.1";
 			$code = "win-5";
 		} elseif (preg_match('/Windows NT 6.2/i', $useragent)) {
-			$title .= "8";
+			$title .= " 8";
 			$code = "win-5";
 		} elseif (preg_match('/Windows NT 6.1/i', $useragent)) {
-			$title .= "7";
+			$title .= " 7";
 			$code = "win-4";
 		} elseif (preg_match('/Windows NT 6.0/i', $useragent)) {
-			$title .= "Vista";
+			$title .= " Vista";
 			$code = "win-3";
 		} elseif (preg_match('/Windows NT 5.2/i', $useragent)) {
-			$title .= "Server 2003";
+			$title .= " Server 2003";
 			$code = "win-2";
 		} elseif (preg_match('/Windows (NT 5.1|XP)/i', $useragent)) {
-			$title .= "XP";
+			$title .= " XP";
 			$code = "win-2";
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Windows NT 5.01/i', $useragent)) {
-			$title .= "2000 Service Pack 1";
+			$title .= " 2000 Service Pack 1";
 			$code = "win-1";
 			// @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Windows (NT 5.0|2000)/i', $useragent)) {
-			$title .= "2000";
+			$title .= " 2000";
 			$code = "win-1";
 		} elseif (preg_match('/Windows NT 4.0/i', $useragent)
 			|| preg_match('/WinNT4.0/i', $useragent)) {
-			$title .= "NT 4.0";
+			$title .= " NT 4.0";
 			$code = "win-1";
 		} elseif (preg_match('/Win(dows )?NT ?3.51/i', $useragent)
 			|| preg_match('/WinNT3.51/i', $useragent)) {
-			$title .= "NT 3.11";
+			$title .= " NT 3.11";
 			$code = "win-1";
 		} elseif (preg_match('/Win(dows )?3.11|Win16/i', $useragent)) {
-			$title .= "3.11";
+			$title .= " 3.11";
 			$code = "win-1";
 		} elseif (preg_match('/Windows 3.1/i', $useragent)) {
-			$title .= "3.1";
+			$title .= " 3.1";
 			$code = "win-1";
 		} elseif (preg_match('/Win 9x 4.90|Windows ME/i', $useragent)) {
-			$title .= "Me";
+			$title .= " Me";
 			$code = "win-1";
 		} elseif (preg_match('/Win98/i', $useragent)) {
-			$title .= "98 SE";
+			$title .= " 98 SE";
 			$code = "win-1";
 		} elseif (preg_match('/Windows (98|4\.10)/i', $useragent)) {
-			$title .= "98";
+			$title .= " 98";
 			$code = "win-1";
 		} elseif (preg_match('/Windows 95/i', $useragent)
 			|| preg_match('/Win95/i', $useragent)) {
-			$title .= "95";
+			$title .= " 95";
 			$code = "win-1";
 		} elseif (preg_match('/Windows CE|Windows .+Mobile/i', $useragent)) {
-			$title .= "CE";
+			$title .= " CE";
 			$code = "win-2";
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/WM5/i', $useragent)) {
-			$title .= "Mobile 5";
+			$title .= " Mobile 5";
 			$code = "win-phone";
 		} elseif (preg_match('/WindowsMobile/i', $useragent)) {
-			$title .= "Mobile";
+			$title .= " Mobile";
 			$code = "win-phone";
-			// @codeCoverageIgnoreEnd
-		} else {
-			$title = "Windows";
-			$code = "win-2";
 		}
+		// @codeCoverageIgnoreEnd
 
 		return array(
 			'link' => $link,
@@ -338,9 +334,9 @@ class useragent_detect_os {
 			} else {
 				$title .= " Linux";
 			}
+			$code = "oracle";
 // @codeCoverageIgnoreEnd
 
-			$code = "oracle";
 		} elseif (preg_match('/Pardus/i', $useragent)) {
 			$link = "http://www.pardus.org.tr/en/";
 			$title = "Pardus";
@@ -576,12 +572,12 @@ class useragent_detect_os {
 			$title = "Solaris";
 			$code = "solaris";
 
-		} elseif (preg_match('/Symb[ian]?[OS]?/i', $useragent)) {
+		} elseif (preg_match('/Symb(ian)?(OS)?/i', $useragent)) {
 			$link = "http://www.symbianos.org/";
 			$title = "SymbianOS";
 
-			if (preg_match('/Symb[ian]?[OS]?\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+			if (preg_match('/Symb(ian)?(OS)?\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$title .= " " . $regmatch[3];
 			}
 
 			$code = "symbian";
