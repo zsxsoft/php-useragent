@@ -526,10 +526,6 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('img/16/browser/uzardweb.png', 'img/16/os/win-2.png', 'uZard 1.0', 'Windows Server 2003 x64'),
 			),
 			array(
-				array('Ploetz + Zeller (http://www.ploetz-zeller.de) Link Validator v1.0 (support@p-und-z.de) for ARIS Business Architect'),
-				array('img/16/browser/null.png', 'img/16/os/archlinux.png', 'Unknown', 'Arch Linux'),
-			),
-			array(
 				array('curl/7.8 (i386-redhat-linux-gnu) libcurl 7.8 (OpenSSL 0.9.6b) (ipv6 enabled)'),
 				array('img/16/browser/null.png', 'img/16/os/red-hat.png', 'curl 7.8', 'Red Hat'),
 			),
@@ -1059,11 +1055,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.04 [en] (X11; I; IRIX 5.3 IP22)'),
-				array('img/16/browser/mozilla.png', 'img/16/os/irix.png', 'Mozilla Compatible', 'IRIX Linux 5.3'),
+				array('img/16/browser/mozilla.png', 'img/16/os/irix.png', 'Mozilla Compatible', 'IRIX 5.3'),
 			),
 			array(
 				array('Mozilla/4.76C-SGI [en] (X11; I; IRIX64 6.5 IP30)'),
-				array('img/16/browser/mozilla.png', 'img/16/os/irix.png', 'Mozilla Compatible', 'IRIX Linux x64 6.5'),
+				array('img/16/browser/mozilla.png', 'img/16/os/irix.png', 'Mozilla Compatible', 'IRIX x64 6.5'),
 			),
 			array(
 				array('Mozilla/4.8 [en] (X11; U; HP-UX B.11.00 9000/785)'),
@@ -1515,12 +1511,12 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows CE; Mobile; like Android; ko-kr) AppleWebKit/533.3 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.3 Dorothy'),
-				array('img/16/browser/dorothybrowser.png', 'img/16/os/android.png', 'Dorothy ', 'Android'),
-			),
+				array('img/16/browser/dorothybrowser.png', 'img/16/os/win-2.png', 'Dorothy ', 'Windows CE'),
+			), /*
 			array(
-				array('Mozilla/5.0 (Windows; U; Windows CE; Mobile; like iPhone; ko-kr) AppleWebKit/533.3 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.3 Dorothy'),
-				array('img/16/browser/dorothybrowser.png', 'img/16/device/iphone.png', 'Dorothy ', 'iPhone'),
-			),
+			array('Mozilla/5.0 (Windows; U; Windows CE; Mobile; like iPhone; ko-kr) AppleWebKit/533.3 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.3 Dorothy'),
+			array('img/16/browser/dorothybrowser.png', 'img/16/os/win-2.png', 'Dorothy ', 'Windows CE'),
+			),*/
 			array(
 				array('Doris/1.15 [en] (Symbian)'),
 				array('img/16/browser/doris.png', 'img/16/os/symbian.png', 'Doris 1.15', 'SymbianOS'),
@@ -1688,10 +1684,6 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 6.0; AOL 7.0; Windows 98; Win 9x 4.90; .NET CLR 1.1.4322)'),
 				array('img/16/browser/aol.png', 'img/16/os/win-1.png', 'AOL 7.0', 'Windows Me'),
-			),
-			array(
-				array('Mozilla/5.0 (Android 2.2; Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4'),
-				array('img/16/browser/android-webkit.png', 'img/16/os/android.png', 'Android Webkit 5.0.3', 'Android 2.2'),
 			),
 			array(
 				array('Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'),
@@ -2195,11 +2187,10 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			$original = $list[0];
 			$result = $list[1];
 			$useragent = UserAgentFactory::analyze($original[0]);
-			// echo 'Test: ' . $useragent->useragent . "\n";
-			$this->assertEquals($useragent->browser['image'], $result[0]);
-			$this->assertEquals($useragent->platform['image'], $result[1]);
-			$this->assertEquals($useragent->browser['title'], $result[2]);
-			$this->assertEquals($useragent->platform['title'], $result[3]);
+			$this->assertEquals($useragent->browser['image'], $result[0], $useragent->useragent);
+			$this->assertEquals($useragent->platform['image'], $result[1], $useragent->useragent);
+			$this->assertEquals($useragent->browser['title'], $result[2], $useragent->useragent);
+			$this->assertEquals($useragent->platform['title'], $result[3], $useragent->useragent);
 			$this->assertFileExists($useragent->browser['image']);
 			$this->assertFileExists($useragent->platform['image']);
 			$this->assertFileExists($useragent->os['image']);
