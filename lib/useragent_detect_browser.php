@@ -1749,11 +1749,6 @@ class useragent_detect_browser {
 		} elseif (preg_match('/Mozilla/i', $useragent)) {
 			$link = "http://www.mozilla.org/";
 			$title = "Mozilla Compatible";
-
-			if (preg_match('/rv:([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title = "Mozilla " . $regmatch[1];
-			}
-
 			$code = "mozilla";
 		} else {
 			$link = "#";

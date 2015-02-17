@@ -1079,7 +1079,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.7) Gecko/20050427 Red Hat/1.7.7-1.1.3.4'),
-				array('img/16/browser/mozilla.png', 'img/16/os/red-hat.png', 'Mozilla 1.7.7', 'Red Hat'),
+				array('img/16/browser/mozilla.png', 'img/16/os/red-hat.png', 'Mozilla Compatible', 'Red Hat'),
 			),
 			array(
 				array('NCSA_Mosaic/2.0 (Windows 3.1)'),
@@ -2151,7 +2151,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (X11; U; Linux i686; nl-NL; rv:1.6) Gecko/20050714 Linspire/1.6-5.1.0.50.linspire2.70'),
-				array('img/16/browser/mozilla.png', 'img/16/os/lindowsos.png', 'Mozilla 1.6', 'Linspire'),
+				array('img/16/browser/mozilla.png', 'img/16/os/lindowsos.png', 'Mozilla Compatible', 'Linspire'),
 			),
 			array(
 				array('Mozilla/5.0 (X11; U; Mac OSX; it; rv:1.9.0.7) Gecko/2009030422 Firefox/3.0.7'),
