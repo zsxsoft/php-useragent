@@ -38,7 +38,6 @@ class useragent_detect_browser {
 		'Beamrise',
 		'Beonex',
 		'BA?IDUBrowser|BaiduHD',
-		'BlackBerry',
 		'Blackbird',
 		'BlackHawk',
 		'Blazer',
@@ -400,11 +399,6 @@ class useragent_detect_browser {
 			'link' => 'http://browser.baidu.com/',
 			'title' => '{%BaiduHD%}',
 			'code' => 'bidubrowser',
-		),
-		'blackberry' => array(
-			'link' => 'http://www.blackberry.com/',
-			'title' => '{%BlackBerry%}',
-			'code' => 'blackberry',
 		),
 		'blackbird' => array(
 			'link' => 'http://www.blackbirdbrowser.com/',
@@ -1701,7 +1695,7 @@ class useragent_detect_browser {
 				$title = self::detect_browser_version(array('', 'Safari'));
 			}
 
-			if (preg_match('/Mobile Safari/i', $useragent)) {
+			if (preg_match('/Mobile ?Safari/i', $useragent)) {
 				$title = "Mobile " . $title;
 			}
 

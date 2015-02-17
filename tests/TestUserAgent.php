@@ -1658,10 +1658,6 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('img/16/browser/blazer.png', 'img/16/device/palm.png', 'Blazer 3.0', 'Palm'),
 			),
 			array(
-				array('Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+'),
-				array('img/16/browser/blackberry.png', 'img/16/device/blackberry.png', 'BlackBerry 9900', 'BlackBerry'),
-			),
-			array(
 				array('Mozilla/5.0 (Windows; U; WinNT; en; rv:1.0.2) Gecko/20030311 Beonex/0.8.2-stable'),
 				array('img/16/browser/beonex.png', 'img/16/os/win-2.png', 'Beonex 0.8.2', 'Windows'),
 			),
@@ -2155,11 +2151,11 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (X11; U; Mac OSX; it; rv:1.9.0.7) Gecko/2009030422 Firefox/3.0.7'),
-				array('img/16/browser/firefox.png', 'img/16/os/mac-2.png', 'Firefox 3.0.7', 'Mac OSX'),
+				array('img/16/browser/firefox.png', 'img/16/os/mac-2.png', 'Firefox 3.0.7', 'Mac OS X'),
 			),
 			array(
 				array('MobileSafari/9537.53 CFNetwork/672.1.13 Darwin/13.1.0'),
-				array('img/16/browser/safari.png', 'img/16/os/mac-1.png', 'Safari', 'Mac OS Darwin'),
+				array('img/16/browser/safari.png', 'img/16/os/mac-1.png', 'Mobile Safari', 'Mac OS Darwin'),
 			),
 			array(
 				array('Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobiile Safari/533.1'),
@@ -2240,7 +2236,14 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Superbird/37.0.2062.90 Chrome/37.0.2062.90 Safari/537.36'),
 				array('img/16/browser/superbird.png', 'img/16/os/win-5.png', 'Superbird 37.0.2062.90', 'Windows 8.1 x64'),
 			),
-
+			array(
+				array('Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+'),
+				array('img/16/browser/safari.png', 'img/16/device/blackberry.png', 'Mobile Safari 7.1.0.346', 'BlackBerry 9900'),
+			),
+			array(
+				array('Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.2372 Mobile Safari/537.10+'),
+				array('img/16/browser/safari.png', 'img/16/os/blackberry.png', 'Mobile Safari 10.0.9.2372', 'BlackBerry OS 10'),
+			),
 		);
 
 		foreach ($testList as $list) {

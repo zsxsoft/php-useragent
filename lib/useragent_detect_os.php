@@ -490,6 +490,10 @@ class useragent_detect_os {
 			}
 
 			$code = "amigaos";
+		} elseif (preg_match('/BB10/i', $useragent)) {
+			$link = "http://www.blackberry.com/";
+			$title = "BlackBerry OS 10";
+			$code = "blackberry";
 
 		} elseif (preg_match('/BeOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/BeOS";
@@ -543,6 +547,7 @@ class useragent_detect_os {
 				}
 
 				$title = str_replace("_", ".", $title);
+				$title = str_replace("OSX", "OS X", $title);
 
 				$code = $regmatch[1] == "Mac OSX" ? "mac-2" : "mac-3";
 			} elseif (preg_match('/Darwin/i', $useragent)) {

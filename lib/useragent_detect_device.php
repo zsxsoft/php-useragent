@@ -62,7 +62,7 @@ class UserAgent_Detect_Device {
 			$link = "http://www.blackberry.com/";
 			$title = "BlackBerry";
 
-			if (preg_match('/blackberry([.0-9a-zA-Z]+)\//i', $useragent, $regmatch)) {
+			if (preg_match('/blackberry ?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$title .= " " . $regmatch[1];
 			}
 
