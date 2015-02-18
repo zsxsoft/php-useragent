@@ -8,7 +8,7 @@ http://www.zsxsoft.com/php-useragent/test-my-useragent.php
 
 ## JavaScript Edition
 
-[https://github.com/zsxsoft/php-useragent/ ](https://github.com/zsxsoft/php-useragent)
+[https://github.com/zsxsoft/useragent.js/ ](https://github.com/zsxsoft/useragent.js)
 
 ## Contributors
 zsx(http://www.zsxsoft.com)
