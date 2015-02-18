@@ -1,1 +1,6 @@
+.project
 /vendor/
+/cover/
+/tests/*.txt
+/BuildTestCase.php
+/tests/BuildTestCase2.php

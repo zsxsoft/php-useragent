@@ -6,6 +6,10 @@ A simple project that allows you to display details about a computer's operating
 
 http://www.zsxsoft.com/php-useragent/test-my-useragent.php
 
+## JavaScript Edition
+
+[https://github.com/zsxsoft/php-useragent/ ](https://github.com/zsxsoft/php-useragent)
+
 ## Contributors
 zsx(http://www.zsxsoft.com)
 
