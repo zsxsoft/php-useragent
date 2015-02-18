@@ -68,7 +68,6 @@ class useragent_detect_browser {
 		'CrMo',
 		'Cruz',
 		'Cyberdog',
-		'DPlus',
 		'Deepnet\ Explorer',
 		'Demeter',
 		'DeskBrowse',
@@ -219,7 +218,6 @@ class useragent_detect_browser {
 		'SubStream',
 		'Sulfur',
 		'Sundance',
-		'Sunrise',
 		'Sunrise',
 		'Surf',
 		'Swiftfox',
@@ -1316,11 +1314,6 @@ class useragent_detect_browser {
 			'code' => 'sundance',
 		),
 		'sunrise' => array(
-			'link' => 'http://www.sundialbrowser.com/',
-			'title' => '{%Sundial%}',
-			'code' => 'sundial',
-		),
-		'sunrise' => array(
 			'link' => 'http://www.sunrisebrowser.com/',
 			'title' => '{%Sunrise%}',
 			'code' => 'sunrise',
@@ -1523,7 +1516,7 @@ class useragent_detect_browser {
 		'wyzo' => array(
 			'link' => 'http://www.wyzo.com/',
 			'title' => '{%Wyzo%}',
-			'code' => 'Wyzo',
+			'code' => 'wyzo',
 		),
 		'x-smiles' => array(
 			'link' => 'http://www.xsmiles.org/',

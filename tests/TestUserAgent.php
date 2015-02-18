@@ -491,7 +491,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20100121 Firefox/3.5.6 Wyzo/3.5.6.1'),
-				array('img/16/browser/Wyzo.png', 'img/16/os/win-4.png', 'Wyzo 3.5.6.1', 'Windows 7'),
+				array('img/16/browser/wyzo.png', 'img/16/os/win-4.png', 'Wyzo 3.5.6.1', 'Windows 7'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-BR) AppleWebKit/532.4 (KHTML, like Gecko) WeltweitimnetzBrowser/0.25 Safari/532.4'),
