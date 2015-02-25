@@ -1,4 +1,7 @@
 # PHP-UserAgent
+[![Build Status](https://travis-ci.org/zsxsoft/php-useragent.svg)](https://travis-ci.org/zsxsoft/php-useragent)
+[![Latest Stable Version](https://poser.pugx.org/zsxsoft/php-useragent/v/stable.png)](https://packagist.org/packages/zsxsoft/php-useragent)
+
 
 A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
 
