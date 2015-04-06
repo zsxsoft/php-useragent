@@ -475,7 +475,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0'),
-				array('img/16/browser/msie11.png', 'img/16/os/win-5.png', 'Internet Explorer Spartan 12.0', 'Windows 10 x64'),
+				array('img/16/browser/spartan.png', 'img/16/os/win-5.png', 'Spartan 12.0', 'Windows 10 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.69 Safari/537.36 2345chrome v2.4.0.2847'),

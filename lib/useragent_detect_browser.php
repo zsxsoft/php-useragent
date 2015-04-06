@@ -1662,15 +1662,16 @@ class useragent_detect_browser {
 			$link = "http://developer.android.com/reference/android/webkit/package-summary.html";
 			$title = self::detect_browser_version(array('', 'Android Webkit'));
 			$code = "android-webkit";
+
+		} elseif (preg_match('/Windows NT.+Chrome.+Edge/i', $useragent)) {
+			// Project Spartan
+			$link = "http://windows.microsoft.com/en-us/windows/preview-spartan-pc";
+			$title = self::detect_browser_version(array('', 'Spartan'));
+			$code = "spartan";
+
 		} elseif (preg_match('/Chrome|crios/i', $useragent)) {
 
-			// Note: For IE11 Experimental Web Platform Features in Windows 10
-			// Spartan? Who knows.
-			if (preg_match('/Windows NT 1.+Edge/i', $useragent)) {
-				$link = "http://www.microsoft.com/windows/products/winfamily/ie/default.mspx";
-				$title = "Internet Explorer " . self::detect_browser_version(array('', 'Spartan'));
-				$code = "msie11";
-			} else if (preg_match('/crios/i', $useragent)) {
+			if (preg_match('/crios/i', $useragent)) {
 				$link = "http://google.com/chrome/";
 				$title = "Google " . self::detect_browser_version(array('', 'CriOS'));
 				$code = "chrome";
