@@ -241,7 +241,7 @@ class UserAgent_Detect_Device {
 			$title = "Nokia";
 			$code = "nokia";
 			if (preg_match('/Nokia(E|N| )?([0-9]+)/i', $useragent, $regmatch)) {
-				if (preg_match('/IEMobile|WPDesktop/i', $useragent)) {
+				if (preg_match('/IEMobile|WPDesktop|Edge/i', $useragent)) {
 					// Nokia Windows Phone
 					if ($regmatch[2] == '909') {
 						$regmatch[2] = '1020';

@@ -2246,7 +2246,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; NOKIA; Nokia 920) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0'),
-				array('img/16/browser/spartan.png', 'img/16/device/nokia.png', 'Spartan 12.0', 'Nokia  920'),
+				array('img/16/browser/spartan.png', 'img/16/device/nokia.png', 'Spartan 12.0', 'Nokia Lumia 920'),
 			),
 		);
 
