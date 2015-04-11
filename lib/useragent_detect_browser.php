@@ -1663,7 +1663,7 @@ class useragent_detect_browser {
 			$title = self::detect_browser_version(array('', 'Android Webkit'));
 			$code = "android-webkit";
 
-		} elseif (preg_match('/Windows NT.+Chrome.+Edge/i', $useragent)) {
+		} elseif (preg_match('/Windows.+Chrome.+Edge/i', $useragent)) {
 			// Project Spartan
 			$link = "http://windows.microsoft.com/en-us/windows/preview-spartan-pc";
 			$title = self::detect_browser_version(array('', 'Spartan'));
