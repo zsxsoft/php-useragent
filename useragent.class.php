@@ -85,7 +85,7 @@ class UserAgent {
 	}
 
 	public static function __autoload($className) {
-		if (is_file('lib/' . $className . '.php')) {
+		if (is_file(dirname(__FILE__).'/lib/' . $className . '.php')) {
 			require_once 'lib/' . $className . '.php';
 
 		}
