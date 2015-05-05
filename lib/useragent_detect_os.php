@@ -534,7 +534,35 @@ class useragent_detect_os {
 
 			$code = "irix";
 
-		} elseif (preg_match('/Mac/i', $useragent)
+		} 
+		//Apple iOS
+		elseif (preg_match('/iPad/i', $useragent)) {
+		    $link = "http://www.apple.com/itunes";
+		
+		    if (preg_match('/CPU\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+		        $title = " iOS " . str_replace("_", ".", $regmatch[1]);
+		    }
+		
+		    $code = "ipad";
+		} elseif (preg_match('/iPod/i', $useragent)) {
+		    $link = "http://www.apple.com/itunes";
+		
+		    if (preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+		        $title = " iOS " . str_replace("_", ".", $regmatch[1]);
+		    }
+		
+		    $code = "ipod";
+		} elseif (preg_match('/iPhone/i', $useragent)) {
+		    $link = "http://www.apple.com/iphone";
+		
+		    if (preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+		        $title = " iOS " . str_replace("_", ".", $regmatch[1]);
+		    }
+		
+		    $code = "iphone";
+		}
+		//Apple Mac
+		elseif (preg_match('/Mac/i', $useragent)
 			|| preg_match('/Darwin/i', $useragent)) {
 			$link = "http://www.apple.com/macosx/";
 

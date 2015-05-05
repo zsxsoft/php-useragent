@@ -143,7 +143,6 @@ class useragent_detect_browser {
 		'Maxthon',
 		'\ MIB\/',
 		'Tablet\ browser',
-		'MicroMessenger',
 		'Midori',
 		'Minefield',
 		'MiniBrowser',
@@ -190,6 +189,7 @@ class useragent_detect_browser {
 		'Polarity',
 		'Prism',
 		'M?QQBrowser',
+	    'MicroMessenger',
 		'QQ(?!Download|Pinyin)',
 		'QtWeb\ Internet\ Browser',
 		'QtCarBrowser',
@@ -938,6 +938,11 @@ class useragent_detect_browser {
 			'title' => '{%Tablet browser%}',
 			'code' => 'microb',
 		),
+	    'mqqbrowser' => array(
+	        'link' => 'http://browser.qq.com/',
+	        'title' => '{%MQQBrowser%}',
+	        'code' => 'qqbrowser',
+	    ),
 		'micromessenger' => array(
 			'link' => 'http://weixin.qq.com/',
 			'title' => '{%MicroMessenger%}',
@@ -972,11 +977,6 @@ class useragent_detect_browser {
 			'link' => 'http://www.mozilla.org/projects/devpreview/releasenotes/',
 			'title' => '{%MozillaDeveloperPreview%}',
 			'code' => 'firefoxdevpre',
-		),
-		'mqqbrowser' => array(
-			'link' => 'http://browser.qq.com/',
-			'title' => '{%MQQBrowser%}',
-			'code' => 'qqbrowser',
 		),
 		'multi-browser' => array(
 			'link' => 'http://www.multibrowser.de/',
@@ -1574,8 +1574,8 @@ class useragent_detect_browser {
 		$result = array();
 		$regExList = '/(' . implode('|', self::$browserRegEx) . ')/i';
 
-		if (preg_match($regExList, $useragent, $result)) {
-			$name = strtolower($result[1]);
+		if (preg_match_all($regExList, $useragent, $result)) {
+			$name = strtolower($result[1][count($result[1])-1]);
 			if (isset(self::$browserList[$name])) {
 				$result = self::$browserList[$name];
 				$result['title'] = preg_replace_callback('/\{\%(.+)\%\}/', array('useragent_detect_browser', 'detect_browser_version'), $result['title']);

@@ -264,7 +264,7 @@ class UserAgent_Detect_Device {
 			$title = "Onda";
 			$code = "onda";
 		}
-		// Onda
+		// Oppo
 		elseif (preg_match('/oppo/i', $useragent)) {
 			$link = "http://www.oppo.com/";
 			$title = "OPPO";
@@ -418,11 +418,11 @@ class UserAgent_Detect_Device {
 			$link = "http://www.apple.com/itunes";
 			$title = "iPod";
 
-			if (preg_match('/iPhone\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+			if (preg_match('/iPod\ OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$title .= " iOS " . str_replace("_", ".", $regmatch[1]);
 			}
 
-			$code = "iphone";
+			$code = "ipod";
 		} elseif (preg_match('/iPhone/i', $useragent)) {
 			$link = "http://www.apple.com/iphone";
 			$title = "iPhone";
@@ -435,6 +435,180 @@ class UserAgent_Detect_Device {
 		}
 
 		//Some special UA..
+		// 华为荣耀
+		elseif (preg_match('/HONOR[\ ]?([A-Za-z0-9]{3,4}\-[A-Za-z0-9]{3,4})|(Che[0-9]{1}-[a-zA-Z0-9]{4})/i', $useragent,$regmatch)) {
+		    $link = "http://www.huawei.com/cn/";
+		    $title = "Huawei ".$regmatch[count($regmatch)-1];
+		    $code = "huawei";
+		}
+		elseif (preg_match('/(H60-L\d+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.huawei.com/cn/";
+		    $title = "Huawei ".$regmatch[count($regmatch)-1];
+		    $code = "huawei";
+		}
+		// 三星
+		elseif (preg_match('/(SCH-[0-9a-z]+)|(SHV-[0-9a-z]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.samsungmobile.com/";
+		    $title = "Samsung ".$regmatch[count($regmatch)-1];
+		    $code = "samsung";
+		}
+		elseif (preg_match('/(SM-[0-9a-z]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.samsungmobile.com/";
+		    $title = "Samsung ".$regmatch[count($regmatch)-1];
+		    $code = "samsung";
+		}
+		elseif (preg_match('/Galaxy S III/i', $useragent)) {
+		    $link = "http://www.samsungmobile.com/";
+		    $title = "Samsung GalaxyS3";
+		    $code = "samsung";
+		}
+		// 金立
+		elseif (preg_match('/(GN[0-9]+)|GiONEE-([a-zA-Z0-9]{2,4})|GIO-GiONEE\_([a-zA-Z0-9]{2,4})|(E7)/i', $useragent,$regmatch)) {
+		    $link = "http://www.gionee.com/";
+		    $title = "Gionee ".$regmatch[count($regmatch)-1];
+		    $code = "gionee";
+		}
+		// 海信
+		elseif (preg_match('/HS-(EG[0-9]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.hisense.com/";
+		    $title = "Hisense EG".$regmatch[count($regmatch)-1];
+		    $code = "hisense";
+		}
+		// 魅族
+		elseif (preg_match('/(M35[0-9]+)|(M040)|(M045)/i', $useragent,$regmatch)) {
+		    $link = "http://www.meizu.com/";
+			$title = "Meizu ".$regmatch[count($regmatch)-1];
+			$code = "meizu";
+		}
+		elseif (preg_match('/(MX[0-9]{1})/i', $useragent,$regmatch)) {
+		    $link = "http://www.meizu.com/";
+		    $title = "Meizu ".$regmatch[count($regmatch)-1];
+		    $code = "meizu";
+		}
+		// 小米
+		elseif (preg_match('/(2013[0-9]{3})|(2014[0-9]{3})|(HM\ 1SC)|(HM\ 1SW)|(M35c)|(M[0-9]{1})/', $useragent,$regmatch)) {
+		    $link = "http://www.xiaomi.com/";
+		    $title = "Xiaomi ".$regmatch[count($regmatch)-1];
+		    $code = "xiaomi";
+		}
+		// 蓝天
+		elseif (preg_match('/MX X1/i', $useragent,$regmatch)) {
+		    $link = "#";
+		    $title = "蓝天 MX X1";
+		    $code = "蓝天";
+		}
+		// 中国移动
+		elseif (preg_match('/(M601)|(M701)|(M811)|(M812)/i', $useragent,$regmatch)) {
+		    $link = "http://www.10086.cn";
+		    $title = "ChinaMobile ".$regmatch[count($regmatch)-1];
+		    $code = "chinamobile";
+		}
+		// Oppo
+		elseif (preg_match('/(X\d{3,4}[a-z]?)|(R\d{3,4}[a-z]?)|(N\d{3,4}[a-z]?)|(1107)|(N1T)/', $useragent,$regmatch)) {
+		    $link = "http://www.oppo.com/";
+		    $title = "OPPO ".$regmatch[count($regmatch)-1];
+		    $code = "oppo";
+		}
+		// TCL
+		elseif (preg_match('/TCL/', $useragent)) {
+		    $link = "http://www.tcl.com";
+		    $title = "TCL";
+		
+		    if (preg_match('/TCL[\ |\-]([0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+		        $title .= " " . $regmatch[count($regmatch)-1];
+		    }
+		
+		    $code = "tcl";
+		}
+		// 易派
+		elseif (preg_match('/epade/i', $useragent)) {
+		    $link = "#";
+		    $title = "Epade";
+		
+		    if (preg_match('/epade\ ([0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+		        $title .= " " . $regmatch[count($regmatch)-1];
+		    }
+		
+		    $code = "epade";
+		}
+		// 亿通
+		elseif (preg_match('/eton/i', $useragent)) {
+		    $link = "#";
+		    $title = "Eton";
+		
+		    if (preg_match('/eton\ ([0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+		        $title .= " " . $regmatch[count($regmatch)-1];
+		    }
+		
+		    $code = "eton";
+		}
+		// Sony
+		elseif (preg_match('/([A-Z]{1}[0-9]{2}[a-zA-Z]{1})|([A-Z]{1}[0-9]{4})|(Z3)/', $useragent,$regmatch)) {
+		    $link = "http://www.sonymobile.com/cn/";
+		    $title = "Sony ".$regmatch[count($regmatch)-1];
+		    $code = "sony";
+		}
+		// 语信
+		elseif (preg_match('/YUSUN([\ |\_]*[A-Z0-9]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.yusun.com.cn/";
+		    $title = "Yusun ".$regmatch[count($regmatch)-1];
+		    $code = "yusun";
+		}
+		// 黑米
+		elseif (preg_match('/HMI_([0-9a-zA-Z]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.hmiphone.com/";
+		    $title = "Hmi ".$regmatch[count($regmatch)-1];
+		    $code = "hmi";
+		}
+		// 优米
+		elseif (preg_match('/UMI[\-]?([0-9a-zA-Z]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.91umi.com/";
+		    $title = "Umi ".$regmatch[count($regmatch)-1];
+		    $code = "umi";
+		}
+		// 爱派尔
+		elseif (preg_match('/IPH-([0-9a-zA-Z]+)/i', $useragent,$regmatch)) {
+		    $link = "http://iphchina.com/index.html";
+		    $title = "IPH ".$regmatch[count($regmatch)-1];
+		    $code = "iph";
+		}
+		// 美图
+		elseif (preg_match('/meitu([0-9a-zA-Z]+)/i', $useragent,$regmatch)) {
+		    $link = "http://www.meitu.com";
+		    $title = "Meitu ".$regmatch[count($regmatch)-1];
+		    $code = "meitu";
+		}
+		// 摩托罗拉
+		elseif (preg_match('/([A-Z]{2}[0-9+]{3,4})/i', $useragent,$regmatch)) {
+		    $link = "http://www.motorola.com.cn";
+		    $title = "Motorola ".$regmatch[count($regmatch)-1];
+		    $code = "motorola";
+		}
+		// 维卡
+		elseif (preg_match('/VIKA-([0-9A-Za-z])/i', $useragent,$regmatch)) {
+		    $link = "http://www.vikamobile.com/";
+		    $title = "Vika ".$regmatch[count($regmatch)-1];
+		    $code = "vika";
+		}
+		// Vivo
+		elseif (preg_match('/(X3)/', $useragent,$regmatch)) {
+		    $link = "http://www.vivo.com/cn/";
+		    $title = "Vivo ".$regmatch[count($regmatch)-1];
+		    $code = "vivo";
+		}
+		// 酷派
+		elseif (preg_match('/(8060)/', $useragent,$regmatch)) {
+		    $link = "http://www.coolpad.com/";
+		    $title = "Coolpad ".$regmatch[count($regmatch)-1];
+		    $code = "coolpad";
+		}
+		//联想
+		elseif (preg_match('/(K3)/i', $useragent,$regmatch)) {
+		    $link = "http://www.lenovo.com.cn";
+		    $title = "Lenovo ".$regmatch[count($regmatch)-1];
+		    $code = "lenovo";
+		
+		}
 		//is MSIE
 		elseif (preg_match('/MSIE.+?Windows.+?Trident/i', $useragent) && !preg_match('/Windows ?Phone/i', $useragent)) {
 			$link = "";
