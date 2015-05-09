@@ -7,7 +7,7 @@
  */
 ini_set('display_errors', 'On');
 error_reporting(E_ALL);
-include './useragent.class.php';
+include dirname(__FILE__) . '/useragent.class.php';
 $useragent = UserAgentFactory::analyze($_SERVER['HTTP_USER_AGENT']);
 ?>
 <!DOCTYPE html>
