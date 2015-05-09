@@ -1665,9 +1665,9 @@ class useragent_detect_browser {
 
 		} elseif (preg_match('/Windows.+Chrome.+Edge/i', $useragent)) {
 			// Project Spartan
-			$link = "http://windows.microsoft.com/en-us/windows/preview-spartan-pc";
-			$title = self::detect_browser_version(array('', 'Spartan'));
-			$code = "spartan";
+			$link = "http://windows.microsoft.com/en-us/windows/preview-microsoft-edge-pc";
+			$title = self::detect_browser_version(array('', 'Edge'));
+			$code = "edge";
 
 		} elseif (preg_match('/Chrome|crios/i', $useragent)) {
 
