@@ -1761,41 +1761,35 @@ class useragent_detect_browser {
 		$return = '';
 		// Fix for Opera's UA string changes in v10.00+ (and others)
 		$start = $title;
-		if (($lower_title == "opera"
-			|| $lower_title == "opera next"
-			|| $lower_title == "opera labs")
-			&& preg_match('/Version/i', $useragent)) {
+		if (
+			preg_match('/Version/i', $useragent)
+			&&
+			((($lower_title == "opera" || $lower_title == "opera next" || $lower_title == "opera labs")) ||
+				($lower_title == "opera mobi") ||
+				($lower_title == "safari") ||
+				($lower_title == "pre") ||
+				($lower_title == "android webkit"))
+		) {
 			$start = "Version";
 		} elseif (($lower_title == "opera"
 			|| $lower_title == "opera next"
 			|| $lower_title == "opera developer")
 			&& preg_match('/OPR/i', $useragent)) {
 			$start = "OPR";
-		} elseif ($lower_title == "opera mobi"
-			&& preg_match('/Version/i', $useragent)) {
-			$start = "Version";
-		} elseif ($lower_title == "safari"
-			&& preg_match('/Version/i', $useragent)) {
-			$start = "Version";
-		} elseif ($lower_title == "pre"
-			&& preg_match('/Version/i', $useragent)) {
-			$start = "Version";
-		} elseif ($lower_title == "android webkit") {
-			$start = "Version";
 		} elseif ($lower_title == "links") {
 			$start = "Links (";
 		} elseif ($lower_title == "uc browser") {
 			$start = "UC Browser";
-		} elseif ($lower_title == "tenfourfox") {
-			$start = " rv";
-		} elseif ($lower_title == "classilla") {
-			$start = " rv";
 		} elseif ($lower_title == "smarttv") {
 			$start = "WebBrowser";
 		} elseif ($lower_title == "ucweb"
 			&& preg_match('/UCBrowser/i', $useragent)) {
 			$start = "UCBrowser";
-		} elseif ($lower_title == "msie" && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent)) {
+		} elseif (
+			($lower_title == "tenfourfox") ||
+			($lower_title == "classilla") ||
+			($lower_title == "msie" && preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent))
+		) {
 			// We have IE11 or newer
 			$start = " rv";
 		} elseif ($lower_title == "spartan") {
@@ -1819,57 +1813,61 @@ class useragent_detect_browser {
 			&& $version == "7.0"
 			&& preg_match('/Trident\/4.0/i', $useragent)) {
 			$return = " 8.0 (Compatibility Mode)"; // Fix for IE8 quirky UA string with Compatibility Mode enabled
+			$version = "";
 		} elseif ($lower_title == "msie") {
-			$return = " " . $version;
+			$return = "";
 		} elseif ($lower_title == "nf-browser") {
-			$return = "NetFront " . $version;
+			$return = "NetFront";
 		} elseif ($lower_title == "semc-browser") {
-			$return = "SEMC Browser " . $version;
+			$return = "SEMC Browser";
 		} elseif ($lower_title == "ucweb" || $lower_title == "ubrowser" || $lower_title == "ucbrowser" || $lower_title == "uc browser") {
-			$return = "UC Browser " . $version;
+			$return = "UC Browser";
 		} elseif ($lower_title == "bidubrowser" || $lower_title == "baidubrowser" || $lower_title == "baiduhd") {
-			$return = "Baidu Browser " . $version;
+			$return = "Baidu Browser";
 		} elseif ($lower_title == "up.browser"
 			|| $lower_title == "up.link") {
-			$return = "Openwave Mobile Browser " . $version;
+			$return = "Openwave Mobile Browser";
 		} elseif ($lower_title == "chromeframe") {
-			$return = "Google Chrome Frame " . $version;
+			$return = "Google Chrome Frame";
 		} elseif ($lower_title == "mozilladeveloperpreview") {
-			$return = "Mozilla Developer Preview " . $version;
+			$return = "Mozilla Developer Preview";
 		} elseif ($lower_title == "opera mobi") {
-			$return = "Opera Mobile " . $version;
+			$return = "Opera Mobile";
 		} elseif ($lower_title == "osb-browser") {
-			$return = "Gtk+ WebCore " . $version;
+			$return = "Gtk+ WebCore";
 		} elseif ($lower_title == "tablet browser") {
-			$return = "MicroB " . $version;
+			$return = "MicroB";
 		} elseif ($lower_title == "crmo") {
-			$return = "Chrome Mobile " . $version;
+			$return = "Chrome Mobile";
 		} elseif ($lower_title == "smarttv") {
-			$return = "Maple Browser " . $version;
+			$return = "Maple Browser";
 		} elseif ($lower_title == "atomicbrowser") {
-			$return = "Atomic Web Browser " . $version;
+			$return = "Atomic Web Browser";
 		} elseif ($lower_title == "barcapro") {
-			$return = "Barca Pro " . $version;
+			$return = "Barca Pro";
 		} elseif ($lower_title == "dplus") {
-			$return = "D+ " . $version;
+			$return = "D+";
 		} elseif ($lower_title == "micromessenger") {
-			$return = "WeChat " . $version;
+			$return = "WeChat";
 		} elseif ($lower_title == "nichrome/self") {
-			$return = "NiChrome " . $version;
+			$return = "NiChrome";
 		} elseif ($lower_title == "opera labs") {
 			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
-			$return = $title . $regmatch[1] . " " . $version;
+			$return = $title . $regmatch[1] . "";
 		} elseif ($lower_title == 'qtcarbrowser') {
 			$return = "Tesla Car Browser";
+			$version = "";
 		} elseif ($lower_title == "iceweasel") {
 			if ($version == "Firefox") {
 				$version = "";
 			}
 
-			$return = $title . " " . $version;
+			$return = $title;
 		} else {
-			$return = $title . " " . $version;
+			$return = $title;
 		}
+
+		$return .= ($version !== "" ? " " . $version : "");
 
 		return $return;
 	}
