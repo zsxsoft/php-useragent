@@ -99,6 +99,7 @@ class useragent_detect_browser {
 		'GoSurf',
 		'GranParadiso',
 		'GreenBrowser',
+		'GSA',
 		'Hana',
 		'HotJava',
 		'Hv3',
@@ -707,6 +708,11 @@ class useragent_detect_browser {
 			'link' => 'http://www.morequick.com/',
 			'title' => '{%GreenBrowser%}',
 			'code' => 'greenbrowser',
+		),
+		'gsa' => array(
+			'link' => 'http://www.google.com', 
+			'title' => '{%GSA%}',
+			'code' => 'google'
 		),
 		'hana' => array(
 			'link' => 'http://www.alloutsoftware.com/',
@@ -1851,6 +1857,8 @@ class useragent_detect_browser {
 			$return = "WeChat";
 		} elseif ($lower_title == "nichrome/self") {
 			$return = "NiChrome";
+		} elseif ($lower_title == "gsa") {
+			$return = "Google Search App";
 		} elseif ($lower_title == "opera labs") {
 			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
 			$return = $title . $regmatch[1] . "";
