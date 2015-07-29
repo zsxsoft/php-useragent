@@ -179,7 +179,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (MSIE 9.0; Windows NT 6.4; WOW64; Trident/7.0; rv:11.0) like Gecko'),
-				array('img/16/browser/msie9.png', 'img/16/os/win-5.png', 'Internet Explorer 11.0', 'Windows 10 x64'),
+				array('img/16/browser/msie9.png', 'img/16/os/win-6.png', 'Internet Explorer 11.0', 'Windows 10 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; LCJB; rv:11.0) like Gecko'),
@@ -475,7 +475,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0'),
-				array('img/16/browser/edge.png', 'img/16/os/win-5.png', 'Edge 12.0', 'Windows 10 x64'),
+				array('img/16/browser/edge.png', 'img/16/os/win-6.png', 'Edge 12.0', 'Windows 10 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.69 Safari/537.36 2345chrome v2.4.0.2847'),
@@ -487,7 +487,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.89 Vivaldi/1.0.94.2 Safari/537.36'),
-				array('img/16/browser/vivaldi.png', 'img/16/os/win-5.png', 'Vivaldi 1.0.94.2', 'Windows 10 x64'),
+				array('img/16/browser/vivaldi.png', 'img/16/os/win-6.png', 'Vivaldi 1.0.94.2', 'Windows 10 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20100121 Firefox/3.5.6 Wyzo/3.5.6.1'),

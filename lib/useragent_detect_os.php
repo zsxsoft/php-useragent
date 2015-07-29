@@ -59,7 +59,7 @@ class useragent_detect_os {
 			}
 		} elseif (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
 			$title .= " 10";
-			$code = "win-5";
+			$code = "win-6";
 		} elseif (preg_match('/Windows NT 6.3/i', $useragent)) {
 			$title .= " 8.1";
 			$code = "win-5";
