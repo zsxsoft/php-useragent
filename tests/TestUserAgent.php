@@ -1822,8 +1822,8 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 				array('img/16/browser/owb.png', 'img/16/os/amigaos.png', 'Oregano Web Browser', 'AmigaOS 4.1'),
 			),
 			array(
-				array('Mozilla/5.0 (Linux; Android 4.4.3; Amazon Otter Build/KTU84M) AppleWebKit/537.36 (KHTML like Gecko) Version/4.0 Chrome/33.0.0.0 Safari/537.36'),
-				array('img/16/browser/otter.png', 'img/16/os/android.png', 'Otter', 'Android 4.4.3'),
+				array('Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/538.1 (KHTML, like Gecko) Otter/0.9.08'),
+				array('img/16/browser/otter.png', 'img/16/os/win-5.png', 'Otter 0.9.08', 'Windows 8 x64'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; cs-CZ) AppleWebKit/533.3 (KHTML, like Gecko) SlimBoat/1.0.8 Version/5.1 Safari/533.3'),
@@ -1964,10 +1964,6 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			array(
 				array('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; PhaseOut-www.phaseout.net)'),
 				array('img/16/browser/phaseout.png', 'img/16/os/win-2.png', 'Phaseout', 'Windows XP'),
-			),
-			array(
-				array('Mozilla/4.0 (BREW 3.1.5; U; en-us; Samsung; SPH_M330; POLARIS/6.1/WAP) MMP/2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0'),
-				array('img/16/browser/polaris.png', 'img/16/device/samsung.png', 'Polaris 6.1', 'Samsung'),
 			),
 			array(
 				array('Mozilla/5.0 (Windows; U; Windows NT 6.1; cs-CZ) AppleWebKit/533.3 (KHTML, like Gecko) Patriott::Browser/1.0.0 Safari/533.3'),

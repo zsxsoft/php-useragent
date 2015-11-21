@@ -341,18 +341,6 @@ class useragent_detect_os {
 			$link = "http://www.pardus.org.tr/en/";
 			$title = "Pardus";
 			$code = "pardus";
-// @codeCoverageIgnoreStart
-
-		} elseif (preg_match('/PCLinuxOS/i', $useragent)) {
-			$link = "http://www.pclinuxos.com/";
-			$title = "PCLinuxOS";
-
-			if (preg_match('/PCLinuxOS\/[.\-0-9a-zA-Z]+pclos([.\-0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . str_replace("_", ".", $regmatch[1]);
-			}
-
-			$code = "pclinuxos";
-// @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/Red\ Hat/i', $useragent)
 			|| preg_match('/RedHat/i', $useragent)) {
@@ -364,21 +352,6 @@ class useragent_detect_os {
 			}
 
 			$code = "red-hat";
-// @codeCoverageIgnoreStart
-
-		} elseif (preg_match('/Rosa/i', $useragent)) {
-			$link = "http://www.rosalab.com/";
-			$title = "Rosa Linux";
-			$code = "rosa";
-// @codeCoverageIgnoreEnd
-
-// @codeCoverageIgnoreStart
-
-		} elseif (preg_match('/Sabayon/i', $useragent)) {
-			$link = "http://www.sabayonlinux.org/";
-			$title = "Sabayon Linux";
-			$code = "sabayon";
-// @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/Slackware/i', $useragent)) {
 			$link = "http://www.slackware.com/";
@@ -388,24 +361,6 @@ class useragent_detect_os {
 			$link = "http://www.opensuse.org/";
 			$title = "openSUSE";
 			$code = "suse";
-// @codeCoverageIgnoreStart
-		} elseif (preg_match('/VectorLinux/i', $useragent)) {
-			$link = "http://www.vectorlinux.com/";
-			$title = "VectorLinux";
-			$code = "vectorlinux";
-// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} elseif (preg_match('/Venenux/i', $useragent)) {
-			$link = "http://www.venenux.org/";
-			$title = "Venenux GNU Linux";
-			$code = "venenux";
-// @codeCoverageIgnoreEnd
-			// @codeCoverageIgnoreStart
-		} elseif (preg_match('/Xandros/i', $useragent)) {
-			$link = "http://www.xandros.com/";
-			$title = "Xandros";
-			$code = "xandros";
-// @codeCoverageIgnoreEnd
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Xubuntu/i', $useragent)) {
 			$link = "http://www.xubuntu.org/";
