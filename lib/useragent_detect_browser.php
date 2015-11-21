@@ -190,6 +190,7 @@ class useragent_detect_browser {
 		'Polaris',
 		'Polarity',
 		'Prism',
+		'Puffin',
 		'M?QQBrowser',
 		'QQ(?!Download|Pinyin)',
 		'QtWeb\ Internet\ Browser',
@@ -1174,6 +1175,11 @@ class useragent_detect_browser {
 			'title' => '{%Prism%}',
 			'code' => 'prism',
 		),
+		'puffin' => array(
+			'link' => 'http://www.puffinbrowser.com/index.php',
+			'title' => '{%Puffin%}',
+			'code' => 'puffin',
+		),
 		'qqbrowser' => array(
 			'link' => 'http://browser.qq.com/',
 			'title' => '{%QQBrowser%}',
@@ -1873,6 +1879,10 @@ class useragent_detect_browser {
 			$return = $title;
 		} else {
 			$return = $title;
+		}
+
+		if (strtolower($version) == "build") {
+			$version = '';// To Fix some ua like 'Amazon Otter Build/KTU84M';
 		}
 
 		$return .= ($version !== "" ? " " . $version : "");
