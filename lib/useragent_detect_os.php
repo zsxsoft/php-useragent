@@ -269,12 +269,12 @@ class useragent_detect_os {
 
 			if (preg_match('/Lubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$version .= " " . $regmatch[1];
-			}
 
-			if ($regmatch[1] < 10) {
-				$code = "lubuntu-1";
-			} else {
-				$code = "lubuntu-2";
+				if ($regmatch[1] < 10) {
+					$code = "lubuntu-1";
+				} else {
+					$code = "lubuntu-2";
+				}
 			}
 
 			if (strlen($version) > 1) {
