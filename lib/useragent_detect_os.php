@@ -176,12 +176,13 @@ class useragent_detect_os {
 
 			if (preg_match('/Edubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$version .= " " . $regmatch[1];
-			}
 
-			if ($regmatch[1] < 10) {
-				$code = "edubuntu-1";
-			} else {
-				$code = "edubuntu-2";
+				if ($regmatch[1] < 10) {
+					$code = "edubuntu-1";
+				} else {
+					$code = "edubuntu-2";
+				}
+
 			}
 
 			if (strlen($version) > 1) {
@@ -368,12 +369,13 @@ class useragent_detect_os {
 
 			if (preg_match('/Xubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$version .= " " . $regmatch[1];
-			}
 
-			if ($regmatch[1] < 10) {
-				$code = "xubuntu-1";
-			} else {
-				$code = "xubuntu-2";
+				if ($regmatch[1] < 10) {
+					$code = "xubuntu-1";
+				} else {
+					$code = "xubuntu-2";
+				}
+
 			}
 
 			if (strlen($version) > 1) {
