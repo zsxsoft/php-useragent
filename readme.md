@@ -17,7 +17,7 @@ http://www.zsxsoft.com/php-useragent/test-my-useragent.php
 ## Contributors
 zsx(http://www.zsxsoft.com)
 
-This project based on [kyleabaker](http://www.kyleabaker.com/goodies/coding/wp-useragent/)'s "wp-useragent".
+The project is based on [kyleabaker](http://www.kyleabaker.com/goodies/coding/wp-useragent/)'s "wp-useragent".
 
 ## Supported Browsers/Platforms
 
