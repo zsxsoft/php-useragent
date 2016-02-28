@@ -4,7 +4,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/ade685edac6c4b86913c1b9785612a10)](https://www.codacy.com/app/zsxsoft/php-useragent)
 [![Packagist](https://img.shields.io/packagist/dt/zsxsoft/php-useragent.svg)](https://packagist.org/packages/zsxsoft/php-useragent)
 
-A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.
+A User-agent analyze project.
 
 ## Try it
 
