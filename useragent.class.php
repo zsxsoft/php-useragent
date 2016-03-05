@@ -36,16 +36,16 @@ class UserAgent {
 	public function __get($param) {
 		$privateParam = '_' . $param;
 		switch ($param) {
-			case 'imagePath':
-				return $this->_imagePath . $this->_imageSize . '/';
-				break;
-			default:
-				if (isset($this->$privateParam)) {
-					return $this->$privateParam;
-				} else if (isset($this->_data[$param])) {
-					return $this->_data[$param];
-				}
-				break;
+		case 'imagePath':
+			return $this->_imagePath . $this->_imageSize . '/';
+			break;
+		default:
+			if (isset($this->$privateParam)) {
+				return $this->$privateParam;
+			} else if (isset($this->_data[$param])) {
+				return $this->_data[$param];
+			}
+			break;
 		}
 		return null;
 	}
@@ -78,6 +78,7 @@ class UserAgent {
 				"title" => "Unknown",
 				"code" => "null",
 				"dir" => "browser",
+				"type" => "os",
 				"image" => $this->_makeImage('browser', 'null'),
 			);
 		}

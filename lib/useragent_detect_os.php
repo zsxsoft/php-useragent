@@ -52,6 +52,8 @@ class useragent_detect_os {
 
 		$result['x64'] = $x64;
 		$result['title'] = $result['name'] . ($result['version'] == "" ? '' : ' ' . $result['version']) . ($x64 ? ' x64' : '');
+		$result['type'] = 'os';
+		$result['dir'] = 'os';
 		return $result;
 	}
 
@@ -136,7 +138,6 @@ class useragent_detect_os {
 			'name' => $name,
 			'version' => $version,
 			'code' => $image_url,
-			'dir' => 'os',
 		);
 	}
 
@@ -419,7 +420,6 @@ class useragent_detect_os {
 			'name' => $name,
 			'version' => $version,
 			'code' => $image_url,
-			'dir' => 'os',
 		);
 	}
 
@@ -574,7 +574,6 @@ class useragent_detect_os {
 			'name' => $name,
 			'version' => $version,
 			'code' => $image_url,
-			'dir' => 'os',
 		);
 	}
 }

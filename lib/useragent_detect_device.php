@@ -451,6 +451,7 @@ class UserAgent_Detect_Device {
 			'title' => $title,
 			'code' => $code,
 			'dir' => 'device',
+			'type' => 'device',
 		);
 
 	}
