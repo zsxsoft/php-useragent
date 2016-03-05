@@ -1594,11 +1594,12 @@ class useragent_detect_browser {
 			$name = strtolower($result[1]);
 			if (isset(self::$browserList[$name])) {
 				$result = self::$browserList[$name];
+				$browserNameArray = explode('{%', $result['title']);
 				$regmatch = null;
 				if (preg_match('/\{\%(.+)\%\}/', $result['title'], $regmatch)) {
 					$version_object = self::get_version(array('', $regmatch[1]));
 					$result['version'] = $version_object['version'];
-					$result['name'] = explode('{%', $result['title'])[0] . $version_object['title'];
+					$result['name'] = $browserNameArray[0] . $version_object['title'];
 					$result['title'] = $result['name'] . ($result['version'] == '' ? '' : ' ' . $result['version']);
 				} else {
 					$result['name'] = $result['title'];
