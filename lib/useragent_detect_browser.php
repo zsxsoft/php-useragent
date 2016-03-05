@@ -711,9 +711,9 @@ class useragent_detect_browser {
 			'code' => 'greenbrowser',
 		),
 		'gsa' => array(
-			'link' => 'http://www.google.com', 
+			'link' => 'http://www.google.com',
 			'title' => '{%GSA%}',
-			'code' => 'google'
+			'code' => 'google',
 		),
 		'hana' => array(
 			'link' => 'http://www.alloutsoftware.com/',
@@ -1568,20 +1568,29 @@ class useragent_detect_browser {
 		'none' => array(
 			'link' => '#',
 			'title' => 'Unknown',
+			'name' => 'Unknown',
+			'version' => '',
 			'code' => 'unknown',
 		),
 
 	);
 	private static $useragent;
 
+	public static function replace_callback(&$matches) {
+		$ret = self::get_version($matches);
+
+	}
+
 	public static function analyze($useragent) {
 		self::$useragent = $useragent;
 
 		$link = '';
 		$title = '';
-		$code = '';
+		$version = '';
+		$image_url = '';
 		$web_browser = '';
 		$mobile = 0;
+		$version_object = null;
 
 		$result = array();
 		$regExList = '/(' . implode('|', self::$browserRegEx) . ')/i';
@@ -1590,7 +1599,13 @@ class useragent_detect_browser {
 			$name = strtolower($result[1]);
 			if (isset(self::$browserList[$name])) {
 				$result = self::$browserList[$name];
-				$result['title'] = preg_replace_callback('/\{\%(.+)\%\}/', array('useragent_detect_browser', 'detect_browser_version'), $result['title']);
+				$regmatch = null;
+				if (preg_match('/\{\%(.+)\%\}/', $result['title'], $regmatch)) {
+					$version_object = self::get_version(array('', $regmatch[1]));
+					$result['version'] = $version_object['version'];
+					$result['name'] = $version_object['title'];
+					$result['title'] = explode('{%', $result['title'])[0] . $result['name'] . ($result['version'] == '' ? '' : ' ' . $result['version']);
+				}
 				return $result;
 			} else {
 				return self::$browserList['none'];
@@ -1598,175 +1613,179 @@ class useragent_detect_browser {
 		} elseif (preg_match('/Galaxy/i', $useragent)
 			&& !preg_match('/Chrome/i', $useragent)) {
 			$link = "http://www.traos.org/";
-			$title = self::detect_browser_version(array('', 'Galaxy'));
-			$code = "galaxy";
+			$version_object = self::get_version(array('', 'Galaxy'));
+			$image_url = "galaxy";
 		} elseif (preg_match('/Opera Mini/i', $useragent)) {
 			$link = "http://www.opera.com/mini/";
-			$title = self::detect_browser_version(array('', 'Opera Mini'));
-			$code = "opera-2";
+			$version_object = self::get_version(array('', 'Opera Mini'));
+			$image_url = "opera-2";
 		} elseif (preg_match('/Opera Mobi/i', $useragent)) {
 			$link = "http://www.opera.com/mobile/";
-			$title = self::detect_browser_version(array('', 'Opera Mobi'));
-			$code = "opera-2";
+			$version_object = self::get_version(array('', 'Opera Mobi'));
+			$image_url = "opera-2";
 		} elseif (preg_match('/Opera Labs/i', $useragent)
 			|| (preg_match('/Opera/i', $useragent)
 				&& preg_match('/Edition Labs/i', $useragent))) {
 			$link = "http://labs.opera.com/";
-			$title = self::detect_browser_version(array('', 'Opera Labs'));
-			$code = "opera-next";
+			$version_object = self::get_version(array('', 'Opera Labs'));
+			$image_url = "opera-next";
 		} elseif (preg_match('/Opera Next/i', $useragent)
 			|| (preg_match('/Opera/i', $useragent)
 				&& preg_match('/Edition Next/i', $useragent))) {
 			$link = "http://www.opera.com/support/kb/view/991/";
-			$title = self::detect_browser_version(array('', 'Opera Next'));
-			$code = "opera-next";
+			$version_object = self::get_version(array('', 'Opera Next'));
+			$image_url = "opera-next";
 		} elseif (preg_match('/Opera/i', $useragent)) {
 			$link = "http://www.opera.com/";
-			$title = self::detect_browser_version(array('', 'Opera'));
-			$code = "opera-1";
+			$version_object = self::get_version(array('', 'Opera'));
+			$image_url = "opera-1";
 			if (preg_match('/Version/i', $useragent)) {
-				$code = "opera-2";
+				$image_url = "opera-2";
 			}
 
 		} elseif (preg_match('/OPR/i', $useragent)) {
 			$link = "http://www.opera.com/";
 			if (preg_match('/(Edition Next)/i', $useragent)) {
-				$title = self::detect_browser_version(array('', 'Opera Next'));
-				$code = "opera-next";
+				$version_object = self::get_version(array('', 'Opera Next'));
+				$image_url = "opera-next";
 			} elseif (preg_match('/(Edition Developer)/i', $useragent)) {
-				$title = self::detect_browser_version(array('', 'Opera Developer'));
-				$code = "opera-developer";
+				$version_object = self::get_version(array('', 'Opera Developer'));
+				$image_url = "opera-developer";
 			} else {
-				$title = self::detect_browser_version(array('', 'Opera'));
-				$code = "opera-1";
+				$version_object = self::get_version(array('', 'Opera'));
+				$image_url = "opera-1";
 			}
 
 		} elseif (preg_match('/Series60/i', $useragent)
 			&& !preg_match('/Symbian/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Web_Browser_for_S60";
-			$title = "Nokia " . self::detect_browser_version(array('', 'Series60'));
-			$code = "s60";
+			$title = "Nokia";
+			$version_object = self::get_version(array('', 'Series60'));
+			$image_url = "s60";
 		} elseif (preg_match('/S60/i', $useragent)
 			&& !preg_match('/Symbian/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Web_Browser_for_S60";
-			$title = "Nokia " . self::detect_browser_version(array('', 'S60'));
-			$code = "s60";
+			$title = "Nokia";
+			$version_object = self::get_version(array('', 'S60'));
+			$image_url = "s60";
 		} elseif (preg_match('/SE\ /i', $useragent)
 			&& preg_match('/MetaSr/i', $useragent)) {
 			$link = "http://ie.sogou.com/";
 			$title = "Sogou Explorer";
-			$code = "sogou";
+			$image_url = "sogou";
 
 		} elseif ((preg_match('/Ubuntu\;\ Mobile/i', $useragent) || preg_match('/Ubuntu\;\ Tablet/i', $useragent) &&
 			preg_match('/WebKit/i', $useragent))) {
 			$link = "https://launchpad.net/webbrowser-app";
 			$title = "Ubuntu Web Browser";
-			$code = "ubuntuwebbrowser";
-			$code = "ubuntuwebbrowser";
+			$image_url = "ubuntuwebbrowser";
+			$image_url = "ubuntuwebbrowser";
 
 		} elseif (preg_match('/Avant\ Browser/i', $useragent)) {
 			$link = "http://www.avantbrowser.com/";
-			$title = "Avant " . self::detect_browser_version(array('', 'Browser'));
-			$code = "avantbrowser";
+			$title = "Avant ";
+			$version_object = self::get_version(array('', 'Browser'));
+			$image_url = "avantbrowser";
 		} elseif (preg_match('/AppleWebkit/i', $useragent)
 			&& preg_match('/Android/i', $useragent)
 			&& !preg_match('/Chrome/i', $useragent)) {
 			$link = "http://developer.android.com/reference/android/webkit/package-summary.html";
-			$title = self::detect_browser_version(array('', 'Android Webkit'));
-			$code = "android-webkit";
+			$version_object = self::get_version(array('', 'Android Webkit'));
+			$image_url = "android-webkit";
 
 		} elseif (preg_match('/Windows.+Chrome.+Edge/i', $useragent)) {
 			// Project Spartan
 			$link = "http://windows.microsoft.com/en-us/windows/preview-microsoft-edge-pc";
-			$title = self::detect_browser_version(array('', 'Edge'));
-			$code = "edge";
+			$version_object = self::get_version(array('', 'Edge'));
+			$image_url = "edge";
 
 		} elseif (preg_match('/Chrome|crios/i', $useragent)) {
 
 			if (preg_match('/crios/i', $useragent)) {
 				$link = "http://google.com/chrome/";
-				$title = "Google " . self::detect_browser_version(array('', 'CriOS'));
-				$code = "chrome";
+				$title = "Google ";
+				$version_object = self::get_version(array('', 'CriOS'));
+				$image_url = "chrome";
 			} else {
 				$link = "http://google.com/chrome/";
-				$title = "Google " . self::detect_browser_version(array('', 'Chrome'));
-				$code = "chrome";
+				$title = "Google ";
+				$version_object = self::get_version(array('', 'Chrome'));
+				$image_url = "chrome";
 			}
 		} elseif (preg_match('/Safari/i', $useragent)
 			&& !preg_match('/Nokia/i', $useragent)) {
 			$link = "http://www.apple.com/safari/";
-			$title = "Safari";
 
 			if (preg_match('/Version/i', $useragent)) {
-				$title = self::detect_browser_version(array('', 'Safari'));
+				$version_object = self::get_version(array('', 'Safari'));
+			} else {
+				$title = 'Safari';
 			}
-
 			if (preg_match('/Mobile ?Safari/i', $useragent)) {
 				$title = "Mobile " . $title;
 			}
 
-			$code = "safari";
+			$image_url = "safari";
 		} elseif (preg_match('/Nokia/i', $useragent) && !preg_match('/Trident/i', $useragent)) {
 			$link = "http://www.nokia.com/browser";
 			$title = "Nokia Web Browser";
-			$code = "maemo";
+			$image_url = "maemo";
 		} elseif (preg_match('/Firefox/i', $useragent)) {
 			$link = "http://www.mozilla.org/";
-			$title = self::detect_browser_version(array('', 'Firefox'));
-			$code = "firefox";
+			$version_object = self::get_version(array('', 'Firefox'));
+			$image_url = "firefox";
 		} elseif (preg_match('/MSIE/i', $useragent) || preg_match('/Trident/i', $useragent)) {
 			$link = "http://www.microsoft.com/windows/products/winfamily/ie/default.mspx";
-			$title = "Internet Explorer" . self::detect_browser_version(array('', 'MSIE'));
+			$title = "Internet Explorer";
+			$version_object = self::get_version(array('', 'MSIE'));
 
+			$image_url = "msie";
 			if (preg_match('/MSIE[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				// We have IE10 or older
 			} elseif (preg_match('/\ rv:([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				// We have IE11 or newer
 			}
-			$code = "msie";
-
 			if (count($regmatch) > 0) {
-				if ($regmatch[1] >= 11) {
-					$code = "msie11";
-				} elseif ($regmatch[1] >= 10) {
-					$code = "msie10";
-				} elseif ($regmatch[1] >= 9) {
-					$code = "msie9";
-				} elseif ($regmatch[1] >= 7) {
-					// also ie8
-					$code = "msie7";
-				} elseif ($regmatch[1] >= 6) {
-					$code = "msie6";
-				} elseif ($regmatch[1] >= 4) {
-					// also ie5
-					$code = "msie4";
-				} elseif ($regmatch[1] >= 3) {
-					$code = "msie3";
-				} elseif ($regmatch[1] >= 2) {
-					$code = "msie2";
+				$ie_version = (int) $regmatch[1];
+				if ($ie_version >= 11) {
+					$image_url = "msie11";
+				} elseif ($ie_version == 8) {
+					$image_url = "msie7";
+				} elseif ($ie_version == 5) {
+					$image_url = "msie4";
+				} else {
+					$image_url = "msie" . $ie_version;
 				}
 			}
 		} elseif (preg_match('/Mozilla/i', $useragent)) {
 			$link = "http://www.mozilla.org/";
 			$title = "Mozilla Compatible";
-			$code = "mozilla";
+			$image_url = "mozilla";
 		} else {
 			$link = "#";
 			$title = "Unknown";
-			$code = "null";
+			$image_url = "null";
+		}
+
+		$full = '';
+		if (!is_null($version_object)) {
+			$version = $version_object['version'];
+			$title .= $version_object['title'];
+			$full = $title . ($version == "" ? '' : ' ' . $version);
+		} else {
+			$full = $title;
 		}
 
 		return array(
 			'link' => $link,
-			'title' => $title,
-			'code' => $code,
+			'title' => $full, // compatibility
+			'name' => $title,
+			'version' => $version,
+			'code' => $image_url,
 		);
 	}
 
-/**
- * Detect Web Browser versions
- */
-	static function detect_browser_version($object) {
+	static function get_version($object) {
 		$useragent = self::$useragent;
 		$title = $object[1];
 		$lower_title = strtolower($title);
@@ -1875,19 +1894,19 @@ class useragent_detect_browser {
 			if ($version == "Firefox") {
 				$version = "";
 			}
-
 			$return = $title;
 		} else {
 			$return = $title;
 		}
 
 		if (strtolower($version) == "build") {
-			$version = '';// To Fix some ua like 'Amazon Otter Build/KTU84M';
+			$version = ''; // To Fix some ua like 'Amazon Otter Build/KTU84M';
 		}
 
-		$return .= ($version !== "" ? " " . $version : "");
-
-		return $return;
+		return array(
+			"title" => $return,
+			"version" => trim($version),
+		);
 	}
 
 }
