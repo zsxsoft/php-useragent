@@ -30,7 +30,7 @@ OS: Android / Arch Linux / CentOS / Chrome OS / Debain / Fedora / FreeBSD / OSX 
 Devices: Xiaomi / BlackBerry / Nexus / HTC / Huawei / Kindle / Lenovo / LG / Motorola / Nokia / OnePlus / PlayStation / Samsung / Sony Xperia / ZTE / Ubuntu / Windows Phone / Apple Family and so on.
 
 
-## Example
+## Example &amp; API
 ```php
 <?php
 /**
@@ -51,11 +51,12 @@ $useragent = UserAgentFactory::analyze($_SERVER['HTTP_USER_AGENT']);
 	<title>UserAgent</title>
 </head>
 <body>
-	<h1>Test UserAgent</h1>
-	<p>UserAgent: <?php echo $useragent->useragent;?></p>
-	<p>Platform: <img src="<?php echo $useragent->platform['image']?>"/><?php echo $useragent->platform['title']?></p>
-	<p>Web Browser: <img src="<?php echo $useragent->browser['image']?>"/><?php echo $useragent->browser['title']?></p>
-	<p>OS: <img src="<?php echo $useragent->os['image']?>"/><?php echo $useragent->os['title']?></p>
+    <h1>Test UserAgent</h1>
+    <p>UserAgent: <?php echo $useragent->useragent; ?></p>
+    <p>Platform Type: <?php echo $useragent->platform['type'] ?>
+    <p>Device: <img src="<?php echo $useragent->device['image'] ?>"/><?php echo $useragent->device['title'] ?> </p>
+    <p>OS: <img src="<?php echo $useragent->os['image'] ?>"/><?php echo $useragent->os['title'] ?> (Name = <?php echo $useragent->os['name'] ?>, Version = <?php echo $useragent->os['version'] ?>)</p>
+    <p>Browser: <img src="<?php echo $useragent->browser['image'] ?>"/><?php echo $useragent->browser['title'] ?> (Name = <?php echo $useragent->browser['name'] ?>, Version = <?php echo $useragent->browser['version'] ?>)</p>
 
 </body>
 </html>

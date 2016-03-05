@@ -18,10 +18,11 @@ $useragent = UserAgentFactory::analyze($_SERVER['HTTP_USER_AGENT']);
 </head>
 <body>
 	<h1>Test UserAgent</h1>
-	<p>UserAgent: <?php echo $useragent->useragent;?></p>
-	<p>Platform: <img src="<?php echo $useragent->platform['image']?>"/><?php echo $useragent->platform['title']?></p>
-	<p>Web Browser: <img src="<?php echo $useragent->browser['image']?>"/><?php echo $useragent->browser['title']?></p>
-	<p>OS: <img src="<?php echo $useragent->os['image']?>"/><?php echo $useragent->os['title']?></p>
+	<p>UserAgent: <?php echo $useragent->useragent; ?></p>
+	<p>Platform Type: <?php echo $useragent->platform['type'] ?>
+    <p>Device: <img src="<?php echo $useragent->device['image'] ?>"/><?php echo $useragent->device['title'] ?> </p>
+    <p>OS: <img src="<?php echo $useragent->os['image'] ?>"/><?php echo $useragent->os['title'] ?> (Name = <?php echo $useragent->os['name'] ?>, Version = <?php echo $useragent->os['version'] ?>)</p>
+    <p>Browser: <img src="<?php echo $useragent->browser['image'] ?>"/><?php echo $useragent->browser['title'] ?> (Name = <?php echo $useragent->browser['name'] ?>, Version = <?php echo $useragent->browser['version'] ?>)</p>
 
 </body>
 </html>

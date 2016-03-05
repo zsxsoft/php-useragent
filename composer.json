@@ -1,6 +1,6 @@
 {
     "name": "zsxsoft/php-useragent",
-    "description": "A simple project that allows you to display details about a computer's operating system or web browser with a user-agent.",
+    "description": "A User-agent analyze project.",
     "license": "GPL",
     "authors": [
         {
