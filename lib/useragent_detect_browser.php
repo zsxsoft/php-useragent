@@ -1576,11 +1576,6 @@ class useragent_detect_browser {
 	);
 	private static $useragent;
 
-	public static function replace_callback(&$matches) {
-		$ret = self::get_version($matches);
-
-	}
-
 	public static function analyze($useragent) {
 		self::$useragent = $useragent;
 
@@ -1603,8 +1598,11 @@ class useragent_detect_browser {
 				if (preg_match('/\{\%(.+)\%\}/', $result['title'], $regmatch)) {
 					$version_object = self::get_version(array('', $regmatch[1]));
 					$result['version'] = $version_object['version'];
-					$result['name'] = $version_object['title'];
-					$result['title'] = explode('{%', $result['title'])[0] . $result['name'] . ($result['version'] == '' ? '' : ' ' . $result['version']);
+					$result['name'] = explode('{%', $result['title'])[0] . $version_object['title'];
+					$result['title'] = $result['name'] . ($result['version'] == '' ? '' : ' ' . $result['version']);
+				} else {
+					$result['name'] = $result['title'];
+					$result['version'] = '';
 				}
 				return $result;
 			} else {
