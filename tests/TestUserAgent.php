@@ -1054,7 +1054,7 @@ class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 			),
 			array(
 				array('Mozilla/4.76C-SGI [en] (X11; I; IRIX64 6.5 IP30)'),
-				array('img/16/browser/mozilla.png', 'img/16/os/irix.png', 'Mozilla Compatible', '', 'Mozilla Compatible', 'IRIX x64 6.5'),
+				array('img/16/browser/mozilla.png', 'img/16/os/irix.png', 'Mozilla Compatible', '', 'Mozilla Compatible', 'IRIX 6.5 x64'),
 			),
 			array(
 				array('Mozilla/4.8 [en] (X11; U; HP-UX B.11.00 9000/785)'),

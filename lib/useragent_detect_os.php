@@ -16,6 +16,20 @@
  */
 
 class useragent_detect_os {
+	private static $_windows_version = array(
+		"6.4" => array("10", "6"), // Windows 10 before 10240
+		"10.0" => array("10", "6"),
+		"6.3" => array("8.1", "5"),
+		"6.2" => array("8", "5"),
+		"6.1" => array("7", "4"),
+		"6.0" => array("Vista", "3"),
+		"5.2" => array("Server 2003", "2"),
+		"5.1" => array("XP", "2"),
+		"5.01" => array("2000 Service Pack 1", "1"),
+		"5.0" => array("2000", "1"),
+		"4.0" => array("NT 4.0", "1"),
+		"3.51" => array("NT 3.11", "1"),
+	);
 
 	public static function analyze($useragent) {
 
@@ -23,7 +37,7 @@ class useragent_detect_os {
 
 		// Check if is AMD64
 		$x64 = false;
-		if (preg_match('/x86_64|Win64; x64|WOW64/i', $useragent)) {
+		if (preg_match('/x86_64|Win64; x64|WOW64|IRIX64/i', $useragent)) {
 			$x64 = true;
 		}
 
@@ -35,251 +49,243 @@ class useragent_detect_os {
 		} else {
 			$result = self::analyzeOther($useragent);
 		}
-		if ($x64) {
-			$result['title'] .= ' x64';
-		}
 
+		$result['x64'] = $x64;
+		$result['title'] = $result['name'] . ($result['version'] == "" ? '' : ' ' . $result['version']) . ($x64 ? ' x64' : '');
 		return $result;
+	}
+
+	private static function _returnWindows(&$return, $index) {
+		$return['image_url'] = 'win-' . self::$_windows_version[$index][1];
+		$return['version'] = self::$_windows_version[$index][0];
 	}
 
 	public static function analyzeWindows($useragent) {
 		$link = "http://www.microsoft.com/windows/";
-		$title = 'Windows';
-		$code = 'win-2';
+		$name = 'Windows';
+		$version = '';
+		$image_url = 'win-2';
+		$return = array(
+			"image_url" => "",
+			"version" => "",
+		);
 
 		if (preg_match('/Windows Phone|WPDesktop|ZuneWP7|WP7/i', $useragent)) {
 			$link = "http://www.windowsphone.com/";
-			$title .= ' Phone';
-			$code = "windowsphone";
+			$name .= ' Phone';
+			$image_url = "windowsphone";
 			if (preg_match('/Windows Phone (OS )?([0-9\.]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[2];
+				$name .= " " . $regmatch[2];
 				if ((int) $regmatch[2] == 7) {
-					$code = "wp7";
+					$image_url = "wp7";
 				}
 			}
-		} elseif (preg_match('/Windows NT (6.4|10.0)/i', $useragent)) {
-			$title .= " 10";
-			$code = "win-6";
-		} elseif (preg_match('/Windows NT 6.3/i', $useragent)) {
-			$title .= " 8.1";
-			$code = "win-5";
-		} elseif (preg_match('/Windows NT 6.2/i', $useragent)) {
-			$title .= " 8";
-			$code = "win-5";
-		} elseif (preg_match('/Windows NT 6.1/i', $useragent)) {
-			$title .= " 7";
-			$code = "win-4";
-		} elseif (preg_match('/Windows NT 6.0/i', $useragent)) {
-			$title .= " Vista";
-			$code = "win-3";
-		} elseif (preg_match('/Windows NT 5.2/i', $useragent)) {
-			$title .= " Server 2003";
-			$code = "win-2";
-		} elseif (preg_match('/Windows (NT 5.1|XP)/i', $useragent)) {
-			$title .= " XP";
-			$code = "win-2";
-			// @codeCoverageIgnoreStart
-		} elseif (preg_match('/Windows NT 5.01/i', $useragent)) {
-			$title .= " 2000 Service Pack 1";
-			$code = "win-1";
-			// @codeCoverageIgnoreEnd
-		} elseif (preg_match('/Windows (NT 5.0|2000)/i', $useragent)) {
-			$title .= " 2000";
-			$code = "win-1";
-		} elseif (preg_match('/Windows NT 4.0/i', $useragent)
-			|| preg_match('/WinNT4.0/i', $useragent)) {
-			$title .= " NT 4.0";
-			$code = "win-1";
-		} elseif (preg_match('/Win(dows )?NT ?3.51/i', $useragent)
-			|| preg_match('/WinNT3.51/i', $useragent)) {
-			$title .= " NT 3.11";
-			$code = "win-1";
+		} elseif (preg_match('/Windows NT ([0-9.]+)/i', $useragent, $regmatch)) {
+			if (isset(self::$_windows_version[$regmatch[1]])) {
+				self::_returnWindows($return, $regmatch[1]);
+			}
+		} elseif (preg_match('/Windows 2000/i', $useragent)) {
+			self::_returnWindows($return, "5.0");
+		} elseif (preg_match('/Windows XP/i', $useragent)) {
+			self::_returnWindows($return, "5.1");
+		} elseif (preg_match('/Win(dows )?NT ?4.0|WinNT4.0/i', $useragent)) {
+			self::_returnWindows($return, "4.0");
+		} elseif (preg_match('/Win(dows )?NT ?3.51|WinNT3.51/i', $useragent)) {
+			self::_returnWindows($return, "3.51");
 		} elseif (preg_match('/Win(dows )?3.11|Win16/i', $useragent)) {
-			$title .= " 3.11";
-			$code = "win-1";
+			$version = "3.11";
+			$image_url = "win-1";
 		} elseif (preg_match('/Windows 3.1/i', $useragent)) {
-			$title .= " 3.1";
-			$code = "win-1";
+			$version = "3.1";
+			$image_url = "win-1";
 		} elseif (preg_match('/Win 9x 4.90|Windows ME/i', $useragent)) {
-			$title .= " Me";
-			$code = "win-1";
+			$version = "Me";
+			$image_url = "win-1";
 		} elseif (preg_match('/Win98/i', $useragent)) {
-			$title .= " 98 SE";
-			$code = "win-1";
+			$version = "98 SE";
+			$image_url = "win-1";
 		} elseif (preg_match('/Windows (98|4\.10)/i', $useragent)) {
-			$title .= " 98";
-			$code = "win-1";
+			$version = "98";
+			$image_url = "win-1";
 		} elseif (preg_match('/Windows 95/i', $useragent)
 			|| preg_match('/Win95/i', $useragent)) {
-			$title .= " 95";
-			$code = "win-1";
+			$version = "95";
+			$image_url = "win-1";
 		} elseif (preg_match('/Windows CE|Windows .+Mobile/i', $useragent)) {
-			$title .= " CE";
-			$code = "win-2";
+			$version = "CE";
+			$image_url = "win-2";
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/WM5/i', $useragent)) {
-			$title .= " Mobile 5";
-			$code = "win-phone";
+			$name .= " Mobile";
+			$version = "5";
+			$image_url = "win-phone";
 		} elseif (preg_match('/WindowsMobile/i', $useragent)) {
-			$title .= " Mobile";
-			$code = "win-phone";
+			$name .= " Mobile";
+			$image_url = "win-phone";
 		}
 		// @codeCoverageIgnoreEnd
 
+		if ($return['image_url'] !== "") {
+			$image_url = $return['image_url'];
+		}
+		if ($return['version'] !== "") {
+			$version = $return['version'];
+		}
 		return array(
 			'link' => $link,
-			'title' => $title,
-			'code' => $code,
+			'name' => $name,
+			'version' => $version,
+			'code' => $image_url,
 			'dir' => 'os',
 		);
 	}
 
 	public static function analyzeLinux($useragent) {
 		$link = '';
-		$title = '';
-		$code = '';
+		$name = '';
+		$image_url = '';
 		$version = '';
 
 		if (preg_match('/[^A-Za-z]Arch/i', $useragent)) {
 			$link = "http://www.archlinux.org/";
-			$title = "Arch Linux";
-			$code = "archlinux";
+			$name = "Arch Linux";
+			$image_url = "archlinux";
 		} elseif (preg_match('/CentOS/i', $useragent)) {
 			$link = "http://www.centos.org/";
-			$title = "CentOS";
+			$name = "CentOS";
 
 			if (preg_match('/.el([.0-9a-zA-Z]+).centos/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
 			}
 
-			$code = "centos";
+			$image_url = "centos";
 // @codeCoverageIgnoreStart
 		} elseif (preg_match('/Chakra/i', $useragent)) {
 			$link = "http://www.chakra-linux.org/";
-			$title = "Chakra Linux";
-			$code = "chakra";
+			$name = "Chakra Linux";
+			$image_url = "chakra";
 // @codeCoverageIgnoreEnd
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Crunchbang/i', $useragent)) {
 			$link = "http://www.crunchbanglinux.org/";
-			$title = "Crunchbang";
-			$code = "crunchbang";
+			$name = "Crunchbang";
+			$image_url = "crunchbang";
 // @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Debian/i', $useragent)) {
 			$link = "http://www.debian.org/";
-			$title = "Debian GNU/Linux";
-			$code = "debian";
+			$name = "Debian GNU/Linux";
+			$image_url = "debian";
 // @codeCoverageIgnoreStart
 		} elseif (preg_match('/Edubuntu/i', $useragent)) {
 			$link = "http://www.edubuntu.org/";
-			$title = "Edubuntu";
+			$name = "Edubuntu";
 
 			if (preg_match('/Edubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$version .= " " . $regmatch[1];
+				$version = $regmatch[1];
 
 				if ($regmatch[1] < 10) {
-					$code = "edubuntu-1";
+					$image_url = "edubuntu-1";
 				} else {
-					$code = "edubuntu-2";
+					$image_url = "edubuntu-2";
 				}
 
 			}
 
 			if (strlen($version) > 1) {
-				$title .= $version;
+				$name .= $version;
 			}
 // @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Fedora/i', $useragent)) {
 			$link = "http://www.fedoraproject.org/";
-			$title = "Fedora";
+			$name = "Fedora";
 
 			if (preg_match('/.fc([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
+
 			}
 
-			$code = "fedora";
+			$image_url = "fedora";
 		} elseif (preg_match('/Foresight\ Linux/i', $useragent)) {
 			$link = "http://www.foresightlinux.org/";
-			$title = "Foresight Linux";
+			$name = "Foresight Linux";
 
 			if (preg_match('/Foresight\ Linux\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
+
 			}
 
-			$code = "foresight";
+			$image_url = "foresight";
 		} elseif (preg_match('/Gentoo/i', $useragent)) {
 			$link = "http://www.gentoo.org/";
-			$title = "Gentoo";
-			$code = "gentoo";
+			$name = "Gentoo";
+			$image_url = "gentoo";
 
 		} elseif (preg_match('/Kanotix/i', $useragent)) {
 			$link = "http://www.kanotix.com/";
-			$title = "Kanotix";
-			$code = "kanotix";
+			$name = "Kanotix";
+			$image_url = "kanotix";
 // @codeCoverageIgnoreStart
 		} elseif (preg_match('/Knoppix/i', $useragent)) {
 			$link = "http://www.knoppix.net/";
-			$title = "Knoppix";
-			$code = "knoppix";
+			$name = "Knoppix";
+			$image_url = "knoppix";
 // @codeCoverageIgnoreEnd
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Kubuntu/i', $useragent)) {
 			$link = "http://www.kubuntu.org/";
-			$title = "Kubuntu";
+			$name = "Kubuntu";
 
 			if (preg_match('/Kubuntu[\/|\ ]([.0-9]+)/i', $useragent, $regmatch)) {
-				$version .= " " . $regmatch[1];
+				$version = $regmatch[1];
 
 				if ($regmatch[1] < 10) {
-					$code = "kubuntu-1";
+					$image_url = "kubuntu-1";
 				} else {
-					$code = "kubuntu-2";
+					$image_url = "kubuntu-2";
 				}
 			} else {
-				$code = "kubuntu-2";
+				$image_url = "kubuntu-2";
 			}
 
-			if (strlen($version) > 1) {
-				$title .= $version;
-			}
 // @codeCoverageIgnoreEnd
 		} elseif (preg_match('/LindowsOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Lsongs";
-			$title = "LindowsOS";
-			$code = "lindowsos";
+			$name = "LindowsOS";
+			$image_url = "lindowsos";
 
 		} elseif (preg_match('/Linspire/i', $useragent)) {
 			$link = "http://www.linspire.com/";
-			$title = "Linspire";
-			$code = "lindowsos";
+			$name = "Linspire";
+			$image_url = "lindowsos";
 
 		} elseif (preg_match('/Linux\ Mint/i', $useragent)) {
 			$link = "http://www.linuxmint.com/";
-			$title = "Linux Mint";
+			$name = "Linux Mint";
 
 			if (preg_match('/Linux\ Mint\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
+
 			}
 
-			$code = "linuxmint";
+			$image_url = "linuxmint";
 // @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Lubuntu/i', $useragent)) {
 			$link = "http://www.lubuntu.net/";
-			$title = "Lubuntu";
+			$name = "Lubuntu";
 
 			if (preg_match('/Lubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$version .= " " . $regmatch[1];
+				$version = $regmatch[1];
 
 				if ($regmatch[1] < 10) {
-					$code = "lubuntu-1";
+					$image_url = "lubuntu-1";
 				} else {
-					$code = "lubuntu-2";
+					$image_url = "lubuntu-2";
 				}
 			}
 
 			if (strlen($version) > 1) {
-				$title .= $version;
+				$name .= $version;
 			}
 // @codeCoverageIgnoreEnd
 
@@ -287,293 +293,287 @@ class useragent_detect_os {
 
 		} elseif (preg_match('/Mageia/i', $useragent)) {
 			$link = "http://www.mageia.org/";
-			$title = "Mageia";
-			$code = "mageia";
+			$name = "Mageia";
+			$image_url = "mageia";
 // @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Mandriva/i', $useragent)) {
 			$link = "http://www.mandriva.com/";
-			$title = "Mandriva";
+			$name = "Mandriva";
 // @codeCoverageIgnoreStart
 
 			if (preg_match('/mdv([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
+
 			}
 // @codeCoverageIgnoreEnd
 
-			$code = "mandriva";
+			$image_url = "mandriva";
 
 		} elseif (preg_match('/moonOS/i', $useragent)) {
 			$link = "http://www.moonos.org/";
-			$title = "moonOS";
+			$name = "moonOS";
 
 			if (preg_match('/moonOS\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
+
 			}
 
-			$code = "moonos";
+			$image_url = "moonos";
 		} elseif (preg_match('/Nova/i', $useragent)) {
 			$link = "http://www.nova.cu";
-			$title = "Nova";
+			$name = "Nova";
 
 			if (preg_match('/Nova[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$version .= " " . $regmatch[1];
+				$version = $regmatch[1];
+
 			}
 
-			if (strlen($version) > 1) {
-				$title .= $version;
-			}
-
-			$code = "nova";
+			$image_url = "nova";
 // @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Oracle/i', $useragent)) {
 			$link = "http://www.oracle.com/us/technologies/linux/";
-			$title = "Oracle";
+			$name = "Oracle";
 
 			if (preg_match('/.el([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " Enterprise Linux " . str_replace("_", ".", $regmatch[1]);
+				$name .= " Enterprise Linux";
+				$version = str_replace("_", ".", $regmatch[1]);
 			} else {
-				$title .= " Linux";
+				$name .= " Linux";
 			}
-			$code = "oracle";
+			$image_url = "oracle";
 // @codeCoverageIgnoreEnd
 
 		} elseif (preg_match('/Pardus/i', $useragent)) {
 			$link = "http://www.pardus.org.tr/en/";
-			$title = "Pardus";
-			$code = "pardus";
+			$name = "Pardus";
+			$image_url = "pardus";
 
 		} elseif (preg_match('/Red\ Hat/i', $useragent)
 			|| preg_match('/RedHat/i', $useragent)) {
 			$link = "http://www.redhat.com/";
-			$title = "Red Hat";
+			$name = "Red Hat";
 
 			if (preg_match('/.el([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " Enterprise Linux " . str_replace("_", ".", $regmatch[1]);
+				$name .= " Enterprise Linux";
+				$version = str_replace("_", ".", $regmatch[1]);
 			}
 
-			$code = "red-hat";
+			$image_url = "red-hat";
 
 		} elseif (preg_match('/Slackware/i', $useragent)) {
 			$link = "http://www.slackware.com/";
-			$title = "Slackware";
-			$code = "slackware";
+			$name = "Slackware";
+			$image_url = "slackware";
 		} elseif (preg_match('/Suse/i', $useragent)) {
 			$link = "http://www.opensuse.org/";
-			$title = "openSUSE";
-			$code = "suse";
+			$name = "openSUSE";
+			$image_url = "suse";
 			// @codeCoverageIgnoreStart
 		} elseif (preg_match('/Xubuntu/i', $useragent)) {
 			$link = "http://www.xubuntu.org/";
-			$title = "Xubuntu";
+			$name = "Xubuntu";
 
 			if (preg_match('/Xubuntu[\/|\ ]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$version .= " " . $regmatch[1];
+				$version = $regmatch[1];
 
 				if ($regmatch[1] < 10) {
-					$code = "xubuntu-1";
+					$image_url = "xubuntu-1";
 				} else {
-					$code = "xubuntu-2";
+					$image_url = "xubuntu-2";
 				}
 
 			}
 
-			if (strlen($version) > 1) {
-				$title .= $version;
-			}
 // @codeCoverageIgnoreEnd
 		} elseif (preg_match('/Zenwalk/i', $useragent)) {
 			$link = "http://www.zenwalk.org/";
-			$title = "Zenwalk GNU Linux";
-			$code = "zenwalk";
+			$name = "Zenwalk GNU Linux";
+			$image_url = "zenwalk";
 		}
 
 		// Pulled out of order to help ensure better detection for above platforms
 		elseif (preg_match('/Ubuntu/i', $useragent)) {
 			$link = "http://www.ubuntu.com/";
-			$title = "Ubuntu";
+			$name = "Ubuntu";
 
 			if (preg_match('/Ubuntu[\/|\ ]([.0-9]+[.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$version .= " " . $regmatch[1];
+				$version = $regmatch[1];
 				if ($regmatch[1] < 10) {
-					$code = "ubuntu-1";
+					$image_url = "ubuntu-1";
 				}
 			}
 
-			if ($code == '') {
-				$code = "ubuntu-2";
-			}
-
-			if (strlen($version) > 1) {
-				$title .= $version;
+			if ($image_url == '') {
+				$image_url = "ubuntu-2";
 			}
 
 		} else {
 			$link = "http://www.linux.org/";
-			$title = "GNU/Linux";
-			$code = "linux";
+			$name = "GNU/Linux";
+			$image_url = "linux";
 		}
 
 		return array(
 			'link' => $link,
-			'title' => $title,
-			'code' => $code,
+			'name' => $name,
+			'version' => $version,
+			'code' => $image_url,
 			'dir' => 'os',
 		);
 	}
 
 	public static function analyzeOther($useragent) {
 		$link = '';
-		$title = '';
-		$code = '';
+		$name = '';
+		$image_url = '';
 		$version = '';
 
 		// Opera's Useragent does not contains 'Linux'
 		if (preg_match('/Android|ADR /i', $useragent)) {
 			$link = "http://www.android.com/";
-			$title = "Android";
-			$code = "android";
+			$name = "Android";
+			$image_url = "android";
 
 			if (preg_match('/(Android|Adr)[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$version = $regmatch[2];
-				$title .= " " . $version;
 			}
 		} elseif (preg_match('/AmigaOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/AmigaOS";
-			$title = "AmigaOS";
+			$name = "AmigaOS";
 
 			if (preg_match('/AmigaOS\ ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
 			}
 
-			$code = "amigaos";
+			$image_url = "amigaos";
 		} elseif (preg_match('/BB10/i', $useragent)) {
 			$link = "http://www.blackberry.com/";
-			$title = "BlackBerry OS 10";
-			$code = "blackberry";
+			$name = "BlackBerry OS";
+			$version = "10";
+			$image_url = "blackberry";
 
 		} elseif (preg_match('/BeOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/BeOS";
-			$title = "BeOS";
-			$code = "beos";
+			$name = "BeOS";
+			$image_url = "beos";
 
 		} elseif (preg_match('/\b(?!Mi)CrOS(?!oft)/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Google_Chrome_OS";
-			$title = "Google Chrome OS";
-			$code = "chromeos";
+			$name = "Google Chrome OS";
+			$image_url = "chromeos";
 		} elseif (preg_match('/DragonFly/i', $useragent)) {
 			$link = "http://www.dragonflybsd.org/";
-			$title = "DragonFly BSD";
-			$code = "dragonflybsd";
+			$name = "DragonFly BSD";
+			$image_url = "dragonflybsd";
 
 		} elseif (preg_match('/FreeBSD/i', $useragent)) {
 			$link = "http://www.freebsd.org/";
-			$title = "FreeBSD";
-			$code = "freebsd";
+			$name = "FreeBSD";
+			$image_url = "freebsd";
 
 		} elseif (preg_match('/Inferno/i', $useragent)) {
 			$link = "http://www.vitanuova.com/inferno/";
-			$title = "Inferno";
-			$code = "inferno";
+			$name = "Inferno";
+			$image_url = "inferno";
 
 		} elseif (preg_match('/IRIX/i', $useragent)) {
 			$link = "http://www.sgi.com/partners/?/technology/irix/";
-			$title = "IRIX";
+			$name = "IRIX";
 
 			if (preg_match('/IRIX(64)?\ ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				if ($regmatch[1]) {
-					$title .= " x" . $regmatch[1];
-				}
+
 				if ($regmatch[2]) {
-					$title .= " " . $regmatch[2];
+					$version = $regmatch[2];
 				}
 			}
 
-			$code = "irix";
+			$image_url = "irix";
 
 		} elseif (preg_match('/Mac/i', $useragent)
 			|| preg_match('/Darwin/i', $useragent)) {
 			$link = "http://www.apple.com/macosx/";
 
 			if (preg_match('/(Mac OS ?X)/i', $useragent, $regmatch)) {
-				$title = substr($useragent, strpos(strtolower($useragent), strtolower($regmatch[1])));
-				$title = substr($title, 0, strpos($title, ")"));
+				$name = substr($useragent, strpos(strtolower($useragent), strtolower($regmatch[1])));
+				$name = substr($name, 0, strpos($name, ")"));
 
-				if (strpos($title, ";")) {
-					$title = substr($title, 0, strpos($title, ";"));
+				if (strpos($name, ";")) {
+					$name = substr($name, 0, strpos($name, ";"));
 				}
 
-				$title = str_replace("_", ".", $title);
-				$title = str_replace("OSX", "OS X", $title);
+				$name = str_replace("_", ".", $name);
+				$name = str_replace("OSX", "OS X", $name);
 
-				$code = $regmatch[1] == "Mac OSX" ? "mac-2" : "mac-3";
+				$image_url = $regmatch[1] == "Mac OSX" ? "mac-2" : "mac-3";
 			} elseif (preg_match('/Darwin/i', $useragent)) {
-				$title = "Mac OS Darwin";
-				$code = "mac-1";
+				$name = "Mac OS Darwin";
+				$image_url = "mac-1";
 			} else {
-				$title = "Macintosh";
-				$code = "mac-1";
+				$name = "Macintosh";
+				$image_url = "mac-1";
 			}
 		} elseif (preg_match('/MorphOS/i', $useragent)) {
 			$link = "http://www.morphos-team.net/";
-			$title = "MorphOS";
-			$code = "morphos";
+			$name = "MorphOS";
+			$image_url = "morphos";
 
 		} elseif (preg_match('/NetBSD/i', $useragent)) {
 			$link = "http://www.netbsd.org/";
-			$title = "NetBSD";
-			$code = "netbsd";
+			$name = "NetBSD";
+			$image_url = "netbsd";
 
 		} elseif (preg_match('/OpenBSD/i', $useragent)) {
 			$link = "http://www.openbsd.org/";
-			$title = "OpenBSD";
-			$code = "openbsd";
+			$name = "OpenBSD";
+			$image_url = "openbsd";
 		} elseif (preg_match('/RISC OS/i', $useragent)) {
 			$link = "https://www.riscosopen.org/";
-			$title = "RISC OS";
-			$code = "risc";
+			$name = "RISC OS";
+			$image_url = "risc";
 
 			if (preg_match('/RISC OS ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[1];
+				$version = $regmatch[1];
 			}
 
 		} elseif (preg_match('/Solaris|SunOS/i', $useragent)) {
 			$link = "http://www.sun.com/software/solaris/";
-			$title = "Solaris";
-			$code = "solaris";
+			$name = "Solaris";
+			$image_url = "solaris";
 
 		} elseif (preg_match('/Symb(ian)?(OS)?/i', $useragent)) {
 			$link = "http://www.symbianos.org/";
-			$title = "SymbianOS";
+			$name = "SymbianOS";
 
 			if (preg_match('/Symb(ian)?(OS)?\/([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= " " . $regmatch[3];
+				$version = $regmatch[3];
 			}
 
-			$code = "symbian";
+			$image_url = "symbian";
 
 		} elseif (preg_match('/Unix/i', $useragent)) {
 			$link = "http://www.unix.org/";
-			$title = "Unix";
-			$code = "unix";
+			$name = "Unix";
+			$image_url = "unix";
 // @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/webOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/WebOS";
-			$title = "Palm webOS";
-			$code = "palm";
+			$name = "Palm webOS";
+			$image_url = "palm";
 		} elseif (preg_match('/J2ME\/MIDP/i', $useragent)) {
 			$link = "http://java.sun.com/javame/";
-			$title = "J2ME/MIDP Device";
-			$code = "java";
+			$name = "J2ME/MIDP Device";
+			$image_url = "java";
 		} else {
-			$code = "null";
+			$image_url = "null";
 		}
 
 		return array(
 			'link' => $link,
-			'title' => $title,
-			'code' => $code,
+			'name' => $name,
+			'version' => $version,
+			'code' => $image_url,
 			'dir' => 'os',
 		);
 	}
