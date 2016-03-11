@@ -1884,8 +1884,11 @@ class useragent_detect_browser {
 		} elseif ($lower_title == "gsa") {
 			$return = "Google Search App";
 		} elseif ($lower_title == "opera labs") {
-			preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch);
-			$return = $title . $regmatch[1] . "";
+			if (preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch)) {
+				$return = $title . $regmatch[1];
+			} else {
+				$return = $title;
+			}
 		} elseif ($lower_title == 'qtcarbrowser') {
 			$return = "Tesla Car Browser";
 			$version = "";
