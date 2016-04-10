@@ -523,6 +523,11 @@ class useragent_detect_os {
 				$name = "Macintosh";
 				$image_url = "mac-1";
 			}
+		} elseif (preg_match('/Meego/i', $useragent)) {
+			$link = "http://meego.com/";
+			$name = "Meego";
+			$image_url = "meego";
+
 		} elseif (preg_match('/MorphOS/i', $useragent)) {
 			$link = "http://www.morphos-team.net/";
 			$name = "MorphOS";

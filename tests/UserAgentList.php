@@ -1,6 +1,14 @@
 <?php
 return array(
 	array(
+		array('Mozilla/5.0 (MeeGo) AppleWebKit/534.13 (KHTML, like Gecko) Mobile Safari/534.13'),
+		array('img/16/browser/safari.png', 'img/16/os/meego.png', 'Mobile Safari', '', 'Mobile Safari', 'Meego', '', 'Meego', '', 'os'),
+	),
+	array(
+		array('Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13'),
+		array('img/16/browser/nokia.png', 'img/16/device/nokia.png', 'Nokia Browser', '8.5.0', 'Nokia Browser 8.5.0', 'Meego', '', 'Meego', 'Nokia N9', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 114Browser/5.0'),
 		array('img/16/browser/114browser.png', 'img/16/os/win-2.png', '114Browser', '5.0', '114Browser 5.0', 'Windows', 'XP', 'Windows XP', '', 'os'),
 	),
