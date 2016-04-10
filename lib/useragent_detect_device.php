@@ -212,6 +212,16 @@ class UserAgent_Detect_Device {
 			$image_url = "motorola";
 		}
 
+		// Microsoft
+		elseif (preg_match('/Microsoft/i', $useragent)) {
+			$link = "http://www.microsoft.com/";
+			$brand = "Microsoft";
+			$image_url = "microsoft";
+			if (preg_match('/Lumia ([0-9]+)/i', $useragent, $regmatch)) {
+				$model = "Lumia " . $regmatch[1];
+			}
+			//}
+		}
 		// Nintendo
 		elseif (preg_match('/Nintendo/i', $useragent)) {
 			$brand = "Nintendo";

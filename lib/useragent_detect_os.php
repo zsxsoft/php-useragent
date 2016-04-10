@@ -73,7 +73,7 @@ class useragent_detect_os {
 		);
 
 		if (preg_match('/Windows Phone|WPDesktop|ZuneWP7|WP7/i', $useragent)) {
-			$link = "http://www.windowsphone.com/";
+			$link = "https://www.microsoft.com/windows/phones";
 			$name .= ' Phone';
 			$image_url = "windowsphone";
 			if (preg_match('/Windows Phone (OS )?([0-9\.]+)/i', $useragent, $regmatch)) {
