@@ -44,7 +44,7 @@ class useragent_detect_os {
 		// Check Linux
 		if (preg_match('/Windows|Win(NT|32|95|98|16)|ZuneWP7|WPDesktop/i', $useragent)) {
 			$result = self::analyzeWindows($useragent);
-		} else if (preg_match('/Linux/i', $useragent) && !preg_match('/Android|ADR/', $useragent)) {
+		} else if (preg_match('/Linux/i', $useragent) && !preg_match('/Android|ADR|Tizen/', $useragent)) {
 			$result = self::analyzeLinux($useragent);
 		} else {
 			$result = self::analyzeOther($useragent);
@@ -555,6 +555,12 @@ class useragent_detect_os {
 			}
 
 			$image_url = "symbian";
+
+		} elseif (preg_match('/Tizen/i', $useragent)) {
+			$link = "https://www.tizen.org/";
+			$name = "Tizen";
+			$image_url = "tizen";
+// @codeCoverageIgnoreStart
 
 		} elseif (preg_match('/Unix/i', $useragent)) {
 			$link = "http://www.unix.org/";

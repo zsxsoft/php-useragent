@@ -1790,7 +1790,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Tizen 2.0; en-us) AppleWebKit/537.1 (KHTML, like Gecko) Mobile TizenBrowser/2.0'),
-		array('img/16/browser/tizen.png', 'img/16/os/linux.png', 'Tizen', '2.0', 'Tizen 2.0', 'GNU/Linux', '', 'GNU/Linux', '', 'os'),
+		array('img/16/browser/tizen.png', 'img/16/os/tizen.png', 'Tizen', '2.0', 'Tizen 2.0', 'Tizen', '', 'Tizen', '', 'os'),
 	),
 	array(
 		array('Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; AspTear 1.5)'),
