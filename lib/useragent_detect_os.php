@@ -77,8 +77,13 @@ class useragent_detect_os {
 			$name .= ' Phone';
 			$image_url = "windowsphone";
 			if (preg_match('/Windows Phone (OS )?([0-9\.]+)/i', $useragent, $regmatch)) {
-				$name .= " " . $regmatch[2];
-				if ((int) $regmatch[2] == 7) {
+				$version = $regmatch[2];
+				$intVersion = (int) $version;
+				if ($intVersion == 10) {
+					$name = "Windows";
+					$version = "10 Mobile";
+					$image_url = "win-6";
+				} elseif ($intVersion == 7) {
 					$image_url = "wp7";
 				}
 			}

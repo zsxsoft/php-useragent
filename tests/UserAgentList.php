@@ -122,23 +122,23 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Nokia 920)'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '10.0', 'IEMobile 10.0', 'Windows Phone 8.0', '', 'Windows Phone 8.0', 'Nokia Lumia 920', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '10.0', 'IEMobile 10.0', 'Windows Phone', '8.0', 'Windows Phone 8.0', 'Nokia Lumia 920', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; HTC; Windows Phone 8S by HTC) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/htc.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone 8.1', '', 'Windows Phone 8.1', 'HTC 8S', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/htc.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone', '8.1', 'Windows Phone 8.1', 'HTC 8S', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Nokia 909) like Gecko'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone 8.1', '', 'Windows Phone 8.1', 'Nokia Lumia 1020', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone', '8.1', 'Windows Phone 8.1', 'Nokia Lumia 1020', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows Phone 8.1; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Lumia 1520) like Gecko'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone 8.1', '', 'Windows Phone 8.1', 'Nokia Lumia 1520', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone', '8.1', 'Windows Phone 8.1', 'Nokia Lumia 1520', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Mobile; Windows Phone 8.1; Android 4.0; ARM; Trident/7.0; Touch; rv:11.0; IEMobile/11.0; NOKIA; Nokia 920) like iPhone OS 7_0_3 Mac OS X AppleWebKit/537 (KHTML, like Gecko) Mobile Safari/537'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone 8.1', '', 'Windows Phone 8.1', 'Nokia Lumia 920', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '11.0', 'IEMobile 11.0', 'Windows Phone', '8.1', 'Windows Phone 8.1', 'Nokia Lumia 920', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0; ARM; Touch; WPDesktop)'),
@@ -146,7 +146,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.2; ARM; Trident/7.0; Touch; rv:11.0; WPDesktop; HTC; Windows Phone 8X by HTC) like Gecko'),
-		array('img/16/browser/msie11.png', 'img/16/device/htc.png', 'Internet Explorer', '11.0', 'Internet Explorer 11.0', 'Windows Phone 8', '', 'Windows Phone 8', 'HTC 8X', 'device'),
+		array('img/16/browser/msie11.png', 'img/16/device/htc.png', 'Internet Explorer', '11.0', 'Internet Explorer 11.0', 'Windows Phone', '8', 'Windows Phone 8', 'HTC 8X', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.2; ARM; Trident/7.0; Touch; rv:11.0; WPDesktop; Nokia 920) like Gecko'),
@@ -1262,7 +1262,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)'),
-		array('img/16/browser/msie-mobile.png', 'img/16/os/wp7.png', 'IEMobile', '9.0', 'IEMobile 9.0', 'Windows Phone 7.5', '', 'Windows Phone 7.5', '', 'os'),
+		array('img/16/browser/msie-mobile.png', 'img/16/os/wp7.png', 'IEMobile', '9.0', 'IEMobile 9.0', 'Windows Phone', '7.5', 'Windows Phone 7.5', '', 'os'),
 	),
 	array(
 		array('HTC_Touch_3G Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)'),
@@ -1270,7 +1270,7 @@ return array(
 	),
 	array(
 		array('Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.0; Trident/3.1; IEMobile/7.0; Nokia;N70)'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '7.0', 'IEMobile 7.0', 'Windows Phone 7.0', '', 'Windows Phone 7.0', 'Nokia', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/nokia.png', 'IEMobile', '7.0', 'IEMobile 7.0', 'Windows Phone', '7.0', 'Windows Phone 7.0', 'Nokia', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.9.0.7) Gecko/2009030814 Iceweasel Firefox/3.0.7 (Debian-3.0.7-1)'),
@@ -1938,7 +1938,7 @@ return array(
 	),
 	array(
 		array('Mozilla/4.0 (compatible; MSIE 7.0; Windows Phone OS 7.5; Trident/3.1; IEMobile/7.0; DELL; Venue Pro)'),
-		array('img/16/browser/msie-mobile.png', 'img/16/device/dell.png', 'IEMobile', '7.0', 'IEMobile 7.0', 'Windows Phone 7.5', '', 'Windows Phone 7.5', 'Dell', 'device'),
+		array('img/16/browser/msie-mobile.png', 'img/16/device/dell.png', 'IEMobile', '7.0', 'IEMobile 7.0', 'Windows Phone', '7.5', 'Windows Phone 7.5', 'Dell', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.0.3; de-ch; HTC Sensation Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30'),
@@ -2182,7 +2182,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; NOKIA; Nokia 920) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0'),
-		array('img/16/browser/edge.png', 'img/16/device/nokia.png', 'Edge', '12.0', 'Edge 12.0', 'Windows Phone 10.0', '', 'Windows Phone 10.0', 'Nokia Lumia 920', 'device'),
+		array('img/16/browser/edge.png', 'img/16/device/nokia.png', 'Edge', '12.0', 'Edge 12.0', 'Windows', '10 Mobile', 'Windows 10 Mobile', 'Nokia Lumia 920', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) GSA/3.2.1.25875 Mobile/11D167 Safari/8536.25'),
