@@ -274,7 +274,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 5_1 like Mac OS X) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Oupeng/10.0.1.82018 Mobile Safari/534.30'),
-		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Mobile Safari', '4.0', 'Mobile Safari 4.0', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 5.1', 'device'),
+		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Mobile Safari', '4.0', 'Mobile Safari 4.0', 'iOS', '5.1', 'iOS 5.1', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) Qt/4.8.2'),
@@ -286,7 +286,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPad; CPU OS 7_1 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D167'),
-		array('img/16/browser/mozilla.png', 'img/16/device/ipad.png', 'Mozilla Compatible', '', 'Mozilla Compatible', 'Mac OS X', '', 'Mac OS X', 'Apple iPad iOS 7.1', 'device'),
+		array('img/16/browser/mozilla.png', 'img/16/device/ipad.png', 'Mozilla Compatible', '', 'Mozilla Compatible', 'iOS', '7.1', 'iOS 7.1', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.1.2; zh-cn; MI-ONE Plus Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.4 Mobile Safari/537.36'),
@@ -342,7 +342,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPad; CPU OS 7_1_2 like Mac OS X) AppleWebKit/537.51.2 (KHTML, like Gecko) Mobile/11D257 IPadQQ/4.1.1.14'),
-		array('img/16/browser/qq.png', 'img/16/device/ipad.png', 'QQ', '4.1.1.14', 'QQ 4.1.1.14', 'Mac OS X', '', 'Mac OS X', 'Apple iPad iOS 7.1.2', 'device'),
+		array('img/16/browser/qq.png', 'img/16/device/ipad.png', 'QQ', '4.1.1.14', 'QQ 4.1.1.14', 'iOS', '7.1.2', 'iOS 7.1.2', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; iOCEAN X7 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 V1_AND_SQ_5.0.0_146_YYB_D QQ/5.0.0.2215'),
@@ -350,7 +350,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12B435 QQ/5.1.1.97'),
-		array('img/16/browser/qq.png', 'img/16/device/iphone.png', 'QQ', '5.1.1.97', 'QQ 5.1.1.97', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 8.1.1', 'device'),
+		array('img/16/browser/qq.png', 'img/16/device/iphone.png', 'QQ', '5.1.1.97', 'QQ 5.1.1.97', 'iOS', '8.1.1', 'iOS 8.1.1', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.48 Safari/537.36 QQBrowser/7.7.31721.400'),
@@ -374,11 +374,11 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPad; CPU OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B440 Safari/600.1.4'),
-		array('img/16/browser/safari.png', 'img/16/device/ipad.png', 'Safari', '8.0', 'Safari 8.0', 'Mac OS X', '', 'Mac OS X', 'Apple iPad iOS 8.1.2', 'device'),
+		array('img/16/browser/safari.png', 'img/16/device/ipad.png', 'Safari', '8.0', 'Safari 8.0', 'iOS', '8.1.2', 'iOS 8.1.2', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 8_0 like Mac OS X) AppleWebKit/600.1.3 (KHTML, like Gecko) Version/8.0 Mobile/12A4345d Safari/600.1.4'),
-		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Safari', '8.0', 'Safari 8.0', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 8.0', 'device'),
+		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Safari', '8.0', 'Safari 8.0', 'iOS', '8.0', 'iOS 8.0', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5'),
@@ -438,7 +438,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 7_1_2 like Mac OS X; zh-CN) AppleWebKit/537.51.2 (KHTML, like Gecko) CriOS/23.0.1271.100 Mobile/11D257 Safari/7534.48.3 UCBrowser/9.9.2.490'),
-		array('img/16/browser/ucbrowser.png', 'img/16/device/iphone.png', 'UC Browser', '9.9.2.490', 'UC Browser 9.9.2.490', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 7.1.2', 'device'),
+		array('img/16/browser/ucbrowser.png', 'img/16/device/iphone.png', 'UC Browser', '9.9.2.490', 'UC Browser 9.9.2.490', 'iOS', '7.1.2', 'iOS 7.1.2', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; K-Touch T619+ Build/MocorDroid2.3.5) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/9.9.8.511 U3/0.8.0 Mobile Safari/534.30'),
@@ -682,15 +682,15 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25'),
-		array('img/16/browser/safari.png', 'img/16/device/ipad.png', 'Safari', '6.0', 'Safari 6.0', 'Mac OS X', '', 'Mac OS X', 'Apple iPad iOS 6.0', 'device'),
+		array('img/16/browser/safari.png', 'img/16/device/ipad.png', 'Safari', '6.0', 'Safari 6.0', 'iOS', '6.0', 'iOS 6.0', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (iPod; U; CPU iPhone OS 4_2_1 like Mac OS X; he-il) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148 Safari/6533.18.5'),
-		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Safari', '5.0.2', 'Safari 5.0.2', 'Mac OS X', '', 'Mac OS X', 'Apple iPod iOS 4.2.1', 'device'),
+		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Safari', '5.0.2', 'Safari 5.0.2', 'iOS', '4.2.1', 'iOS 4.2.1', 'Apple iPod', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; U; ru; CPU iPhone OS 4_2_1 like Mac OS X; ru) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8C148a Safari/6533.18.5'),
-		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Safari', '5.0.2', 'Safari 5.0.2', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 4.2.1', 'device'),
+		array('img/16/browser/safari.png', 'img/16/device/iphone.png', 'Safari', '5.0.2', 'Safari 5.0.2', 'iOS', '4.2.1', 'iOS 4.2.1', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/533.17.8 (KHTML, like Gecko) Version/5.0.1 Safari/533.17.8'),
@@ -1330,7 +1330,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36 Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10'),
-		array('img/16/browser/chrome.png', 'img/16/device/ipad.png', 'Google Chrome', '34.0.1847.116', 'Google Chrome 34.0.1847.116', 'Windows', 'XP', 'Windows XP', 'Apple iPad iOS 3.2', 'device'),
+		array('img/16/browser/chrome.png', 'img/16/device/ipad.png', 'Google Chrome', '34.0.1847.116', 'Google Chrome 34.0.1847.116', 'Windows', 'XP', 'Windows XP', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (X11; CrOS i686 4319.74.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36'),
@@ -1710,7 +1710,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPad; CPU OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Coast/1.0.2.62956 Mobile/10B329 Safari/7534.48.3'),
-		array('img/16/browser/coast.png', 'img/16/device/ipad.png', 'Coast', '1.0.2.62956', 'Coast 1.0.2.62956', 'Mac OS X', '', 'Mac OS X', 'Apple iPad iOS 6.1.3', 'device'),
+		array('img/16/browser/coast.png', 'img/16/device/ipad.png', 'Coast', '1.0.2.62956', 'Coast 1.0.2.62956', 'iOS', '6.1.3', 'iOS 6.1.3', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/534.34 (KHTML like Gecko) Columbus/1.5.0.0 Safari/534.34'),
@@ -1818,7 +1818,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPad; CPU OS 613 like Mac OS X) AppleWebKit/536.26 (KHTML like Gecko) Mobile/10B329 Safari/6533.18.5 SecuredBrowser/jp.co.obayashi.clomosecuredbrowser'),
-		array('img/16/browser/edbrowse.png', 'img/16/device/ipad.png', 'Edbrowse', 'r', 'Edbrowse r', 'Mac OS X', '', 'Mac OS X', 'Apple iPad iOS 613', 'device'),
+		array('img/16/browser/edbrowse.png', 'img/16/device/ipad.png', 'Edbrowse', 'r', 'Edbrowse r', 'iOS', '613', 'iOS 613', 'Apple iPad', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Macintosh; Intel Mac OS X 1095) AppleWebKit/537.36 (KHTML like Gecko) Chrome/34.0.1771.0 Safari/537.36 Epic'),
@@ -1846,7 +1846,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 712 like Mac OS X) AppleWebKit/537.51.2 (KHTML like Gecko) Mobile/11D257 FBAN/FBIOS;FBAV/14.0.0.25.26;FBBV/4017285;FBDV/iPhone61;FBMD/iPhone;FBSN/iPhone OS;FBSV/7.1.2;FBSS/2; FBCR/Strata;FBID/phone;FBLC/enUS;FBOP/5'),
-		array('img/16/browser/kirix-strata.png', 'img/16/device/iphone.png', 'Kirix Strata', '', 'Kirix Strata', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 712', 'device'),
+		array('img/16/browser/kirix-strata.png', 'img/16/device/iphone.png', 'Kirix Strata', '', 'Kirix Strata', 'iOS', '712', 'iOS 712', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/31.0.1650.63 Safari/537.36'),
@@ -2046,7 +2046,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; U; CPU iPhone OS 5_1_1 like Mac OS X; en) AppleWebKit/534.46.0 (KHTML, like Gecko) CriOS/19.0.1084.60 Mobile/9B206 Safari/7534.48.3'),
-		array('img/16/browser/chrome.png', 'img/16/device/iphone.png', 'Google CriOS', '19.0.1084.60', 'Google CriOS 19.0.1084.60', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 5.1.1', 'device'),
+		array('img/16/browser/chrome.png', 'img/16/device/iphone.png', 'Google CriOS', '19.0.1084.60', 'Google CriOS 19.0.1084.60', 'iOS', '5.1.1', 'iOS 5.1.1', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (compatible; Konqueror/2.2.2; Linux 2.4.18; X11; i686; AffiliateCashGen/1.0; en) LindowsOS (Lindows.com, Inc.)'),
@@ -2130,7 +2130,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10B329 MicroMessenger/5.0.1'),
-		array('img/16/browser/wechat.png', 'img/16/device/iphone.png', 'WeChat', '5.0.1', 'WeChat 5.0.1', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 6.1.3', 'device'),
+		array('img/16/browser/wechat.png', 'img/16/device/iphone.png', 'WeChat', '5.0.1', 'WeChat 5.0.1', 'iOS', '6.1.3', 'iOS 6.1.3', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.1.2; zh-cn; MI-ONE Plus Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MicroMessenger/5.0.1.352'),
@@ -2186,9 +2186,10 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 7_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) GSA/3.2.1.25875 Mobile/11D167 Safari/8536.25'),
-		array('img/16/browser/google.png', 'img/16/device/iphone.png', 'Google Search App', '3.2.1.25875', 'Google Search App 3.2.1.25875', 'Mac OS X', '', 'Mac OS X', 'Apple iPhone iOS 7.1', 'device'),
+		array('img/16/browser/google.png', 'img/16/device/iphone.png', 'Google Search App', '3.2.1.25875', 'Google Search App 3.2.1.25875', 'iOS', '7.1', 'iOS 7.1', 'Apple iPhone', 'device'),
 	),
 	array(
 		array(''),
 		array('img/16/browser/null.png', 'img/16/browser/null.png', 'Unknown', '', 'Unknown', '', '', '', 'Unknown', 'os'),
-	));
+	),
+);

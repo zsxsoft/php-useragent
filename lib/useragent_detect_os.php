@@ -438,6 +438,11 @@ class useragent_detect_os {
 			if (preg_match('/(Android|Adr)[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$version = $regmatch[2];
 			}
+		} elseif (preg_match('/CPU\ (iPhone )?OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+			$link = "http://www.apple.com/";
+			$name = "iOS";
+			$image_url = "mac-3";
+			$version = str_replace("_", ".", $regmatch[2]);
 		} elseif (preg_match('/AmigaOS/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/AmigaOS";
 			$name = "AmigaOS";
