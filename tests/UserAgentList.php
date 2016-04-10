@@ -9,6 +9,10 @@ return array(
 		array('img/16/browser/nokia.png', 'img/16/device/nokia.png', 'Nokia Browser', '8.5.0', 'Nokia Browser 8.5.0', 'Meego', '', 'Meego', 'Nokia N9', 'device'),
 	),
 	array(
+		array('Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 950) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Mobile Safari/537.36 Edge/14.14263'),
+		array('img/16/browser/edge.png', 'img/16/device/microsoft.png', 'Edge', '14.14263', 'Edge 14.14263', 'Windows', '10 Mobile', 'Windows 10 Mobile', 'Microsoft Lumia 950', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36 114Browser/5.0'),
 		array('img/16/browser/114browser.png', 'img/16/os/win-2.png', '114Browser', '5.0', '114Browser 5.0', 'Windows', 'XP', 'Windows XP', '', 'os'),
 	),
@@ -54,7 +58,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'),
-		array('img/16/browser/android-webkit.png', 'img/16/device/google-nexusone.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.2', 'Android 2.2', 'Nexus One', 'device'),
+		array('img/16/browser/android-webkit.png', 'img/16/device/google-nexusone.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.2', 'Android 2.2', 'Google Nexus One', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Ubuntu Chromium/25.0.1364.160 Chrome/25.0.1364.160 Safari/537.22'),
@@ -102,7 +106,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (Linux; Android 4.4.4; Nexus 4 Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36'),
-		array('img/16/browser/chrome.png', 'img/16/device/google-nexusone.png', 'Google Chrome', '33.0.0.0', 'Google Chrome 33.0.0.0', 'Android', '4.4.4', 'Android 4.4.4', 'Nexus 4', 'device'),
+		array('img/16/browser/chrome.png', 'img/16/device/google-nexusone.png', 'Google Chrome', '33.0.0.0', 'Google Chrome 33.0.0.0', 'Android', '4.4.4', 'Android 4.4.4', 'Google Nexus 4', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; Android 4.4.4; MI 4W Build/KTU84P) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 MxBrowser/4.3.5.2000'),
@@ -306,7 +310,7 @@ return array(
 	),
 	array(
 		array('Mozilla/5.0 (MeeGo; NokiaN9) AppleWebKit/534.13 (KHTML, like Gecko) NokiaBrowser/8.5.0 Mobile Safari/534.13'),
-		array('img/16/browser/nokia.png', 'img/16/device/nokia.png', 'Nokia Browser', '8.5.0', 'Nokia Browser 8.5.0', '', '', '', 'Nokia N9', 'device'),
+		array('img/16/browser/nokia.png', 'img/16/device/nokia.png', 'Nokia Browser', '8.5.0', 'Nokia Browser 8.5.0', 'Meego', '', 'Meego', 'Nokia N9', 'device'),
 	),
 	array(
 		array('Nokia5320di'),

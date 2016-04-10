@@ -411,10 +411,11 @@ class UserAgent_Detect_Device {
 		// Google
 		elseif (preg_match('/Nexus/i', $useragent)) {
 			$link = "https://www.google.com/nexus/";
-			$brand = "Nexus";
+			$brand = "Google";
 			$image_url = "google-nexusone";
+			$model = "Nexus";
 			if (preg_match('/Nexus ([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$model = $regmatch[1];
+				$model .= " " . $regmatch[1];
 			}
 		}
 
