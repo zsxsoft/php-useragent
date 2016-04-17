@@ -1,5 +1,61 @@
 <?php return array(
 	array(
+		array('iTunes/10.2.1 (Windows; Microsoft Windows 7 Enterprise Edition Service Pack 1 (Build 7601)) AppleWebKit/533.20.25'),
+		array('img/16/browser/itunes.png', 'img/16/device/microsoft.png', 'iTunes', '10.2.1', 'iTunes 10.2.1', 'Windows', '', 'Windows', 'Microsoft', 'device'),
+	),
+	array(
+		array('Microsoft Office PowerPoint 2013 (15.0.4693) Windows NT 6.2'),
+		array('img/16/browser/office.png', 'img/16/device/microsoft.png', 'Microsoft Office', '', 'Microsoft Office', 'Windows', '8', 'Windows 8', 'Microsoft', 'device'),
+	),
+	array(
+		array('Microsoft Office Upload Center 2013 (15.0.4693) Windows NT 6.2'),
+		array('img/16/browser/office.png', 'img/16/device/microsoft.png', 'Microsoft Office', '', 'Microsoft Office', 'Windows', '8', 'Windows 8', 'Microsoft', 'device'),
+	),
+	array(
+		array('Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)'),
+		array('img/16/browser/office.png', 'img/16/device/microsoft.png', 'Microsoft Office', '', 'Microsoft Office', 'Windows', '8', 'Windows 8', 'Microsoft', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 4.1.2; Xperia Miro Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.90 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/xperia.png', 'Google Chrome', '27.0.1453.90', 'Google Chrome 27.0.1453.90', 'Android', '4.1.2', 'Android 4.1.2', 'Xperia Miro', 'device'),
+	),
+	array(
+		array('WhatsApp/2.11.102 Android/4.0.4 Device/Motorola-XOOM_2'),
+		array('img/16/browser/whatsapp.png', 'img/16/device/motorola.png', 'WhatsApp', '2.11.102', 'WhatsApp 2.11.102', 'Android', '4.0.4', 'Android 4.0.4', 'Motorola Xoom', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (iPhone; CPU iPhone OS 7_0_4 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11B554a Weibo (iPhone3,2__weibo__4.2.5__iphone__os7.0.4)'),
+		array('img/16/browser/weibo.png', 'img/16/device/iphone.png', 'Weibo', '', 'Weibo', 'iOS', '7.0.4', 'iOS 7.0.4', 'Apple iPhone', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Mobile/12B411 [FBAN/FBIOS;FBAV/26.0.0.11.13;FBBV/7806348;FBDV/iPhone5,2;FBMD/hone;FBSN/iPhone OS;FBSV/8.1;FBSS/2; FBCR/3DK;FBID/phone;FBLC/da_DK;FBOP/5]'),
+		array('img/16/browser/facebook.png', 'img/16/device/iphone.png', 'Facebook', '26.0.0.11.13', 'Facebook 26.0.0.11.13', 'iOS', '8.1', 'iOS 8.1', 'Apple iPhone', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Mobile; rv:31.0) Gecko/31.0 Firefox/31.0 SailfishBrowser/1.0'),
+		array('img/16/browser/sailfishbrowser.png', 'img/16/os/linux.png', 'Sailfish Browser', '1.0', 'Sailfish Browser 1.0', 'GNU/Linux', '', 'GNU/Linux', '', 'os'),
+	),
+	array(
+		array('Mozilla/5.0 (SymbianOS/9.3; U; Series60/3.2 NokiaN79-3/10.018; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (KHTML, like Gecko) Safari/413'),
+		array('img/16/browser/maemo.png', 'img/16/device/nokia.png', 'Nokia Web Browser', '', 'Nokia Web Browser', 'SymbianOS', '9.3', 'SymbianOS 9.3', 'Nokia N79', 'device'),
+	),
+	array(
+		array('iTunes/10.2.1 (Windows; Microsoft Windows 7 Enterprise Edition Service Pack 1 (Build 7601)) AppleWebKit/533.20.25'),
+		array('img/16/browser/itunes.png', 'img/16/device/microsoft.png', 'iTunes', '10.2.1', 'iTunes 10.2.1', 'Windows', '', 'Windows', 'Microsoft', 'device'),
+	),
+	array(
+		array('Microsoft Office PowerPoint 2013 (15.0.4693) Windows NT 6.2'),
+		array('img/16/browser/office.png', 'img/16/device/microsoft.png', 'Microsoft Office', '', 'Microsoft Office', 'Windows', '8', 'Windows 8', 'Microsoft', 'device'),
+	),
+	array(
+		array('Microsoft Office Upload Center 2013 (15.0.4693) Windows NT 6.2'),
+		array('img/16/browser/office.png', 'img/16/device/microsoft.png', 'Microsoft Office', '', 'Microsoft Office', 'Windows', '8', 'Windows 8', 'Microsoft', 'device'),
+	),
+	array(
+		array('Microsoft Office/15.0 (Windows NT 6.2; Microsoft Excel 15.0.4693; Pro)'),
+		array('img/16/browser/office.png', 'img/16/device/microsoft.png', 'Microsoft Office', '', 'Microsoft Office', 'Windows', '8', 'Windows 8', 'Microsoft', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (Linux; Android 4.2.2; nl-nl; SAMSUNG GT-I9505 Build/JDQ39) AppleWebKit/535.19 (KHTML, like Gecko) Version/1.0 Chrome/18.0.1025.308 Mobile Safari/535.19'),
 		array('img/16/browser/chrome.png', 'img/16/device/samsung.png', 'Google Chrome', '18.0.1025.308', 'Google Chrome 18.0.1025.308', 'Android', '4.2.2', 'Android 4.2.2', 'Samsung I9505', 'device'),
 	),
@@ -297,7 +353,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.1.1; zh-cn; MI 2SC Build/JRO03L) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Mobile Safari/537.36 XiaoMi/MiuiBrowser/2.1.1'),
-		array('img/16/browser/miuibrowser.png', 'img/16/device/xiaomi.png', 'MiuiBrowser', '2.1.1', 'MiuiBrowser 2.1.1', 'Android', '4.1.1', 'Android 4.1.1', 'Xiaomi 2SC', 'device'),
+		array('img/16/browser/miuibrowser.png', 'img/16/device/xiaomi.png', 'MIUI Browser', '2.1.1', 'MIUI Browser 2.1.1', 'Android', '4.1.1', 'Android 4.1.1', 'Xiaomi 2SC', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 2.2; fr-fr; Desire_A8181 Build/FRF91) App3leWebKit/53.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'),
@@ -1821,7 +1877,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Tizen 2.0; en-us) AppleWebKit/537.1 (KHTML, like Gecko) Mobile TizenBrowser/2.0'),
-		array('img/16/browser/tizen.png', 'img/16/os/tizen.png', 'Tizen', '2.0', 'Tizen 2.0', 'Tizen', '', 'Tizen', '', 'os'),
+		array('img/16/browser/tizen.png', 'img/16/os/tizen.png', 'Tizen Browser', '2.0', 'Tizen Browser 2.0', 'Tizen', '', 'Tizen', '', 'os'),
 	),
 	array(
 		array('Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; AspTear 1.5)'),
@@ -1877,7 +1933,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (iPhone; CPU iPhone OS 712 like Mac OS X) AppleWebKit/537.51.2 (KHTML like Gecko) Mobile/11D257 FBAN/FBIOS;FBAV/14.0.0.25.26;FBBV/4017285;FBDV/iPhone61;FBMD/iPhone;FBSN/iPhone OS;FBSV/7.1.2;FBSS/2; FBCR/Strata;FBID/phone;FBLC/enUS;FBOP/5'),
-		array('img/16/browser/kirix-strata.png', 'img/16/device/iphone.png', 'Kirix Strata', '', 'Kirix Strata', 'iOS', '712', 'iOS 712', 'Apple iPhone', 'device'),
+		array('img/16/browser/facebook.png', 'img/16/device/iphone.png', 'Facebook', '14.0.0.25.26', 'Facebook 14.0.0.25.26', 'iOS', '712', 'iOS 712', 'Apple iPhone', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/31.0.1650.63 Safari/537.36'),

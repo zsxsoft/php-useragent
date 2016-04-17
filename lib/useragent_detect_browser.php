@@ -87,6 +87,7 @@ class useragent_detect_browser {
 		'Epic',
 		'Epiphany',
 		'Escape|Espial',
+		'FBAV',
 		'Fennec',
 		'Firebird',
 		'Fireweb\ Navigator',
@@ -108,6 +109,7 @@ class useragent_detect_browser {
 		'IBM\ WebExplorer',
 		'JuziBrowser',
 		'MiuiBrowser',
+		'Microsoft Office',
 		'MxNitro',
 		'IBrowse',
 		'iCab',
@@ -118,6 +120,7 @@ class useragent_detect_browser {
 		'IceWeasel',
 		'iNet\ Browser',
 		'iRider',
+		'iTunes',
 		'InternetSurfboard',
 		'Jasmine',
 		'K-Meleon',
@@ -201,6 +204,7 @@ class useragent_detect_browser {
 		'RockMelt',
 		'Ryouko',
 		'SaaYaa',
+		'SailfishBrowser',
 		'SeaMonkey',
 		'SEMC-Browser',
 		'SEMC-java',
@@ -232,7 +236,8 @@ class useragent_detect_browser {
 		'TenFourFox',
 		'TheWorld',
 		'Thunderbird',
-		'Tizen',
+		'TizenBrowser',
+		'Tizen Browser',
 		'Tjusig',
 		'TencentTraveler',
 		'UC?\ ?Browser|UCWEB',
@@ -252,6 +257,8 @@ class useragent_detect_browser {
 		'WebianShell',
 		'Webrender',
 		'WeltweitimnetzBrowser',
+		'WhatsApp',
+		'Weibo',
 		'wKiosk',
 		'WorldWideWeb',
 		'wget',
@@ -650,6 +657,11 @@ class useragent_detect_browser {
 			'title' => '{%Espial%}',
 			'code' => 'espialtvbrowser',
 		),
+		'fbav' => array(
+			'link' => 'https://www.facebook.com',
+			'title' => '{%FBAV%}',
+			'code' => 'facebook',
+		),
 		'fennec' => array(
 			'link' => 'https://wiki.mozilla.org/Fennec',
 			'title' => '{%Fennec%}',
@@ -755,6 +767,16 @@ class useragent_detect_browser {
 			'title' => '{%MiuiBrowser%}',
 			'code' => 'miuibrowser',
 		),
+		'miuibrowser' => array(
+			'link' => 'http://www.xiaomi.com/',
+			'title' => '{%MiuiBrowser%}',
+			'code' => 'miuibrowser',
+		),
+		'microsoft office' => array(
+			'link' => 'http://www.microsoft.com',
+			'title' => 'Microsoft Office',
+			'code' => 'office',
+		),
 		'mxnitro' => array(
 			'link' => 'http://www.maxthon.com/nitro/',
 			'title' => '{%MxNitro%}',
@@ -799,6 +821,11 @@ class useragent_detect_browser {
 			'link' => 'http://alexanderjbeston.wordpress.com/',
 			'title' => 'iNet {%Browser%}',
 			'code' => 'null',
+		),
+		'itunes' => array(
+			'link' => 'http://www.apple.com',
+			'title' => '{%iTunes%}',
+			'code' => 'itunes',
 		),
 		'irider' => array(
 			'link' => 'http://en.wikipedia.org/wiki/IRider',
@@ -1230,6 +1257,11 @@ class useragent_detect_browser {
 			'title' => 'SaaYaa Explorer',
 			'code' => 'saayaa',
 		),
+		'sailfishbrowser' => array(
+			'link' => 'https://github.com/sailfishos/sailfish-browser',
+			'title' => '{%SailfishBrowser%}',
+			'code' => 'sailfishbrowser',
+		),
 		'seamonkey' => array(
 			'link' => 'http://www.seamonkey-project.org/',
 			'title' => '{%SeaMonkey%}',
@@ -1390,9 +1422,14 @@ class useragent_detect_browser {
 			'title' => '{%Thunderbird%}',
 			'code' => 'thunderbird',
 		),
-		'tizen' => array(
+		'tizenbrowser' => array(
 			'link' => 'https://www.tizen.org/',
-			'title' => '{%Tizen%}',
+			'title' => '{%Tizenbrowser%}',
+			'code' => 'tizen',
+		),
+		'tizen browser' => array(
+			'link' => 'https://www.tizen.org/',
+			'title' => '{%Tizen Browser%}',
 			'code' => 'tizen',
 		),
 		'tjusig' => array(
@@ -1509,6 +1546,16 @@ class useragent_detect_browser {
 			'link' => 'http://weltweitimnetz.de/software/Browser.en.page',
 			'title' => 'Weltweitimnetz {%Browser%}',
 			'code' => 'weltweitimnetzbrowser',
+		),
+		'weibo' => array(
+			'link' => 'http://www.weibo.com',
+			'title' => '{%Weibo%}',
+			'code' => 'weibo',
+		),
+		'whatsapp' => array(
+			'link' => 'https://web.whatsapp.com/',
+			'title' => '{%WhatsApp%}',
+			'code' => 'whatsapp',
 		),
 		'whitehat aviator' => array(
 			'link' => 'https://www.whitehatsec.com/aviator/',
@@ -1883,6 +1930,14 @@ class useragent_detect_browser {
 			$return = "NiChrome";
 		} elseif ($lower_title == "gsa") {
 			$return = "Google Search App";
+		} elseif ($lower_title == "fbav") {
+			$return = "Facebook";
+		} elseif ($lower_title == "tizenbrowser") {
+			$return = "Tizen Browser";
+		} elseif ($lower_title == "sailfishbrowser") {
+			$return = "Sailfish Browser";
+		} elseif ($lower_title == "miuibrowser") {
+			$return = "MIUI Browser";
 		} elseif ($lower_title == "opera labs") {
 			if (preg_match('/Edition\ Labs([\ ._0-9a-zA-Z]+);/i', $useragent, $regmatch)) {
 				$return = $title . $regmatch[1];

@@ -226,6 +226,10 @@ class useragent_detect_os {
 			$name = "Gentoo";
 			$image_url = "gentoo";
 
+		} elseif (preg_match('/Joola/i', $useragent)) {
+			$link = "https://jolla.com/";
+			$name = "Jolla";
+			$image_url = "joola";
 		} elseif (preg_match('/Kanotix/i', $useragent)) {
 			$link = "http://www.kanotix.com/";
 			$name = "Kanotix";
