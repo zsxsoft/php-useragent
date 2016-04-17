@@ -1,5 +1,17 @@
 <?php return array(
 	array(
+		array('Mozilla/5.0 (Linux; Android 4.4.4; A0001 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '39.0.2171.93', 'Google Chrome 39.0.2171.93', 'Android', '4.4.4', 'Android 4.4.4', 'OnePlus One', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.1.1; ONE A2005 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '47.0.2526.83', 'Google Chrome 47.0.2526.83', 'Android', '5.1.1', 'Android 5.1.1', 'OnePlus Two', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.1; ONE E1003 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '46.0.2490.76', 'Google Chrome 46.0.2490.76', 'Android', '5.1', 'Android 5.1', 'OnePlus X', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (Linux; Android 5.0.1; Letv X3-50 UHD Build/V760R360C162B10235T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.25 Safari/537.36'),
 		array('img/16/browser/chrome.png', 'img/16/device/letv.png', 'Google Chrome', '45.0.2454.25', 'Google Chrome 45.0.2454.25', 'Android', '5.0.1', 'Android 5.0.1', 'Letv X3', 'device'),
 	),

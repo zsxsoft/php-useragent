@@ -62,5 +62,8 @@ $useragent = UserAgentFactory::analyze($_SERVER['HTTP_USER_AGENT']);
 </html>
 ```
 
+##TODO
+ * Move out RegExps like useragent.js from the PHP file
+
 ##License
  * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html

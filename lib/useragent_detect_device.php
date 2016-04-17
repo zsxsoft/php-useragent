@@ -315,7 +315,20 @@ class UserAgent_Detect_Device {
 			$brand = "OPPO";
 			$image_url = "oppo";
 		}
+		// Oneplus
+		elseif (preg_match('/A0001|A2005|E1003|One [A-Z]\d{4}/i', $useragent)) {
+			$link = "http://www.oneplus.cn/";
+			$brand = "OnePlus";
+			$image_url = "oneplus";
 
+			if (preg_match('/A0001/i', $useragent)) {
+				$model = "One";
+			} else if (preg_match('/A2005/i', $useragent)) {
+				$model = "Two";
+			} else if (preg_match('/E1003/i', $useragent)) {
+				$model = "X";
+			}
+		}
 		// Palm
 		elseif (preg_match('/\ Pixi\//i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Palm_Pixi";
