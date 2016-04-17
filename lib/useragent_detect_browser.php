@@ -101,6 +101,10 @@ class useragent_detect_browser {
 		'GranParadiso',
 		'GreenBrowser',
 		'GSA',
+		'google earth',
+		'google.android.apps',
+		'googleplus',
+		'youtube',
 		'Hana',
 		'HotJava',
 		'Hv3',
@@ -702,9 +706,24 @@ class useragent_detect_browser {
 			'title' => 'GO {%Browser%}',
 			'code' => 'gobrowser',
 		),
-		'google wireless transcoder' => array(
-			'link' => 'http://google.com/gwt/n',
-			'title' => 'Google Wireless Transcoder',
+		'google earth' => array(
+			'link' => 'http://earth.google.com/',
+			'title' => '{%Google Earth%}',
+			'code' => 'google',
+		),
+		'google.android.apps' => array(
+			'link' => 'http://www.google.com/',
+			'title' => 'Google App',
+			'code' => 'google',
+		),
+		'googleplus' => array(
+			'link' => 'http://plus.google.com/',
+			'title' => 'Google+',
+			'code' => 'google',
+		),
+		'youtube' => array(
+			'link' => 'http://www.youtube.com/',
+			'title' => '{%Youtube%}',
 			'code' => 'google',
 		),
 		'gosurf' => array(

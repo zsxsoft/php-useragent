@@ -226,10 +226,10 @@ class useragent_detect_os {
 			$name = "Gentoo";
 			$image_url = "gentoo";
 
-		} elseif (preg_match('/Joola/i', $useragent)) {
+		} elseif (preg_match('/Jolla/i', $useragent)) {
 			$link = "https://jolla.com/";
 			$name = "Jolla";
-			$image_url = "joola";
+			$image_url = "jolla";
 		} elseif (preg_match('/Kanotix/i', $useragent)) {
 			$link = "http://www.kanotix.com/";
 			$name = "Kanotix";
@@ -444,7 +444,7 @@ class useragent_detect_os {
 			$name = "Android";
 			$image_url = "android";
 
-			if (preg_match('/(Android|Adr)[\ |\/]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+			if (preg_match('/(Android|Adr)[\ |\/]([.0-9]+)/i', $useragent, $regmatch)) {
 				$version = $regmatch[2];
 			}
 		} elseif (preg_match('/CPU\ (iPhone )?OS\ ([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {

@@ -1,5 +1,21 @@
 <?php return array(
 	array(
+		array('Mozilla/5.0 (iPad3,1; iPad; U; CPU OS 7_0_4 like Mac OS X; en_GB) com.google.GooglePlus/29676 (KHTML, like Gecko) Mobile/J1AP (gzip)'),
+		array('img/16/browser/google.png', 'img/16/device/ipad.png', 'Google+', '', 'Google+', 'iOS', '7.0.4', 'iOS 7.0.4', 'Apple iPad', 'device'),
+	),
+	array(
+		array('com.google.android.youtube/5.3.32(Linux; U; Android 4.0.3; ro_RO; GOCLEVER NETBOOK R103 Build/IML74K) gzip'),
+		array('img/16/browser/google.png', 'img/16/os/android.png', 'Youtube', '5.3.32', 'Youtube 5.3.32', 'Android', '4.0.3', 'Android 4.0.3', '', 'os'),
+	),
+	array(
+		array('NS/3.3.1 (Linux; U; Android 5.0.1; en-in; phone/Nexus 5 Build/LRX22C; Density/480; gzip) com.google.android.apps.magazines/2014102707'),
+		array('img/16/browser/google.png', 'img/16/device/google-nexusone.png', 'Google App', '', 'Google App', 'Android', '5.0.1', 'Android 5.0.1', 'Google Nexus 5', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Windows; U; Windows NT 5.1; cs-CZ) AppleWebKit/532.4 (KHTML, like Gecko) Google Earth/5.2.1.1329 Safari/532.4'),
+		array('img/16/browser/google.png', 'img/16/os/win-2.png', 'Google Earth', '5.2.1.1329', 'Google Earth 5.2.1.1329', 'Windows', 'XP', 'Windows XP', '', 'os'),
+	),
+	array(
 		array('iTunes/10.2.1 (Windows; Microsoft Windows 7 Enterprise Edition Service Pack 1 (Build 7601)) AppleWebKit/533.20.25'),
 		array('img/16/browser/itunes.png', 'img/16/device/microsoft.png', 'iTunes', '10.2.1', 'iTunes 10.2.1', 'Windows', '', 'Windows', 'Microsoft', 'device'),
 	),
@@ -33,7 +49,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (Maemo; Linux; U; Jolla; Sailfish; Mobile; rv:31.0) Gecko/31.0 Firefox/31.0 SailfishBrowser/1.0'),
-		array('img/16/browser/sailfishbrowser.png', 'img/16/os/linux.png', 'Sailfish Browser', '1.0', 'Sailfish Browser 1.0', 'GNU/Linux', '', 'GNU/Linux', '', 'os'),
+		array('img/16/browser/sailfishbrowser.png', 'img/16/os/jolla.png', 'Sailfish Browser', '1.0', 'Sailfish Browser 1.0', 'Jolla', '', 'Jolla', '', 'os'),
 	),
 	array(
 		array('Mozilla/5.0 (SymbianOS/9.3; U; Series60/3.2 NokiaN79-3/10.018; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/413 (KHTML, like Gecko) Safari/413'),
@@ -73,7 +89,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (Windows; U; Windows NT 5.1; cs-CZ) AppleWebKit/532.4 (KHTML, like Gecko) Google Earth/5.2.1.1329 Safari/532.4'),
-		array('img/16/browser/safari.png', 'img/16/os/win-2.png', 'Safari', '', 'Safari', 'Windows', 'XP', 'Windows XP', '', 'os'),
+		array('img/16/browser/google.png', 'img/16/os/win-2.png', 'Google Earth', '5.2.1.1329', 'Google Earth 5.2.1.1329', 'Windows', 'XP', 'Windows XP', '', 'os'),
 	),
 	array(
 		array('Mozilla/5.0 (MeeGo) AppleWebKit/534.13 (KHTML, like Gecko) Mobile Safari/534.13'),
