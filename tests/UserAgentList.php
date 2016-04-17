@@ -1,5 +1,17 @@
 <?php return array(
 	array(
+		array('Mozilla/5.0 (Linux; Android 4.2.2; nl-nl; SAMSUNG GT-I9505 Build/JDQ39) AppleWebKit/535.19 (KHTML, like Gecko) Version/1.0 Chrome/18.0.1025.308 Mobile Safari/535.19'),
+		array('img/16/browser/chrome.png', 'img/16/device/samsung.png', 'Google Chrome', '18.0.1025.308', 'Google Chrome 18.0.1025.308', 'Android', '4.2.2', 'Android 4.2.2', 'Samsung I9505', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 4.3; en-us; SAMSUNG SCH-I545 Build/JSS15J) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/samsung.png', 'Google Chrome', '28.0.1500.94', 'Google Chrome 28.0.1500.94', 'Android', '4.3', 'Android 4.3', 'Samsung I545', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 4.4.2; ko-kr; SAMSUNG SHV-E300S Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.5 Chrome/28.0.1500.94 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/samsung.png', 'Google Chrome', '28.0.1500.94', 'Google Chrome 28.0.1500.94', 'Android', '4.4.2', 'Android 4.4.2', 'Samsung E300S', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36'),
 		array('img/16/browser/chrome.png', 'img/16/device/samsung.png', 'Google Chrome', '48.0.2564.23', 'Google Chrome 48.0.2564.23', 'Android', '5.0', 'Android 5.0', 'Samsung G900P', 'device'),
 	),
