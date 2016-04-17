@@ -336,21 +336,12 @@ class UserAgent_Detect_Device {
 			$link = "http://www.samsung.com/us/experience/smart-tv/";
 			$brand = "Samsung Smart TV";
 			$image_url = "samsung";
-		} elseif (preg_match('/GT-/i', $useragent)) {
+		} elseif (preg_match('/Samsung|SM-|GT-/i', $useragent)) {
 			$link = "http://www.samsungmobile.com/";
 			$brand = "Samsung";
 
-			if (preg_match('/GT-([.\-0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$model = $regmatch[1];
-			}
-
-			$image_url = "samsung";
-		} elseif (preg_match('/Samsung/i', $useragent)) {
-			$link = "http://www.samsungmobile.com/";
-			$brand = "Samsung";
-
-			if (preg_match('/Samsung-([.\-0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$model = $regmatch[1];
+			if (preg_match('/(Samsung-|GT-|SM-)([.\-0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$model = $regmatch[2];
 			}
 
 			$image_url = "samsung";

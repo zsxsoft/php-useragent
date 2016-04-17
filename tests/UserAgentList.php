@@ -1,5 +1,12 @@
-<?php
-return array(
+<?php return array(
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.23 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/samsung.png', 'Google Chrome', '48.0.2564.23', 'Google Chrome 48.0.2564.23', 'Android', '5.0', 'Android 5.0', 'Samsung G900P', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Windows; U; Windows NT 5.1; cs-CZ) AppleWebKit/532.4 (KHTML, like Gecko) Google Earth/5.2.1.1329 Safari/532.4'),
+		array('img/16/browser/safari.png', 'img/16/os/win-2.png', 'Safari', '', 'Safari', 'Windows', 'XP', 'Windows XP', '', 'os'),
+	),
 	array(
 		array('Mozilla/5.0 (MeeGo) AppleWebKit/534.13 (KHTML, like Gecko) Mobile Safari/534.13'),
 		array('img/16/browser/safari.png', 'img/16/os/meego.png', 'Mobile Safari', '', 'Mobile Safari', 'Meego', '', 'Meego', '', 'os'),
