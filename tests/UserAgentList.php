@@ -1,5 +1,41 @@
 <?php return array(
 	array(
+		array('Mozilla/5.0 (Linux; Android 5.0.1; Letv X3-50 UHD Build/V760R360C162B10235T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.25 Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/letv.png', 'Google Chrome', '45.0.2454.25', 'Google Chrome 45.0.2454.25', 'Android', '5.0.1', 'Android 5.0.1', 'Letv X3', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.0.1; Lenovo TAB S8-50LC Build/BMAIN) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.95 Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/lenovo.png', 'Google Chrome', '48.0.2564.95', 'Google Chrome 48.0.2564.95', 'Android', '5.0.1', 'Android 5.0.1', 'Lenovo TAB', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.0.1; Nexus 7 Build/LRX22C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.59 Safari/537.36 OPR/26.0.1656.87080'),
+		array('img/16/browser/opera-1.png', 'img/16/device/google-nexusone.png', 'Opera', '26.0.1656.87080', 'Opera 26.0.1656.87080', 'Android', '5.0.1', 'Android 5.0.1', 'Google Nexus 7', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.0.1; YOGA Tablet 2-1050F Build/LRX22C) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36 OPR/34.0.2044.98679'),
+		array('img/16/browser/opera-1.png', 'img/16/device/lenovo.png', 'Opera', '34.0.2044.98679', 'Opera 34.0.2044.98679', 'Android', '5.0.1', 'Android 5.0.1', 'Lenovo Yoga 2', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 2.3.4; xx; HTC Flyer P510e Build/GRJ22) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'),
+		array('img/16/browser/android-webkit.png', 'img/16/device/htc.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.3.4', 'Android 2.3.4', 'HTC Flyer', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 2.3.5; xx; Dell V04B Build/GRJ90) AppleWebKit/530.17 (KHTML, like Gecko) FlyFlow/2.3 Version/4.0 Mobile Safari/530.17 baidubrowser/042_1.41.3.2_diordna_069_045/lleD_01_5.3.2_B40V-lleD/1000134f/0146F6A8AB026C4A2705693E9A014A'),
+		array('img/16/browser/bidubrowser.png', 'img/16/device/dell.png', 'Baidu Browser', '042', 'Baidu Browser 042', 'Android', '2.3.5', 'Android 2.3.5', 'Dell', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 4.1.1; TCL TAB 7 Build/GSDT011) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166  Safari/535.19'),
+		array('img/16/browser/chrome.png', 'img/16/device/tcl.png', 'Google Chrome', '18.0.1025.166', 'Google Chrome 18.0.1025.166', 'Android', '4.1.1', 'Android 4.1.1', 'TCL TAB', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 4.2.1; zh-CN; M045 Build/JOP40D) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.0.0.488 U3/0.8.0 Mobile Safari/534.30'),
+		array('img/16/browser/ucbrowser.png', 'img/16/device/meizu.png', 'UC Browser', '10.0.0.488', 'UC Browser 10.0.0.488', 'Android', '4.2.1', 'Android 4.2.1', 'Meizu M045', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90)'),
+		array('img/16/browser/mozilla.png', 'img/16/device/meizu.png', 'Mozilla Compatible', '', 'Mozilla Compatible', 'Android', '2.3.5', 'Android 2.3.5', 'Meizu MX', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (Linux; U; Android 5.0.2; en-gb; PLK-AL10 Build/HONORPLK-AL10) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.3 Mobile Safari/537.36'),
 		array('img/16/browser/qqbrowser.png', 'img/16/device/huawei.png', 'MQQBrowser', '5.3', 'MQQBrowser 5.3', 'Android', '5.0.2', 'Android 5.0.2', 'Huawei PLK-AL10', 'device'),
 	),
@@ -2213,7 +2249,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 2.3.5; zh-cn; MEIZU MX Build/GRJ90) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobiile Safari/533.1'),
-		array('img/16/browser/android-webkit.png', 'img/16/device/meizu.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.3.5', 'Android 2.3.5', 'Meizu', 'device'),
+		array('img/16/browser/android-webkit.png', 'img/16/device/meizu.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.3.5', 'Android 2.3.5', 'Meizu MX', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; Android 4.4.4; Xperia SP Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 YiXin/3.2.0'),

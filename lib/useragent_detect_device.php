@@ -36,10 +36,17 @@ class UserAgent_Detect_Device {
 		}*/
 
 		// meizu
-		if (preg_match('/(MEIZU (MX|M9)|M030)|MX-3/i', $useragent)) {
+		if (preg_match('/MEIZU (MX|M9)|MX-\d|M0(4|5)\d|M35\d/i', $useragent)) {
 			$link = "http://www.meizu.com/";
 			$brand = "Meizu";
 			$image_url = "meizu";
+
+			if (preg_match('/(M35[0-9]+)|(M04\d)|(M05\d)/i', $useragent, $regmatch)) {
+				$model = $regmatch[count($regmatch) - 1];
+			} else if (preg_match('/(MX[0-9]{0,1})/i', $useragent, $regmatch)) {
+				$model = $regmatch[count($regmatch) - 1];
+			}
+
 		}
 
 		// xiaomi
@@ -167,18 +174,31 @@ class UserAgent_Detect_Device {
 			}
 		}
 		// Lenovo
-		elseif (preg_match('/Lenovo|lepad/i', $useragent)) {
+		elseif (preg_match('/Lenovo|lepad|Yoga/i', $useragent)) {
 			$link = "http://www.lenovo.com.cn";
 			$brand = "Lenovo";
 
 			if (preg_match('/Lenovo[\ |\-|\/|\_]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$model = $regmatch[1];
+			} else if (preg_match('/Yoga( Tablet)?[\ |\-|\/|\_]([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$model = "Yoga " . $regmatch[2];
 			} else if (preg_match('/lepad/i', $useragent)) {
 				$model = 'LePad';
 			}
 
 			$image_url = "lenovo";
 
+		}
+		// Letv
+		elseif (preg_match('/Letv/i', $useragent)) {
+			$link = "http://www.letv.com";
+			$brand = "Letv";
+
+			if (preg_match('/Letv?([- \/])([0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$model = $regmatch[2];
+			}
+
+			$image_url = "letv";
 		}
 		// LG
 		elseif (preg_match('/LG/i', $useragent)) {
@@ -369,7 +389,15 @@ class UserAgent_Detect_Device {
 
 			$image_url = "sonyericsson";
 		}
-
+		// vivo
+		elseif (preg_match('/tcl/i', $useragent)) {
+			$link = "http://www.tcl.com/";
+			$brand = "TCL";
+			$image_url = "tcl";
+			if (preg_match('/TCL[\ |\-]([0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
+				$model = $regmatch[1];
+			}
+		}
 		// vivo
 		elseif (preg_match('/vivo/i', $useragent)) {
 			$link = "http://www.vivo.com.cn/";
