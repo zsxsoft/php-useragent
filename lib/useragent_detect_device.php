@@ -134,7 +134,18 @@ class UserAgent_Detect_Device {
 			if (preg_match('/HUAWEI( |\_)?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$model = $regmatch[2];
 			}
+		} elseif (preg_match('/HONOR[\ ]?([A-Za-z0-9]{3,4}\-[A-Za-z0-9]{3,4})|(Che[0-9]{1}-[a-zA-Z0-9]{4})/i', $useragent, $regmatch)) {
+			$link = "http://www.huawei.com/cn/";
+			$brand = "Huawei";
+			$model = $regmatch[count($regmatch) - 1];
+			$image_url = "huawei";
+		} elseif (preg_match('/(H60-L\d+)/i', $useragent, $regmatch)) {
+			$link = "http://www.huawei.com/cn/";
+			$brand = "Huawei";
+			$model = $regmatch[count($regmatch) - 1];
+			$image_url = "huawei";
 		}
+
 		// Kindle
 		elseif (preg_match('/Kindle/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/Amazon_Kindle";

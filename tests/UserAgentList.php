@@ -1,5 +1,17 @@
 <?php return array(
 	array(
+		array('Mozilla/5.0 (Linux; U; Android 5.0.2; en-gb; PLK-AL10 Build/HONORPLK-AL10) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.3 Mobile Safari/537.36'),
+		array('img/16/browser/qqbrowser.png', 'img/16/device/huawei.png', 'MQQBrowser', '5.3', 'MQQBrowser 5.3', 'Android', '5.0.2', 'Android 5.0.2', 'Huawei PLK-AL10', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 4.4.2; en-US; CHM-U01 Build/HonorCHM-U01) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 UCBrowser/10.5.2.582 U3/0.8.0 Mobile Safari/534.30'),
+		array('img/16/browser/ucbrowser.png', 'img/16/device/huawei.png', 'UC Browser', '10.5.2.582', 'UC Browser 10.5.2.582', 'Android', '4.4.2', 'Android 4.4.2', 'Huawei CHM-U01', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 4.4.2; zh-cn; H60-L11 Build/HDH60-L11) AppleWebKit/533.1 (KHTML, like Gecko)Version/4.0 MQQBrowser/5.4 TBS/025410 Mobile Safari/533.1 MicroMessenger/6.1.0.66_r1062275.542 NetType/WIFI'),
+		array('img/16/browser/qqbrowser.png', 'img/16/device/huawei.png', 'MQQBrowser', '5.4', 'MQQBrowser 5.4', 'Android', '4.4.2', 'Android 4.4.2', 'Huawei H60-L11', 'device'),
+	),
+	array(
 		array('Mozilla/5.0 (iPad3,1; iPad; U; CPU OS 7_0_4 like Mac OS X; en_GB) com.google.GooglePlus/29676 (KHTML, like Gecko) Mobile/J1AP (gzip)'),
 		array('img/16/browser/google.png', 'img/16/device/ipad.png', 'Google+', '', 'Google+', 'iOS', '7.0.4', 'iOS 7.0.4', 'Apple iPad', 'device'),
 	),
