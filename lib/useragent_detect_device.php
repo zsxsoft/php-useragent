@@ -105,6 +105,16 @@ class UserAgent_Detect_Device {
 			$image_url = "android";
 		}
 
+		// Hisense
+		elseif (preg_match('/Hasee/i', $useragent)) {
+			$link = "http://www.hasee.com/";
+			$brand = "Hasee";
+			$image_url = "hasee";
+			if (preg_match('/Hasee (([^;\/]+) Build|([^;\/)]+)[);\/ ])/i', $useragent, $regmatch)) {
+				$model = $regmatch[2];
+			}
+		}
+
 		// HTC
 		elseif (preg_match('/Desire/i', $useragent)) {
 			$link = "http://en.wikipedia.org/wiki/HTC_Desire";

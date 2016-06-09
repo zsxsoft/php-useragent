@@ -2374,4 +2374,9 @@
 		array('Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; HS-T96 Build/IML74K) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.5.2.394 U3/0.8.0 Mobile Safari/533.1'),
 		array('img/16/browser/ucbrowser.png', 'img/16/device/hisense.png', 'UC Browser', '9.5.2.394', 'UC Browser 9.5.2.394', 'Android', '4.0.3', 'Android 4.0.3', 'Hisense HS-T96', 'device'),
 	),
+
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; hasee H45 T3 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/6.0 Mobile Safari/537.36'),
+		array('img/16/browser/qqbrowser.png', 'img/16/device/hasee.png', 'MQQBrowser', '6.0', 'MQQBrowser 6.0', 'Android', '4.2.2', 'Android 4.2.2', 'Hasee H45 T3', 'device'),
+	),
 );
