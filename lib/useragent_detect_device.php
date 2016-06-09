@@ -139,6 +139,17 @@ class UserAgent_Detect_Device {
 
 			$image_url = "htc";
 		}
+
+		// Hisense
+		elseif (preg_match('/Hisense|HS-(?:U|EG?|I|T|X)[0-9]+[a-z0-9\-]*/i', $useragent)) {
+			$link = "http://www.hisense.com/";
+			$brand = "Hisense";
+			$image_url = "hisense";
+			if (preg_match('/(HS-(?:U|EG?|I|T|X)[0-9]+[a-z0-9\-]*)/i', $useragent, $regmatch)) {
+				$model = $regmatch[1];
+			}
+		}
+
 		// huawei
 		elseif (preg_match('/Huawei/i', $useragent)) {
 			$link = "http://www.huawei.com/cn/";
