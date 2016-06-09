@@ -98,6 +98,12 @@ class UserAgent_Detect_Device {
 			$brand = "Dell";
 			$image_url = "dell";
 		}
+		// Google TV
+		elseif (preg_match('/Google ?TV/i', $useragent)) {
+			$link = "https://www.android.com/tv/";
+			$brand = "Google TV";
+			$image_url = "android";
+		}
 
 		// HTC
 		elseif (preg_match('/Desire/i', $useragent)) {

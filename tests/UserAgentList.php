@@ -2355,4 +2355,9 @@
 		array(''),
 		array('img/16/browser/null.png', 'img/16/browser/null.png', 'Unknown', '', 'Unknown', '', '', '', 'Unknown', 'os'),
 	),
+
+	array(
+		array('Mozilla/5.0 (Linux; GoogleTV 3.2; LG Google TV Build/MASTER) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.77 Safari/534.24'),
+		array('img/16/browser/chrome.png', 'img/16/device/android.png', 'Google Chrome', '11.0.696.77', 'Google Chrome 11.0.696.77', 'GNU/Linux', '', 'GNU/Linux', 'Google TV', 'device'),
+	),
 );
