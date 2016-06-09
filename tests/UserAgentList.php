@@ -2360,4 +2360,14 @@
 		array('Mozilla/5.0 (Linux; GoogleTV 3.2; LG Google TV Build/MASTER) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/11.0.696.77 Safari/534.24'),
 		array('img/16/browser/chrome.png', 'img/16/device/android.png', 'Google Chrome', '11.0.696.77', 'Google Chrome 11.0.696.77', 'GNU/Linux', '', 'GNU/Linux', 'Google TV', 'device'),
 	),
+
+	array(
+		array('Mozilla/5.0 (Linux; U; Android 2.2; en-us; meizu_m9 Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1'),
+		array('img/16/browser/android-webkit.png', 'img/16/device/meizu.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.2', 'Android 2.2', 'Meizu', 'device'),
+	),
+
+	array(
+		array('Mozilla/5.0 (Linux; Android 4.2.2; XT1060 Build/13.9.0Q2.X-116-MX-12) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.64 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/os/android.png', 'Google Chrome', '28.0.1500.64', 'Google Chrome 28.0.1500.64', 'Android', '4.2.2', 'Android 4.2.2', '', 'os'),
+	),
 );

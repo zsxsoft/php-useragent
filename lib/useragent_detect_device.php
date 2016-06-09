@@ -36,7 +36,7 @@ class UserAgent_Detect_Device {
 		}*/
 
 		// meizu
-		if (preg_match('/MEIZU (MX|M9)|MX-\d|M0(4|5)\d|M35\d/i', $useragent)) {
+		if (preg_match('/MEIZU[ _-](MX|M9)|MX[0-9]{0,1};|M0(4|5)\d|M35\d/i', $useragent)) {
 			$link = "http://www.meizu.com/";
 			$brand = "Meizu";
 			$image_url = "meizu";
