@@ -144,7 +144,7 @@ class UserAgent_Detect_Device {
 			if (preg_match('/HTC[\ |_|-]?([.0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
 				$model = $regmatch[1];
 			} elseif (preg_match('/HTC([._0-9a-zA-Z]+)/i', $useragent, $regmatch)) {
-				$title .= str_replace("_", " ", $regmatch[1]);
+				$model .= str_replace("_", " ", $regmatch[1]);
 			}
 
 			$image_url = "htc";
