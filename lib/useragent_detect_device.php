@@ -36,7 +36,7 @@ class UserAgent_Detect_Device {
 		}*/
 
 		// meizu
-		if (preg_match('/MEIZU[ _-](MX|M9)|MX[0-9]{0,1};|M0(4|5)\d|M35\d/i', $useragent)) {
+		if (preg_match('/MEIZU[ _-](MX|M9)|MX[0-9]{0,1}[; ]|M0(4|5)\d|M35\d/i', $useragent)) {
 			$link = "http://www.meizu.com/";
 			$brand = "Meizu";
 			$image_url = "meizu";
@@ -359,17 +359,19 @@ class UserAgent_Detect_Device {
 			$image_url = "oppo";
 		}
 		// Oneplus
-		elseif (preg_match('/A0001|A2005|E1003|One [A-Z]\d{4}/i', $useragent)) {
+		elseif (preg_match('/A0001|A2005|A3000|E1003|One [A-Z]\d{4}/i', $useragent)) {
 			$link = "http://www.oneplus.cn/";
 			$brand = "OnePlus";
 			$image_url = "oneplus";
 
 			if (preg_match('/A0001/i', $useragent)) {
-				$model = "One";
+				$model = "1";
 			} else if (preg_match('/A2005/i', $useragent)) {
-				$model = "Two";
+				$model = "2";
 			} else if (preg_match('/E1003/i', $useragent)) {
 				$model = "X";
+			} else if (preg_match('/A3000/i', $useragent)) {
+				$model = "3";
 			}
 		}
 		// Palm

@@ -1,15 +1,19 @@
 <?php return array(
 	array(
 		array('Mozilla/5.0 (Linux; Android 4.4.4; A0001 Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.93 Mobile Safari/537.36'),
-		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '39.0.2171.93', 'Google Chrome 39.0.2171.93', 'Android', '4.4.4', 'Android 4.4.4', 'OnePlus One', 'device'),
+		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '39.0.2171.93', 'Google Chrome 39.0.2171.93', 'Android', '4.4.4', 'Android 4.4.4', 'OnePlus 1', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; Android 5.1.1; ONE A2005 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36'),
-		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '47.0.2526.83', 'Google Chrome 47.0.2526.83', 'Android', '5.1.1', 'Android 5.1.1', 'OnePlus Two', 'device'),
+		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '47.0.2526.83', 'Google Chrome 47.0.2526.83', 'Android', '5.1.1', 'Android 5.1.1', 'OnePlus 2', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Linux; Android 5.1; ONE E1003 Build/LMY47V) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.76 Mobile Safari/537.36'),
 		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '46.0.2490.76', 'Google Chrome 46.0.2490.76', 'Android', '5.1', 'Android 5.1', 'OnePlus X', 'device'),
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 6.0.1; ONEPLUS A3000 Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/50.0.2661.86 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/oneplus.png', 'Google Chrome', '50.0.2661.86', 'Google Chrome 50.0.2661.86', 'Android', '6.0.1', 'Android 6.0.1', 'OnePlus 3', 'device')
 	),
 	array(
 		array('Mozilla/5.0 (Linux; Android 5.0.1; Letv X3-50 UHD Build/V760R360C162B10235T; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.25 Safari/537.36'),
@@ -2385,5 +2389,9 @@
 	array(
 		array('Mozilla/5.0 (Linux; Android 4.4.4; HM 2A Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36'),
 		array('img/16/browser/chrome.png', 'img/16/device/xiaomi.png', 'Google Chrome', '33.0.0.0', 'Google Chrome 33.0.0.0', 'Android', '4.4.4', 'Android 4.4.4', 'Redmi 2A', 'device')
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.1; MX5 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/meizu.png', 'Google Chrome', '40.2214.121', 'Google Chrome 40.2214.121', 'Android', '5.1', 'Android 5.1', 'Meizu MX5', 'device')
 	)
 );
