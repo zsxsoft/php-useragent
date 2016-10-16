@@ -50,7 +50,7 @@ class UserAgent_Detect_Device {
 		}
 
 		// xiaomi
-		elseif (preg_match('/MI-ONE|MI \d|HM NOTE/i', $useragent)) {
+		elseif (preg_match('/MI-ONE|MI \d/i', $useragent)) {
 			$link = "http://www.xiaomi.com/";
 			$brand = "Xiaomi";
 
@@ -60,6 +60,22 @@ class UserAgent_Detect_Device {
 				$model = $regmatch[1];
 			} else if (preg_match('/MI-ONE/i', $useragent, $regmatch)) {
 				$model = "1";
+			}
+
+			$image_url = "xiaomi";
+		}
+
+		// redmi
+		elseif (preg_match('/HM NOTE|HM \d|Redmi/i', $useragent)) {
+			$link = "http://www.xiaomi.com/";
+			$brand = "Redmi";
+
+			if (preg_match('/HM NOTE ([A-Z0-9]+)/i', $useragent, $regmatch)) {
+				$model = "Note " . $regmatch[1];
+			} else if (preg_match('/HM ([A-Z0-9]+)/i', $useragent, $regmatch)) {
+				$model = $regmatch[1];
+			} else if (preg_match('/RedMi Note ([A-Z0-9]+)/i', $useragent, $regmatch)) {
+				$model = "Note " . $regmatch[1];
 			}
 
 			$image_url = "xiaomi";

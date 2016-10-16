@@ -177,7 +177,7 @@
 	),
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; HM NOTE 1W Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30; 360browser(securitypay,securityinstalled); 360(android,uppayplugin); 360 Aphone Browser (5.4.1)'),
-		array('img/16/browser/360se.png', 'img/16/device/xiaomi.png', '360 Aphone Browser', '', '360 Aphone Browser', 'Android', '4.2.2', 'Android 4.2.2', 'Xiaomi HM-NOTE 1W', 'device'),
+		array('img/16/browser/360se.png', 'img/16/device/xiaomi.png', '360 Aphone Browser', '', '360 Aphone Browser', 'Android', '4.2.2', 'Android 4.2.2', 'Redmi Note 1W', 'device'),
 	),
 	array(
 		array('Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko se5_i) Chrome/31.0.1650.63 Safari/537.36 QIHU 360SE'),
@@ -2374,9 +2374,16 @@
 		array('Mozilla/5.0 (Linux; U; Android 4.0.3; zh-CN; HS-T96 Build/IML74K) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 UCBrowser/9.5.2.394 U3/0.8.0 Mobile Safari/533.1'),
 		array('img/16/browser/ucbrowser.png', 'img/16/device/hisense.png', 'UC Browser', '9.5.2.394', 'UC Browser 9.5.2.394', 'Android', '4.0.3', 'Android 4.0.3', 'Hisense HS-T96', 'device'),
 	),
-
 	array(
 		array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; hasee H45 T3 Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko)Version/4.0 MQQBrowser/6.0 Mobile Safari/537.36'),
 		array('img/16/browser/qqbrowser.png', 'img/16/device/hasee.png', 'MQQBrowser', '6.0', 'MQQBrowser 6.0', 'Android', '4.2.2', 'Android 4.2.2', 'Hasee H45 T3', 'device'),
 	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.0.2; Redmi Note 2 Build/LRX22G; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/45.0.2454.95 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/xiaomi.png', 'Google Chrome', '45.0.2454.95', 'Google Chrome 45.0.2454.95', 'Android', '5.0.2', 'Android 5.0.2', 'Redmi Note 2', 'device')
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 4.4.4; HM 2A Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/xiaomi.png', 'Google Chrome', '33.0.0.0', 'Google Chrome 33.0.0.0', 'Android', '4.4.4', 'Android 4.4.4', 'Redmi 2A', 'device')
+	)
 );
