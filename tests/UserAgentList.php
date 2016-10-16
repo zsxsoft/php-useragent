@@ -2393,5 +2393,13 @@
 	array(
 		array('Mozilla/5.0 (Linux; Android 5.1; MX5 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36'),
 		array('img/16/browser/chrome.png', 'img/16/device/meizu.png', 'Google Chrome', '40.2214.121', 'Google Chrome 40.2214.121', 'Android', '5.1', 'Android 5.1', 'Meizu MX5', 'device')
-	)
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.1; m3 note Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/40.2214.121 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/meizu.png', 'Google Chrome', '40.2214.121', 'Google Chrome 40.2214.121', 'Android', '5.1', 'Android 5.1', 'Meizu m3 note', 'device')
+	),
+	array(
+		array('Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36'),
+		array('img/16/browser/chrome.png', 'img/16/device/xiaomi.png', 'Google Chrome', '43.0.2357.121', 'Google Chrome 43.0.2357.121', 'Android', '5.1.1', 'Android 5.1.1', 'Xiaomi 4c', 'device')
+	),
 );

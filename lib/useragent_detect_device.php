@@ -36,7 +36,7 @@ class UserAgent_Detect_Device {
 		}*/
 
 		// meizu
-		if (preg_match('/MEIZU[ _-](MX|M9)|MX[0-9]{0,1}[; ]|M0(4|5)\d|M35\d/i', $useragent)) {
+		if (preg_match('/MEIZU[ _-](MX|M9)|MX[0-9]{0,1}[; ]|M0(4|5)\d|M35\d|M\d note/i', $useragent)) {
 			$link = "http://www.meizu.com/";
 			$brand = "Meizu";
 			$image_url = "meizu";
@@ -45,21 +45,23 @@ class UserAgent_Detect_Device {
 				$model = $regmatch[count($regmatch) - 1];
 			} else if (preg_match('/(MX[0-9]{0,1})/i', $useragent, $regmatch)) {
 				$model = $regmatch[count($regmatch) - 1];
+			} else if (preg_match('/(m\d Note)/i', $useragent, $regmatch)) {
+				$model = $regmatch[count($regmatch) - 1];
 			}
 
 		}
 
 		// xiaomi
-		elseif (preg_match('/MI-ONE|MI \d/i', $useragent)) {
+		elseif (preg_match('/MI-ONE|MI[ -]\d/i', $useragent)) {
 			$link = "http://www.xiaomi.com/";
 			$brand = "Xiaomi";
 
 			if (preg_match('/HM NOTE ([A-Z0-9]+)/i', $useragent, $regmatch)) {
 				$model = "HM-NOTE " . $regmatch[1];
-			} else if (preg_match('/MI ([A-Z0-9]+)/i', $useragent, $regmatch)) {
-				$model = $regmatch[1];
 			} else if (preg_match('/MI-ONE/i', $useragent, $regmatch)) {
 				$model = "1";
+			} else if (preg_match('/MI[ -]([A-Z0-9]+)/i', $useragent, $regmatch)) {
+				$model = $regmatch[1];
 			}
 
 			$image_url = "xiaomi";
