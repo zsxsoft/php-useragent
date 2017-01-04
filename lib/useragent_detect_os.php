@@ -17,8 +17,8 @@
 
 class useragent_detect_os {
     private static $_windows_version = array(
-        "6.4" => array("10", "6"), // Windows 10 before 10240
         "10.0" => array("10", "6"),
+        "6.4" => array("10", "6"), // Windows 10 before 10240
         "6.3" => array("8.1", "5"),
         "6.2" => array("8", "5"),
         "6.1" => array("7", "4"),
@@ -88,7 +88,7 @@ class useragent_detect_os {
                     $image_url = "wp7";
                 }
             }
-        } elseif (preg_match('/Windows NT ([0-9.]+)/i', $useragent, $regmatch)) {
+        } elseif (preg_match('/Windows NT (\d+\.\d+)/i', $useragent, $regmatch)) {
             if (isset(self::$_windows_version[$regmatch[1]])) {
                 self::_returnWindows($return, $regmatch[1]);
             }

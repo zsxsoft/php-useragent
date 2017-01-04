@@ -2402,4 +2402,8 @@
         array('Mozilla/5.0 (Linux; Android 5.1.1; Mi-4c Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/43.0.2357.121 Mobile Safari/537.36'),
         array('img/16/browser/chrome.png', 'img/16/device/xiaomi.png', 'Google Chrome', '43.0.2357.121', 'Google Chrome 43.0.2357.121', 'Android', '5.1.1', 'Android 5.1.1', 'Xiaomi 4c', 'device')
     ),
+    array(
+        array('Mozilla/5.0 (Windows NT 10.0.14986; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2950.4 Safari/537.36'),
+        array('img/16/browser/chrome.png', 'img/16/os/win-6.png', 'Google Chrome', '57.0.2950.4', 'Google Chrome 57.0.2950.4', 'Windows', '10', 'Windows 10 x64', '', 'os')
+    ),
 );
