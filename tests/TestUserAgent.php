@@ -5,7 +5,6 @@
  * @author zsx <zsx@zsxsoft.com>
  * @license GNU/GPL http://www.gnu.org/copyleft/gpl.html
  */
-include './useragent.class.php';
 
 class UserAgentFactoryTest extends PHPUnit_Framework_TestCase {
 

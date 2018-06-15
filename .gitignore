@@ -4,3 +4,4 @@
 /tests/*.txt
 /BuildTestCase.php
 /tests/BuildTestCase2.php
+composer.lock
