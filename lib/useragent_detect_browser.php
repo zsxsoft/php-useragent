@@ -37,7 +37,7 @@ class useragent_detect_browser {
         'Barca',
         'Beamrise',
         'Beonex',
-        'BA?IDUBrowser|BaiduHD',
+        'BA?IDUBrowser|BaiduHD|baiduboxapp',
         'Blackbird',
         'BlackHawk',
         'Blazer',
@@ -409,6 +409,11 @@ class useragent_detect_browser {
         'baiduhd' => array(
             'link' => 'http://browser.baidu.com/',
             'title' => '{%BaiduHD%}',
+            'code' => 'bidubrowser',
+        ),
+        'baiduboxapp' => array(
+            'link' => 'http://mo.baidu.com/',
+            'title' => '{%BaiduBoxApp%}',
             'code' => 'bidubrowser',
         ),
         'blackbird' => array(
@@ -1765,6 +1770,11 @@ class useragent_detect_browser {
             $version_object = self::get_version(array('', 'Edge'));
             $image_url = "edge";
 
+        }  elseif (preg_match('/EdgA/i', $useragent)) { // Edge Android
+            $link = "http://windows.microsoft.com/en-us/windows/preview-microsoft-edge-pc";
+            $version_object = self::get_version(array('', 'EdgA'));
+            $image_url = "edge";
+
         } elseif (preg_match('/Chrome|crios/i', $useragent)) {
 
             if (preg_match('/crios/i', $useragent)) {
@@ -1967,6 +1977,8 @@ class useragent_detect_browser {
         } elseif ($lower_title == 'qtcarbrowser') {
             $return = "Tesla Car Browser";
             $version = "";
+        } elseif ($lower_title == 'edga') {
+            $return = "Edge Android";
         } elseif ($lower_title == "iceweasel") {
             if ($version == "Firefox") {
                 $version = "";

@@ -196,10 +196,6 @@
         array('img/16/browser/android-webkit.png', 'img/16/device/htc.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '2.3.7', 'Android 2.3.7', 'HTC Desire', 'device'),
     ),
     array(
-        array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; HUAWEI Y516-T00 Build/HUAWEIY516-T00) AppleWebKit/534.24 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.24 T5/2.0 baiduboxapp/6.0.1 (Baidu; P1 4.2.2)'),
-        array('img/16/browser/android-webkit.png', 'img/16/device/huawei.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '4.2.2', 'Android 4.2.2', 'Huawei Y516', 'device'),
-    ),
-    array(
         array('Mozilla/5.0 (Linux; U; Android 4.2.2; zh-cn; K-Touch T60 Build/JDQ39) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30 MxBrowser/4.3.2.2000'),
         array('img/16/browser/android-webkit.png', 'img/16/device/k-touch.png', 'Android Webkit', '4.0', 'Android Webkit 4.0', 'Android', '4.2.2', 'Android 4.2.2', 'K-Touch T60', 'device'),
     ),
@@ -2418,5 +2414,17 @@
     array(
         array('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/6.1.6 Safari/537.78.2'),
         array('img/16/browser/safari.png', 'img/16/os/mac-3.png', 'Safari', '6.1.6', 'Safari 6.1.6', 'Mac OS X', '10.7.5', 'Mac OS X 10.7.5', '', 'os'),
+    ),
+    array(
+        array('Mozilla/5.0 (Linux; Android 7.1.1; MIX 2 Build/NMF26X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.145 Mobile Safari/537.36 EdgA/41.0.0.1265'),
+        array('img/16/browser/edge.png', 'img/16/os/android.png', 'Edge Android', '41.0.0.1265', 'Edge Android 41.0.0.1265', 'Android', '7.1.1', 'Android 7.1.1', '', 'os'),
+    ),
+    array(
+        array('Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_2 like Mac OS X) AppleWebKit/603.2.4 (KHTML, like Gecko) Mobile/14F89 baiduboxapp/10.5.0.10 (Baidu; P2 10.3.2)'),
+        array('img/16/browser/bidubrowser.png', 'img/16/device/iphone.png', 'BaiduBoxApp', '10.5.0.10', 'BaiduBoxApp 10.5.0.10', 'iOS', '10.3.2', 'iOS 10.3.2', 'Apple iPhone', 'device'),
+    ),
+    array(
+        array('Mozilla/5.0 (Linux; Android 7.0; SM-G9550 Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/48.0.2564.116 Mobile Safari/537.36 T7/7.9 baiduboxapp/9.0.0.10 (Baidu; P1 7.0)'),
+        array('img/16/browser/bidubrowser.png', 'img/16/device/samsung.png', 'BaiduBoxApp', '9.0.0.10', 'BaiduBoxApp 9.0.0.10', 'Android', '7.0', 'Android 7.0', 'Samsung G9550', 'device'),
     ),
 );
