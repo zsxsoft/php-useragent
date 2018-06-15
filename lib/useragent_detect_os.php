@@ -520,6 +520,13 @@ class useragent_detect_os {
 
                 $name = str_replace("_", ".", $name);
                 $name = str_replace("OSX", "OS X", $name);
+                $macOSVersion = strpos($name, "OS X") + 4;
+                $version = trim(substr($name, $macOSVersion));
+                $name = substr($name, 0, $macOSVersion);
+
+                if (version_compare('10.12', $version) < 1) {
+                    $name = 'macOS';
+                }
 
                 $image_url = $regmatch[1] == "Mac OSX" ? "mac-2" : "mac-3";
             } elseif (preg_match('/Darwin/i', $useragent)) {

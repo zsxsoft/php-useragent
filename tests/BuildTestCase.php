@@ -14,7 +14,7 @@ foreach ($list as $value) {
 ?>
 array(
 	array('<?php echo $useragent->useragent ?>'),
-	array('<?php echo $useragent->browser['image'] ?>', '<?php echo $useragent->platform['image'] ?>', '<?php echo $useragent->browser['name'] ?>', '<?php echo $useragent->browser['version'] ?>', '<?php echo $useragent->browser['title'] ?>', '<?php echo $useragent->os['name'] ?>', '<?php echo $useragent->os['version'] ?>', '<?php echo $useragent->os['title'] ?>', '<?php echo $useragent->device['title'] ?>', '<?php echo $useragent->platform['type'] ?>')
+	array('<?php echo $useragent->browser['image'] ?>', '<?php echo $useragent->platform['image'] ?>', '<?php echo $useragent->browser['name'] ?>', '<?php echo $useragent->browser['version'] ?>', '<?php echo $useragent->browser['title'] ?>', '<?php echo $useragent->os['name'] ?>', '<?php echo $useragent->os['version'] ?>', '<?php echo $useragent->os['title'] ?>', '<?php echo $useragent->device['title'] ?>', '<?php echo $useragent->platform['type'] ?>'),
 ),
 <?php //exit;
 }
